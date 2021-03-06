@@ -21,9 +21,9 @@ const UsterTechnologies = memo(() => {
             &quot;Basislehrjahr&quot; in Uster Technologies together with other
             companies
           </Dash>
-          <Dash>setting up the computers for during the exchange program</Dash>
+          <Dash>Setting up the computers for during the exchange program</Dash>
           <Dash>
-            create intranet based on PHP as a variant to MS SharePoint
+            Create intranet based on PHP as a variant to MS SharePoint
           </Dash>
           <Dash>Microcontroller programming in C / C++</Dash>
           <Dash>Microcontroller network manager in C#</Dash>
