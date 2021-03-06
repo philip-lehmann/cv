@@ -1,11 +1,17 @@
 {
   "name": "cv-next",
   "version": "0.1.0",
+  "author": "Philip Lehmann",
   "private": true,
+  "description": "Philip Lehmann - Curriculum vitae",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $PORT"
+  },
+  "engines": {
+    "node": ">= 14.15",
+    "yarn": ">= 1.22.10"
   },
   "dependencies": {
     "@bootstrap-styled/provider": "^2.0.3",
