@@ -1,8 +1,12 @@
 import React, { memo } from 'react'
-
 import { CardText, A } from '@bootstrap-styled/v4'
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/my_card'
+import styled from 'styled-components'
 import Image from 'next/image'
+import { MyCard, MyCardBlock, MyCardTitle } from 'components/my_card'
+
+export const ImageSpan = styled('span')`
+  line-height: 26px;
+`
 
 const FollowMe = memo(() => {
   return (
@@ -27,7 +31,7 @@ const FollowMe = memo(() => {
                 marginRight: '2px'
               }}
             />
-            Github
+            <ImageSpan>Github</ImageSpan>
           </A>
           |
           <A

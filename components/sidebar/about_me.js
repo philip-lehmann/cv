@@ -27,11 +27,13 @@ const Contact = memo(() => {
         <br />
         <br />
         <MyCardText>
-          I have always been facinated by computers. Started an apprenticeship
-          as System Engineer but my passion for programming did rise fast once
-          we startet our first courses with C. In my free time I continued with
-          PHP and Java to develop several private projects. After my
-          apprenticeship I made my passion my job.
+          I have always been fascinated by computers. I began my working career
+          with an apprenticeship as System Engineer, but I discovered quickly my
+          passion for programming, once I started my first course with C. In my
+          free time I continued to study and discover PHP and Java, to develop
+          several private projects. After my apprenticeship it was clear to me
+          that I had found my professional calling and pursued my career in
+          programming, for now 14 years.
         </MyCardText>
       </MyCardBlock>
     </MyCard>

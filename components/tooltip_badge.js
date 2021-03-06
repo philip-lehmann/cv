@@ -25,7 +25,7 @@ const TooltipBadge = memo(({ name, namespace, progress }) => {
         toggle={() => setIsOpen(!isOpen)}
       >
         <ProgressWith>
-          <ProgressBar valueNow={progress} />
+          <ProgressBar valueNow={Number(progress)} />
         </ProgressWith>
       </Tooltip>
     </>
