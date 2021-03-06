@@ -1,65 +1,61 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from 'react'
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+import {
+  Container,
+  Row,
+  Col,
+  Header,
+  H1,
+  H3,
+  Card,
+  CardBlock
+} from '@bootstrap-styled/v4'
+import styled from 'styled-components'
+import { Reset } from 'styled-reset'
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+import Layout from 'components/layout'
+import Experience from 'components/experience'
+import SidebarContent from 'components/sidebar'
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+const HomeH1 = styled(H1)`
+  margin-top: 100px;
+`
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+const MyLayout = styled(Layout)``
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+const SidebarCol = styled(Col)`
+  background: linear-gradient(
+    90deg,
+    rgba(222, 222, 224, 1) 0%,
+    rgba(233, 233, 235, 1) 100%
+  );
+  min-height: 100vh;
+`
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+const IndexPage = () => (
+  <>
+    <Reset />
+    <MyLayout>
+      <Container>
+        <Row>
+          <SidebarCol sm={4}>
+            <SidebarContent />
+          </SidebarCol>
+          <Col sm={8}>
+            <Card>
+              <CardBlock>
+                <Header>
+                  <HomeH1>Philip Lehmann</HomeH1>
+                  <H3>Software Engineer</H3>
+                </Header>
+              </CardBlock>
+            </Card>
+            <Experience />
+          </Col>
+        </Row>
+      </Container>
+    </MyLayout>
+  </>
+)
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
-}
+export default IndexPage
