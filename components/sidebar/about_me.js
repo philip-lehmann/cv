@@ -18,7 +18,12 @@ const Contact = memo(() => {
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
         <MyCardTitle>About Me</MyCardTitle>
-        <MyImage src="/images/me.jpg" alt="Philip Lehmann" width={250} height={250} />
+        <MyImage
+          src="/images/me.jpg"
+          alt="Philip Lehmann"
+          width={250}
+          height={250}
+        />
         <br />
         <br />
         <MyCardText>

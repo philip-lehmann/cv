@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "next start -p $PORT",
+    "deploy": "git push heroku main:master",
+    "lint": "eslint --ext '.js,.jsx' .",
+    "lint-fix": "eslint --ext '.js,.jsx' --fix ."
   },
   "engines": {
     "node": ">= 14.15",
