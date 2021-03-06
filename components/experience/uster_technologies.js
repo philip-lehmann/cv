@@ -1,8 +1,8 @@
 import React, { memo } from 'react'
-
 import { CardText, H5, H6 } from '@bootstrap-styled/v4'
 import { FloatRight } from 'components/float'
 import TooltipBadge from 'components/tooltip_badge'
+import { DashList, Dash } from 'components/dash_list'
 import { monthYear } from 'helpers/date'
 
 const UsterTechnologies = memo(() => {
@@ -16,6 +16,17 @@ const UsterTechnologies = memo(() => {
         <H6>Apprenticeship as System Engineer</H6>
       </div>
       <CardText>
+        <DashList>
+          <Dash>
+            "Basislehrjahr" in Uster Technologies together with other companies
+          </Dash>
+          <Dash>setting up the computers for during the exchange program</Dash>
+          <Dash>
+            create intranet based on PHP as a variant to MS SharePoint
+          </Dash>
+          <Dash>Microcontroller programming in C / C++</Dash>
+          <Dash>Microcontroller network manager in C#</Dash>
+        </DashList>
         Even the apprenticeship was about systems informatics my interrest and
         also my assignments where more in developing. I could build an intranet
         solution in php for the company during my second year. Afterwards I came

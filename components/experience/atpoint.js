@@ -1,9 +1,15 @@
 import React, { memo } from 'react'
-
 import { CardText, H5, H6 } from '@bootstrap-styled/v4'
 import { FloatRight } from 'components/float'
 import TooltipBadge from 'components/tooltip_badge'
+import { DashList, Dash } from 'components/dash_list'
 import { monthYear } from 'helpers/date'
+
+// At the beginning with the focus on HTML5 and touch we created our own
+// multitouch devices with some applications for Post, Avaloq and Trilux.
+// With the upcoming of the iPad we started consulting solutions with a
+// native layer to transfer data between the WebViews over Bluetooth. Now
+// having several Fintech Solutions over several Clients.
 
 const Atpoint = memo(() => {
   return (
@@ -14,7 +20,14 @@ const Atpoint = memo(() => {
         <H6>Head of Development</H6>
       </div>
       <CardText>
-        Last year I was appointed as the team and architecture lead.
+        <DashList>
+          <Dash>performance reviews</Dash>
+          <Dash>developer recruitment</Dash>
+          <Dash>create a project roadmap with the project manager</Dash>
+          <Dash>define project setups</Dash>
+          <Dash>organize know-how transfers in the company</Dash>
+          <Dash>quality and security control of projects</Dash>
+        </DashList>
       </CardText>
       <br />
       <div>
@@ -24,11 +37,38 @@ const Atpoint = memo(() => {
         <H6>Software Engineer</H6>
       </div>
       <CardText>
-        At the beginning with the focus on HTML5 and touch we created our own
-        multitouch devices with some applications for Post, Avaloq and Trilux.
-        With the upcoming of the iPad we started consulting solutions with a
-        native layer to transfer data between the WebViews over Bluetooth. Now
-        having several Fintech Solutions over several Clients.
+        <DashList>
+          <Dash>
+            create several multitouch applications based on HTML5 with a REST
+            API in Ruby &amp; Rails (
+            <a
+              href="https://www.youtube.com/watch?v=11iK1_jvGio"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Demo1
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=4iaAD4nZizQ"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Demo2
+            </a>
+            )
+          </Dash>
+          <Dash>
+            Microsoft Kinect demo in HTML5 (
+            <a
+              href="https://www.youtube.com/watch?v=-09y8g2Zd2I"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Demo
+            </a>
+            )
+          </Dash>
+        </DashList>
         <br />
         <TooltipBadge
           namespace="atpoint"

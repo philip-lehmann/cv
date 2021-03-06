@@ -1,8 +1,8 @@
 import React, { memo } from 'react'
-
 import { CardText, H5, H6 } from '@bootstrap-styled/v4'
 import { FloatRight } from 'components/float'
 import TooltipBadge from 'components/tooltip_badge'
+import { DashList, Dash } from 'components/dash_list'
 import { monthYear } from 'helpers/date'
 
 const Insign = memo(() => {
@@ -16,11 +16,14 @@ const Insign = memo(() => {
         <H6>Software Engineer</H6>
       </div>
       <CardText>
-        After my apprenticeship and the army I found an oppertuniy at insign
-        gmbh as a web developer with PHP. The main focus was on an own PHP CMS
-        and Magento Webshops. I could create and extend pages for PWC, Finanz
-        und Wirtschft, Syngenta, Piazza and many more. On the side I could
-        assist the system administrator.
+        <DashList>
+          <Dash>
+            maintain and create Website with the internal CMS for customer like
+            PWC, Finanz und Wirtschaft, Syngenta
+          </Dash>
+          <Dash>update Pizza to smarty and continue development</Dash>
+          <Dash>system administrator tasks</Dash>
+        </DashList>
         <br />
         <TooltipBadge namespace="insign" progress="70" name="PHP" />{' '}
         <TooltipBadge namespace="insign" progress="90" name="JavaScript" />{' '}
