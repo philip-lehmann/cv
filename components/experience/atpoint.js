@@ -87,7 +87,7 @@ const Atpoint = memo(() => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Kinect
+              Demo
             </a>
             )
           </Dash>
@@ -99,7 +99,7 @@ const Atpoint = memo(() => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Kato
+              Demo
             </a>
             )
           </Dash>
