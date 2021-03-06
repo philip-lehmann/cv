@@ -1,8 +1,8 @@
 import React, { memo } from 'react'
 
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/my_card'
+import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 
-const Languages = memo(() => {
+const HumanLanguages = memo(() => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
@@ -14,6 +14,6 @@ const Languages = memo(() => {
     </MyCard>
   )
 })
-Languages.displayName = 'Languages'
+HumanLanguages.displayName = 'HumanLanguages'
 
-export default Languages
+export default HumanLanguages

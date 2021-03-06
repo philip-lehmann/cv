@@ -18,13 +18,12 @@ const Insign = memo(() => {
       <CardText>
         <DashList>
           <Dash>
-            maintain and create Website with the internal CMS for customer like
+            Maintain and create Website with the internal CMS for customer like
             PWC, Finanz und Wirtschaft, Syngenta
           </Dash>
-          <Dash>update Pizza to smarty and continue development</Dash>
-          <Dash>system administrator tasks</Dash>
+          <Dash>Update Pizza to smarty and continue development</Dash>
+          <Dash>System administrator tasks</Dash>
         </DashList>
-        <br />
         <TooltipBadge namespace="insign" progress="70" name="PHP" />{' '}
         <TooltipBadge namespace="insign" progress="90" name="JavaScript" />{' '}
         <TooltipBadge namespace="insign" progress="70" name="CSS" />{' '}

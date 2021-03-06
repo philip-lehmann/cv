@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 
 import { CardText } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/my_card'
+import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 import Image from 'next/image'
 
 const MyImage = styled(Image)`
@@ -27,13 +27,13 @@ const Contact = memo(() => {
         <br />
         <br />
         <MyCardText>
-          I have always been fascinated by computers. I began my working career
-          with an apprenticeship as System Engineer, but I discovered quickly my
-          passion for programming, once I started my first course with C. In my
-          free time I continued to study and discover PHP and Java, to develop
+          Computers have always fascinated me. I began my career with an
+          apprenticeship as System Engineer but once I started my first course
+          with C, I quickly discovered my passion for programming. In my free
+          time I continued to study and discover PHP and Java and developing
           several private projects. After my apprenticeship it was clear to me
           that I had found my professional calling and pursued my career in
-          programming, for now 14 years.
+          programming, for 14 years.
         </MyCardText>
       </MyCardBlock>
     </MyCard>

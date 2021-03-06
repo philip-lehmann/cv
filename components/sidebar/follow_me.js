@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { CardText, A } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
 import Image from 'next/image'
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/my_card'
+import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 
 export const ImageSpan = styled('span')`
   line-height: 26px;

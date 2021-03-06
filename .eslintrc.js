@@ -33,5 +33,11 @@ module.exports = {
     'no-debugger': 'error',
     'react/prop-types': 'off'
   },
-  parser: 'babel-eslint'
+  parser: 'babel-eslint',
+  ignorePatterns: [
+    'public/sw.js',
+    'public/workbox-*.js',
+    'public/sw.js.map',
+    'public/workbox-*.js.map'
+  ]
 }

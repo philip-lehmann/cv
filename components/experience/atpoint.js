@@ -21,12 +21,14 @@ const Atpoint = memo(() => {
       </div>
       <CardText>
         <DashList>
-          <Dash>performance reviews</Dash>
-          <Dash>developer recruitment</Dash>
-          <Dash>create a project roadmap with the project manager</Dash>
-          <Dash>define project setups</Dash>
-          <Dash>organize know-how transfers in the company</Dash>
-          <Dash>quality and security control of projects</Dash>
+          <Dash>Lead of software development with customer focus in mind</Dash>
+          <Dash>Architect reusable and maintainable software components</Dash>
+          <Dash>Performance reviews</Dash>
+          <Dash>Developer recruitment</Dash>
+          <Dash>Create a project roadmap with the project manager</Dash>
+          <Dash>Define project setups</Dash>
+          <Dash>Organize know-how transfers in the company</Dash>
+          <Dash>Quality and security control of projects</Dash>
         </DashList>
       </CardText>
       <br />
@@ -39,21 +41,42 @@ const Atpoint = memo(() => {
       <CardText>
         <DashList>
           <Dash>
-            create several multitouch applications based on HTML5 with a REST
-            API in Ruby &amp; Rails (
+            Development of quality software with a customer focus in mind
+          </Dash>
+          <Dash>
+            Specification, implementation, test and documentation of software
+          </Dash>
+          <Dash>Agile software development</Dash>
+          <Dash>
+            Setup production environments and deploy the software regularly
+          </Dash>
+        </DashList>
+        <br />
+        <H6>Project references:</H6>
+        <DashList>
+          <Dash>
+            Multitouch applications based on HTML5 with a REST API in Ruby &amp;
+            Rails with a synchronization over websockets in the case of Trilux (
             <a
               href="https://www.youtube.com/watch?v=11iK1_jvGio"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Demo1
-            </a>
+              Post
+            </a>{' '}
             <a
               href="https://www.youtube.com/watch?v=4iaAD4nZizQ"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Demo2
+              Avaloq
+            </a>{' '}
+            <a
+              href="https://www.youtube.com/watch?v=y3I30wolftc"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Trilux
             </a>
             )
           </Dash>
@@ -64,17 +87,24 @@ const Atpoint = memo(() => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Demo
+              Kinect
+            </a>
+            )
+          </Dash>
+
+          <Dash>
+            iPad / Touch offline application in HTML5 (
+            <a
+              href="https://www.youtube.com/watch?v=N8Qa2rHR7nE"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Kato
             </a>
             )
           </Dash>
         </DashList>
-        <br />
-        <TooltipBadge
-          namespace="atpoint"
-          progress="80"
-          name="Ruby & Rails"
-        />{' '}
+        <TooltipBadge namespace="atpoint" progress="80" name="Ruby & Rails" />{' '}
         <TooltipBadge namespace="atpoint" progress="90" name="ES6" />{' '}
         <TooltipBadge namespace="atpoint" progress="85" name="Typescript" />{' '}
         <TooltipBadge namespace="atpoint" progress="85" name="Flow" />{' '}

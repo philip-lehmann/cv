@@ -20,7 +20,7 @@ const DataQuest = memo(() => {
         <DashList>
           <Dash>Service Desk - repair receipt</Dash>
           <Dash>
-            write a warehouse management system in Java for the iPod replacement
+            Write a warehouse management system in Java for the iPod replacement
             program in favor of an excel list. (done in my free time because i
             did not like the excel list)
           </Dash>

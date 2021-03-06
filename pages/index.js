@@ -1,4 +1,6 @@
-import React from 'react'
+/* eslint no-console:off, no-useless-escape:off */
+
+import React, { useEffect } from 'react'
 
 import {
   Container,
@@ -32,30 +34,40 @@ const SidebarCol = styled(Col)`
   min-height: 100vh;
 `
 
-const IndexPage = () => (
-  <>
-    <Reset />
-    <MyLayout>
-      <Container>
-        <Row>
-          <SidebarCol sm={4}>
-            <SidebarContent />
-          </SidebarCol>
-          <Col sm={8}>
-            <Card>
-              <CardBlock>
-                <Header>
-                  <HomeH1>Philip Lehmann</HomeH1>
-                  <H3>Software Engineer</H3>
-                </Header>
-              </CardBlock>
-            </Card>
-            <Experience />
-          </Col>
-        </Row>
-      </Container>
-    </MyLayout>
-  </>
-)
+const IndexPage = () => {
+  useEffect(() => {
+    console.log('_    _ _____ _____  ______   __  __ ______   ')
+    console.log('| |  | |_   _|  __ \\|  ____| |  \\/  |  ____|  ')
+    console.log('| |__| | | | | |__) | |__    | \\  / | |__     ')
+    console.log('|  __  | | | |  _  /|  __|   | |\\/| |  __|    ')
+    console.log('| |  | |_| |_| | \\ \\| |____  | |  | | |____ _ ')
+    console.log('|_|  |_|_____|_|  \\_\\______| |_|  |_|______(_)')
+  })
+  return (
+    <>
+      <Reset />
+      <MyLayout>
+        <Container>
+          <Row>
+            <SidebarCol sm={4}>
+              <SidebarContent />
+            </SidebarCol>
+            <Col sm={8}>
+              <Card>
+                <CardBlock>
+                  <Header>
+                    <HomeH1>Philip Lehmann</HomeH1>
+                    <H3>Software Engineer</H3>
+                  </Header>
+                </CardBlock>
+              </Card>
+              <Experience />
+            </Col>
+          </Row>
+        </Container>
+      </MyLayout>
+    </>
+  )
+}
 
 export default IndexPage

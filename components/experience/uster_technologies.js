@@ -18,7 +18,8 @@ const UsterTechnologies = memo(() => {
       <CardText>
         <DashList>
           <Dash>
-            "Basislehrjahr" in Uster Technologies together with other companies
+            &quot;Basislehrjahr&quot; in Uster Technologies together with other
+            companies
           </Dash>
           <Dash>setting up the computers for during the exchange program</Dash>
           <Dash>
@@ -27,17 +28,7 @@ const UsterTechnologies = memo(() => {
           <Dash>Microcontroller programming in C / C++</Dash>
           <Dash>Microcontroller network manager in C#</Dash>
         </DashList>
-        Even the apprenticeship was about systems informatics my interrest and
-        also my assignments where more in developing. I could build an intranet
-        solution in php for the company during my second year. Afterwards I came
-        from the apprenticeship workship into the company where I was
-        programming microcontroller in C and writing software in C# and Java.
-        <br />
-        <TooltipBadge
-          namespace="uster_technologies"
-          progress="70"
-          name="PHP"
-        />{' '}
+        <TooltipBadge namespace="uster_technologies" progress="70" name="PHP" />{' '}
         <TooltipBadge
           namespace="uster_technologies"
           progress="90"

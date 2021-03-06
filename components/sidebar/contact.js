@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 
-import { CardText, A, Strong } from '@bootstrap-styled/v4'
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/my_card'
+import { CardText, A } from '@bootstrap-styled/v4'
+import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 
 const Contact = memo(() => {
   return (
@@ -9,25 +9,23 @@ const Contact = memo(() => {
       <MyCardBlock>
         <MyCardTitle>Contact</MyCardTitle>
         <CardText>
-          <Strong>Phone:</Strong>
+          16.09.1986
+          <br />
+          Swiss
+          <br />
           <br />
           <A href="tel:0041797562627">+41 79 756 26 27</A>
           <br />
-          <br />
-          <Strong>Web:</Strong>
-          <br />
-          <A href="mailto:philiplehmann@gmail.com">philiplehmann@gmail.com</A>
+          <A href="mailto:hireme@philiplehmann.ch">hireme@philiplehmann.ch</A>
           <br />
           <A
-            href="https://lehme86.ch"
+            href="https://philiplehmann.ch"
             target="_blank"
             rel="noopener noreferrer"
           >
-            lehme86.ch
+            philiplehmann.ch
           </A>
           <br />
-          <br />
-          <Strong>Address:</Strong>
           <br />
           Richterwis 12
           <br />

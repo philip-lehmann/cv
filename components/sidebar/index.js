@@ -4,14 +4,18 @@ import AboutMe from 'components/sidebar/about_me'
 import Contact from 'components/sidebar/contact'
 import FollowMe from 'components/sidebar/follow_me'
 import Interests from 'components/sidebar/interests'
-import Languages from 'components/sidebar/languages'
+import ComputerLanguages from 'components/sidebar/computer_languages'
+import HumanLanguages from 'components/sidebar/human_languages'
+import OperatingSystems from 'components/sidebar/operating_systems'
 
 const Sidebar = memo(() => {
   return (
     <>
       <AboutMe />
-      <Languages />
       <Contact />
+      <ComputerLanguages />
+      <HumanLanguages />
+      <OperatingSystems />
       <FollowMe />
       <Interests />
     </>
