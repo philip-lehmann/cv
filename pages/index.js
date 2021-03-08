@@ -25,7 +25,7 @@ const HomeH1 = styled(H1)`
 
 const PrintContainer = styled(Container)`
   @media print {
-    max-width: none;
+    max-width: calc(100vw - 30px);
   }
 `
 
