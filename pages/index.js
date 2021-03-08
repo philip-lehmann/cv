@@ -23,7 +23,11 @@ const HomeH1 = styled(H1)`
   margin-top: 100px;
 `
 
-const MyLayout = styled(Layout)``
+const PrintContainer = styled(Container)`
+  @media print {
+    max-width: none;
+  }
+`
 
 const SidebarCol = styled(Col)`
   background: linear-gradient(
@@ -46,8 +50,8 @@ const IndexPage = () => {
   return (
     <>
       <Reset />
-      <MyLayout>
-        <Container>
+      <Layout>
+        <PrintContainer>
           <Row>
             <SidebarCol sm={4}>
               <SidebarContent />
@@ -64,8 +68,8 @@ const IndexPage = () => {
               <Experience />
             </Col>
           </Row>
-        </Container>
-      </MyLayout>
+        </PrintContainer>
+      </Layout>
     </>
   )
 }
