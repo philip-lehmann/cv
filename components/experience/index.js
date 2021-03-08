@@ -16,7 +16,7 @@ const Experience = memo(() => {
           <CardTitle>Work Experience</CardTitle>
           <Atpoint />
           <Hr />
-          <div style="page-break-before:always"></div>
+          <div style={{ 'page-break-before': 'always' }}></div>
           <Insign />
           <Hr />
           <DataQuest />
