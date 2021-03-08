@@ -1,32 +1,51 @@
 /* global process, __dirname */
 
+// https://www.sejda.com/developers#html-pdf-api
+
 import request from 'request'
 import fs from 'fs'
 import path from 'path'
+import pdfcrowd from 'pdfcrowd'
 
 const outputPath = path.resolve('cv_pdf.pdf')
-console.log(__dirname, outputPath)
 
 const getFile = () => {
   return new Promise((resolve, reject) => {
     if (fs.existsSync(outputPath)) {
       resolve(fs.createReadStream(outputPath))
     } else {
-      request
-        .post(opts)
-        .on('error', (err) => {
-          reject(new Error(err))
-        })
-        .on('response', (response) => {
-          if (response.statusCode === 200) {
-            response.pipe(fs.createWriteStream(outputPath)).on('finish', () => {
-              console.log('PDF saved to disk')
-              resolve(getFile())
-            })
-          } else {
-            reject(new Error(response))
-          }
-        })
+      // create the API client instance
+      const client = new pdfcrowd.HtmlToPdfClient(
+        'nobody86',
+        process.env.PDFCROWD_API_KEY
+      )
+
+      // configure the conversion
+      try {
+        client.setPageSize('A4')
+        client.setOrientation('portrait')
+        client.setNoMargins(true)
+        client.setHeaderHeight('0')
+        client.setFooterHeight('0')
+        client.setNoHeaderFooterHorizontalMargins(true)
+        client.setUsePrintMedia(true)
+        client.setPageMode('full-screen')
+        client.setInitialZoomType('fit-width')
+      } catch (why) {
+        // report the error
+        console.error('Pdfcrowd Error: ' + why)
+        process.exit(1)
+      }
+
+      // run the conversion and write the result to a file
+      client.convertUrlToFile(
+        'https://philiplehmann.ch/print',
+        outputPath,
+        (err, fileName) => {
+          if (err) return reject(err)
+          return resolve(getFile())
+        }
+      )
     }
   })
 }
@@ -38,7 +57,12 @@ const opts = Object.freeze({
   },
   json: {
     url: 'https://philiplehmann.ch/print',
-    viewportWidth: 1200
+    viewportWidth: 3000,
+    pageMarginUnits: 'px',
+    pageMargin: 0,
+    pageOrientation: 'portrait',
+    pageSize: 'a4',
+    scrollPage: true
   }
 })
 

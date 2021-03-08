@@ -13,6 +13,7 @@ const Sidebar = memo(() => {
     <>
       <AboutMe />
       <Contact />
+      <div style="page-break-before:always"></div>
       <ComputerLanguages />
       <HumanLanguages />
       <OperatingSystems />
