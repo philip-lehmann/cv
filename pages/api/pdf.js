@@ -2,7 +2,6 @@
 
 // https://www.sejda.com/developers#html-pdf-api
 
-import request from 'request'
 import fs from 'fs'
 import path from 'path'
 import pdfcrowd from 'pdfcrowd'
@@ -41,7 +40,7 @@ const getFile = () => {
       client.convertUrlToFile(
         'https://philiplehmann.ch/print',
         outputPath,
-        (err, fileName) => {
+        (err, _fileName) => {
           if (err) return reject(err)
           return resolve(getFile())
         }
@@ -49,22 +48,6 @@ const getFile = () => {
     }
   })
 }
-
-const opts = Object.freeze({
-  uri: 'https://api.sejda.com/v2/html-pdf',
-  headers: {
-    Authorization: 'Token: ' + process.env.SEJDA_API_KEY
-  },
-  json: {
-    url: 'https://philiplehmann.ch/print',
-    viewportWidth: 3000,
-    pageMarginUnits: 'px',
-    pageMargin: 0,
-    pageOrientation: 'portrait',
-    pageSize: 'a4',
-    scrollPage: true
-  }
-})
 
 export default async (req, res) => {
   // res.status(200).json({ name: 'John Doe' })
