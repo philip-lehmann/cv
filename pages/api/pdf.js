@@ -26,6 +26,7 @@ const getFile = () => {
         client.setNoMargins(true)
         client.setHeaderHeight('0')
         client.setFooterHeight('0')
+        client.setScaleFactor(80)
         client.setNoHeaderFooterHorizontalMargins(true)
         client.setUsePrintMedia(true)
         client.setPageMode('full-screen')
@@ -38,7 +39,7 @@ const getFile = () => {
 
       // run the conversion and write the result to a file
       client.convertUrlToFile(
-        'https://philiplehmann.ch/print',
+        'https://philiplehmann.ch/',
         outputPath,
         (err, _fileName) => {
           if (err) return reject(err)

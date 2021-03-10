@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
-import { A } from '@bootstrap-styled/v4'
+import { A, Img } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
-import Image from 'next/image'
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 
 export const ImageSpan = styled('span')`
@@ -33,8 +32,9 @@ const FollowMe = memo(() => {
           rel="noopener noreferrer"
           style={{ margin: '0 5px' }}
         >
-          <Image
-            src="/images/github.png"
+          <Img
+            src="/images/github@1x.png"
+            srcset="/images/github@1x.png, /images/github@2x.png 2x"
             alt="github"
             width={20}
             height={20}
@@ -53,8 +53,9 @@ const FollowMe = memo(() => {
           rel="noopener noreferrer"
           style={{ margin: '0 5px' }}
         >
-          <Image
-            src="/images/linkedin.png"
+          <Img
+            src="/images/linkedin@1x.png"
+            srcset="/images/linkedin@1x.png, /images/linkedin@2x.png 2x"
             alt="linkedin"
             width={20}
             height={20}
@@ -73,8 +74,9 @@ const FollowMe = memo(() => {
           rel="noopener noreferrer"
           style={{ margin: '0 5px' }}
         >
-          <Image
-            src="/images/xing.png"
+          <Img
+            src="/images/xing@1x.png"
+            srcset="/images/xing@1x.png, /images/xing@2x.png 2x"
             alt="xing"
             width={20}
             height={20}

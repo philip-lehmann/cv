@@ -1,11 +1,10 @@
 import React, { memo } from 'react'
 
-import { CardText } from '@bootstrap-styled/v4'
+import { CardText, Img } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
-import Image from 'next/image'
 
-const MyImage = styled(Image)`
+const MyImage = styled(Img)`
   width: 250px;
   border-radius: 125px;
 `
@@ -18,7 +17,8 @@ const Contact = memo(() => {
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
         <MyImage
-          src="/images/me.jpg"
+          src="/images/me@1x.jpg"
+          srcset="/images/me@1x.jpg, /images/me@2x.jpg x2"
           alt="Philip Lehmann"
           width={250}
           height={250}
