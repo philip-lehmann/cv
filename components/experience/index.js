@@ -1,12 +1,25 @@
 import React, { memo } from 'react'
 import { Hr, H6 } from '@bootstrap-styled/v4'
-
+import styled from 'styled-components'
 import { Card, CardBlock, CardTitle } from 'components/experience/card'
 import Atpoint from 'components/experience/atpoint'
 import Insign from 'components/experience/insign'
 import DataQuest from 'components/experience/dataquest'
 import UsterTechnologies from 'components/experience/uster_technologies'
 import { FloatRight } from 'components/float'
+
+const HrPrintHidden = styled(Hr)`
+  @media print {
+    display: none !important;
+  }
+`
+
+const LineBreak = styled('div')`
+  page-break-before: always;
+  @media print {
+    height: 70px;
+  }
+`
 
 const Experience = memo(() => {
   return (
@@ -16,9 +29,9 @@ const Experience = memo(() => {
           <CardTitle>Work Experience</CardTitle>
           <Atpoint />
           <Hr />
-          <div style={{ 'page-break-before': 'always' }}></div>
           <Insign />
-          <Hr />
+          <HrPrintHidden />
+          <LineBreak />
           <DataQuest />
           <Hr />
           <UsterTechnologies />
@@ -30,7 +43,7 @@ const Experience = memo(() => {
           <CardTitle>Education</CardTitle>
           <div>
             <FloatRight>Sep - Nov 2009</FloatRight>
-            <H6>English School - Global Village Hawaii</H6>
+            <H6>English Language School - Global Village Hawaii</H6>
           </div>
           <div>
             <FloatRight>2006 - 2007</FloatRight>

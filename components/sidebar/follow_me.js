@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { CardText, A } from '@bootstrap-styled/v4'
+import { A } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
@@ -8,12 +8,26 @@ export const ImageSpan = styled('span')`
   line-height: 26px;
 `
 
+const ANoBreak = styled(A)`
+  white-space: nowrap;
+`
+
+const PrintSpan = styled('span')`
+  @media print {
+    visibility: hidden;
+  }
+  @media screen and (max-width: 929px) {
+    visibility: hidden;
+  }
+}
+`
+
 const FollowMe = memo(() => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
         <MyCardTitle>Follow Me</MyCardTitle>
-        <A
+        <ANoBreak
           href="https://github.com/philiplehmann"
           target="_blank"
           rel="noopener noreferrer"
@@ -31,9 +45,9 @@ const FollowMe = memo(() => {
             }}
           />
           <ImageSpan>Github</ImageSpan>
-        </A>
-        |
-        <A
+        </ANoBreak>
+        <span>|</span>
+        <ANoBreak
           href="https://www.linkedin.com/in/philip-lehmann-6362a256/"
           target="_blank"
           rel="noopener noreferrer"
@@ -51,9 +65,9 @@ const FollowMe = memo(() => {
             }}
           />
           LinkedIn
-        </A>
-        |
-        <A
+        </ANoBreak>
+        <PrintSpan>|</PrintSpan>
+        <ANoBreak
           href="https://www.xing.com/profile/Philip_Lehmann5/cv"
           target="_blank"
           rel="noopener noreferrer"
@@ -71,7 +85,7 @@ const FollowMe = memo(() => {
             }}
           />
           Xing
-        </A>
+        </ANoBreak>
       </MyCardBlock>
     </MyCard>
   )

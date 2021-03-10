@@ -18,15 +18,13 @@ const UsterTechnologies = memo(() => {
       <CardText>
         <DashList>
           <Dash>
-            &quot;Basislehrjahr&quot; in Uster Technologies together with other
-            companies
+            Set up computers for all the employees and migrate data and
+            applications
           </Dash>
-          <Dash>Setting up the computers for during the exchange program</Dash>
           <Dash>
             Create intranet based on PHP as a variant to MS SharePoint
           </Dash>
-          <Dash>Microcontroller programming in C / C++</Dash>
-          <Dash>Microcontroller network manager in C#</Dash>
+          <Dash>Design software for microcontrollers in C / C++ / C#</Dash>
         </DashList>
         <TooltipBadge namespace="uster_technologies" progress="70" name="PHP" />{' '}
         <TooltipBadge

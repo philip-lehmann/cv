@@ -1,15 +1,22 @@
 import React, { memo } from 'react'
+import styled from 'styled-components'
 
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
+
+const SpanNoBreak = styled('span')`
+  white-space: nowrap;
+`
 
 const OperatingSystems = memo(() => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
         <MyCardTitle>Operating Systems</MyCardTitle>
-        MacOS: Development / Personal use <br />
-        Linux: Production <br />
-        Windows: Graphic intensive work / Games
+        MacOS: <SpanNoBreak>Development / Personal use</SpanNoBreak>
+        <br />
+        Linux: <SpanNoBreak>Production</SpanNoBreak>
+        <br />
+        Windows: <SpanNoBreak>Graphic intensive work / Games</SpanNoBreak>
       </MyCardBlock>
     </MyCard>
   )

@@ -17,6 +17,9 @@ const SidebarCol = styled(Col)`
     rgba(233, 233, 235, 1) 100%
   );
   min-height: 100vh;
+  @media print {
+    padding-bottom: 909px;
+  }
 `
 
 const CV = () => {
@@ -34,6 +37,8 @@ const CV = () => {
             </Header>
           </CardBlock>
         </Card>
+        <br />
+        <br />
         <Experience />
       </Col>
     </Row>

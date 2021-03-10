@@ -18,6 +18,11 @@ const MyCv = ({ Component, pageProps }) => {
         <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
         <link
+          rel="prefetch"
+          href="https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXiWtFCc.woff2"
+        />
+
+        <link
           rel="manifest"
           href="/site.webmanifest"
           crossOrigin="use-credentials"

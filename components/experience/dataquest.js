@@ -14,15 +14,13 @@ const DataQuest = memo(() => {
         <FloatRight>
           {monthYear('2006-08-01')} - {monthYear('2006-11-01')}
         </FloatRight>
-        <H6>Service Desk</H6>
+        <H6>Service Desk Support</H6>
       </div>
       <CardText>
         <DashList>
-          <Dash>Service Desk - repair receipt</Dash>
           <Dash>
-            Write a warehouse management system in Java for the iPod replacement
-            program in favor of an excel list. (done in my free time because i
-            did not like the excel list)
+            Design and implement a warehouse management system for the iPod
+            replacement program using Java
           </Dash>
         </DashList>
         <TooltipBadge namespace="dataquest" progress="60" name="Java" />

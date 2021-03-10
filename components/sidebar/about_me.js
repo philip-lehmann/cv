@@ -17,7 +17,6 @@ const Contact = memo(() => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
-        <MyCardTitle>About Me</MyCardTitle>
         <MyImage
           src="/images/me.jpg"
           alt="Philip Lehmann"
@@ -26,6 +25,7 @@ const Contact = memo(() => {
         />
         <br />
         <br />
+        <MyCardTitle>About Me</MyCardTitle>
         <MyCardText>
           Computers have always fascinated me. I began my career with an
           apprenticeship as System Engineer but once I started my first course

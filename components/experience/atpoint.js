@@ -21,14 +21,19 @@ const Atpoint = memo(() => {
       </div>
       <CardText>
         <DashList>
-          <Dash>Lead of software development with customer focus in mind</Dash>
+          <Dash>Lead, evaluate and monitor software development process</Dash>
+          <Dash>
+            Analyze and resolve software defects, improve and optimize existing
+            functionality
+          </Dash>
           <Dash>Architect reusable and maintainable software components</Dash>
-          <Dash>Performance reviews</Dash>
-          <Dash>Developer recruitment</Dash>
-          <Dash>Create a project roadmap with the project manager</Dash>
-          <Dash>Define project setups</Dash>
-          <Dash>Organize know-how transfers in the company</Dash>
+          <Dash>Project planning, estimation and controlling</Dash>
+          <Dash>Create project roadmap and define project setup</Dash>
           <Dash>Quality and security control of projects</Dash>
+          <Dash>
+            Manage and coach software development team (5 employees, incl.
+            recruitment, performance reviews, know-how transfers)
+          </Dash>
         </DashList>
       </CardText>
       <br />
@@ -40,15 +45,21 @@ const Atpoint = memo(() => {
       </div>
       <CardText>
         <DashList>
+          <Dash>Agile and innovative software development</Dash>
           <Dash>
-            Development of quality software with a customer focus in mind
+            Improve the functionality, usability, architecture and quality of
+            the software
           </Dash>
           <Dash>
             Specification, implementation, test and documentation of software
           </Dash>
-          <Dash>Agile software development</Dash>
           <Dash>
-            Setup production environments and deploy the software regularly
+            Set up production environments and create deployment pipelines
+          </Dash>
+          <Dash>
+            Further development of existing applications (maintenance and
+            support, troubleshooting, continuous improvements of the existing
+            code base)
           </Dash>
         </DashList>
         <br />
