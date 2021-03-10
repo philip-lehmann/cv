@@ -31,6 +31,7 @@ const getFile = () => {
         client.setUsePrintMedia(true)
         client.setPageMode('full-screen')
         client.setInitialZoomType('fit-width')
+        client.setPrintPageRange('1-2')
       } catch (why) {
         // report the error
         console.error('Pdfcrowd Error: ' + why)

@@ -11,15 +11,14 @@ const ANoBreak = styled(A)`
   white-space: nowrap;
 `
 
-const PrintSpan = styled('span')`
-  @media print {
-    visibility: hidden;
-  }
-  @media screen and (max-width: 929px) {
-    visibility: hidden;
-  }
-}
-`
+// const PrintSpan = styled('span')`
+//   @media print {
+//     visibility: hidden;
+//   }
+//   @media screen and (max-width: 929px) {
+//     visibility: hidden;
+//   }
+// `
 
 const FollowMe = memo(() => {
   return (
@@ -67,7 +66,7 @@ const FollowMe = memo(() => {
           />
           LinkedIn
         </ANoBreak>
-        <PrintSpan>|</PrintSpan>
+        <span>|</span>
         <ANoBreak
           href="https://www.xing.com/profile/Philip_Lehmann5/cv"
           target="_blank"
