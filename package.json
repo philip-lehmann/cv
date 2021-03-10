@@ -13,7 +13,7 @@
     "lint-fix": "eslint --ext '.js,.jsx' --fix ."
   },
   "engines": {
-    "node": ">= 14.15",
+    "node": ">= 14.16.0",
     "yarn": ">= 1.22.10"
   },
   "dependencies": {
