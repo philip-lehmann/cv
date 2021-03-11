@@ -7,6 +7,8 @@ import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 const MyImage = styled(Img)`
   width: 250px;
   border-radius: 125px;
+  max-width: 100%;
+  height: auto;
 `
 const MyCardText = styled(CardText)`
   text-align: justify;
@@ -20,6 +22,7 @@ const Contact = memo(() => {
           src="/images/me@1x.jpg"
           srcset="/images/me@1x.jpg, /images/me@2x.jpg 2x"
           alt="Philip Lehmann"
+          figure={true}
           width={250}
           height={250}
         />

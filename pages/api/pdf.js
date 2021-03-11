@@ -56,7 +56,7 @@ export default async (req, res) => {
   try {
     const response = await getFile()
     res.writeHead(200, {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/pdf',
       'Content-Disposition': 'attachment; filename="cv.pdf'
     })
     response.pipe(res).on('finish', () => {
