@@ -10,12 +10,13 @@ const Contact = memo(() => {
       <MyCardBlock>
         <MyCardTitle>
           <T lang="en">Contact</T>
-          <T lang="de">Contact</T>
+          <T lang="de">Kontakt</T>
         </MyCardTitle>
         <CardText>
           16.09.1986
           <br />
-          Swiss
+          <T lang="en">Swiss</T>
+          <T lang="de">Schweizer</T>
           <br />
           <br />
           <A href="tel:0041797562627">+41 79 756 26 27</A>
