@@ -1,13 +1,17 @@
 import React, { memo } from 'react'
 
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
+import T from 'components/trans'
 
 const ComputerLanguages = memo(() => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
-        <MyCardTitle>Computer Languages</MyCardTitle>
-        Ruby & Rails <br />
+        <MyCardTitle>
+          <T lang="en">Computer Languages</T>
+          <T lang="de">Programmiersprachen</T>
+        </MyCardTitle>
+        Ruby &amp; Rails <br />
         JavaScript
       </MyCardBlock>
     </MyCard>

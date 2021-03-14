@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { Container } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
 import { Reset } from 'styled-reset'
+import { useRouter } from 'next/router'
 
 import CV from 'components/cv'
 import Layout from 'components/layout'
@@ -18,6 +19,7 @@ const PrintContainer = styled(Container)`
 `
 
 const IndexPage = () => {
+  const { locale } = useRouter()
   useEffect(hireMe)
   return (
     <>

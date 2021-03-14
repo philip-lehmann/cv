@@ -2,12 +2,16 @@ import React, { memo } from 'react'
 
 import { CardText, A } from '@bootstrap-styled/v4'
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
+import T from 'components/trans'
 
 const Contact = memo(() => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
-        <MyCardTitle>Contact</MyCardTitle>
+        <MyCardTitle>
+          <T lang="en">Contact</T>
+          <T lang="de">Contact</T>
+        </MyCardTitle>
         <CardText>
           16.09.1986
           <br />

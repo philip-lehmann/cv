@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import { A, Img } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
+import T from 'components/trans'
 
 export const ImageSpan = styled('span')`
   line-height: 26px;
@@ -11,20 +12,14 @@ const ANoBreak = styled(A)`
   white-space: nowrap;
 `
 
-// const PrintSpan = styled('span')`
-//   @media print {
-//     visibility: hidden;
-//   }
-//   @media screen and (max-width: 929px) {
-//     visibility: hidden;
-//   }
-// `
-
 const FollowMe = memo(() => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
-        <MyCardTitle>Follow Me</MyCardTitle>
+        <MyCardTitle>
+          <T lang="en">Follow Me</T>
+          <T lang="de">Follow Me</T>
+        </MyCardTitle>
         <ANoBreak
           href="https://github.com/philiplehmann"
           target="_blank"
@@ -33,7 +28,7 @@ const FollowMe = memo(() => {
         >
           <Img
             src="/images/github@1x.png"
-            srcset="/images/github@1x.png, /images/github@2x.png 2x"
+            srcSet="/images/github@1x.png, /images/github@2x.png 2x"
             alt="github"
             width={20}
             height={20}
@@ -54,7 +49,7 @@ const FollowMe = memo(() => {
         >
           <Img
             src="/images/linkedin@1x.png"
-            srcset="/images/linkedin@1x.png, /images/linkedin@2x.png 2x"
+            srcSet="/images/linkedin@1x.png, /images/linkedin@2x.png 2x"
             alt="linkedin"
             width={20}
             height={20}
@@ -75,7 +70,7 @@ const FollowMe = memo(() => {
         >
           <Img
             src="/images/xing@1x.png"
-            srcset="/images/xing@1x.png, /images/xing@2x.png 2x"
+            srcSet="/images/xing@1x.png, /images/xing@2x.png 2x"
             alt="xing"
             width={20}
             height={20}

@@ -1,5 +1,8 @@
 import { parseISO, format } from 'date-fns'
+import { en, de } from 'date-fns/locale'
 
-export const monthYear = (date) => {
-  return format(parseISO(date), 'MMM yyyy')
+const locales = Object.freeze({ en, de })
+
+export const monthYear = (date, { locale = 'en' } = {}) => {
+  return format(parseISO(date), 'MMM yyyy', { locale: locales[locale] })
 }

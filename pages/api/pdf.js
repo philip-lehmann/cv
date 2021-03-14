@@ -1,6 +1,4 @@
-/* global process, __dirname */
-
-// https://www.sejda.com/developers#html-pdf-api
+/* global process */
 
 import fs from 'fs'
 import path from 'path'
@@ -15,7 +13,7 @@ const getFile = () => {
     } else {
       // create the API client instance
       const client = new pdfcrowd.HtmlToPdfClient(
-        'nobody86',
+        process.env.PDFCROWD_USER,
         process.env.PDFCROWD_API_KEY
       )
 
@@ -35,14 +33,14 @@ const getFile = () => {
       } catch (why) {
         // report the error
         console.error('Pdfcrowd Error: ' + why)
-        process.exit(1)
+        reject(new Error(why))
       }
 
       // run the conversion and write the result to a file
       client.convertUrlToFile(
         'https://philiplehmann.ch/',
         outputPath,
-        (err, _fileName) => {
+        (err) => {
           if (err) return reject(err)
           return resolve(getFile())
         }
