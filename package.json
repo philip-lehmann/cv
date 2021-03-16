@@ -9,8 +9,8 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "deploy": "git push heroku main:master",
-    "lint": "eslint --ext '.js,.jsx' .",
-    "lint-fix": "eslint --ext '.js,.jsx' --fix ."
+    "lint": "eslint --ext '.js,.jsx' pages components helpers",
+    "lint-fix": "eslint --ext '.js,.jsx' --fix pages components helpers"
   },
   "engines": {
     "node": "15.x",

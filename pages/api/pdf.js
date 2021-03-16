@@ -1,4 +1,5 @@
 /* global process */
+/* eslint no-console:off */
 
 import fs from 'fs'
 import path from 'path'
