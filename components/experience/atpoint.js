@@ -55,7 +55,9 @@ const Atpoint = memo(() => {
         </Dash>
         <Dash>
           <T lang="en">Create project roadmap and define project setup</T>
-          <T lang="de">Projektplanung erstellen und Projektaufbau definieren</T>
+          <T lang="de">
+            Projekt-Roadmap erstellen und Projektaufbau definieren
+          </T>
         </Dash>
         <Dash>
           <T lang="en">Quality and security control of projects</T>
@@ -127,7 +129,10 @@ const Atpoint = memo(() => {
         </Dash>
       </DashList>
       <br />
-      <H6>Projekt Referenzen:</H6>
+      <H6>
+        <T lang="en">Project references:</T>
+        <T lang="de">Projekt Referenzen:</T>
+      </H6>
       <DashList>
         <Dash>
           <T lang="en">

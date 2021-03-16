@@ -17,7 +17,10 @@ const UsterTechnologies = memo(() => {
           {monthYear('2002-08-01', { locale })} -{' '}
           {monthYear('2006-07-01', { locale })}
         </FloatRight>
-        <H6>Lehre als System Informatiker</H6>
+        <H6>
+          <T lang="en">Apprenticeship System Engineer</T>
+          <T lang="de">Lehre als System Informatiker</T>
+        </H6>
       </div>
       <DashList>
         <Dash>
