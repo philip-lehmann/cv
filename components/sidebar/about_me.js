@@ -20,8 +20,8 @@ const Contact = memo(() => {
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
         <MyImage
-          src="/images/me@1x.jpg"
-          srcSet="/images/me@1x.jpg, /images/me@2x.jpg 2x"
+          src="/images/me/2@1x.jpg"
+          srcSet="/images/me/2@1x.jpg, /images/me/2@2x.jpg 2x"
           alt="Philip Lehmann"
           figure={true}
           width={250}

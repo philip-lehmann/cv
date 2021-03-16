@@ -13,7 +13,10 @@ const Atpoint = memo(() => {
     <>
       <H5>atpoint ag</H5>
       <div>
-        <FloatRight>{monthYear('2020-09-01', { locale })} - now</FloatRight>
+        <FloatRight>
+          {monthYear('2020-09-01', { locale })} - <T lang="en">now</T>
+          <T lang="de">Jetzt</T>
+        </FloatRight>
         <H6>
           <T lang="en">Head of Development</T>
           <T lang="de">Head of Development</T>
