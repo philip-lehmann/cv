@@ -3,10 +3,14 @@
 import fs from 'fs'
 import path from 'path'
 import pdfcrowd from 'pdfcrowd'
+import getConfig from 'next/config'
 
-const outputPath = path.resolve('cv_pdf.pdf')
+const {
+  serverRuntimeConfig: { siteUrl, defaultLocale }
+} = getConfig()
 
-const getFile = () => {
+const getFile = (locale) => {
+  const outputPath = path.resolve(`cv_pdf_${locale}.pdf`)
   return new Promise((resolve, reject) => {
     if (fs.existsSync(outputPath)) {
       resolve(fs.createReadStream(outputPath))
@@ -37,22 +41,20 @@ const getFile = () => {
       }
 
       // run the conversion and write the result to a file
-      client.convertUrlToFile(
-        'https://philiplehmann.ch/',
-        outputPath,
-        (err) => {
-          if (err) return reject(err)
-          return resolve(getFile())
-        }
-      )
+      const url = `${siteUrl}/${locale}`
+      console.log(`write ${url} to ${outputPath}`)
+      client.convertUrlToFile(url, outputPath, (err) => {
+        if (err) return reject(err)
+        return resolve(getFile())
+      })
     }
   })
 }
 
 export default async (req, res) => {
-  // res.status(200).json({ name: 'John Doe' })
+  const { locale = defaultLocale } = req.query
   try {
-    const response = await getFile()
+    const response = await getFile(locale)
     res.writeHead(200, {
       'Content-Type': 'application/pdf',
       'Content-Disposition': 'attachment; filename="cv.pdf'

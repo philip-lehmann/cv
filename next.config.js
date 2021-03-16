@@ -6,7 +6,8 @@ const runtimeCaching = require('next-pwa/cache')
 
 const sharedConfig = {
   env: process.env.NODE_ENV || 'development',
-  siteUrl: process.env.SITE_URL || 'http://localhost:3000'
+  siteUrl: process.env.SITE_URL || 'http://localhost:3000',
+  defaultLocale: process.env.DEFAULT_LOCALE || 'en'
 }
 
 module.exports = withPWA({
@@ -23,11 +24,11 @@ module.exports = withPWA({
   },
   i18n: {
     locales: ['en', 'de'],
-    defaultLocale: 'en',
+    defaultLocale: sharedConfig.defaultLocale,
     domains: [
       {
         domain: sharedConfig.siteUrl,
-        defaultLocale: 'en'
+        defaultLocale: sharedConfig.defaultLocale
       }
     ]
   },
