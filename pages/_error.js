@@ -20,7 +20,7 @@ function Error({ statusCode }) {
 Error.getInitialProps = ({ req, res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404
   // Only require Rollbar and report error if we're on the server
-  if (!process.browser) {
+  if (!process.browser && err) {
     console.log('Reporting error to Rollbar...')
     const rollbar = new Rollbar(serverRuntimeConfig.rollbarServerToken)
     rollbar.error(err, req, (rollbarError) => {
