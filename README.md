@@ -10,3 +10,4 @@
  - rollbar
  - google analytics
  - Pdfcrowd
+ - Typescript
