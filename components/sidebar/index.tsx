@@ -29,6 +29,6 @@ const Sidebar = memo(() => {
     </>
   )
 })
-Sidebar.displayName = Sidebar
+Sidebar.displayName = 'Sidebar'
 
 export default Sidebar

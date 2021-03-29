@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import { Row, Col, Header, H1, H3, Card, CardBlock } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
@@ -22,7 +22,7 @@ const SidebarCol = styled(Col)`
   }
 `
 
-const CV = () => {
+const CV: FC = () => {
   return (
     <Row>
       <SidebarCol sm={4}>

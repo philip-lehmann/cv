@@ -3,11 +3,16 @@
 
 import React from 'react'
 import getConfig from 'next/config'
+import { NextPageContext, NextPage } from 'next'
 import Rollbar from 'rollbar'
 
 const { serverRuntimeConfig } = getConfig()
 
-function Error({ statusCode }) {
+interface ErrorProps {
+  statusCode: number
+}
+
+const Error: NextPage<ErrorProps> = ({ statusCode }) => {
   return (
     <p>
       {statusCode
@@ -17,7 +22,7 @@ function Error({ statusCode }) {
   )
 }
 
-Error.getInitialProps = ({ req, res, err }) => {
+Error.getInitialProps = ({ req, res, err }: NextPageContext) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404
   // Only require Rollbar and report error if we're on the server
   if (!process.browser && err) {

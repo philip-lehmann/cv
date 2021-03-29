@@ -8,7 +8,7 @@ import T from 'components/trans'
 import { monthYear } from 'helpers/date'
 
 const UsterTechnologies = memo(() => {
-  const { locale } = useRouter()
+  const { locale } = useRouter() as RouterProps
   return (
     <>
       <H5>Uster Technologies</H5>

@@ -1,6 +1,6 @@
 /* eslint no-console:off, no-useless-escape:off */
 
-export default () => {
+export default (): void => {
   console.log('_    _ _____ _____  ______   __  __ ______   ')
   console.log('| |  | |_   _|  __ \\|  ____| |  \\/  |  ____|  ')
   console.log('| |__| | | | | |__) | |__    | \\  / | |__     ')

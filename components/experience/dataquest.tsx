@@ -9,7 +9,7 @@ import T from 'components/trans'
 import { monthYear } from 'helpers/date'
 
 const DataQuest = memo(() => {
-  const { locale } = useRouter()
+  const { locale } = useRouter() as RouterProps
   return (
     <>
       <H5>DataQuest</H5>

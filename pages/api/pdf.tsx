@@ -1,16 +1,18 @@
 /* global process */
 /* eslint no-console:off */
 
-import fs from 'fs'
+import fs, { ReadStream } from 'fs'
 import path from 'path'
 import pdfcrowd from 'pdfcrowd'
 import getConfig from 'next/config'
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { LangType } from 'helpers/date'
 
 const {
   serverRuntimeConfig: { siteUrl, defaultLocale }
 } = getConfig()
 
-const getFile = (locale) => {
+const getFile = (locale: LangType): Promise<ReadStream> => {
   const outputPath = path.resolve(`cv_pdf_${locale}.pdf`)
   return new Promise((resolve, reject) => {
     if (fs.existsSync(outputPath)) {
@@ -46,13 +48,16 @@ const getFile = (locale) => {
       console.log(`write ${url} to ${outputPath}`)
       client.convertUrlToFile(url, outputPath, (err) => {
         if (err) return reject(err)
-        return resolve(getFile())
+        return resolve(getFile(locale))
       })
     }
   })
 }
 
-export default async (req, res) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> => {
   const { locale = defaultLocale } = req.query
   try {
     const response = await getFile(locale)
