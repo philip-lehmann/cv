@@ -1,5 +1,5 @@
 import { parseISO, format } from 'date-fns'
-import { de } from 'date-fns/locale'
+import { de, enUS } from 'date-fns/locale'
 
 export type LangType = 'en' | 'de'
 
@@ -7,7 +7,7 @@ type OptionsType = {
   locale?: LangType
 }
 
-const locales = Object.freeze({ en: null, de })
+const locales = Object.freeze({ en: enUS, de })
 
 export const monthYear = (
   date: string,
