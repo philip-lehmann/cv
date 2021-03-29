@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { NextPage } from 'next'
 
 import { Container } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
@@ -17,7 +18,7 @@ const PrintContainer = styled(Container)`
   }
 `
 
-const IndexPage = () => {
+const IndexPage: NextPage = () => {
   useEffect(hireMe)
   return (
     <>

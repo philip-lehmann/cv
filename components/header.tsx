@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { FC } from 'react'
 
-const Header = ({ siteTitle }) => (
+const Header: FC<HeaderProps> = ({ siteTitle }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -30,8 +29,8 @@ const Header = ({ siteTitle }) => (
   </header>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string
+interface HeaderProps {
+  siteTitle: string
 }
 
 Header.defaultProps = {

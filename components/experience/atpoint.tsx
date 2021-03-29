@@ -8,7 +8,7 @@ import T from 'components/trans'
 import { monthYear } from 'helpers/date'
 
 const Atpoint = memo(() => {
-  const { locale } = useRouter()
+  const { locale } = useRouter() as RouterProps
   return (
     <>
       <H5>atpoint ag</H5>

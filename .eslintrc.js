@@ -6,16 +6,20 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module',
+    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+    sourceType: 'module', // Allows for the use of imports
     ecmaFeatures: {
       impliedStrict: true,
       experimentalObjectRestSpread: true,
       jsx: true
     }
   },
+  extends: [
+    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    'plugin:react/recommended'
+  ],
   plugins: ['babel', 'react', 'prettier'],
   settings: {
     react: {
@@ -33,7 +37,6 @@ module.exports = {
     'no-debugger': 'error',
     'react/prop-types': 'off'
   },
-  parser: 'babel-eslint',
   ignorePatterns: [
     'public/sw.js',
     'public/workbox-*.js',

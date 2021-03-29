@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import BootstrapProvider from '@bootstrap-styled/provider'
 import { darken, lighten } from 'polished'
 import { Helmet } from 'react-helmet'
@@ -16,7 +15,7 @@ const theme = {
   '$brand-primary': lighten(0.4, '#343436')
 }
 
-const Layout = ({ children }) => {
+const Layout: FC = ({ children }) => {
   return (
     <BootstrapProvider theme={theme}>
       <Helmet>
@@ -29,10 +28,6 @@ const Layout = ({ children }) => {
       {children}
     </BootstrapProvider>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
 }
 
 export default Layout

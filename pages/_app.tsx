@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Head from 'next/head'
 // import { createGlobalStyle } from 'styled-components'
 import getConfig from 'next/config'
 // const GlobalStyle = createGlobalStyle``
+import type { AppProps /*, AppContext */ } from 'next/app'
 
 const {
   serverRuntimeConfig: { googleAnalyticsKey, rollbarClientToken, env }
 } = getConfig()
 
-const MyCv = ({ Component, pageProps }) => {
+const MyCv: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
