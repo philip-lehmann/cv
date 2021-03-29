@@ -1,9 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import { createGlobalStyle } from 'styled-components'
+// import { createGlobalStyle } from 'styled-components'
 import getConfig from 'next/config'
-const GlobalStyle = createGlobalStyle`
-`
+// const GlobalStyle = createGlobalStyle``
 
 const {
   serverRuntimeConfig: { googleAnalyticsKey, rollbarClientToken, env }
@@ -73,7 +72,6 @@ const MyCv = ({ Component, pageProps }) => {
           />
         )}
       </Head>
-      <GlobalStyle />
       <Component {...pageProps} />
     </>
   )

@@ -2,11 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import BootstrapProvider from '@bootstrap-styled/provider'
 import { darken, lighten } from 'polished'
-import { createGlobalStyle } from 'styled-components'
 import { Helmet } from 'react-helmet'
-
-const GlobalFonts = createGlobalStyle`
-`
 
 const theme = {
   '$card-border-width': 'none',
@@ -30,7 +26,6 @@ const Layout = ({ children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <GlobalFonts />
       {children}
     </BootstrapProvider>
   )
