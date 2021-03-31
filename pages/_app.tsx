@@ -4,9 +4,8 @@ import Head from 'next/head'
 import getConfig from 'next/config'
 // const GlobalStyle = createGlobalStyle``
 import type { AppProps /*, AppContext */ } from 'next/app'
-
 const {
-  serverRuntimeConfig: { googleAnalyticsKey, rollbarClientToken, env }
+  publicRuntimeConfig: { googleAnalyticsKey, rollbarClientToken, env }
 } = getConfig()
 
 const MyCv: FC<AppProps> = ({ Component, pageProps }) => {
