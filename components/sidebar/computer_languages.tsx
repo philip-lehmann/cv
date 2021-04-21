@@ -11,7 +11,7 @@ const ComputerLanguages = memo(() => {
           <T lang="en">Computer Languages</T>
           <T lang="de">Programmiersprachen</T>
         </MyCardTitle>
-        Ruby &amp; Rails <br />
+        Ruby on Rails <br />
         JavaScript
       </MyCardBlock>
     </MyCard>

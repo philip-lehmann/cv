@@ -14,8 +14,8 @@ const Atpoint = memo(() => {
       <H5>atpoint ag</H5>
       <div>
         <FloatRight>
-          {monthYear('2020-09-01', { locale })} - <T lang="en">now</T>
-          <T lang="de">Jetzt</T>
+          {monthYear('2020-09-01', { locale })} -{' '}
+          {monthYear('2021-06-30', { locale })}
         </FloatRight>
         <H6>
           <T lang="en">Head of Development</T>
@@ -136,12 +136,12 @@ const Atpoint = memo(() => {
       <DashList>
         <Dash>
           <T lang="en">
-            Multitouch applications based on HTML5 with a REST API in Ruby &amp;
+            Multitouch applications based on HTML5 with a REST API in Ruby on
             Rails with a synchronization over websockets in the case of Trilux
           </T>
           <T lang="de">
             Multitouch-Anwendungen auf Basis von HTML5 mit einer REST-API in
-            Ruby &amp; Rails mit einer Synchronisation über Websockets beim
+            Ruby on Rails mit einer Synchronisation über Websockets beim
             Beispiel Trilux
           </T>{' '}
           (
@@ -194,7 +194,7 @@ const Atpoint = memo(() => {
           )
         </Dash>
       </DashList>
-      <TooltipBadge namespace="atpoint" progress="80" name="Ruby &amp; Rails" />{' '}
+      <TooltipBadge namespace="atpoint" progress="80" name="Ruby on Rails" />{' '}
       <TooltipBadge namespace="atpoint" progress="90" name="ES6" />{' '}
       <TooltipBadge namespace="atpoint" progress="85" name="Typescript" />{' '}
       <TooltipBadge namespace="atpoint" progress="85" name="Flow" />{' '}

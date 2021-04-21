@@ -16,7 +16,7 @@
     "lint-fix": "eslint --ext '.js,.jsx' --fix components helpers pages"
   },
   "engines": {
-    "node": "15.x",
+    "node": "16.x",
     "yarn": "1.22.x"
   },
   "cacheDirectories": [
