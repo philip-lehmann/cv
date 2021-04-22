@@ -12,8 +12,13 @@ const {
   serverRuntimeConfig: { siteUrl, defaultLocale }
 } = getConfig()
 
+const outputPathByLang = Object.freeze({
+  de: 'cv_pdf_de.pdf',
+  en: 'cv_pdf_en.pdf'
+})
+
 const getFile = (locale: LangType): Promise<ReadStream> => {
-  const outputPath = path.resolve(`cv_pdf_${locale}.pdf`)
+  const outputPath = path.resolve(outputPathByLang[locale])
   return new Promise((resolve, reject) => {
     if (fs.existsSync(outputPath)) {
       resolve(fs.createReadStream(outputPath))
@@ -63,7 +68,7 @@ export default async (
     const response = await getFile(locale)
     res.writeHead(200, {
       'Content-Type': 'application/pdf',
-      'Content-Disposition': 'attachment; filename="cv.pdf'
+      'Content-Disposition': `attachment; filename="philip_lehmann_cv_${locale}.pdf"`
     })
     response.pipe(res).on('finish', () => {
       res.end()
