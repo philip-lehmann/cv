@@ -18,7 +18,7 @@ const SidebarCol = styled(Col)`
   );
   min-height: 100vh;
   @media print {
-    padding-bottom: 908px;
+    padding-bottom: 1000px;
   }
 `
 
