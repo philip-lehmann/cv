@@ -9,6 +9,7 @@ import Meta from 'components/head/meta'
 import GoogleAnalytics from 'components/head/google_analytics'
 import Rollbar from 'components/head/rollbar'
 import Connect from 'components/head/connect'
+import Font from 'components/head/font'
 
 const {
   publicRuntimeConfig: { googleAnalyticsKey, rollbarClientToken, env, siteUrl }
@@ -21,10 +22,6 @@ const MyCv: FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <title>{title}</title>
         <Connect />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-        />
         <Meta title={title} />
         <Icons />
         <Twitter title={title} url={siteUrl} />
@@ -36,6 +33,7 @@ const MyCv: FC<AppProps> = ({ Component, pageProps }) => {
         {rollbarClientToken && (
           <Rollbar rollbarClientToken={rollbarClientToken} env={env} />
         )}
+        <Font />
       </Head>
       <Component {...pageProps} />
     </>
