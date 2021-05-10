@@ -16,7 +16,9 @@ const TooltipBadge = memo<TooltipBadgeProps>(
   ({ name, namespace, progress }) => {
     const [isOpen, setIsOpen] = useState(false)
     const id = useMemo(() => {
-      return `tooltip-${name.replace(/(\W+)/g, '')}-${namespace}`
+      return `tooltip-${name
+        .replace(/[^a-zA-Z0-9]/g, '-')
+        .toLowerCase()}-${namespace}`
     }, [name, namespace])
 
     return (
