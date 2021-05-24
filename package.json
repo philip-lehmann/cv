@@ -26,29 +26,28 @@
     "@bootstrap-styled/provider": "^2.0.3",
     "@bootstrap-styled/v4": "^3.4.0",
     "babel-eslint": "^10.1.0",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.0.1",
     "date-fns": "^2.19.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "eslint": "^7.23.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
-    "next": "10.0.8",
+    "next": "10.2.2",
     "next-pwa": "^5.0.5",
     "pdfcrowd": "^5.0.0",
     "polished": "^4.1.1",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-helmet": "^6.1.0",
     "request": "^2.88.2",
     "rollbar": "^2.21.0",
     "styled-components": "^5.2.1",
     "styled-jsx": "^3.4.4",
-    "styled-reset": "^4.3.4",
-    "wkhtmltopdf": "^0.3.4"
+    "styled-reset": "^4.3.4"
   },
   "devDependencies": {
-    "@types/node": "^14.14.32",
+    "@types/node": "^15.6.0",
     "@types/react": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
@@ -56,9 +55,12 @@
     "babel-plugin-styled-components": "^1.12.0",
     "prettier": "^2.2.1",
     "stylelint": "^13.12.0",
-    "stylelint-config-recommended": "^4.0.0",
+    "stylelint-config-recommended": "^5.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^4.2.3"
+  },
+  "resolutions": {
+    "postcss": ">=8.2.10"
   }
 }
