@@ -5,17 +5,17 @@ import { FloatRight } from 'components/float'
 import TooltipBadge from 'components/tooltip_badge'
 import { DashList, Dash } from 'components/dash_list'
 import T from 'components/trans'
-import { monthYear } from 'helpers/date'
+import { monthYear, LangType } from 'helpers/date'
 
 const Insign = memo(() => {
-  const { locale } = useRouter() as RouterProps
+  const { locale } = useRouter()
   return (
     <>
       <H5>insign GmbH</H5>
       <div>
         <FloatRight>
-          {monthYear('2007-06-01', { locale })} -{' '}
-          {monthYear('2010-05-01', { locale })}
+          {monthYear('2007-06-01', { locale: locale as LangType })} -{' '}
+          {monthYear('2010-05-01', { locale: locale as LangType })}
         </FloatRight>
         <H6>
           <T lang="en">Software Engineer</T>

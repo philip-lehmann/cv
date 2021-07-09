@@ -5,17 +5,17 @@ import { FloatRight } from 'components/float'
 import TooltipBadge from 'components/tooltip_badge'
 import { DashList, Dash } from 'components/dash_list'
 import T from 'components/trans'
-import { monthYear } from 'helpers/date'
+import { monthYear, LangType } from 'helpers/date'
 
 const Atpoint = memo(() => {
-  const { locale } = useRouter() as RouterProps
+  const { locale } = useRouter()
   return (
     <>
       <H5>atpoint ag</H5>
       <div>
         <FloatRight>
-          {monthYear('2020-09-01', { locale })} -{' '}
-          {monthYear('2021-06-30', { locale })}
+          {monthYear('2020-09-01', { locale: locale as LangType })} -{' '}
+          {monthYear('2021-06-30', { locale: locale as LangType })}
         </FloatRight>
         <H6>
           <T lang="en">Head of Development</T>
@@ -77,8 +77,8 @@ const Atpoint = memo(() => {
       <br />
       <div>
         <FloatRight>
-          {monthYear('2010-06-01', { locale })} -{' '}
-          {monthYear('2020-09-01', { locale })}
+          {monthYear('2010-06-01', { locale: locale as LangType })} -{' '}
+          {monthYear('2020-09-01', { locale: locale as LangType })}
         </FloatRight>
         <H6>
           <T lang="en">Software Engineer</T>
