@@ -19,7 +19,7 @@ const PrintContainer = styled(Container)`
 `
 
 const IndexPage: NextPage = () => {
-  useEffect(hireMe)
+  useEffect(hireMe, [])
   return (
     <>
       <Reset />

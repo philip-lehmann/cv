@@ -14,7 +14,7 @@ const Twitter: FC<TwitterProps> = memo(({ title, url }) => {
       <meta name="twitter:description" content={title} />
       <meta
         name="twitter:image"
-        content="https://philiplehmann.ch/android-chrome-192x192.png"
+        content={`${url}/android-chrome-192x192.png`}
       />
       <meta name="twitter:creator" content="@philiplehmann" />
     </>

@@ -22,21 +22,23 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
   )
 }
 
-Error.getInitialProps = ({ req, res, err }: NextPageContext) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404
-  // Only require Rollbar and report error if we're on the server
-  if (!process.browser && err) {
-    console.log('Reporting error to Rollbar...')
-    const rollbar = new Rollbar(serverRuntimeConfig.rollbarServerToken)
-    rollbar.error(err, req, (rollbarError) => {
-      if (rollbarError) {
-        console.error('Rollbar error reporting failed:')
-        console.error(rollbarError)
-        return
-      }
-      console.log('Reported error to Rollbar')
-    })
+if (serverRuntimeConfig.rollbarServerToken) {
+  Error.getInitialProps = ({ req, res, err }: NextPageContext) => {
+    const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+    // Only require Rollbar and report error if we're on the server
+    if (!process.browser && err) {
+      console.log('Reporting error to Rollbar...')
+      const rollbar = new Rollbar(serverRuntimeConfig.rollbarServerToken)
+      rollbar.error(err, req, (rollbarError) => {
+        if (rollbarError) {
+          console.error('Rollbar error reporting failed:')
+          console.error(rollbarError)
+          return
+        }
+        console.log('Reported error to Rollbar')
+      })
+    }
+    return { statusCode }
   }
-  return { statusCode }
 }
 export default Error

@@ -1,6 +1,3 @@
 /// <reference types="next" />
 /// <reference types="next/types/global" />
-
-interface RouterProps {
-  locale: LangType
-}
+/// <reference types="next/image-types/global" />

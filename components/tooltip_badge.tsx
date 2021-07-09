@@ -24,7 +24,14 @@ const TooltipBadge = memo<TooltipBadgeProps>(
     return (
       <>
         <A href="#" id={id}>
-          <Badge>{name}</Badge>
+          <Badge
+            aria-valuenow={progress}
+            aria-valuemin="0"
+            aria-valuemax="100"
+            role="skill"
+          >
+            {name}
+          </Badge>
         </A>
 
         <Tooltip
