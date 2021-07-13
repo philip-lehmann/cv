@@ -13,7 +13,7 @@
     "lint:css": "stylelint components helpers pages",
     "lint:types": "tsc --noEmit",
     "lint": "yarn lint:js && yarn lint:css && yarn lint:types",
-    "lint-fix": "eslint --ext '.js,.jsx' --fix components helpers pages"
+    "lint-fix": "eslint --ext '.ts,.tsx' --fix components helpers pages"
   },
   "engines": {
     "node": "16.x",
@@ -46,7 +46,6 @@
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "babel-eslint": "^10.1.0",
-    "babel-plugin-runtyper": "^0.4.0",
     "babel-plugin-styled-components": "^1.13.2",
     "eslint": "^7.30.0",
     "eslint-config-next": "^11.0.1",
