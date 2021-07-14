@@ -1,12 +1,11 @@
-/* global process */
 /* eslint no-console:off */
 
 import fs, { ReadStream } from 'fs'
 import path from 'path'
-import pdfcrowd from 'pdfcrowd'
 import getConfig from 'next/config'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { LangType } from 'helpers/date'
+import puppeteer from 'puppeteer'
 
 const {
   serverRuntimeConfig: { siteUrl, defaultLocale }
@@ -17,46 +16,27 @@ const outputPathByLang = Object.freeze({
   en: 'cv_pdf_en.pdf'
 })
 
-const getFile = (locale: LangType): Promise<ReadStream> => {
+const getFile = async (locale: LangType): Promise<ReadStream> => {
   const outputPath = path.resolve(outputPathByLang[locale])
-  return new Promise((resolve, reject) => {
-    if (fs.existsSync(outputPath)) {
-      resolve(fs.createReadStream(outputPath))
-    } else {
-      // create the API client instance
-      const client = new pdfcrowd.HtmlToPdfClient(
-        process.env.PDFCROWD_USER,
-        process.env.PDFCROWD_API_KEY
-      )
-
-      // configure the conversion
-      try {
-        client.setPageSize('A4')
-        client.setOrientation('portrait')
-        client.setNoMargins(true)
-        client.setHeaderHeight('0')
-        client.setFooterHeight('0')
-        client.setScaleFactor(80)
-        client.setNoHeaderFooterHorizontalMargins(true)
-        client.setUsePrintMedia(true)
-        client.setPageMode('full-screen')
-        client.setInitialZoomType('fit-width')
-        client.setPrintPageRange('1-2')
-      } catch (why) {
-        // report the error
-        console.error('Pdfcrowd Error: ' + why)
-        reject(new Error(why))
-      }
-
-      // run the conversion and write the result to a file
-      const url = `${siteUrl}/${locale}`
-      console.log(`write ${url} to ${outputPath}`)
-      client.convertUrlToFile(url, outputPath, (err) => {
-        if (err) return reject(err)
-        return resolve(getFile(locale))
-      })
-    }
-  })
+  if (fs.existsSync(outputPath)) {
+    return fs.createReadStream(outputPath)
+  } else {
+    const browser = await puppeteer.launch()
+    const page = await browser.newPage()
+    await page.goto(`${siteUrl}/${locale}`)
+    await page.pdf({
+      path: outputPath,
+      format: 'a4',
+      landscape: false,
+      scale: 0.8,
+      printBackground: true,
+      omitBackground: true,
+      pageRanges: '1-2',
+      margin: { top: 0, right: 0, bottom: 0, left: 0 }
+    })
+    await browser.close()
+    return getFile(locale)
+  }
 }
 
 export default async (
