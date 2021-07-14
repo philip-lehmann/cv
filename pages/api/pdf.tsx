@@ -25,7 +25,9 @@ const getFile = async (locale: LangType): Promise<ReadStream> => {
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
     const page = await browser.newPage()
-    await page.goto(`${siteUrl}/api/pdf?locale=${locale}`)
+    const url = `${siteUrl}/api/pdf?locale=${locale}`
+    console.info(url)
+    await page.goto(url)
     await page.pdf({
       path: outputPath,
       format: 'a4',
