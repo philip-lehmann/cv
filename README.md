@@ -9,5 +9,5 @@
  - styled-components
  - rollbar
  - google analytics
- - Pdfcrowd
+ - puppeteer
  - Typescript
