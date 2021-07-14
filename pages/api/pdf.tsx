@@ -23,7 +23,7 @@ const getFile = async (locale: LangType): Promise<ReadStream> => {
   } else {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
-    await page.goto(`${siteUrl}/${locale}`)
+    await page.goto(`${siteUrl}/api/pdf?locale=${locale}`)
     await page.pdf({
       path: outputPath,
       format: 'a4',
@@ -54,7 +54,8 @@ export default async (
       res.end()
       console.log('PDF send')
     })
-  } catch (e) {
-    res.status(500).json(e)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json(error)
   }
 }
