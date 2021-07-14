@@ -21,7 +21,9 @@ const getFile = async (locale: LangType): Promise<ReadStream> => {
   if (fs.existsSync(outputPath)) {
     return fs.createReadStream(outputPath)
   } else {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    })
     const page = await browser.newPage()
     await page.goto(`${siteUrl}/api/pdf?locale=${locale}`)
     await page.pdf({
