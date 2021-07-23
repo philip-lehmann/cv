@@ -1,5 +1,5 @@
 {
-  "name": "cv-next",
+  "name": "cv",
   "version": "0.1.0",
   "author": "Philip Lehmann",
   "private": true,
@@ -8,7 +8,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "deploy": "git push heroku main:master",
     "lint:js": "eslint --ext '.ts,.tsx' components helpers pages",
     "lint:css": "stylelint components helpers pages",
     "lint:types": "tsc --noEmit",
@@ -20,11 +19,14 @@
     "yarn": "1.22.x"
   },
   "cacheDirectories": [
+    "node_modules",
     ".next/cache"
   ],
   "dependencies": {
     "@bootstrap-styled/provider": "^2.0.3",
     "@bootstrap-styled/v4": "^3.4.0",
+    "@types/node": "^16.3.0",
+    "@types/react": "^17.0.14",
     "date-fns": "^2.22.1",
     "dotenv": "^10.0.0",
     "next": "11.0.1",
@@ -38,11 +40,10 @@
     "rollbar": "^2.24.0",
     "styled-components": "^5.2.1",
     "styled-jsx": "^3.4.4",
-    "styled-reset": "^4.3.4"
+    "styled-reset": "^4.3.4",
+    "typescript": "^4.3.5"
   },
   "devDependencies": {
-    "@types/node": "^16.3.0",
-    "@types/react": "^17.0.14",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "babel-eslint": "^10.1.0",
@@ -56,8 +57,7 @@
     "stylelint": "^13.12.0",
     "stylelint-config-recommended": "^5.0.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0",
-    "typescript": "^4.3.5"
+    "stylelint-processor-styled-components": "^1.10.0"
   },
   "resolutions": {
     "postcss": ">=8.3.5",
