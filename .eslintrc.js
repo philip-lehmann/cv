@@ -37,10 +37,5 @@ module.exports = {
     'no-debugger': 'error',
     'react/prop-types': 'off'
   },
-  ignorePatterns: [
-    'public/sw.js',
-    'public/workbox-*.js',
-    'public/sw.js.map',
-    'public/workbox-*.js.map'
-  ]
+  ignorePatterns: ['public/sw.js', 'public/workbox-*.js', 'public/sw.js.map', 'public/workbox-*.js.map']
 }
