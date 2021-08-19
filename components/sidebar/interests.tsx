@@ -13,12 +13,8 @@ const Interests = memo(() => {
           <T lang="de">Persönliche Interessen</T>
         </MyCardTitle>
         <CardText>
-          <T lang="en">
-            Cook / Surf / Scuba Dive / Snowboard / Bike / E-Sports
-          </T>
-          <T lang="de">
-            Kochen / Surfen / Tauchen / Snowboard / Fahrrad / E-Sports
-          </T>
+          <T lang="en">Cook / Surf / Scuba Dive / Snowboard / Bike / E-Sports</T>
+          <T lang="de">Kochen / Surfen / Tauchen / Snowboard / Fahrrad / E-Sports</T>
         </CardText>
       </MyCardBlock>
     </MyCard>

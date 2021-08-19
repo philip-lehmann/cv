@@ -27,11 +27,7 @@ const FollowMe = memo(() => {
           <T lang="en">Follow Me</T>
           <T lang="de">Follow Me</T>
         </MyCardTitle>
-        <ANoBreak
-          href="https://github.com/philiplehmann"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ANoBreak href="https://github.com/philiplehmann" target="_blank" rel="noopener noreferrer">
           <StyledImg
             src="/images/github@1x.png"
             srcSet="/images/github@1x.png, /images/github@2x.png 2x"
@@ -42,11 +38,7 @@ const FollowMe = memo(() => {
           <ImageSpan>Github</ImageSpan>
         </ANoBreak>
         <span>|</span>
-        <ANoBreak
-          href="https://www.linkedin.com/in/philip-lehmann-6362a256/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ANoBreak href="https://www.linkedin.com/in/philip-lehmann-6362a256/" target="_blank" rel="noopener noreferrer">
           <StyledImg
             src="/images/linkedin@1x.png"
             srcSet="/images/linkedin@1x.png, /images/linkedin@2x.png 2x"
@@ -57,11 +49,7 @@ const FollowMe = memo(() => {
           LinkedIn
         </ANoBreak>
         <span>|</span>
-        <ANoBreak
-          href="https://www.xing.com/profile/Philip_Lehmann5/cv"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ANoBreak href="https://www.xing.com/profile/Philip_Lehmann5/cv" target="_blank" rel="noopener noreferrer">
           <StyledImg
             src="/images/xing@1x.png"
             srcSet="/images/xing@1x.png, /images/xing@2x.png 2x"

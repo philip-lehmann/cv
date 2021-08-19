@@ -27,12 +27,8 @@ const MyCv: FC<AppProps> = ({ Component, pageProps }) => {
         <Twitter title={title} url={siteUrl} />
         <OpenGraph title={title} url={siteUrl} />
 
-        {googleAnalyticsKey && (
-          <GoogleAnalytics googleAnalyticsKey={googleAnalyticsKey} />
-        )}
-        {rollbarClientToken && (
-          <Rollbar rollbarClientToken={rollbarClientToken} env={env} />
-        )}
+        {googleAnalyticsKey && <GoogleAnalytics googleAnalyticsKey={googleAnalyticsKey} />}
+        {rollbarClientToken && <Rollbar rollbarClientToken={rollbarClientToken} env={env} />}
         <Font />
       </Head>
       <Component {...pageProps} />

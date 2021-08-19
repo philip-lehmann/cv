@@ -23,11 +23,7 @@ const Contact = memo(() => {
           <br />
           <A href="mailto:hireme@philiplehmann.ch">hireme@philiplehmann.ch</A>
           <br />
-          <A
-            href="https://philiplehmann.ch"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <A href="https://philiplehmann.ch" target="_blank" rel="noopener noreferrer">
             philiplehmann.ch
           </A>
           <br />

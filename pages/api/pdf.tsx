@@ -43,10 +43,7 @@ const getFile = async (locale: LangType): Promise<ReadStream> => {
   }
 }
 
-export default async (
-  req: NextApiRequest,
-  res: NextApiResponse
-): Promise<void> => {
+export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const { locale = defaultLocale } = req.query
   try {
     const response = await getFile(locale)

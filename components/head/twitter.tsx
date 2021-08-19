@@ -12,10 +12,7 @@ const Twitter: FC<TwitterProps> = memo(({ title, url }) => {
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={title} />
-      <meta
-        name="twitter:image"
-        content={`${url}/android-chrome-192x192.png`}
-      />
+      <meta name="twitter:image" content={`${url}/android-chrome-192x192.png`} />
       <meta name="twitter:creator" content="@philiplehmann" />
     </>
   )

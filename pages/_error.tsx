@@ -13,13 +13,7 @@ interface ErrorProps {
 }
 
 const Error: NextPage<ErrorProps> = ({ statusCode }) => {
-  return (
-    <p>
-      {statusCode
-        ? `An error ${statusCode} occurred on server`
-        : 'An error occurred on client'}
-    </p>
-  )
+  return <p>{statusCode ? `An error ${statusCode} occurred on server` : 'An error occurred on client'}</p>
 }
 
 if (serverRuntimeConfig.rollbarServerToken) {

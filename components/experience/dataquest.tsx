@@ -26,13 +26,9 @@ const DataQuest = memo(() => {
       <DashList>
         <Dash>
           <T lang="en">
-            Design and implement a warehouse management system for the iPod
-            replacement program using Java
+            Design and implement a warehouse management system for the iPod replacement program using Java
           </T>
-          <T lang="de">
-            Entwickeln einer Lagerverwalung für das iPod austausch Program in
-            Java.
-          </T>
+          <T lang="de">Entwickeln einer Lagerverwalung für das iPod austausch Program in Java.</T>
         </Dash>
       </DashList>
       <TooltipBadge namespace="dataquest" progress="60" name="Java" />

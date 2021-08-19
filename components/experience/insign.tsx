@@ -25,20 +25,17 @@ const Insign = memo(() => {
       <DashList>
         <Dash>
           <T lang="en">
-            Maintain, create and deploy websites utilizing the internal CMS for
-            customers (PWC, Finanz und Wirtschaft, Syngenta etc.)
+            Maintain, create and deploy websites utilizing the internal CMS for customers (PWC, Finanz und Wirtschaft,
+            Syngenta etc.)
           </T>
           <T lang="de">
-            Unterhalt, entwicklung und deployment von Webseiten aufgebaut auf
-            dem internen CMS nach Kundenwünschen (PWC, Finanz und Wirtschaft,
-            Syngenta etc.)
+            Unterhalt, entwicklung und deployment von Webseiten aufgebaut auf dem internen CMS nach Kundenwünschen (PWC,
+            Finanz und Wirtschaft, Syngenta etc.)
           </T>
         </Dash>
         <Dash>
           <T lang="en">Update Piazza using PHP Template Engine Smarty</T>
-          <T lang="de">
-            Piazza Plattform mit der PHP Template Engine Smarty erweitern
-          </T>
+          <T lang="de">Piazza Plattform mit der PHP Template Engine Smarty erweitern</T>
         </Dash>
         <Dash>
           <T lang="en">System administrator tasks</T>

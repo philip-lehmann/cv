@@ -10,10 +10,7 @@ const Connect: FC = memo(() => {
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-      <link
-        rel="prefetch"
-        href="https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXiWtFCc.woff2"
-      />
+      <link rel="prefetch" href="https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXiWtFCc.woff2" />
     </>
   )
 })

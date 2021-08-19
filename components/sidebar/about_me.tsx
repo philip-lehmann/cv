@@ -35,22 +35,17 @@ const Contact = memo(() => {
         </MyCardTitle>
         <MyCardText>
           <T lang="en">
-            Computers have always fascinated me. I began my career with an
-            apprenticeship as System Engineer but once I started my first course
-            with C, I quickly discovered my passion for programming. In my free
-            time I continued to study and discover PHP and Java and developing
-            several private projects. After my apprenticeship it was clear to me
-            that I had found my professional calling and pursued my career in
-            programming, for 14 years.
+            Computers have always fascinated me. I began my career with an apprenticeship as System Engineer but once I
+            started my first course with C, I quickly discovered my passion for programming. In my free time I continued
+            to study and discover PHP and Java and developing several private projects. After my apprenticeship it was
+            clear to me that I had found my professional calling and pursued my career in programming, for 14 years.
           </T>
           <T lang="de">
-            Computer haben mich schon immer fasziniert. Ich habe meine Karriere
-            mit einer Lehre als System Informatiker gestartet, aber als wir den
-            ersten Programmierkurs in C hatten, habe ich meine Leidenschaft
-            gefunden für das Programmieren. In meiner Freizeit habe ich
-            angefangen PHP und Java zu lernen. Nach meiner Lehre war für mich
-            klar, dass ich meine Berufung gefunden habe als Entwickler und habe
-            nun seit 14 Jahren Erfahrungen gesammelt.
+            Computer haben mich schon immer fasziniert. Ich habe meine Karriere mit einer Lehre als System Informatiker
+            gestartet, aber als wir den ersten Programmierkurs in C hatten, habe ich meine Leidenschaft gefunden für das
+            Programmieren. In meiner Freizeit habe ich angefangen PHP und Java zu lernen. Nach meiner Lehre war für mich
+            klar, dass ich meine Berufung gefunden habe als Entwickler und habe nun seit 14 Jahren Erfahrungen
+            gesammelt.
           </T>
         </MyCardText>
       </MyCardBlock>

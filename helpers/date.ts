@@ -9,9 +9,6 @@ type OptionsType = {
 
 const locales = Object.freeze({ en: enUS, de })
 
-export const monthYear = (
-  date: string,
-  { locale = 'en' }: OptionsType = {}
-): string => {
+export const monthYear = (date: string, { locale = 'en' }: OptionsType = {}): string => {
   return format(parseISO(date), 'MMM yyyy', { locale: locales[locale] })
 }
