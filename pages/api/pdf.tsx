@@ -7,9 +7,11 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { LangType } from 'helpers/date'
 import puppeteer from 'puppeteer'
 
-const {
-  serverRuntimeConfig: { siteUrl, defaultLocale }
+let {
+  serverRuntimeConfig: { siteUrl }
 } = getConfig()
+
+siteUrl = siteUrl || 'https://cv.philiplehmann.ch'
 
 const outputPathByLang = Object.freeze({
   de: 'cv_pdf_de.pdf',
