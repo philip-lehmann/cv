@@ -6,7 +6,7 @@
   "description": "Philip Lehmann - Curriculum vitae",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "SITE_URL=https://cv.philiplehmann.ch next build",
     "start": "next start -p $PORT",
     "lint:js": "eslint --ext '.ts,.tsx' components helpers pages",
     "lint:css": "stylelint components helpers pages",

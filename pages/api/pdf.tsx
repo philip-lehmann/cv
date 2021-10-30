@@ -7,11 +7,9 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { LangType } from 'helpers/date'
 import puppeteer from 'puppeteer'
 
-let {
-  serverRuntimeConfig: { siteUrl }
+const {
+  serverRuntimeConfig: { siteUrl, defaultLocale }
 } = getConfig()
-
-siteUrl = siteUrl || 'https://cv.philiplehmann.ch'
 
 const outputPathByLang = Object.freeze({
   de: 'cv_pdf_de.pdf',
@@ -47,8 +45,9 @@ const getFile = async (locale: LangType): Promise<ReadStream> => {
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const { locale = defaultLocale } = req.query
+  const strLocale = (Array.isArray(locale) ? locale[0] : locale) as LangType
   try {
-    const response = await getFile(locale)
+    const response = await getFile(strLocale)
     res.writeHead(200, {
       'Content-Type': 'application/pdf',
       'Content-Disposition': `attachment; filename="philip_lehmann_cv_${locale}.pdf"`
