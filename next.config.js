@@ -10,7 +10,7 @@ const sharedConfig = {
   defaultLocale: process.env.DEFAULT_LOCALE || 'en'
 }
 
-module.exports = withPWA({
+const config = {
   serverRuntimeConfig: {
     // Will only be available on the server side
     ...sharedConfig,
@@ -43,4 +43,6 @@ module.exports = withPWA({
     // Important: return the modified config
     return config
   }
-})
+}
+
+module.exports = process.env.NODE_ENV === 'production' ? withPWA(config) : config

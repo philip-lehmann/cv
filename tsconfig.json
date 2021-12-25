@@ -18,11 +18,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "components/*": ["./components/*"],
-      "helpers/*": ["./helpers/*"],
-      "pages/*": ["./pages/*"],
-
-    }
+      "components/*": [
+        "./components/*"
+      ],
+      "helpers/*": [
+        "./helpers/*"
+      ],
+      "pages/*": [
+        "./pages/*"
+      ]
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",

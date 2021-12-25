@@ -16,9 +16,9 @@ const outputPathByLang = Object.freeze({
   en: 'cv_pdf_en.pdf'
 })
 
-const getFile = async (locale: LangType): Promise<ReadStream> => {
+const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV === 'production'): Promise<ReadStream> => {
   const outputPath = path.resolve(outputPathByLang[locale])
-  if (fs.existsSync(outputPath)) {
+  if (isProduction && fs.existsSync(outputPath)) {
     return fs.createReadStream(outputPath)
   } else {
     const browser = await puppeteer.launch({
@@ -39,7 +39,7 @@ const getFile = async (locale: LangType): Promise<ReadStream> => {
       margin: { top: 0, right: 0, bottom: 0, left: 0 }
     })
     await browser.close()
-    return getFile(locale)
+    return getFile(locale, true)
   }
 }
 
@@ -50,7 +50,8 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
     const response = await getFile(strLocale)
     res.writeHead(200, {
       'Content-Type': 'application/pdf',
-      'Content-Disposition': `attachment; filename="philip_lehmann_cv_${locale}.pdf"`
+      'Content-Disposition':
+        process.env.NODE_ENV === 'production' ? `attachment; filename="philip_lehmann_cv_${locale}.pdf"` : ''
     })
     response.pipe(res).on('finish', () => {
       res.end()

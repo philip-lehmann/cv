@@ -20,7 +20,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     'plugin:react/recommended'
   ],
-  plugins: ['babel', 'react', 'prettier'],
+  plugins: ['react', 'prettier'],
   settings: {
     react: {
       pragma: 'React',
