@@ -6,6 +6,7 @@ import TooltipBadge from 'components/tooltip_badge'
 import { DashList, Dash } from 'components/dash_list'
 import T from 'components/trans'
 import { monthYear, LangType } from 'helpers/date'
+import Link from 'next/link'
 
 const Atpoint = memo(() => {
   const { locale } = useRouter()
@@ -115,32 +116,32 @@ const Atpoint = memo(() => {
             über Websockets beim Beispiel Trilux
           </T>{' '}
           (
-          <a href="https://www.youtube.com/watch?v=11iK1_jvGio" rel="noopener noreferrer" target="_blank">
-            Post
-          </a>{' '}
-          <a href="https://www.youtube.com/watch?v=4iaAD4nZizQ" rel="noopener noreferrer" target="_blank">
-            Avaloq
-          </a>{' '}
-          <a href="https://www.youtube.com/watch?v=y3I30wolftc" rel="noopener noreferrer" target="_blank">
-            Trilux
-          </a>
+          <Link href={{ query: { video: 'post' } }} scroll={false} passHref>
+            <a>Post</a>
+          </Link>{' '}
+          <Link href={{ query: { video: 'avaloq' } }} scroll={false} passHref>
+            <a>Avaloq</a>
+          </Link>{' '}
+          <Link href={{ query: { video: 'trilux' } }} scroll={false} passHref>
+            <a>Trilux</a>
+          </Link>
           )
         </Dash>
         <Dash>
           <T lang="en">Microsoft Kinect demo in HTML5</T>
           <T lang="de">Microsoft Kinect demo in HTML5</T> (
-          <a href="https://www.youtube.com/watch?v=-09y8g2Zd2I" rel="noopener noreferrer" target="_blank">
-            Demo
-          </a>
+          <Link href={{ query: { video: 'kinect' } }} scroll={false} passHref>
+            <a>Demo</a>
+          </Link>
           )
         </Dash>
 
         <Dash>
           <T lang="en">iPad / Touch offline application in HTML5</T>
           <T lang="de">iPad / Touch Offline-Anwendung in HTML5</T> (
-          <a href="https://www.youtube.com/watch?v=N8Qa2rHR7nE" rel="noopener noreferrer" target="_blank">
-            Demo
-          </a>
+          <Link href={{ query: { video: 'local' } }} scroll={false} passHref>
+            <a>Demo</a>
+          </Link>
           )
         </Dash>
       </DashList>
