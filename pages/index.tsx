@@ -11,6 +11,8 @@ import hireMe from 'helpers/hire_me'
 import { useRouter } from 'next/router'
 import VideoModal from 'components/video'
 
+import type { LangType } from 'helpers/date'
+
 const PrintContainer = styled(Container)`
   @media screen and (max-width: 1024px) {
     max-width: calc(100vw - 30px);
@@ -21,7 +23,6 @@ const PrintContainer = styled(Container)`
 `
 
 type VideoType = 'post' | 'avaloq' | 'trilux' | 'kinect' | 'local'
-type LocaleType = 'de' | 'en'
 
 const videoTitle = Object.freeze({
   post: {
@@ -56,9 +57,7 @@ const IndexPage: NextPage = () => {
     <>
       <Reset />
       <Layout>
-        {video && (
-          <VideoModal video={video as VideoType} title={videoTitle[video as VideoType][locale as LocaleType]} />
-        )}
+        {video && <VideoModal video={video as VideoType} title={videoTitle[video as VideoType][locale as LangType]} />}
         <PrintContainer>
           <CV />
         </PrintContainer>

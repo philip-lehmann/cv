@@ -25,6 +25,7 @@
   "dependencies": {
     "@bootstrap-styled/provider": "^2.0.3",
     "@bootstrap-styled/v4": "^3.4.0",
+    "@google-cloud/storage": "^5.16.1",
     "date-fns": "^2.22.1",
     "dotenv": "^10.0.0",
     "next": ">=11.1.0",

@@ -14,7 +14,9 @@ const config = {
   serverRuntimeConfig: {
     // Will only be available on the server side
     ...sharedConfig,
-    rollbarServerToken: process.env.ROLLBAR_SERVER_TOKEN
+    rollbarServerToken: process.env.ROLLBAR_SERVER_TOKEN,
+    googleStorageToken: process.env.GOOGLE_STORAGE_TOKEN && JSON.parse(process.env.GOOGLE_STORAGE_TOKEN),
+    googleBucketName: process.env.GOOGLE_BUCKET_NAME
   },
   publicRuntimeConfig: {
     // Will be available on both server and client
