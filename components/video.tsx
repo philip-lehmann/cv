@@ -30,10 +30,10 @@ const VideoModal: FC<VideoModalProps> = ({ video, title }) => {
     <Modal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
       <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
       <ModalBody>
-        <video controls width="100%" ref={videoRef}>
-          <source src={`/api/video/${video}.webm`} type="video/webm" />
+        <video controls width="100%" ref={videoRef} src={`/api/video/${video}.mp4`}>
           <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs='hvc1'" />
           <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs='avc1'" />
+          <source src={`/api/video/${video}.webm`} type="video/webm" />
           Sorry, your browser doesn&apos;t support embedded videos.
         </video>
       </ModalBody>
