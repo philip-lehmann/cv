@@ -8,6 +8,21 @@ interface VideoModalProps {
   title: string
 }
 
+interface DisableScrollProps {
+  element: HTMLElement
+  disabled: boolean
+}
+
+const useDisableScroll = ({ element, disabled }: DisableScrollProps): void => {
+  useEffect(() => {
+    element.style.overflowY = disabled ? 'hidden' : 'scroll'
+
+    return () => {
+      element.style.overflowY = 'scroll'
+    }
+  }, [disabled])
+}
+
 const VideoModal: FC<VideoModalProps> = ({ video, title }) => {
   const router = useRouter()
   const videoRef = useRef<HTMLVideoElement>()
@@ -25,6 +40,7 @@ const VideoModal: FC<VideoModalProps> = ({ video, title }) => {
   useEffect(() => {
     setOpen(true)
   }, [])
+  useDisableScroll({ element: document.body, disabled: open })
 
   return createPortal(
     <Modal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
