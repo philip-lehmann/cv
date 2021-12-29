@@ -1,6 +1,3 @@
-/* global process */
-/* eslint no-console:off */
-
 import React, { useEffect } from 'react'
 import { NextPage } from 'next'
 import T from 'components/trans'
