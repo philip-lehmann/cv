@@ -35,7 +35,13 @@ const VideoModal: FC<VideoModalProps> = ({ video, title }) => {
     router.push({ query: {} }, null, { scroll: false })
   }, [])
   const openedHandler = useCallback(() => {
-    videoRef.current?.play()
+    try {
+      // only allowed by user interaction
+      videoRef.current?.play()
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error(e)
+    }
   }, [videoRef.current])
   useEffect(() => {
     setOpen(true)
