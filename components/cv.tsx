@@ -21,8 +21,7 @@ const SidebarCol = styled(Col)`
 
 const LanguageCol = styled(Col)`
   display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   margin-top: 15px;
   margin-bottom: calc(-27.5px - 15px);
 `

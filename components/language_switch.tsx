@@ -6,8 +6,6 @@ import { Button, ButtonGroup } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
 
 const FloatingButtonGroup = styled(ButtonGroup)`
-  justify-content: end;
-  -webkit-justify-content: end;
   z-index: 1;
 
   @media print {
