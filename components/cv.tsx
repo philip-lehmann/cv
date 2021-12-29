@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 import Experience from 'components/experience'
 import SidebarContent from 'components/sidebar'
+import { LanguageSwitch } from './language_switch'
 
 const HomeH1 = styled(H1)`
   margin-top: 100px;
@@ -18,26 +19,40 @@ const SidebarCol = styled(Col)`
   }
 `
 
+const LanguageCol = styled(Col)`
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: calc(-27.5px - 15px);
+`
+
 const CV: FC = () => {
   return (
-    <Row>
-      <SidebarCol sm={4}>
-        <SidebarContent />
-      </SidebarCol>
-      <Col sm={8}>
-        <Card>
-          <CardBlock>
-            <Header>
-              <HomeH1>Philip Lehmann</HomeH1>
-              <H3>Software Engineer</H3>
-            </Header>
-          </CardBlock>
-        </Card>
-        <br />
-        <br />
-        <Experience />
-      </Col>
-    </Row>
+    <>
+      <Row>
+        <LanguageCol sm={12}>
+          <LanguageSwitch />
+        </LanguageCol>
+
+        <SidebarCol sm={4}>
+          <SidebarContent />
+        </SidebarCol>
+        <Col sm={8}>
+          <Card>
+            <CardBlock>
+              <Header>
+                <HomeH1>Philip Lehmann</HomeH1>
+                <H3>Software Engineer</H3>
+              </Header>
+            </CardBlock>
+          </Card>
+          <br />
+          <br />
+          <Experience />
+        </Col>
+      </Row>
+    </>
   )
 }
 CV.displayName = 'CV'

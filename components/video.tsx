@@ -2,15 +2,40 @@ import React, { FC, useState, useCallback, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { Modal, ModalHeader, ModalBody } from '@bootstrap-styled/v4'
 import { useRouter } from 'next/router'
-
-interface VideoModalProps {
-  video: string
-  title: string
-}
+import { LangType } from 'helpers/date'
 
 interface DisableScrollProps {
   element: HTMLElement
   disabled: boolean
+}
+
+const videoTitle = Object.freeze({
+  post: {
+    de: 'Die Schweizerische Post: Multitouch Messelösung (HTML5)',
+    en: 'The Swiss Post: Exhibition Multitouch Application (HTML5)'
+  },
+  avaloq: {
+    de: 'Avaloq Financial Planning Prototyp',
+    en: 'Avaloq Financial Planning Prototyp'
+  },
+  trilux: {
+    de: 'Trilux Verkausfsanwendung an der "Light+Building 2012"',
+    en: 'Trilux sales application at the "Light+Building 2012"'
+  },
+  kinect: {
+    de: 'Kinect Demo HTML5 & Javascript',
+    en: 'Kinect Demo HTML5 & Javascript'
+  },
+  local: {
+    de: 'local.ch: Sales Butler',
+    en: 'local.ch: Sales Butler'
+  }
+})
+
+export type VideoType = keyof typeof videoTitle
+
+interface VideoModalProps {
+  video: VideoType
 }
 
 const useDisableScroll = ({ element, disabled }: DisableScrollProps): void => {
@@ -23,8 +48,11 @@ const useDisableScroll = ({ element, disabled }: DisableScrollProps): void => {
   }, [disabled])
 }
 
-const VideoModal: FC<VideoModalProps> = ({ video, title }) => {
+const VideoModal: FC<VideoModalProps> = ({ video }) => {
   const router = useRouter()
+  const { locale } = router
+  const title = videoTitle[video][locale as LangType]
+
   const videoRef = useRef<HTMLVideoElement>()
 
   const [open, setOpen] = useState(false)
