@@ -27,7 +27,7 @@ type VideoType = 'post' | 'avaloq' | 'trilux' | 'kinect' | 'local'
 const videoTitle = Object.freeze({
   post: {
     de: 'Die Schweizerische Post: Multitouch Messelösung (HTML5)',
-    en: 'Die Schweizerische Post: Multitouch Messelösung (HTML5)'
+    en: 'The Swiss Post: Exhibition Multitouch Application (HTML5)'
   },
   avaloq: {
     de: 'Avaloq Financial Planning Prototyp',
@@ -35,7 +35,7 @@ const videoTitle = Object.freeze({
   },
   trilux: {
     de: 'Trilux Verkausfsanwendung an der "Light+Building 2012"',
-    en: 'Trilux Verkausfsanwendung an der "Light+Building 2012"'
+    en: 'Trilux sales application at the "Light+Building 2012"'
   },
   kinect: {
     de: 'Kinect Demo HTML5 & Javascript',
