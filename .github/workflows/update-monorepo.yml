@@ -1,3 +1,5 @@
+name: Update Sites in Monorepo
+
 on: [push]
 jobs:
   dispatch:
@@ -5,11 +7,11 @@ jobs:
     steps:
     - uses: actions/github-script@v6
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
         script: |
           await github.rest.actions.createWorkflowDispatch({
             owner: 'philiplehmann',
             repo: 'heroku-monorepo',
-            workflow_id: 'docker-image.yml',
+            workflow_id: 'update-sites.yml',
             ref: 'main'
           })
