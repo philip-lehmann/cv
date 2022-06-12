@@ -28,9 +28,9 @@ const Contact = memo(() => {
           </A>
           <br />
           <br />
-          Richterwis 12
+          Holzmoosrütisteig 2A
           <br />
-          8303 Bassersdorf
+          8820 Wädenswil
         </CardText>
       </MyCardBlock>
     </MyCard>
