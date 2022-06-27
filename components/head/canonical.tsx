@@ -1,7 +1,6 @@
 import React, { memo, FC } from 'react'
 import getConfig from 'next/config'
 import { LangType } from 'helpers/date'
-import { useRouter } from 'next/router'
 const {
   serverRuntimeConfig: { siteUrl, defaultLocale }
 } = getConfig()
