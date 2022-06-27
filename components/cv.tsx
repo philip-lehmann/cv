@@ -1,56 +1,35 @@
 import React, { FC } from 'react'
 
-import { Row, Col, Header, H1, H3, Card, CardBlock } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
+import { Card, CardHeader, Typography, Grid } from '@mui/material'
 
 import Experience from 'components/experience'
 import SidebarContent from 'components/sidebar'
 import { LanguageSwitch } from './language_switch'
 
-const HomeH1 = styled(H1)`
-  margin-top: 100px;
-`
-
-const SidebarCol = styled(Col)`
-  background: linear-gradient(90deg, rgba(222, 222, 224, 1) 0%, rgba(233, 233, 235, 1) 100%);
-  min-height: 100vh;
-  @media print {
-    padding-bottom: 1000px;
-  }
-`
-
-const LanguageCol = styled(Col)`
-  display: flex;
-  flex-direction: row-reverse;
-  margin-top: 15px;
-  margin-bottom: calc(-27.5px - 15px);
-`
-
 const CV: FC = () => {
   return (
     <>
-      <Row>
-        <LanguageCol sm={12}>
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
           <LanguageSwitch />
-        </LanguageCol>
+        </Grid>
 
-        <SidebarCol sm={4}>
+        <Grid item xs={4}>
           <SidebarContent />
-        </SidebarCol>
-        <Col sm={8}>
+        </Grid>
+
+        <Grid item xs={8}>
           <Card>
-            <CardBlock>
-              <Header>
-                <HomeH1>Philip Lehmann</HomeH1>
-                <H3>Software Engineer</H3>
-              </Header>
-            </CardBlock>
+            <CardHeader>
+              <Typography variant="h1">Philip Lehmann</Typography>
+              <Typography variant="h3">Software Engineer</Typography>
+            </CardHeader>
           </Card>
           <br />
           <br />
           <Experience />
-        </Col>
-      </Row>
+        </Grid>
+      </Grid>
     </>
   )
 }

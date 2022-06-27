@@ -1,31 +1,31 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
-
-import { Button, ButtonGroup } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
-
-const FloatingButtonGroup = styled(ButtonGroup)`
-  z-index: 1;
-
-  @media print {
-    display: none !important;
-  }
-  > a {
-    text-decoration: none;
-  }
-`
+import { ToggleButton, ToggleButtonGroup } from '@mui/material'
 
 export const LanguageSwitch = ({ className = '' }) => {
-  const { locale } = useRouter()
+  const { locale, push } = useRouter()
+
+  const handleOnChange = useCallback(
+    (event, value: 'de' | 'en') => {
+      push(`/${value}`)
+    },
+    [push]
+  )
+
   return (
-    <FloatingButtonGroup className={className} size="sm">
-      <Link href={{ href: '/' }} locale="en" passHref>
-        <Button color={locale === 'en' ? 'primary' : 'secondary'}>EN</Button>
-      </Link>
-      <Link href={{ href: '/' }} locale="de" passHref>
-        <Button color={locale === 'de' ? 'primary' : 'secondary'}>DE</Button>
-      </Link>
-    </FloatingButtonGroup>
+    <ToggleButtonGroup
+      value={locale}
+      exclusive
+      onChange={handleOnChange}
+      aria-label="Page Language"
+      className={className}
+    >
+      <ToggleButton value="en" aria-label="EN">
+        EN
+      </ToggleButton>
+      <ToggleButton value="de" aria-label="DE">
+        DE
+      </ToggleButton>
+    </ToggleButtonGroup>
   )
 }

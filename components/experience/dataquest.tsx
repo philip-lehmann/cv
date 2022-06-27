@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import { H5, H6 } from '@bootstrap-styled/v4'
+import { Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import { FloatRight } from 'components/float'
 import TooltipBadge from 'components/tooltip_badge'
@@ -12,16 +12,16 @@ const DataQuest = memo(() => {
   const { locale } = useRouter()
   return (
     <>
-      <H5>DataQuest</H5>
+      <Typography variant="h5">DataQuest</Typography>
       <div>
         <FloatRight>
           {monthYear('2006-08-01', { locale: locale as LangType })} -{' '}
           {monthYear('2006-11-01', { locale: locale as LangType })}
         </FloatRight>
-        <H6>
+        <Typography variant="h6">
           <T lang="en">Service Desk - Support</T>
           <T lang="de">Service Desk - Support</T>
-        </H6>
+        </Typography>
       </div>
       <DashList>
         <Dash>

@@ -5,7 +5,7 @@
 
 ## Stack
  - next.js
- - @bootstrap-styled/v4
+ - @mui/material
  - styled-components
  - rollbar
  - google analytics
