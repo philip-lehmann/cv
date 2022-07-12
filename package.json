@@ -59,7 +59,7 @@
     "stylelint-processor-styled-components": "^1.10.0"
   },
   "resolutions": {
-    "postcss": ">=8.3.5",
-    "@bootstrap-styled/v4/@rollup-umd/documentation-cli/yargs/**/ansi-regex": ">=5.0.1"
-  }
+    "postcss": ">=8.3.5"
+  },
+  "packageManager": "yarn@3.2.1"
 }
