@@ -1,8 +1,8 @@
-import { CardTitle as LibCardTitle } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
+import { CardHeader } from '@mui/material'
+import { styled } from '@mui/material'
 
-export const CardTitle = styled(LibCardTitle)`
+export const CardTitle = styled(CardHeader)`
   font-weight: 1000;
 `
 
-export { Card, CardBlock } from '@bootstrap-styled/v4'
+export { Card, CardContent as CardBlock } from '@mui/material'

@@ -6,7 +6,6 @@
 ## Stack
  - next.js
  - @mui/material
- - styled-components
  - rollbar
  - google analytics
  - puppeteer

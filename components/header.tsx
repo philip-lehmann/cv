@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import { styled } from '@mui/material'
 
 const HeaderDiv = styled('header')`
   background: 'rebeccapurple';

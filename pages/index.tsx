@@ -3,8 +3,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
 import { Container } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
-import { Reset } from 'styled-reset'
+import { styled } from '@mui/material'
 
 import CV from 'components/cv'
 import Layout from 'components/layout'
@@ -61,7 +60,6 @@ const IndexPage: NextPage = () => {
         {rollbarClientToken && <Rollbar rollbarClientToken={rollbarClientToken} env={env} />}
         <Font />
       </Head>
-      <Reset />
       <Layout>
         {video && <VideoModal video={video as VideoType} />}
         <PrintContainer>

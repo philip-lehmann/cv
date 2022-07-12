@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import styled from 'styled-components'
+import { styled } from '@mui/material'
 import AboutMe from 'components/sidebar/about_me'
 import Contact from 'components/sidebar/contact'
 import FollowMe from 'components/sidebar/follow_me'

@@ -1,17 +1,16 @@
 import React, { memo } from 'react'
 
-import { CardText, Img } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
+import { styled, CardContent } from '@mui/material'
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 import T from 'components/trans'
 
-const MyImage = styled(Img)`
+const MyImage = styled('img')`
   width: 250px;
   border-radius: 125px;
   max-width: 100%;
   height: auto;
 `
-const MyCardText = styled(CardText)`
+const MyCardText = styled(CardContent)`
   text-align: justify;
 `
 
@@ -23,7 +22,6 @@ const Contact = memo(() => {
           src="/images/me/2@1x.jpg"
           srcSet="/images/me/2@1x.jpg, /images/me/2@2x.jpg 2x"
           alt="Philip Lehmann"
-          figure={true}
           width={250}
           height={250}
         />

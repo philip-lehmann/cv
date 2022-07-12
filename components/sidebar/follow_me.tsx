@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { A, Img } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
+import { styled } from '@mui/material'
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 import T from 'components/trans'
 

@@ -1,8 +1,7 @@
 import React, { memo, useState, useMemo } from 'react'
-import styled from 'styled-components'
-import { Badge, Tooltip, Progress, ProgressBar, A } from '@bootstrap-styled/v4'
+import { styled, LinearProgress, Badge, Tooltip } from '@mui/material'
 
-const ProgressWith = styled(Progress)`
+const ProgressWith = styled(LinearProgress)`
   min-width: 100px;
 `
 
@@ -26,10 +25,8 @@ const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress }) => 
         </Badge>
       </A>
 
-      <Tooltip placement="top" isOpen={isOpen} target={id} toggle={() => setIsOpen(!isOpen)}>
-        <ProgressWith>
-          <ProgressBar valueNow={Number(progress)} />
-        </ProgressWith>
+      <Tooltip placement="top" target={id} toggle={() => setIsOpen(!isOpen)}>
+        <LinearProgress value={Number(progress)} />
       </Tooltip>
     </>
   )

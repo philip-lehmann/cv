@@ -1,12 +1,11 @@
-import styled from 'styled-components'
-import { Ul, Li } from '@bootstrap-styled/v4'
+import { styled } from '@mui/material'
 
-export const DashList = styled(Ul)`
+export const DashList = styled('ul')`
   margin-left: 0;
   padding-left: 10px;
 `
 
-export const Dash = styled(Li)`
+export const Dash = styled('li')`
   text-indent: 5px;
   &:before {
     content: '-';
