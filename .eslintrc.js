@@ -17,6 +17,7 @@ module.exports = {
     }
   },
   extends: [
+    'plugin:@next/next/recommended',
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     'plugin:react/recommended'
   ],
