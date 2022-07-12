@@ -39,13 +39,13 @@ const PrintContainer = styled(Container)`
 
 const IndexPage: NextPage = () => {
   useEffect(hireMe, [])
-  const {
-    query: { video },
-    locale,
-    pathname
-  } = useRouter()
+  const { query, locale, pathname } = useRouter()
+  const video = query.video as unknown as VideoType | ''
 
-  const title = 'Philip Lehmann - Curriculum vitae'
+  let title = 'Philip Lehmann - Curriculum vitae'
+  if (video) {
+    title = `${title} - video ${video}`
+  }
   return (
     <>
       <Head>
