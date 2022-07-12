@@ -44,7 +44,8 @@ const config = {
 
     // Important: return the modified config
     return config
-  }
+  },
+  swcMinify: true
 }
 
 module.exports = process.env.NODE_ENV === 'production' ? withPWA(config) : config
