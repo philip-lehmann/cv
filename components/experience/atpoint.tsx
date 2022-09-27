@@ -5,6 +5,7 @@ import { FloatRight } from 'components/float'
 import TooltipBadge from 'components/tooltip_badge'
 import { DashList, Dash } from 'components/dash_list'
 import T from 'components/trans'
+import { LineBreak } from 'components/print'
 import { monthYear, LangType } from 'helpers/date'
 import Link from 'next/link'
 
@@ -62,6 +63,7 @@ const Atpoint = memo(() => {
         </Dash>
       </DashList>
       <br />
+      <LineBreak/>
       <div>
         <FloatRight>
           {monthYear('2010-06-01', { locale: locale as LangType })} -{' '}

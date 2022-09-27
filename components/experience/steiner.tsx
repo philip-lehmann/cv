@@ -3,7 +3,7 @@ import { H5, H6 } from '@bootstrap-styled/v4'
 import { useRouter } from 'next/router'
 import { FloatRight } from 'components/float'
 import TooltipBadge from 'components/tooltip_badge'
-import { DashList, Dash } from 'components/dash_list'
+import { DashList } from 'components/dash_list'
 import T from 'components/trans'
 import { monthYear, LangType } from 'helpers/date'
 
@@ -22,8 +22,7 @@ const Steiner = memo(() => {
           <T lang="de">Senior Software Engineer</T>
         </H6>
       </div>
-      <DashList>
-      </DashList>
+      <DashList></DashList>
       <TooltipBadge namespace="steiner" progress="90" name="Typescript" />{' '}
       <TooltipBadge namespace="steiner" progress="90" name="Next.js" />{' '}
       <TooltipBadge namespace="steiner" progress="10" name="NestJs" />{' '}

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 import BootstrapProvider from '@bootstrap-styled/provider'
 import { darken, lighten } from 'polished'
 import { Helmet } from 'react-helmet'
@@ -15,7 +15,7 @@ const theme = {
   '$brand-primary': lighten(0.4, '#343436')
 }
 
-const Layout: FC = ({ children }) => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <BootstrapProvider theme={theme}>
       <Helmet>

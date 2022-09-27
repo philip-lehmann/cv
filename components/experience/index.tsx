@@ -11,19 +11,6 @@ import UsterTechnologies from 'components/experience/uster_technologies'
 import { FloatRight } from 'components/float'
 import T from 'components/trans'
 
-const HrPrintHidden = styled(Hr)`
-  @media print {
-    display: none !important;
-  }
-`
-
-const LineBreak = styled('div')`
-  page-break-before: always;
-  @media print {
-    height: 70px;
-  }
-`
-
 const Experience = memo(() => {
   return (
     <>
@@ -38,8 +25,7 @@ const Experience = memo(() => {
           <Quatico />
           <Hr />
           <Atpoint />
-          <HrPrintHidden />
-          <LineBreak />
+          <Hr />
           <Insign />
           <Hr />
           <DataQuest />
