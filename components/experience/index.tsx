@@ -5,6 +5,7 @@ import { Card, CardBlock, CardTitle } from 'components/experience/card'
 import Quatico from 'components/experience/quatico'
 import Atpoint from 'components/experience/atpoint'
 import Insign from 'components/experience/insign'
+import Steiner from 'components/experience/steiner'
 import DataQuest from 'components/experience/dataquest'
 import UsterTechnologies from 'components/experience/uster_technologies'
 import { FloatRight } from 'components/float'
@@ -32,6 +33,8 @@ const Experience = memo(() => {
             <T lang="en">Work Experience</T>
             <T lang="de">Arbeitserfahrung</T>
           </CardTitle>
+          <Steiner />
+          <Hr />
           <Quatico />
           <Hr />
           <Atpoint />

@@ -14,8 +14,7 @@ const Quatico = memo(() => {
       <H5>quatico solution ag</H5>
       <div>
         <FloatRight>
-          {monthYear('2022-01-01', { locale: locale as LangType })} - <T lang="en">Now</T>
-          <T lang="de">Jetzt</T>
+          {monthYear('2022-01-01', { locale: locale as LangType })} - {monthYear('2022-09-30', { locale: locale as LangType })}
         </FloatRight>
         <H6>
           <T lang="en">Agile Team Lead</T>
