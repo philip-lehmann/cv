@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
 import { Hr, H6 } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
 import { Card, CardBlock, CardTitle } from 'components/experience/card'
 import Quatico from 'components/experience/quatico'
 import Atpoint from 'components/experience/atpoint'

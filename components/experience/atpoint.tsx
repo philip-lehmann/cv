@@ -63,7 +63,7 @@ const Atpoint = memo(() => {
         </Dash>
       </DashList>
       <br />
-      <LineBreak/>
+      <LineBreak />
       <div>
         <FloatRight>
           {monthYear('2010-06-01', { locale: locale as LangType })} -{' '}
