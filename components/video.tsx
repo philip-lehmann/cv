@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { Modal, ModalHeader, ModalBody } from '@bootstrap-styled/v4'
 import { useRouter } from 'next/router'
 import { LangType } from 'helpers/date'
+import styled from 'styled-components'
 
 interface DisableScrollProps {
   element: HTMLElement
@@ -37,6 +38,12 @@ export type VideoType = keyof typeof videoTitle
 interface VideoModalProps {
   video: VideoType
 }
+
+const StyledModal = styled(Modal)`
+  .modal-dialog {
+    background-color: transparent;
+  }
+`
 
 const useDisableScroll = ({ element, disabled }: DisableScrollProps): void => {
   useEffect(() => {
@@ -77,7 +84,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
   useDisableScroll({ element: document.body, disabled: open })
 
   return createPortal(
-    <Modal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
+    <StyledModal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
       <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
       <ModalBody>
         <video controls width="100%" ref={videoRef} src={`/api/video/${video}.mp4`}>
@@ -87,7 +94,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
           Sorry, your browser doesn&apos;t support embedded videos.
         </video>
       </ModalBody>
-    </Modal>,
+    </StyledModal>,
     document.body
   )
 }
