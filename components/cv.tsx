@@ -19,21 +19,15 @@ const SidebarCol = styled(Col)`
   }
 `
 
-const LanguageCol = styled(Col)`
-  display: flex;
-  flex-direction: row-reverse;
-  margin-top: 15px;
-  margin-bottom: calc(-27.5px - 15px);
+const RowStyled = styled(Row)`
+  position: relative;
 `
 
 const CV: FC = () => {
   return (
     <>
-      <Row>
-        <LanguageCol sm={12}>
-          <LanguageSwitch />
-        </LanguageCol>
-
+      <RowStyled>
+        <LanguageSwitch />
         <SidebarCol sm={4}>
           <SidebarContent />
         </SidebarCol>
@@ -50,7 +44,7 @@ const CV: FC = () => {
           <br />
           <Experience />
         </Col>
-      </Row>
+      </RowStyled>
     </>
   )
 }
