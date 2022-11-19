@@ -20,10 +20,10 @@ export const LanguageSwitch = ({ className = '' }) => {
   const { locale } = useRouter()
   return (
     <FloatingButtonGroup className={className} size="sm">
-      <Link href={{ href: '/' }} locale="en" passHref>
+      <Link href={{ href: '/' }} locale="en" passHref legacyBehavior>
         <Button color={locale === 'en' ? 'primary' : 'secondary'}>EN</Button>
       </Link>
-      <Link href={{ href: '/' }} locale="de" passHref>
+      <Link href={{ href: '/' }} locale="de" passHref legacyBehavior>
         <Button color={locale === 'de' ? 'primary' : 'secondary'}>DE</Button>
       </Link>
     </FloatingButtonGroup>

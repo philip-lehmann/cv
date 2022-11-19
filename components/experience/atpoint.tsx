@@ -119,13 +119,13 @@ const Atpoint = memo(() => {
           </T>{' '}
           (
           <Link href={{ query: { video: 'post' } }} scroll={false} passHref>
-            <a>Post</a>
+            Post
           </Link>{' '}
           <Link href={{ query: { video: 'avaloq' } }} scroll={false} passHref>
-            <a>Avaloq</a>
+            Avaloq
           </Link>{' '}
           <Link href={{ query: { video: 'trilux' } }} scroll={false} passHref>
-            <a>Trilux</a>
+            Trilux
           </Link>
           )
         </Dash>
@@ -133,7 +133,7 @@ const Atpoint = memo(() => {
           <T lang="en">Microsoft Kinect demo in HTML5</T>
           <T lang="de">Microsoft Kinect demo in HTML5</T> (
           <Link href={{ query: { video: 'kinect' } }} scroll={false} passHref>
-            <a>Demo</a>
+            Demo
           </Link>
           )
         </Dash>
@@ -142,7 +142,7 @@ const Atpoint = memo(() => {
           <T lang="en">iPad / Touch offline application in HTML5</T>
           <T lang="de">iPad / Touch Offline-Anwendung in HTML5</T> (
           <Link href={{ query: { video: 'local' } }} scroll={false} passHref>
-            <a>Demo</a>
+            Demo
           </Link>
           )
         </Dash>
