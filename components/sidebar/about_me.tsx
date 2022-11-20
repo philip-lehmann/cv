@@ -5,13 +5,13 @@ import styled from 'styled-components'
 import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
 import T from 'components/trans'
 
-const MyImage = styled(Img)`
+const ImgStyled = styled(Img)`
   width: 250px;
+  height: 250px;
   border-radius: 125px;
   max-width: 100%;
-  height: auto;
 `
-const MyCardText = styled(CardText)`
+const CardTextStyled = styled(CardText)`
   text-align: justify;
 `
 
@@ -19,21 +19,19 @@ const Contact = memo(() => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
-        <MyImage
-          src="/images/me/2@1x.jpg"
-          srcSet="/images/me/2@1x.jpg, /images/me/2@2x.jpg 2x"
-          alt="Philip Lehmann"
-          figure={true}
-          width={250}
-          height={250}
-        />
+        <picture>
+          <source srcSet="/images/me/2@1x.avif, /images/me/2@2x.avif 2x" type="image/avif" />
+          <source srcSet="/images/me/2@1x.webp, /images/me/2@2x.webp 2x" type="image/webp" />
+          <source srcSet="/images/me/2@1x.jpg, /images/me/2@2x.jpg 2x" type="image/jpeg" />
+          <ImgStyled src="/images/me/2@1x.jpg" alt="Philip Lehmann" figure={true} />
+        </picture>
         <br />
         <br />
         <MyCardTitle>
           <T lang="en">About Me</T>
           <T lang="de">Über mich</T>
         </MyCardTitle>
-        <MyCardText>
+        <CardTextStyled>
           <T lang="en">
             Computers have always fascinated me. I began my career with an apprenticeship as System Engineer but once I
             started my first course with C, I quickly discovered my passion for programming. In my free time I continued
@@ -47,7 +45,7 @@ const Contact = memo(() => {
             klar, dass ich meine Berufung gefunden habe als Entwickler und habe nun seit 14 Jahren Erfahrungen
             gesammelt.
           </T>
-        </MyCardText>
+        </CardTextStyled>
       </MyCardBlock>
     </MyCard>
   )
