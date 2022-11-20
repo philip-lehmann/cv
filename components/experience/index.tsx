@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
-import { Hr, H6 } from '@bootstrap-styled/v4'
-import { Card, CardBlock, CardTitle } from 'components/experience/card'
+import { Hr, H6, Card, CardBlock, CardTitle } from '@bootstrap-styled/v4'
 import Quatico from 'components/experience/quatico'
 import Atpoint from 'components/experience/atpoint'
 import Insign from 'components/experience/insign'
