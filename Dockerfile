@@ -22,9 +22,16 @@ RUN apt-get update && \
 
 COPY --from=builder --chown=cv:cv /app/package.json ./package.json
 COPY --from=builder --chown=cv:cv /app/yarn.lock ./yarn.lock
-COPY --from=builder --chown=cv:cv /app/.next ./.next
-COPY --from=builder --chown=cv:cv /app/public ./public
 COPY --from=builder --chown=cv:cv /app/node_modules ./node_modules
+COPY --from=builder --chown=cv:cv /app/components ./components
+COPY --from=builder --chown=cv:cv /app/helpers ./helpers
+COPY --from=builder --chown=cv:cv /app/pages ./pages
+COPY --from=builder --chown=cv:cv /app/public ./public
+COPY --from=builder --chown=cv:cv /app/styles ./styles
+COPY --from=builder --chown=cv:cv /app/.next ./.next
+COPY --from=builder --chown=cv:cv /app/next-env.d.ts ./next-env.d.ts
+COPY --from=builder --chown=cv:cv /app/next.config.js ./next.config.js
+COPY --from=builder --chown=cv:cv /app/tsconfig.json ./tsconfig.json
 
 RUN rm -rf node_modules/puppeteer/.local-chromium/* && \
     node node_modules/puppeteer/install.js && \
