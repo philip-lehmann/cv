@@ -1,0 +1,10 @@
+node_modules
+.git
+.gitignore
+.yarnclean
+.cleanup.ts
+.env
+
+out
+.next
+videos
