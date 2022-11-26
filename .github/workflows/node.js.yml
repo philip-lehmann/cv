@@ -55,10 +55,10 @@ jobs:
             NPM_TOKEN=${{ secrets.NPM_TOKEN }}
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           push: true
-          cache-from: type=registry,ref=ghcr.io/philiplehmann/staking:buildcache
-          cache-to: type=registry,ref=ghcr.io/philiplehmann/staking:buildcache,mode=max
+          cache-from: type=registry,ref=ghcr.io/philiplehmann/cv:buildcache
+          cache-to: type=registry,ref=ghcr.io/philiplehmann/cv:buildcache,mode=max
           tags: |
-            ghcr.io/philiplehmann/staking:latest
+            ghcr.io/philiplehmann/cv:latest
   
   deploy:
     runs-on: ubuntu-latest
