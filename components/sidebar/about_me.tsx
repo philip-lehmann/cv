@@ -7,7 +7,6 @@ import T from 'components/trans'
 
 const ImgStyled = styled(Img)`
   width: 250px;
-  height: 250px;
   border-radius: 125px;
   max-width: 100%;
 `

@@ -14,7 +14,10 @@ const FloatingButtonGroup = styled(ButtonGroup)`
 const LanguageCol = styled(Col)`
   z-index: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  @media (min-width: 576px) {
+    justify-content: flex-end;
+  }
   position: absolute !important;
   left: 0;
   top: 0;
