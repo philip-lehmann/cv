@@ -87,7 +87,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
     <StyledModal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
       <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
       <ModalBody>
-        <video controls width="100%" ref={videoRef} src={`/api/video/${video}.mp4`}>
+        <video controls width="100%" ref={videoRef}>
           <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />
           <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
           <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
