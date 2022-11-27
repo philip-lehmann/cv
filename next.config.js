@@ -17,14 +17,10 @@ const config = {
     // Will only be available on the server side
     ...sharedConfig,
     rollbarServerToken: process.env.ROLLBAR_SERVER_TOKEN,
-    googleStorageToken: process.env.GOOGLE_STORAGE_TOKEN && JSON.parse(process.env.GOOGLE_STORAGE_TOKEN),
-    googleBucketName: process.env.GOOGLE_BUCKET_NAME
-  },
-  publicRuntimeConfig: {
-    // Will be available on both server and client
-    ...sharedConfig,
-    rollbarClientToken: process.env.ROLLBAR_CLIENT_TOKEN,
-    googleAnalyticsKey: process.env.GOOGLE_ANALYTICS_KEY
+    minioBucketName: process.env.MINIO_BUCKET_NAME,
+    minioAccessKey: process.env.MINIO_ACCESS_KEY,
+    minioSecretKey: process.env.MINIO_SECRET_KEY,
+    minioEndpoint: process.env.MINIO_ENDPOINT
   },
   i18n: {
     locales: ['en', 'de'],

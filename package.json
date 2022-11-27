@@ -25,9 +25,9 @@
   "dependencies": {
     "@bootstrap-styled/provider": "^2.0.3",
     "@bootstrap-styled/v4": "^3.4.0",
-    "@google-cloud/storage": "^6.7.0",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
+    "minio": "^7.0.32",
     "next": "^13.0.4",
     "next-pwa": "^5.6.0",
     "polished": "^4.2.2",
@@ -44,6 +44,7 @@
     "typescript": "^4.9.3"
   },
   "devDependencies": {
+    "@types/minio": "^7.0.14",
     "@types/node": "^18.11.9",
     "@types/react": "18.0.25",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
