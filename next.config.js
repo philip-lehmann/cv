@@ -12,6 +12,8 @@ const sharedConfig = {
   defaultLocale: process.env.DEFAULT_LOCALE || 'en'
 }
 
+const url = new URL(sharedConfig.siteUrl)
+
 const config = {
   serverRuntimeConfig: {
     // Will only be available on the server side
@@ -27,7 +29,7 @@ const config = {
     defaultLocale: sharedConfig.defaultLocale,
     domains: [
       {
-        domain: sharedConfig.siteUrl,
+        domain: url.hostname,
         defaultLocale: sharedConfig.defaultLocale
       }
     ]
