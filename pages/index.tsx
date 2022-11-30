@@ -6,9 +6,9 @@ import { Container } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
 import { Reset } from 'styled-reset'
 
-import CV from 'components/cv'
+import { CV } from 'components/cv'
 import Layout from 'components/layout'
-import VideoModal, { VideoType } from 'components/video'
+import VideoModal, { isVideoKey } from 'components/video'
 import hireMe from 'helpers/hire_me'
 
 import Head from 'next/head'
@@ -40,7 +40,7 @@ const PrintContainer = styled(Container)`
 const IndexPage: NextPage = () => {
   useEffect(hireMe, [])
   const { query, locale, pathname } = useRouter()
-  const video = query.video as unknown as VideoType | ''
+  const video = isVideoKey(query.video) ? query.video : null
 
   let title = 'Philip Lehmann - Curriculum vitae'
   if (video) {
@@ -63,7 +63,7 @@ const IndexPage: NextPage = () => {
       </Head>
       <Reset />
       <Layout>
-        {video && <VideoModal video={video as VideoType} />}
+        {video && <VideoModal video={video} />}
         <PrintContainer>
           <CV />
         </PrintContainer>

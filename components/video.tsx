@@ -32,8 +32,11 @@ const videoTitle = Object.freeze({
     en: 'local.ch: Sales Butler'
   }
 })
-
 export type VideoType = keyof typeof videoTitle
+export const VideoKeys = Object.freeze(Object.getOwnPropertyNames(videoTitle) as VideoType[])
+export const isVideoKey = (source: string | string[]): source is VideoType => {
+  return typeof source === 'string' && (VideoKeys as string[]).includes(source)
+}
 
 interface VideoModalProps {
   video: VideoType

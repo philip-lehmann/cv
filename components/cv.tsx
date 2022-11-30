@@ -23,31 +23,26 @@ const RowStyled = styled(Row)`
   position: relative;
 `
 
-const CV: FC = () => {
+export const CV: FC = () => {
   return (
-    <>
-      <RowStyled>
-        <LanguageSwitch />
-        <SidebarCol sm={4}>
-          <SidebarContent />
-        </SidebarCol>
-        <Col sm={8}>
-          <Card>
-            <CardBlock>
-              <Header>
-                <HomeH1>Philip Lehmann</HomeH1>
-                <H3>Software Engineer</H3>
-              </Header>
-            </CardBlock>
-          </Card>
-          <br />
-          <br />
-          <Experience />
-        </Col>
-      </RowStyled>
-    </>
+    <RowStyled>
+      <LanguageSwitch />
+      <SidebarCol sm={4}>
+        <SidebarContent />
+      </SidebarCol>
+      <Col sm={8}>
+        <Card>
+          <CardBlock>
+            <Header>
+              <HomeH1>Philip Lehmann</HomeH1>
+              <H3>Software Engineer</H3>
+            </Header>
+          </CardBlock>
+        </Card>
+        <br />
+        <br />
+        <Experience />
+      </Col>
+    </RowStyled>
   )
 }
-CV.displayName = 'CV'
-
-export default CV
