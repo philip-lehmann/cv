@@ -1,6 +1,6 @@
-import { memo, PropsWithChildren } from 'react'
+import React, { type FC, memo, type PropsWithChildren } from 'react'
 import { useRouter } from 'next/router'
-import { LangType } from 'helpers/date'
+import { type LangType } from 'helpers/date'
 
 interface TransProps {
   lang: LangType
@@ -8,10 +8,10 @@ interface TransProps {
 
 type ComponentProps = PropsWithChildren<TransProps>
 
-const Trans = ({ lang, children }) => {
+const Trans: FC<ComponentProps> = ({ lang, children }) => {
   const { locale } = useRouter()
   if (locale != lang) return null
-  return children
+  return <>{children}</>
 }
 Trans.displayName = 'Trans'
 

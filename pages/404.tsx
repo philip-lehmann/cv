@@ -4,7 +4,12 @@ import T from 'components/trans'
 
 const NotFound: NextPage = () => {
   useEffect(() => {
-    window.onerror('404 page not found', window.location.href)
+    if (window) {
+      window.addEventListener('error', () => {
+        // eslint-disable-next-line no-console
+        console.error('404 page not found', window.location.href)
+      })
+    }
   }, [])
   return (
     <p>

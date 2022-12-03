@@ -1,12 +1,15 @@
 import React, { memo, FC } from 'react'
-import getConfig from 'next/config'
 import { LangType } from 'helpers/date'
+import { useConfig } from 'helpers/config_context'
 
-const {
-  serverRuntimeConfig: { siteUrl, defaultLocale }
-} = getConfig()
+interface CanonicalProps {
+  locale: LangType
+  defaultLocale: LangType
+  path: string
+}
 
-const Canonical: FC<{ locale: LangType; path: string }> = memo(({ locale, path }) => {
+const Canonical: FC<CanonicalProps> = memo(({ locale, defaultLocale, path }) => {
+  const { siteUrl } = useConfig()
   if (path === '/' && locale === defaultLocale) {
     return (
       <>

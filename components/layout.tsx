@@ -1,7 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react'
 import BootstrapProvider from '@bootstrap-styled/provider'
 import { darken, lighten } from 'polished'
-import { Helmet } from 'react-helmet'
 
 const theme = {
   '$card-border-width': 'none',
@@ -16,18 +15,7 @@ const theme = {
 }
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <BootstrapProvider theme={theme}>
-      <Helmet>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP&family=Open+Sans&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
-      {children}
-    </BootstrapProvider>
-  )
+  return <BootstrapProvider theme={theme}>{children}</BootstrapProvider>
 }
 
 export default Layout

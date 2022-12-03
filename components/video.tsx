@@ -34,7 +34,7 @@ const videoTitle = Object.freeze({
 })
 export type VideoType = keyof typeof videoTitle
 export const VideoKeys = Object.freeze(Object.getOwnPropertyNames(videoTitle) as VideoType[])
-export const isVideoKey = (source: string | string[]): source is VideoType => {
+export const isVideoKey = (source: string | string[] | undefined): source is VideoType => {
   return typeof source === 'string' && (VideoKeys as string[]).includes(source)
 }
 
@@ -63,14 +63,14 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
   const { locale } = router
   const title = videoTitle[video][locale as LangType]
 
-  const videoRef = useRef<HTMLVideoElement>()
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   const [open, setOpen] = useState(false)
   const closeHandler = useCallback(() => {
     setOpen(false)
   }, [])
   const closedHandler = useCallback(() => {
-    router.push({ query: {} }, null, { scroll: false })
+    router.push({ query: {} }, undefined, { scroll: false })
   }, [])
   const openedHandler = useCallback(() => {
     try {

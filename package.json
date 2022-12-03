@@ -1,6 +1,6 @@
 {
   "name": "cv",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Philip Lehmann",
   "private": true,
   "description": "Philip Lehmann - Curriculum vitae",
@@ -15,8 +15,8 @@
     "lint-fix": "eslint --ext '.ts,.tsx' --fix components helpers pages"
   },
   "engines": {
-    "node": ">= 16.x",
-    "yarn": "1.22.x"
+    "node": ">= 18.x",
+    "npm": ">= 8.19.2"
   },
   "cacheDirectories": [
     "node_modules",
@@ -35,7 +35,6 @@
     "puppeteer": "^19.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-helmet": "^6.1.0",
     "request": "^2.88.2",
     "rollbar": "^2.25.2",
     "styled-components": "^5.3.6",

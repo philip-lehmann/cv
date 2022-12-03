@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import { Container } from '@bootstrap-styled/v4'
 import styled from 'styled-components'
@@ -11,8 +12,6 @@ import Layout from 'components/layout'
 import VideoModal, { isVideoKey } from 'components/video'
 import hireMe from 'helpers/hire_me'
 
-import Head from 'next/head'
-import getConfig from 'next/config'
 import Twitter from 'components/head/twitter'
 import OpenGraph from 'components/head/open_graph'
 import Icons from 'components/head/icons'
@@ -23,10 +22,7 @@ import Connect from 'components/head/connect'
 import Font from 'components/head/font'
 import Canonical from 'components/head/canonical'
 import { LangType } from 'helpers/date'
-
-const {
-  publicRuntimeConfig: { googleAnalyticsKey, rollbarClientToken, env, siteUrl }
-} = getConfig()
+import { ConfigProps, ConfigProvider } from 'helpers/config_context'
 
 const PrintContainer = styled(Container)`
   @media screen and (max-width: 1024px) {
@@ -37,29 +33,32 @@ const PrintContainer = styled(Container)`
   }
 `
 
-const IndexPage: NextPage = () => {
+const IndexPage: NextPage<{
+  config: ConfigProps
+}> = ({ config }) => {
   useEffect(hireMe, [])
-  const { query, locale, pathname } = useRouter()
+  const { query, locale, defaultLocale, pathname } = useRouter()
   const video = isVideoKey(query.video) ? query.video : null
+  const { googleAnalyticsKey, rollbarClientToken, env, siteUrl } = config
 
   let title = 'Philip Lehmann - Curriculum vitae'
   if (video) {
     title = `${title} - video ${video}`
   }
   return (
-    <>
+    <ConfigProvider value={config}>
       <Head>
         <title>{title}</title>
         <Connect />
+        <Font />
         <Meta title={title} />
         <Icons />
         <Twitter title={title} url={siteUrl} />
         <OpenGraph title={title} url={siteUrl} />
-        <Canonical locale={locale as LangType} path={pathname} />
+        <Canonical locale={locale as LangType} defaultLocale={defaultLocale as LangType} path={pathname} />
 
         {googleAnalyticsKey && <GoogleAnalytics googleAnalyticsKey={googleAnalyticsKey} />}
         {rollbarClientToken && <Rollbar rollbarClientToken={rollbarClientToken} env={env} />}
-        <Font />
       </Head>
       <Reset />
       <Layout>
@@ -68,9 +67,22 @@ const IndexPage: NextPage = () => {
           <CV />
         </PrintContainer>
       </Layout>
-    </>
+    </ConfigProvider>
   )
 }
-IndexPage.displayName = 'IndexPage'
+
+export const getServerSideProps = () => {
+  // eslint-disable-next-line no-console
+  return {
+    props: {
+      config: {
+        googleAnalyticsKey: process.env.GOOGLE_ANALYTICS_KEY,
+        rollbarClientToken: process.env.ROLLBAR_CLIENT_TOKEN,
+        env: process.env.NODE_ENV || 'development',
+        siteUrl: process.env.SITE_URL || 'http://localhost:3000'
+      }
+    }
+  }
+}
 
 export default IndexPage
