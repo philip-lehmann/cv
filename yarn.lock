@@ -1814,6 +1814,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hoist-non-react-statics@npm:*":
+  version: 3.3.1
+  resolution: "@types/hoist-non-react-statics@npm:3.3.1"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: 2c0778570d9a01d05afabc781b32163f28409bb98f7245c38d5eaf082416fdb73034003f5825eb5e21313044e8d2d9e1f3fe2831e345d3d1b1d20bcd12270719
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
   version: 7.0.11
   resolution: "@types/json-schema@npm:7.0.11"
@@ -1879,6 +1889,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react@npm:*":
+  version: 18.0.26
+  resolution: "@types/react@npm:18.0.26"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: b62f0ea3cdfa68e106391728325057ad36f1bde7ba2dfae029472c47e01e482bc77c6ba4f1dad59f3f04ee81cb597618ff7c30a33c157c0a20462b6dd6aa2d4d
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:18.0.25":
   version: 18.0.25
   resolution: "@types/react@npm:18.0.25"
@@ -1910,6 +1931,17 @@ __metadata:
   version: 7.3.13
   resolution: "@types/semver@npm:7.3.13"
   checksum: 00c0724d54757c2f4bc60b5032fe91cda6410e48689633d5f35ece8a0a66445e3e57fa1d6e07eb780f792e82ac542948ec4d0b76eb3484297b79bd18b8cf1cb0
+  languageName: node
+  linkType: hard
+
+"@types/styled-components@npm:^5.1.26":
+  version: 5.1.26
+  resolution: "@types/styled-components@npm:5.1.26"
+  dependencies:
+    "@types/hoist-non-react-statics": "*"
+    "@types/react": "*"
+    csstype: ^3.0.2
+  checksum: 84f53b3101739b20d1731554fb7735bc2f3f5d050a8b392e9845403c8c8bbd729737d033978649f9195a97b557875b010d46e35a4538564a2d0dbcce661dbf76
   languageName: node
   linkType: hard
 
@@ -3219,6 +3251,7 @@ __metadata:
     "@types/minio": ^7.0.14
     "@types/node": ^18.11.9
     "@types/react": 18.0.25
+    "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.43.0
     "@typescript-eslint/parser": ^5.43.0
     date-fns: ^2.29.3
