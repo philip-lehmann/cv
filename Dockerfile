@@ -36,7 +36,7 @@ COPY --from=builder --chown=cv:cv /app/tsconfig.json ./tsconfig.json
 RUN rm -rf node_modules/puppeteer/.local-chromium/* && \
     node node_modules/puppeteer/install.js && \
     mv /root/.cache/puppeteer /home/cv/.cache/puppeteer && chown -R cv:cv /home/cv/ && \
-    chown -R cv:cv /app
+    chown -R cv:cv /app && chmod 700 /app
 
 USER cv
 
