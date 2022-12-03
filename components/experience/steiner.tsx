@@ -7,7 +7,7 @@ import { DashList } from 'components/dash_list'
 import T from 'components/trans'
 import { monthYear, LangType } from 'helpers/date'
 
-const Steiner = memo(() => {
+export const Steiner = memo(() => {
   const { locale } = useRouter()
   return (
     <>
@@ -40,5 +40,3 @@ const Steiner = memo(() => {
   )
 })
 Steiner.displayName = 'Steiner'
-
-export default Steiner

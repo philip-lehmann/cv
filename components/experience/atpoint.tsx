@@ -9,7 +9,7 @@ import { LineBreak } from 'components/print'
 import { monthYear, LangType } from 'helpers/date'
 import Link from 'next/link'
 
-const Atpoint = memo(() => {
+export const Atpoint = memo(() => {
   const { locale } = useRouter()
   return (
     <>
@@ -170,5 +170,3 @@ const Atpoint = memo(() => {
   )
 })
 Atpoint.displayName = 'Atpoint'
-
-export default Atpoint

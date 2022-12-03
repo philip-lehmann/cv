@@ -7,7 +7,7 @@ import { DashList, Dash } from 'components/dash_list'
 import T from 'components/trans'
 import { monthYear, LangType } from 'helpers/date'
 
-const Insign = memo(() => {
+export const Insign = memo(() => {
   const { locale } = useRouter()
   return (
     <>
@@ -53,5 +53,3 @@ const Insign = memo(() => {
   )
 })
 Insign.displayName = 'Insign'
-
-export default Insign

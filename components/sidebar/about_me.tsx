@@ -22,7 +22,7 @@ const Contact = memo(() => {
           <source srcSet="/images/me/2@1x.avif, /images/me/2@2x.avif 2x" type="image/avif" />
           <source srcSet="/images/me/2@1x.webp, /images/me/2@2x.webp 2x" type="image/webp" />
           <source srcSet="/images/me/2@1x.jpg, /images/me/2@2x.jpg 2x" type="image/jpeg" />
-          <ImgStyled src="/images/me/2@1x.jpg" alt="Philip Lehmann" figure={true} />
+          <ImgStyled src="/images/me/2@1x.jpg" alt="Philip Lehmann" figure={true} width="250" height="250" />
         </picture>
         <br />
         <br />

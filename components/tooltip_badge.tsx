@@ -21,9 +21,7 @@ const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress }) => 
   return (
     <>
       <A href="#" id={id}>
-        <Badge aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100" role="skill">
-          {name}
-        </Badge>
+        <Badge>{name}</Badge>
       </A>
 
       <Tooltip placement="top" isOpen={isOpen} target={id} toggle={() => setIsOpen(!isOpen)}>

@@ -7,7 +7,7 @@ import { DashList, Dash } from 'components/dash_list'
 import T from 'components/trans'
 import { monthYear, LangType } from 'helpers/date'
 
-const UsterTechnologies = memo(() => {
+export const UsterTechnologies = memo(() => {
   const { locale } = useRouter()
   return (
     <>
@@ -51,5 +51,3 @@ const UsterTechnologies = memo(() => {
   )
 })
 UsterTechnologies.displayName = 'UsterTechnologies'
-
-export default UsterTechnologies

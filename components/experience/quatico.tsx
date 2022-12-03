@@ -7,7 +7,7 @@ import { DashList, Dash } from 'components/dash_list'
 import T from 'components/trans'
 import { monthYear, LangType } from 'helpers/date'
 
-const Quatico = memo(() => {
+export const Quatico = memo(() => {
   const { locale } = useRouter()
   return (
     <>
@@ -78,5 +78,3 @@ const Quatico = memo(() => {
   )
 })
 Quatico.displayName = 'Quatico'
-
-export default Quatico

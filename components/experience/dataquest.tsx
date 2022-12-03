@@ -8,7 +8,7 @@ import { DashList, Dash } from 'components/dash_list'
 import T from 'components/trans'
 import { monthYear, LangType } from 'helpers/date'
 
-const DataQuest = memo(() => {
+export const DataQuest = memo(() => {
   const { locale } = useRouter()
   return (
     <>
@@ -36,5 +36,3 @@ const DataQuest = memo(() => {
   )
 })
 DataQuest.displayName = 'DataQuest'
-
-export default DataQuest

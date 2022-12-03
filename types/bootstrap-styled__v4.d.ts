@@ -45,7 +45,7 @@ declare module '@bootstrap-styled/v4' {
   export const Header: FC<ComponentProps<'header'>>
   export const CardBlock: FC<ComponentProps<'div'>>
   export const Card: FC<ComponentProps<'div'>>
-  export const CardTitle: FC<ComponentProps<'div'>>
+  export const CardTitle: FC<ComponentProps<'h4'>>
   export const Button: FC<ComponentProps<'button'>>
   export const ButtonGroup: FC<ComponentProps<'div'>>
 }

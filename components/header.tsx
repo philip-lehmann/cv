@@ -22,7 +22,7 @@ const AStyled = styled('a')`
 `
 
 const Header: FC<HeaderProps> = ({ siteTitle }) => (
-  <HeaderDiv role="banner">
+  <HeaderDiv>
     <HeaderWrapper>
       <H1Styled>
         <AStyled href="/">{siteTitle}</AStyled>
