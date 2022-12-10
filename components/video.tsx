@@ -78,7 +78,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
       videoRef.current?.play()
     } catch (e) {
       // eslint-disable-next-line no-console
-      console.error(e)
+      // console.error(e)
     }
   }, [videoRef.current])
   useEffect(() => {

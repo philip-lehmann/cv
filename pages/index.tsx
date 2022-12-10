@@ -9,7 +9,7 @@ import { Reset } from 'styled-reset'
 
 import { CV } from 'components/cv'
 import Layout from 'components/layout'
-import VideoModal, { isVideoKey } from 'components/video'
+import { isVideoKey } from 'components/video'
 import hireMe from 'helpers/hire_me'
 
 import Twitter from 'components/head/twitter'
@@ -23,6 +23,10 @@ import Font from 'components/head/font'
 import Canonical from 'components/head/canonical'
 import { LangType } from 'helpers/date'
 import { ConfigProps, ConfigProvider } from 'helpers/config_context'
+
+import dynamic from 'next/dynamic'
+
+const VideoModal = dynamic(() => import('components/video'), { ssr: false })
 
 const PrintContainer = styled(Container)`
   @media screen and (max-width: 1024px) {
