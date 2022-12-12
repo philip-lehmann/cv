@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cv-philiplehmann
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cv-philiplehmann
+  template:
+    metadata:
+      labels:
+        app: cv-philiplehmann
+    spec:
+      imagePullSecrets:
+        - name: docker-registry-github
+      containers:
+        - name: cv-philiplehmann
+          image: ghcr.io/philiplehmann/cv:latest
+          imagePullPolicy: Always
+          env:
+            - name: PORT
+              value: "3000"
+            - name: SITE_URL
+              value: https://cv.philiplehmann.ch
+            - name: NODE_ENV
+              value: production
+            - name: MINIO_ENDPOINT
+              value: storage.riwi.dev
+          envFrom:
+            - secretRef:
+                name: minio-secret
+            - secretRef:
+                name: google-analytics-secret
+            - secretRef:
+                name: rollbar-secret
+                
+          ports:
+            - containerPort: 3000
+      restartPolicy: Always
