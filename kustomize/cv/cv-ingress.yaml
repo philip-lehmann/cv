@@ -4,9 +4,8 @@ metadata:
   name: cv-philiplehmann
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-http
-    # nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/24, 109.202.219.21"
-
 spec:
+  ingressClassName: nginx
   rules:
   - host: cv.philiplehmann.ch
     http:
@@ -22,3 +21,25 @@ spec:
   - hosts:
     - cv.philiplehmann.ch
     secretName: cv-philiplehmann-cert
+
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: philiplehmann
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-http
+    nginx.ingress.kubernetes.io/server-snippet: |
+      return 301 $scheme://cv.philiplehmann.ch$request_uri;
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: philiplehmann.ch
+  - host: www.philiplehmann.ch
+  tls:
+  - hosts:
+    - philiplehmann.ch
+    - www.philiplehmann.ch
+    secretName: philiplehmann-cert
