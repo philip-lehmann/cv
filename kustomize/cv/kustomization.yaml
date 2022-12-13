@@ -2,6 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - cv-deployment.yaml
-  - cv-service.yaml
-  - cv-ingress.yaml
+- cv-deployment.yaml
+- cv-service.yaml
+- cv-ingress.yaml
+images:
+- name: ghcr.io/philiplehmann/cv
+  newName: ghcr.io/philiplehmann/cv
+  newTag: 22-12-13.21
