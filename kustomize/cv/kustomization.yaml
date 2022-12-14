@@ -8,4 +8,4 @@ resources:
 images:
 - name: ghcr.io/philiplehmann/cv
   newName: ghcr.io/philiplehmann/cv
-  newTag: 22-12-13.21
+  newTag: 22-12-14.22
