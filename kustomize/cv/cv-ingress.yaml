@@ -37,7 +37,17 @@ spec:
   ingressClassName: nginx
   rules:
   - host: philiplehmann.ch
+    http: &HTTP
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: cv-philiplehmann
+            port:
+              number: 3000
   - host: www.philiplehmann.ch
+    http: *HTTP
   tls:
   - hosts:
     - philiplehmann.ch
