@@ -31,8 +31,8 @@ metadata:
   name: philiplehmann
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-http
-    nginx.ingress.kubernetes.io/server-snippet: |
-      return 301 $scheme://cv.philiplehmann.ch$request_uri;
+    # nginx.ingress.kubernetes.io/server-snippet: |
+    #   return 301 $scheme://cv.philiplehmann.ch$request_uri;
 spec:
   ingressClassName: nginx
   rules:
