@@ -13,14 +13,42 @@ jobs:
   ci:
     runs-on: self-hosted
 
+    strategy:
+      matrix:
+        node-version: [18.15.0]
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        name: Use Node.js
+      - uses: actions/checkout@v3
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v3
         with:
-          node-version: 18
-          cache: yarn
-      - run: yarn
+          path: node_modules
+          key: ${{ runner.os }}-node-modules
+      - name: Cache .yarn
+        id: cache-dot-yarn
+        uses: actions/cache@v3
+        with:
+          path: .yarn
+          key: ${{ runner.os }}-dot-yarn
+      - name: Cache .eslintcache
+        id: cache-dot-eslintcache
+        uses: actions/cache@v3
+        with:
+          path: .eslintcache
+          key: ${{ runner.os }}-dot-eslintcache
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          always-auth: true
+          registry-url: https://npm.pkg.github.com
+          scope: "@datage-ch"
+      - name: install dependencies
+        run: |
+          npm install -g yarn
+          yarn install
       - run: yarn lint
 
   build:
