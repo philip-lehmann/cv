@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react'
-import Document, { DocumentContext, DocumentInitialProps } from 'next/document'
+import React, { type ReactNode } from 'react'
+import Document, { type DocumentContext, type DocumentInitialProps } from 'next/document'
 
 import { ServerStyleSheet } from 'styled-components'
 

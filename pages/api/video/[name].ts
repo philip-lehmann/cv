@@ -1,4 +1,3 @@
-/* eslint no-console:off */
 import getConfig from 'next/config'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Client } from 'minio'
