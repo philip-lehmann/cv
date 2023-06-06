@@ -29,9 +29,14 @@
       ]
     },
     "incremental": true,
+    "types": [
+        "node",
+        "minio"
+    ],
     "typeRoots": [
-      "./types",
-      "./node_modules/@types"
+      "./types/",
+      "./node_modules/@types",
+      "./node_modules"
     ]
   },
   "include": [
