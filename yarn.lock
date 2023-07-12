@@ -8861,11 +8861,11 @@ __metadata:
   linkType: hard
 
 "styled-reset@npm:^4.4.7":
-  version: 4.4.7
-  resolution: "styled-reset@npm:4.4.7"
+  version: 4.5.1
+  resolution: "styled-reset@npm:4.5.1"
   peerDependencies:
-    styled-components: ">=4.0.0 || >=5.0.0"
-  checksum: f68e8b1b26fe287423aaae4d28d11ee5d10268840e35513610c1a5ae201cea8812596d4d4811efc747fa1305de9ded8ad5e48572d4163c3e347533df43c9298a
+    styled-components: ">=4.0.0 || >=5.0.0 || >=6.0.0"
+  checksum: ff6c5bbc738017a535a5e74cc3b2e7112652691c8e4acae700fe3d051f870035e2d911e6629a9a626349ccc58ba9842b83793bd9111f4e1c9e1fa695f773d2b8
   languageName: node
   linkType: hard
 
