@@ -9,6 +9,9 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.pull_request.number || github.ref }}
+
 jobs:
   ci:
     runs-on: self-hosted
@@ -49,7 +52,11 @@ jobs:
         run: |
           npm install -g yarn
           yarn install
-      - run: yarn lint
+      - name: lint
+        run: yarn lint
+      - name: build
+        if: github.ref != 'refs/heads/main'
+        run: yarn build
 
   build:
     runs-on: self-hosted
