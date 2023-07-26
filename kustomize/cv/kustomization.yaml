@@ -5,6 +5,7 @@ resources:
 - cv-deployment.yaml
 - cv-service.yaml
 - cv-ingress.yaml
+
 images:
 - name: ghcr.io/philiplehmann/cv
   newName: ghcr.io/philiplehmann/cv

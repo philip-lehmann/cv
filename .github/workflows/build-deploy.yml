@@ -116,8 +116,11 @@ jobs:
           fetch-depth: 0
       - name: set version
         run: echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
+      - name: git pull
+        run: |
+          git pull --rebase
       - uses: imranismail/setup-kustomize@v2
-      - name: deploy
+      - name: set image tag
         run: |
           cd kustomize/cv
           kustomize edit set image ghcr.io/philiplehmann/cv=ghcr.io/philiplehmann/cv:${{ env.TAG_VERSION }}
