@@ -1,4 +1,4 @@
-FROM bitnami/node:20.5.0 AS builder
+FROM bitnami/node:20.5.1 AS builder
 WORKDIR /app
 ARG NPM_TOKEN
 ARG SITE_URL=https://cv.philiplehmann.ch
@@ -8,7 +8,7 @@ RUN yarn install --immutable && \
     yarn build
 
 # Production image, copy all the files and run next
-FROM bitnami/node:20.5.0 AS runner
+FROM bitnami/node:20.5.1 AS runner
 WORKDIR /app
 
 RUN apt-get update && \
