@@ -28,8 +28,6 @@ const Contact = memo(() => {
           </A>
           <br />
           <br />
-          Holzmoosrütisteig 2A
-          <br />
           8820 Wädenswil
         </CardText>
       </MyCardBlock>
