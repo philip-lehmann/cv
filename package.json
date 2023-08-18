@@ -66,5 +66,5 @@
     "postcss": ">=8.3.5",
     "terser": ">=5.14.2"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.2"
 }
