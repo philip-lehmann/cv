@@ -9,4 +9,4 @@ resources:
 images:
 - name: ghcr.io/philiplehmann/cv
   newName: ghcr.io/philiplehmann/cv
-  newTag: 23-09-02.300
+  newTag: 23-09-03.302
