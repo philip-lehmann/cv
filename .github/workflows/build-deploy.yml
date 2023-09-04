@@ -21,7 +21,7 @@ jobs:
         node-version: [20.5.1]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Cache node_modules
         id: cache-node-modules
         uses: actions/cache@v3
@@ -64,7 +64,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v2
       - name: Set up Docker Context for Buildx
@@ -110,7 +110,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: 0
