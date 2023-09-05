@@ -78,12 +78,12 @@ jobs:
           version: latest
           install: true
           endpoint: builders
-      - name: Login to github registry
+      - name: Login to harbor.riwi.dev registry
         uses: docker/login-action@v2
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: harbor.riwi.dev
+          username: ${{ secrets.HARBOR_USER }}
+          password: ${{ secrets.HARBOR_TOKEN }}
 
       - name: set version
         run: echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
@@ -98,11 +98,11 @@ jobs:
             NPM_TOKEN=${{ secrets.NPM_TOKEN }}
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           push: true
-          cache-from: type=registry,ref=ghcr.io/philiplehmann/cv:buildcache
-          cache-to: type=registry,ref=ghcr.io/philiplehmann/cv:buildcache,mode=max
+          cache-from: type=registry,ref=harbor.riwi.dev/philiplehmann/cv:buildcache
+          cache-to: type=registry,ref=harbor.riwi.dev/philiplehmann/cv:buildcache,mode=max,image-manifest=true
           tags: |
-            ghcr.io/philiplehmann/cv:latest
-            ghcr.io/philiplehmann/cv:${{ env.TAG_VERSION }}
+            harbor.riwi.dev/philiplehmann/cv:latest
+            harbor.riwi.dev/philiplehmann/cv:${{ env.TAG_VERSION }}
   
   deploy:
     runs-on: self-hosted
@@ -123,7 +123,7 @@ jobs:
       - name: set image tag
         run: |
           cd kustomize/cv
-          kustomize edit set image ghcr.io/philiplehmann/cv=ghcr.io/philiplehmann/cv:${{ env.TAG_VERSION }}
+          kustomize edit set image harbor.riwi.dev/philiplehmann/cv=harbor.riwi.dev/philiplehmann/cv:${{ env.TAG_VERSION }}
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:

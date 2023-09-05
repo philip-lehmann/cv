@@ -7,6 +7,6 @@ resources:
 - cv-ingress.yaml
 
 images:
-- name: ghcr.io/philiplehmann/cv
-  newName: ghcr.io/philiplehmann/cv
+- name: harbor.riwi.dev/philiplehmann/cv
+  newName: harbor.riwi.dev/philiplehmann/cv
   newTag: 23-09-05.314

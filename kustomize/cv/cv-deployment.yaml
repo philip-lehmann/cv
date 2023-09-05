@@ -13,10 +13,10 @@ spec:
         app: cv-philiplehmann
     spec:
       imagePullSecrets:
-        - name: docker-registry-github
+        - name: docker-registry-harbor
       containers:
         - name: cv-philiplehmann
-          image: ghcr.io/philiplehmann/cv:latest
+          image: harbor.riwi.dev/philiplehmann/cv:latest
           imagePullPolicy: Always
           env:
             - name: PORT
