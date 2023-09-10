@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.6.0]
+        node-version: [20.6.1]
 
     steps:
       - uses: actions/checkout@v4
@@ -93,7 +93,7 @@ jobs:
         with:
           context: .
           file: Dockerfile
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           build-args: |
             NPM_TOKEN=${{ secrets.NPM_TOKEN }}
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
