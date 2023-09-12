@@ -79,7 +79,7 @@ jobs:
           install: true
           endpoint: builders
       - name: Login to harbor.riwi.dev registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: harbor.riwi.dev
           username: ${{ secrets.HARBOR_USER }}
