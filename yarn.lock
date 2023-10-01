@@ -2159,10 +2159,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.7.1":
-  version: 20.7.1
-  resolution: "@types/node@npm:20.7.1"
-  checksum: 3140bd6c9130f1ed73a78ce7a1765ee43e155c1eea50eea45e18faeb31d11d97a84fffdc5e3a97582101d2f57d2652a50f510ede6c702780267bad74c822d56c
+"@types/node@npm:^20.8.0":
+  version: 20.8.0
+  resolution: "@types/node@npm:20.8.0"
+  checksum: ebad6342d54238a24bf980d7750117a5d67749c9b72cbb7a974a1e932c39034aa3a810d669e007e8a5071782a253aa069a187b614407a382403c9826e837c849
   languageName: node
   linkType: hard
 
@@ -3705,7 +3705,7 @@ __metadata:
     "@bootstrap-styled/provider": ^2.0.3
     "@bootstrap-styled/v4": ^3.4.0
     "@stylelint/postcss-css-in-js": ^0.38.0
-    "@types/node": ^20.7.1
+    "@types/node": ^20.8.0
     "@types/react": 18.2.21
     "@types/react-dom": 18.2.8
     "@types/styled-components": ^5.1.28
@@ -3721,7 +3721,7 @@ __metadata:
     next: ^13.5.3
     next-pwa: ^5.6.0
     polished: ^4.2.2
-    postcss: ^8.4.30
+    postcss: ^8.4.31
     postcss-syntax: ^0.36.2
     prettier: ^3.0.3
     puppeteer: ^21.3.6
