@@ -22,6 +22,7 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
     return fs.createReadStream(outputPath)
   } else {
     const browser = await puppeteer.launch({
+      headless: 'new',
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
     const page = await browser.newPage()
