@@ -3,6 +3,7 @@ WORKDIR /app
 ARG NPM_TOKEN
 ARG SITE_URL=https://cv.philiplehmann.ch
 ENV NODE_ENV=production
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 COPY . .
 RUN yarn install --immutable && \
     yarn build
@@ -11,9 +12,15 @@ RUN yarn install --immutable && \
 FROM bitnami/node:20.8.1 AS runner
 WORKDIR /app
 
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libgbm1 libasound2 libpangocairo-1.0-0 libxss1 libgtk-3-0 && \
+    apt-get install -y libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libgbm1 libasound2 libpangocairo-1.0-0 libxss1 libgtk-3-0 \
+                       wget gnupg \
+                       fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf \
+                       libgtk2.0-0 libdrm2 libxkbcommon0 \
+                       chromium && \
     useradd -r cv && \
     mkdir -p /tmp/.yarn-cache && chown -R cv:cv /tmp/.yarn-cache && \
     mkdir -p /home/cv/.cache/yarn && chown -R cv:cv /home/cv && \
@@ -33,9 +40,7 @@ COPY --from=builder --chown=cv:cv /app/next-env.d.ts ./next-env.d.ts
 COPY --from=builder --chown=cv:cv /app/next.config.js ./next.config.js
 COPY --from=builder --chown=cv:cv /app/tsconfig.json ./tsconfig.json
 
-RUN rm -rf node_modules/puppeteer/.local-chromium/* && \
-    node node_modules/puppeteer/install.mjs && \
-    mv /root/.cache/puppeteer /home/cv/.cache/puppeteer && chown -R cv:cv /home/cv/ && \
+RUN chown -R cv:cv /home/cv/ && \
     chown -R cv:cv /app && chmod 700 /app
 
 USER cv
