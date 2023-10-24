@@ -2007,17 +2007,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.2.24":
-  version: 18.2.24
-  resolution: "@types/react@npm:18.2.24"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    "@types/scheduler": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: a83c7ae0010b265012ef038e3e00e4708c27c523f0aa0631e44f934e9c5338a51b6db1901f91d8ba10d3dc292a3a200b2cb5e47430cde58fbf988969866fe75a
-  languageName: node
-  linkType: hard
-
 "@types/resolve@npm:1.17.1":
   version: 1.17.1
   resolution: "@types/resolve@npm:1.17.1"

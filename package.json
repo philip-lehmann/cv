@@ -65,7 +65,7 @@
   "resolutions": {
     "postcss": ">=8.3.5",
     "terser": ">=5.14.2",
-    "@types/react-dom/@types/react": "18.2.24"
+    "@types/react-dom/@types/react": "18.2.31"
   },
   "packageManager": "yarn@4.0.0"
 }
