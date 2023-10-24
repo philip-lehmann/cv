@@ -1,4 +1,4 @@
-FROM bitnami/node:20.8.1 AS builder
+FROM bitnami/node:20.9.0 AS builder
 WORKDIR /app
 ARG NPM_TOKEN
 ARG SITE_URL=https://cv.philiplehmann.ch
@@ -9,7 +9,7 @@ RUN yarn install --immutable && \
     yarn build
 
 # Production image, copy all the files and run next
-FROM bitnami/node:20.8.1 AS runner
+FROM bitnami/node:20.9.0 AS runner
 WORKDIR /app
 
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
