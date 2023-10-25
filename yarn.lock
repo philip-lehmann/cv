@@ -1996,7 +1996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.31":
+"@types/react@npm:*":
   version: 18.2.31
   resolution: "@types/react@npm:18.2.31"
   dependencies:
@@ -2004,6 +2004,17 @@ __metadata:
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: d2793873aef68038e0dc3ee05a573c663fcd3ba7402f1134a633df25aaeb72fd397479d5a5f02e9edc8cd5d000479a73f7bdc64cf00c50fb022c883f22e1fd0f
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:18.2.32":
+  version: 18.2.32
+  resolution: "@types/react@npm:18.2.32"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    "@types/scheduler": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 648662cd852107d7933eee072fa5826069aca1ce15602db8573393ec694780de035cfac4d76f239762e2453b53a4aa8767ae057789661ccfee4d1311040953b9
   languageName: node
   linkType: hard
 
@@ -3478,7 +3489,7 @@ __metadata:
     "@bootstrap-styled/v4": "npm:^3.4.0"
     "@stylelint/postcss-css-in-js": "npm:^0.38.0"
     "@types/node": "npm:^20.8.7"
-    "@types/react": "npm:18.2.31"
+    "@types/react": "npm:18.2.32"
     "@types/react-dom": "npm:18.2.14"
     "@types/styled-components": "npm:^5.1.29"
     "@typescript-eslint/eslint-plugin": "npm:^6.8.0"
