@@ -67,5 +67,5 @@
     "terser": ">=5.14.2",
     "@types/react-dom/@types/react": "18.2.33"
   },
-  "packageManager": "yarn@4.0.0"
+  "packageManager": "yarn@4.0.1"
 }
