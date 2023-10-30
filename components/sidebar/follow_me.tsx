@@ -1,32 +1,32 @@
-import React, { memo } from 'react'
-import { A, Img } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
-import T from 'components/trans'
+import React, { type FC } from 'react';
+import { A, Img } from '@bootstrap-styled/v4';
+import styled from 'styled-components';
+import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
+import { Trans as T } from '@cv/components/trans';
 
 export const ImageSpan = styled('span')`
   line-height: 26px;
-`
+`;
 
 const ANoBreak = styled(A)`
   white-space: nowrap;
   margin: '0 5px';
-`
+`;
 
 const StyledImg = styled(Img)`
   width: '20px';
   height: '20px';
   margin-right: '2px';
-`
+`;
 
 const Devider = styled('span')`
   padding: 0 5px;
   ::before {
     content: '|';
   }
-`
+`;
 
-const FollowMe = memo(() => {
+export const FollowMe: FC = () => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
@@ -65,8 +65,5 @@ const FollowMe = memo(() => {
         </ANoBreak>
       </MyCardBlock>
     </MyCard>
-  )
-})
-FollowMe.displayName = 'FollowMe'
-
-export default FollowMe
+  );
+};

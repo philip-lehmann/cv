@@ -1,9 +1,9 @@
-import React, { memo } from 'react'
+import React, { type FC } from 'react';
 
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
-import T from 'components/trans'
+import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
+import { Trans as T } from '@cv/components/trans';
 
-const ComputerLanguages = memo(() => {
+export const ComputerLanguages: FC = () => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
@@ -16,8 +16,5 @@ const ComputerLanguages = memo(() => {
         Ruby on Rails
       </MyCardBlock>
     </MyCard>
-  )
-})
-ComputerLanguages.displayName = 'Languages'
-
-export default ComputerLanguages
+  );
+};

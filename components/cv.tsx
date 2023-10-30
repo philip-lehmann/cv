@@ -1,15 +1,15 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
-import { Row, Col, Header, H1, H3, Card, CardBlock } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
+import { Row, Col, Header, H1, H3, Card, CardBlock } from '@bootstrap-styled/v4';
+import styled from 'styled-components';
 
-import Experience from 'components/experience'
-import SidebarContent from 'components/sidebar'
-import { LanguageSwitch } from './language_switch'
+import { Experience } from '@cv/components/experience';
+import { Sidebar } from '@cv/components/sidebar';
+import { LanguageSwitch } from './language_switch';
 
 const HomeH1 = styled(H1)`
   margin-top: 100px;
-`
+`;
 
 const SidebarCol = styled(Col)`
   background: linear-gradient(90deg, rgba(222, 222, 224, 1) 0%, rgba(233, 233, 235, 1) 100%);
@@ -17,18 +17,18 @@ const SidebarCol = styled(Col)`
   @media print {
     padding-bottom: 1000px;
   }
-`
+`;
 
 const RowStyled = styled(Row)`
   position: relative;
-`
+`;
 
 export const CV: FC = () => {
   return (
     <RowStyled>
       <LanguageSwitch />
       <SidebarCol sm={4}>
-        <SidebarContent />
+        <Sidebar />
       </SidebarCol>
       <Col sm={8}>
         <Card>
@@ -44,5 +44,5 @@ export const CV: FC = () => {
         <Experience />
       </Col>
     </RowStyled>
-  )
-}
+  );
+};

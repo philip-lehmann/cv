@@ -1,20 +1,20 @@
-import React, { memo } from 'react'
-import { H5, H6 } from '@bootstrap-styled/v4'
-import { useRouter } from 'next/router'
-import { FloatRight } from 'components/float'
-import TooltipBadge from 'components/tooltip_badge'
-import { DashList } from 'components/dash_list'
-import T from 'components/trans'
-import { monthYear, LangType } from 'helpers/date'
+import React, { type FC } from 'react';
+import { H5, H6 } from '@bootstrap-styled/v4';
+import { FloatRight } from '@cv/components/float';
+import TooltipBadge from '@cv/components/tooltip_badge';
+import { DashList } from '@cv/components/dash_list';
+import { Trans as T } from '@cv/components/trans';
+import { monthYear } from '@cv/helpers/date';
+import { useLocale } from '@cv/helpers/use_locale';
 
-export const Steiner = memo(() => {
-  const { locale } = useRouter()
+export const Steiner: FC = () => {
+  const locale = useLocale();
   return (
     <>
-      <H5>steiner ag</H5>
+      <H5>Steiner AG</H5>
       <div>
         <FloatRight>
-          {monthYear('2022-10-01', { locale: locale as LangType })} - <T lang="en">Now</T>
+          {monthYear('2022-10-01', { locale: locale })} - <T lang="en">Now</T>
           <T lang="de">Jetzt</T>
         </FloatRight>
         <H6>
@@ -37,6 +37,5 @@ export const Steiner = memo(() => {
       <TooltipBadge namespace="steiner" progress="80" name="Jira" />{' '}
       <TooltipBadge namespace="steiner" progress="80" name="Confluence" />{' '}
     </>
-  )
-})
-Steiner.displayName = 'Steiner'
+  );
+};

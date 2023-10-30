@@ -1,4 +1,4 @@
-import React, { type FC, type HTMLAttributes } from 'react'
+import React, { type FC, type HTMLAttributes } from 'react';
 
 export const PdfIcon: FC<HTMLAttributes<SVGElement>> = (props) => {
   return (
@@ -23,5 +23,5 @@ c4.755,0,7.78,3.711,7.78,8.553C113.878,159.447,110.863,163.158,106.108,163.158z"
       />
       Sorry, your browser does not support inline SVG.
     </svg>
-  )
-}
+  );
+};

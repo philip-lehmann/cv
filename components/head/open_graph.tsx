@@ -1,11 +1,11 @@
-import React, { memo, FC } from 'react'
+import React, { type FC } from 'react';
 
 type OpenGraphProps = {
-  title: string
-  url: string
-}
+  title: string;
+  url: string;
+};
 
-const OpenGraph: FC<OpenGraphProps> = memo(({ title, url }) => {
+export const OpenGraph: FC<OpenGraphProps> = ({ title, url }) => {
   return (
     <>
       <meta property="og:type" content="website" />
@@ -15,8 +15,5 @@ const OpenGraph: FC<OpenGraphProps> = memo(({ title, url }) => {
       <meta property="og:url" content={url} />
       <meta property="og:image" content={`${url}/apple-touch-icon.png`} />
     </>
-  )
-})
-
-OpenGraph.displayName = 'OpenGraph'
-export default OpenGraph
+  );
+};

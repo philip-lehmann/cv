@@ -1,32 +1,32 @@
-import React, { useEffect } from 'react'
-import { NextPage } from 'next'
-import { useRouter } from 'next/router'
-import Head from 'next/head'
+import React, { useEffect } from 'react';
+import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 
-import { Container } from '@bootstrap-styled/v4'
-import styled from 'styled-components'
-import { Reset } from 'styled-reset'
+import { Container } from '@bootstrap-styled/v4';
+import styled from 'styled-components';
+import { Reset } from 'styled-reset';
 
-import { CV } from 'components/cv'
-import Layout from 'components/layout'
-import { isVideoKey } from 'components/video'
-import hireMe from 'helpers/hire_me'
+import { CV } from '@cv/components/cv';
+import Layout from '@cv/components/layout';
+import { isVideoKey } from '@cv/components/video';
+import hireMe from '@cv/helpers/hire_me';
 
-import Twitter from 'components/head/twitter'
-import OpenGraph from 'components/head/open_graph'
-import Icons from 'components/head/icons'
-import Meta from 'components/head/meta'
-import GoogleAnalytics from 'components/head/google_analytics'
-import Rollbar from 'components/head/rollbar'
-import Connect from 'components/head/connect'
-import Font from 'components/head/font'
-import Canonical from 'components/head/canonical'
-import { LangType } from 'helpers/date'
-import { ConfigProps, ConfigProvider } from 'helpers/config_context'
+import { Twitter } from '@cv/components/head/twitter';
+import { OpenGraph } from '@cv/components/head/open_graph';
+import { Icons } from '@cv/components/head/icons';
+import { Meta } from '@cv/components/head/meta';
+import { GoogleAnalytics } from '@cv/components/head/google_analytics';
+import { Rollbar } from '@cv/components/head/rollbar';
+import { Connect } from '@cv/components/head/connect';
+import { Font } from '@cv/components/head/font';
+import { Canonical } from '@cv/components/head/canonical';
+import { type LangType } from '@cv/helpers/date';
+import { type ConfigProps, ConfigProvider } from '@cv/helpers/config_context';
 
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
-const VideoModal = dynamic(() => import('components/video'), { ssr: false })
+const VideoModal = dynamic(() => import('@cv/components/video'), { ssr: false });
 
 const PrintContainer = styled(Container)`
   @media screen and (max-width: 1024px) {
@@ -35,19 +35,19 @@ const PrintContainer = styled(Container)`
   @media print {
     max-width: calc(100vw - 30px);
   }
-`
+`;
 
 const IndexPage: NextPage<{
-  config: ConfigProps
+  config: ConfigProps;
 }> = ({ config }) => {
-  useEffect(hireMe, [])
-  const { query, locale, defaultLocale, pathname } = useRouter()
-  const video = isVideoKey(query.video) ? query.video : null
-  const { googleAnalyticsKey, rollbarClientToken, env, siteUrl } = config
+  useEffect(hireMe, []);
+  const { query, locale, defaultLocale, pathname } = useRouter();
+  const video = isVideoKey(query.video) ? query.video : null;
+  const { googleAnalyticsKey, rollbarClientToken, env, siteUrl } = config;
 
-  let title = 'Philip Lehmann - Curriculum vitae'
+  let title = 'Philip Lehmann - Curriculum vitae';
   if (video) {
-    title = `${title} - video ${video}`
+    title = `${title} - video ${video}`;
   }
   return (
     <ConfigProvider value={config}>
@@ -72,8 +72,8 @@ const IndexPage: NextPage<{
         </PrintContainer>
       </Layout>
     </ConfigProvider>
-  )
-}
+  );
+};
 
 export const getServerSideProps = () => {
   // eslint-disable-next-line no-console
@@ -83,10 +83,10 @@ export const getServerSideProps = () => {
         googleAnalyticsKey: process.env.GOOGLE_ANALYTICS_KEY,
         rollbarClientToken: process.env.ROLLBAR_CLIENT_TOKEN,
         env: process.env.NODE_ENV || 'development',
-        siteUrl: process.env.SITE_URL || 'http://localhost:3000'
-      }
-    }
-  }
-}
+        siteUrl: process.env.SITE_URL || 'http://localhost:3000',
+      },
+    },
+  };
+};
 
-export default IndexPage
+export default IndexPage;

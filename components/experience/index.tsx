@@ -1,15 +1,16 @@
-import React, { memo } from 'react'
-import { Hr, H6, Card, CardBlock, CardTitle } from '@bootstrap-styled/v4'
-import { Quatico } from 'components/experience/quatico'
-import { Atpoint } from 'components/experience/atpoint'
-import { Insign } from 'components/experience/insign'
-import { Steiner } from 'components/experience/steiner'
-import { DataQuest } from 'components/experience/dataquest'
-import { UsterTechnologies } from 'components/experience/uster_technologies'
-import { FloatRight } from 'components/float'
-import T from 'components/trans'
+import React, { type FC } from 'react';
+import { Hr, H6, Card, CardBlock, CardTitle } from '@bootstrap-styled/v4';
+import { Quatico } from '@cv/components/experience/quatico';
+import { Atpoint } from '@cv/components/experience/atpoint';
+import { Insign } from '@cv/components/experience/insign';
+import { Steiner } from '@cv/components/experience/steiner';
+import { DataQuest } from '@cv/components/experience/dataquest';
+import { Datage } from '@cv/components/experience/datage';
+import { UsterTechnologies } from '@cv/components/experience/uster_technologies';
+import { FloatRight } from '@cv/components/float';
+import { Trans as T } from '@cv/components/trans';
 
-const Experience = memo(() => {
+export const Experience: FC = () => {
   return (
     <>
       <Card>
@@ -21,6 +22,8 @@ const Experience = memo(() => {
           <Steiner />
           <Hr />
           <Quatico />
+          <Hr />
+          <Datage />
           <Hr />
           <Atpoint />
           <Hr />
@@ -76,8 +79,5 @@ const Experience = memo(() => {
         </CardBlock>
       </Card>
     </>
-  )
-})
-Experience.displayName = 'Experience'
-
-export default Experience
+  );
+};

@@ -16,7 +16,7 @@
   },
   "engines": {
     "node": ">= 20.x",
-    "yarn": ">= 1.22.19"
+    "yarn": ">= 4.0.0"
   },
   "cacheDirectories": [
     "node_modules",

@@ -1,13 +1,10 @@
-import React, { memo, FC } from 'react'
+import React, { type FC } from 'react';
 
-const Connect: FC = memo(() => {
+export const Connect: FC = () => {
   return (
     <>
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     </>
-  )
-})
-
-Connect.displayName = 'Connect'
-export default Connect
+  );
+};

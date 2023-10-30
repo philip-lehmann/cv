@@ -1,6 +1,6 @@
-import React, { FC, PropsWithChildren } from 'react'
-import BootstrapProvider from '@bootstrap-styled/provider'
-import { darken, lighten } from 'polished'
+import React, { FC, PropsWithChildren } from 'react';
+import BootstrapProvider from '@bootstrap-styled/provider';
+import { darken, lighten } from 'polished';
 
 const theme = {
   '$card-border-width': 'none',
@@ -11,11 +11,11 @@ const theme = {
   '$link-decoration': 'none',
   '$link-hover-color': darken(0.4, '#343436'),
   '$link-hover-decoration': 'underline',
-  '$brand-primary': lighten(0.4, '#343436')
-}
+  '$brand-primary': lighten(0.4, '#343436'),
+};
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
-  return <BootstrapProvider theme={theme}>{children}</BootstrapProvider>
-}
+  return <BootstrapProvider theme={theme}>{children}</BootstrapProvider>;
+};
 
-export default Layout
+export default Layout;

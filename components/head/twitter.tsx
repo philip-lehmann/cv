@@ -1,11 +1,11 @@
-import React, { memo, FC } from 'react'
+import React, { type FC } from 'react';
 
 type TwitterProps = {
-  title: string
-  url: string
-}
+  title: string;
+  url: string;
+};
 
-const Twitter: FC<TwitterProps> = memo(({ title, url }) => {
+export const Twitter: FC<TwitterProps> = ({ title, url }) => {
   return (
     <>
       <meta name="twitter:card" content={title} />
@@ -15,8 +15,5 @@ const Twitter: FC<TwitterProps> = memo(({ title, url }) => {
       <meta name="twitter:image" content={`${url}/android-chrome-192x192.png`} />
       <meta name="twitter:creator" content="@philiplehmann" />
     </>
-  )
-})
-
-Twitter.displayName = 'Twitter'
-export default Twitter
+  );
+};

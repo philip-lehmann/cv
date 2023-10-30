@@ -1,23 +1,23 @@
-import getConfig from 'next/config'
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { Client } from 'minio'
+import getConfig from 'next/config';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { Client } from 'minio';
 
 const {
-  serverRuntimeConfig: { minioEndpoint, minioAccessKey, minioSecretKey, minioBucketName }
-} = getConfig()
+  serverRuntimeConfig: { minioEndpoint, minioAccessKey, minioSecretKey, minioBucketName },
+} = getConfig();
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const { name } = req.query
+  const { name } = req.query;
 
   const client = new Client({
     endPoint: minioEndpoint,
     port: 443,
     useSSL: true,
     accessKey: minioAccessKey,
-    secretKey: minioSecretKey
-  })
+    secretKey: minioSecretKey,
+  });
 
-  client.getObject(minioBucketName, `videos/${name}`)
-  const url = await client.presignedGetObject(minioBucketName, `videos/${name}`, 3600)
-  res.redirect(url)
-}
+  client.getObject(minioBucketName, `videos/${name}`);
+  const url = await client.presignedGetObject(minioBucketName, `videos/${name}`, 3600);
+  res.redirect(url);
+};

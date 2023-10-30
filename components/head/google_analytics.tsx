@@ -1,11 +1,11 @@
-import React, { memo, FC } from 'react'
+import React, { type FC } from 'react';
 
 type GoogleAnalyticsProps = {
-  googleAnalyticsKey: string
-}
+  googleAnalyticsKey: string;
+};
 
-const GoogleAnalytics: FC<GoogleAnalyticsProps> = memo(({ googleAnalyticsKey }: GoogleAnalyticsProps) => {
-  if (!googleAnalyticsKey) return null
+export const GoogleAnalytics: FC<GoogleAnalyticsProps> = ({ googleAnalyticsKey }: GoogleAnalyticsProps) => {
+  if (!googleAnalyticsKey) return null;
   return (
     <>
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsKey}`}></script>
@@ -15,12 +15,9 @@ const GoogleAnalytics: FC<GoogleAnalyticsProps> = memo(({ googleAnalyticsKey }: 
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
     
-              gtag('config', '${googleAnalyticsKey}');`
+              gtag('config', '${googleAnalyticsKey}');`,
         }}
       />
     </>
-  )
-})
-
-GoogleAnalytics.displayName = 'GoogleAnalytics'
-export default GoogleAnalytics
+  );
+};

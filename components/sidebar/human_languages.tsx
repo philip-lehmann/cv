@@ -1,9 +1,9 @@
-import React, { memo } from 'react'
+import React, { type FC } from 'react';
 
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
-import T from 'components/trans'
+import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
+import { Trans as T } from '@cv/components/trans';
 
-const HumanLanguages = memo(() => {
+export const HumanLanguages: FC = () => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
@@ -21,8 +21,5 @@ const HumanLanguages = memo(() => {
         <T lang="de">Englisch: fliessend</T>
       </MyCardBlock>
     </MyCard>
-  )
-})
-HumanLanguages.displayName = 'HumanLanguages'
-
-export default HumanLanguages
+  );
+};

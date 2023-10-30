@@ -1,22 +1,21 @@
-import React, { memo } from 'react'
+import React, { type FC } from 'react';
 
-import { H5, H6 } from '@bootstrap-styled/v4'
-import { useRouter } from 'next/router'
-import { FloatRight } from 'components/float'
-import TooltipBadge from 'components/tooltip_badge'
-import { DashList, Dash } from 'components/dash_list'
-import T from 'components/trans'
-import { monthYear, LangType } from 'helpers/date'
+import { H5, H6 } from '@bootstrap-styled/v4';
+import { FloatRight } from '@cv/components/float';
+import TooltipBadge from '@cv/components/tooltip_badge';
+import { DashList, Dash } from '@cv/components/dash_list';
+import { Trans as T } from '@cv/components/trans';
+import { monthYear } from '@cv/helpers/date';
+import { useLocale } from '@cv/helpers/use_locale';
 
-export const DataQuest = memo(() => {
-  const { locale } = useRouter()
+export const DataQuest: FC = () => {
+  const locale = useLocale();
   return (
     <>
       <H5>DataQuest</H5>
       <div>
         <FloatRight>
-          {monthYear('2006-08-01', { locale: locale as LangType })} -{' '}
-          {monthYear('2006-11-01', { locale: locale as LangType })}
+          {monthYear('2006-08-01', { locale: locale })} - {monthYear('2006-11-01', { locale: locale })}
         </FloatRight>
         <H6>
           <T lang="en">Service Desk - Support</T>
@@ -33,6 +32,5 @@ export const DataQuest = memo(() => {
       </DashList>
       <TooltipBadge namespace="dataquest" progress="60" name="Java" />
     </>
-  )
-})
-DataQuest.displayName = 'DataQuest'
+  );
+};

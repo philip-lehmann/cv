@@ -1,21 +1,22 @@
-import React, { memo } from 'react'
-import { H5, H6 } from '@bootstrap-styled/v4'
-import { useRouter } from 'next/router'
-import { FloatRight } from 'components/float'
-import TooltipBadge from 'components/tooltip_badge'
-import { DashList, Dash } from 'components/dash_list'
-import T from 'components/trans'
-import { monthYear, LangType } from 'helpers/date'
+import React, { type FC } from 'react';
+import { H5, H6 } from '@bootstrap-styled/v4';
+import { FloatRight } from '@cv/components/float';
+import TooltipBadge from '@cv/components/tooltip_badge';
+import { DashList, Dash } from '@cv/components/dash_list';
+import { Trans as T } from '@cv/components/trans';
+import { monthYear } from '@cv/helpers/date';
+import { useLocale } from '@cv/helpers/use_locale';
+import { LineBreak } from '@cv/components/print';
 
-export const UsterTechnologies = memo(() => {
-  const { locale } = useRouter()
+export const UsterTechnologies: FC = () => {
+  const locale = useLocale();
   return (
     <>
+      <LineBreak />
       <H5>Uster Technologies</H5>
       <div>
         <FloatRight>
-          {monthYear('2002-08-01', { locale: locale as LangType })} -{' '}
-          {monthYear('2006-07-01', { locale: locale as LangType })}
+          {monthYear('2002-08-01', { locale: locale })} - {monthYear('2006-07-01', { locale: locale })}
         </FloatRight>
         <H6>
           <T lang="en">Apprenticeship System Engineer</T>
@@ -48,6 +49,5 @@ export const UsterTechnologies = memo(() => {
       <TooltipBadge namespace="uster_technologies" progress="60" name="Java" />{' '}
       <TooltipBadge namespace="uster_technologies" progress="80" name="Mysql" />
     </>
-  )
-})
-UsterTechnologies.displayName = 'UsterTechnologies'
+  );
+};

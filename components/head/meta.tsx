@@ -1,10 +1,10 @@
-import React, { memo, FC } from 'react'
+import React, { type FC } from 'react';
 
 type MetaProps = {
-  title: string
-}
+  title: string;
+};
 
-const Meta: FC<MetaProps> = memo(({ title }) => {
+export const Meta: FC<MetaProps> = ({ title }) => {
   return (
     <>
       <link rel="manifest" href="/manifest.json" />
@@ -22,8 +22,5 @@ const Meta: FC<MetaProps> = memo(({ title }) => {
       <meta name="msapplication-tap-highlight" content="no" />
       <meta name="theme-color" content="#000000" />
     </>
-  )
-})
-
-Meta.displayName = 'Meta'
-export default Meta
+  );
+};

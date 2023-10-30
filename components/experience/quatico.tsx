@@ -1,21 +1,20 @@
-import React, { memo } from 'react'
-import { H5, H6 } from '@bootstrap-styled/v4'
-import { useRouter } from 'next/router'
-import { FloatRight } from 'components/float'
-import TooltipBadge from 'components/tooltip_badge'
-import { DashList, Dash } from 'components/dash_list'
-import T from 'components/trans'
-import { monthYear, LangType } from 'helpers/date'
+import React, { type FC } from 'react';
+import { H5, H6 } from '@bootstrap-styled/v4';
+import { FloatRight } from '@cv/components/float';
+import TooltipBadge from '@cv/components/tooltip_badge';
+import { DashList, Dash } from '@cv/components/dash_list';
+import { Trans as T } from '@cv/components/trans';
+import { monthYear } from '@cv/helpers/date';
+import { useLocale } from '@cv/helpers/use_locale';
 
-export const Quatico = memo(() => {
-  const { locale } = useRouter()
+export const Quatico: FC = () => {
+  const locale = useLocale();
   return (
     <>
-      <H5>quatico solution ag</H5>
+      <H5>Quatico Solution AG</H5>
       <div>
         <FloatRight>
-          {monthYear('2022-01-01', { locale: locale as LangType })} -{' '}
-          {monthYear('2022-09-30', { locale: locale as LangType })}
+          {monthYear('2021-09-01', { locale: locale })} - {monthYear('2022-09-30', { locale: locale })}
         </FloatRight>
         <H6>
           <T lang="en">Agile Team Lead</T>
@@ -34,8 +33,7 @@ export const Quatico = memo(() => {
       </DashList>
       <div>
         <FloatRight>
-          {monthYear('2021-09-01', { locale: locale as LangType })} -{' '}
-          {monthYear('2022-01-01', { locale: locale as LangType })}
+          {monthYear('2021-09-01', { locale: locale })} - {monthYear('2022-01-01', { locale: locale })}
         </FloatRight>
         <H6>
           <T lang="en">Senior Frontend Developer</T>
@@ -75,6 +73,5 @@ export const Quatico = memo(() => {
       <TooltipBadge namespace="quatico" progress="80" name="Confluence" />{' '}
       <TooltipBadge namespace="quatico" progress="80" name="Bitbucket" />{' '}
     </>
-  )
-})
-Quatico.displayName = 'Quatico'
+  );
+};

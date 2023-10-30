@@ -1,6 +1,6 @@
-import React, { memo, FC } from 'react'
+import React, { type FC } from 'react';
 
-const Icons: FC = memo(() => {
+export const Icons: FC = () => {
   return (
     <>
       <link rel="apple-touch-icon" href="/touch-icon-iphone.png" />
@@ -19,8 +19,5 @@ const Icons: FC = memo(() => {
       <link rel="icon" sizes="192x192" href="/favicon-192x192.png" />
       <link rel="icon" sizes="512x512" href="/favicon-512x512.png" />
     </>
-  )
-})
-
-Icons.displayName = 'Icons'
-export default Icons
+  );
+};

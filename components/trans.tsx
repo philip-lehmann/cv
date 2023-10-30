@@ -1,18 +1,16 @@
-import React, { type FC, memo, type PropsWithChildren } from 'react'
-import { useRouter } from 'next/router'
-import { type LangType } from 'helpers/date'
+import React, { type FC, memo, type PropsWithChildren } from 'react';
+import { type LangType } from '@cv/helpers/date';
+import { useLocale } from '@cv/helpers/use_locale';
 
 interface TransProps {
-  lang: LangType
+  lang: LangType;
 }
 
-type ComponentProps = PropsWithChildren<TransProps>
+type ComponentProps = PropsWithChildren<TransProps>;
 
-const Trans: FC<ComponentProps> = ({ lang, children }) => {
-  const { locale } = useRouter()
-  if (locale != lang) return null
-  return <>{children}</>
-}
-Trans.displayName = 'Trans'
-
-export default memo<ComponentProps>(Trans)
+export const Trans: FC<ComponentProps> = memo(({ lang, children }) => {
+  const locale = useLocale();
+  if (locale !== lang) return null;
+  return <>{children}</>;
+});
+Trans.displayName = 'Trans';

@@ -1,10 +1,10 @@
-import React, { memo } from 'react'
+import React, { type FC } from 'react';
 
-import { CardText, A } from '@bootstrap-styled/v4'
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
-import T from 'components/trans'
+import { CardText, A } from '@bootstrap-styled/v4';
+import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
+import { Trans as T } from '@cv/components/trans';
 
-const Contact = memo(() => {
+export const Contact: FC = () => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
@@ -32,8 +32,5 @@ const Contact = memo(() => {
         </CardText>
       </MyCardBlock>
     </MyCard>
-  )
-})
-Contact.displayName = 'Contact'
-
-export default Contact
+  );
+};

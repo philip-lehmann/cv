@@ -1,22 +1,22 @@
-import React, { memo, useState, useMemo } from 'react'
-import styled from 'styled-components'
-import { Badge, Tooltip, Progress, ProgressBar, A } from '@bootstrap-styled/v4'
+import React, { memo, useState, useMemo } from 'react';
+import styled from 'styled-components';
+import { Badge, Tooltip, Progress, ProgressBar, A } from '@bootstrap-styled/v4';
 
 const ProgressWith = styled(Progress)`
   min-width: 100px;
-`
+`;
 
 interface TooltipBadgeProps {
-  name: string
-  namespace: string
-  progress: string
+  name: string;
+  namespace: string;
+  progress: string;
 }
 
 const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const id = useMemo(() => {
-    return `tooltip-${name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${namespace}`
-  }, [name, namespace])
+    return `tooltip-${name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${namespace}`;
+  }, [name, namespace]);
 
   return (
     <>
@@ -30,8 +30,8 @@ const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress }) => 
         </ProgressWith>
       </Tooltip>
     </>
-  )
-})
-TooltipBadge.displayName = 'TooltipBadge'
+  );
+});
+TooltipBadge.displayName = 'TooltipBadge';
 
-export default TooltipBadge
+export default TooltipBadge;

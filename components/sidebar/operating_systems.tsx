@@ -1,14 +1,14 @@
-import React, { memo } from 'react'
-import styled from 'styled-components'
+import React, { type FC } from 'react';
+import styled from 'styled-components';
 
-import { MyCard, MyCardBlock, MyCardTitle } from 'components/sidebar/card'
-import T from 'components/trans'
+import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
+import { Trans as T } from '@cv/components/trans';
 
 const SpanNoBreak = styled('span')`
   white-space: nowrap;
-`
+`;
 
-const OperatingSystems = memo(() => {
+export const OperatingSystems: FC = () => {
   return (
     <MyCard backgroundColor="transparent">
       <MyCardBlock>
@@ -35,8 +35,5 @@ const OperatingSystems = memo(() => {
         </SpanNoBreak>
       </MyCardBlock>
     </MyCard>
-  )
-})
-OperatingSystems.displayName = 'OperatingSystems'
-
-export default OperatingSystems
+  );
+};
