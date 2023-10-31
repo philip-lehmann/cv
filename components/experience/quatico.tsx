@@ -24,7 +24,7 @@ export const Quatico = memo(() => {
       </div>
       <DashList>
         <Dash>
-          <T lang="en">Estimating tasks for client aproval</T>
+          <T lang="en">Estimating tasks for client approval</T>
           <T lang="de">Aufwandschätzungen erstellen für Kundenwünsche</T>
         </Dash>
         <Dash>
