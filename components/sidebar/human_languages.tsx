@@ -14,10 +14,10 @@ export const HumanLanguages: FC = () => {
         <T lang="en">Swiss German: Native</T>
         <T lang="de">Schweizerdeutsch: Muttersprache</T>
         <br />
-        <T lang="en">German: Business fluent</T>
+        <T lang="en">German: Business Fluent</T>
         <T lang="de">Deutsch: fliessend</T>
         <br />
-        <T lang="en">English: Business fluent</T>
+        <T lang="en">English: Business Fluent</T>
         <T lang="de">Englisch: fliessend</T>
       </MyCardBlock>
     </MyCard>
