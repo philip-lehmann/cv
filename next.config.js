@@ -2,10 +2,11 @@
 /* global require, module, __dirname, process */
 require('dotenv').config();
 const path = require('path');
+const runtimeCaching = require('next-pwa/cache');
 const withPWA = require('next-pwa')({
   dest: 'public',
+  runtimeCaching,
 });
-const runtimeCaching = require('next-pwa/cache');
 
 const config = {
   serverRuntimeConfig: {
@@ -21,10 +22,6 @@ const config = {
   i18n: {
     locales: ['en', 'de'],
     defaultLocale: process.env.DEFAULT_LOCALE || 'en',
-  },
-  pwa: {
-    dest: 'public',
-    runtimeCaching,
   },
   webpack: (config) => {
     config.resolve.alias['@cv/components'] = path.resolve(__dirname, 'components');
