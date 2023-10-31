@@ -34,7 +34,7 @@ const videoTitle = Object.freeze({
 });
 export type VideoType = keyof typeof videoTitle;
 export const VideoKeys = Object.freeze(Object.getOwnPropertyNames(videoTitle) as VideoType[]);
-export const isVideoKey = (source: string | string[] | null): source is VideoType => {
+export const isVideoKey = (source: string | string[] | undefined): source is VideoType => {
   return typeof source === 'string' && (VideoKeys as string[]).includes(source);
 };
 
