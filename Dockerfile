@@ -21,29 +21,29 @@ RUN apt-get update && \
                        fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf \
                        libgtk2.0-0 libdrm2 libxkbcommon0 \
                        chromium && \
-    useradd -r cv && \
-    mkdir -p /tmp/.yarn-cache && chown -R cv:cv /tmp/.yarn-cache && \
-    mkdir -p /home/cv/.cache/yarn && chown -R cv:cv /home/cv && \
-    touch yarn-error.log && chown -R cv:cv yarn-error.log
+    mkdir -p /tmp/.yarn-cache && chown -R 1001:1001 /tmp/.yarn-cache && \
+    mkdir -p /home/cv/.cache/yarn && chown -R 1001:1001 /home/cv && \
+    touch yarn-error.log && chown -R 1001:1001 yarn-error.log
 
 
-COPY --from=builder --chown=cv:cv /app/package.json ./package.json
-COPY --from=builder --chown=cv:cv /app/yarn.lock ./yarn.lock
-COPY --from=builder --chown=cv:cv /app/node_modules ./node_modules
-COPY --from=builder --chown=cv:cv /app/components ./components
-COPY --from=builder --chown=cv:cv /app/helpers ./helpers
-COPY --from=builder --chown=cv:cv /app/pages ./pages
-COPY --from=builder --chown=cv:cv /app/public ./public
-COPY --from=builder --chown=cv:cv /app/styles ./styles
-COPY --from=builder --chown=cv:cv /app/.next ./.next
-COPY --from=builder --chown=cv:cv /app/next-env.d.ts ./next-env.d.ts
-COPY --from=builder --chown=cv:cv /app/next.config.js ./next.config.js
-COPY --from=builder --chown=cv:cv /app/tsconfig.json ./tsconfig.json
+COPY --from=builder --chown=1001:1001 /app/package.json ./package.json
+COPY --from=builder --chown=1001:1001 /app/yarn.lock ./yarn.lock
+COPY --from=builder --chown=1001:1001 /app/node_modules ./node_modules
+COPY --from=builder --chown=1001:1001 /app/components ./components
+COPY --from=builder --chown=1001:1001 /app/helpers ./helpers
+COPY --from=builder --chown=1001:1001 /app/pages ./pages
+COPY --from=builder --chown=1001:1001 /app/public ./public
+COPY --from=builder --chown=1001:1001 /app/styles ./styles
+COPY --from=builder --chown=1001:1001 /app/.next ./.next
+COPY --from=builder --chown=1001:1001 /app/next-env.d.ts ./next-env.d.ts
+COPY --from=builder --chown=1001:1001 /app/next.config.js ./next.config.js
+COPY --from=builder --chown=1001:1001 /app/tsconfig.json ./tsconfig.json
 
-RUN chown -R cv:cv /home/cv/ && \
-    chown -R cv:cv /app && chmod 700 /app
+RUN chown -R 1001:1001 /home/cv/ && \
+    chown -R 1001:1001 /app && chmod 700 /app
 
-USER cv
+USER 1001
+RUN chown -R 1001:1001 /app
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
