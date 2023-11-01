@@ -37,4 +37,50 @@ spec:
                 
           ports:
             - containerPort: 3000
+          resources:
+            requests:
+              memory: "150Mi"
+              cpu: "0.1"
+            limits:
+              memory: "300Mi"
+              cpu: "1"
+          command:
+            - node
+          args:
+            - --max-old-space-size=250
+            - node_modules/.bin/next
+            - start
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: true
+            runAsUser: 1001
+            capabilities: {}
+          livenessProbe:
+            httpGet:
+              path: /health/liveness_check
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health/readiness_check
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            failureThreshold: 3
+          startupProbe:
+            failureThreshold: 10
+            httpGet:
+              path: /
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            successThreshold: 1
+            timeoutSeconds: 5
+
       restartPolicy: Always
+      
