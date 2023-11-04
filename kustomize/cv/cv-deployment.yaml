@@ -59,14 +59,14 @@ spec:
             capabilities: {}
           livenessProbe:
             httpGet:
-              path: /health/liveness_check
+              path: /api/health/liveness_check
               port: 3000
             initialDelaySeconds: 10
             periodSeconds: 15
             failureThreshold: 3
           readinessProbe:
             httpGet:
-              path: /health/readiness_check
+              path: /api/health/readiness_check
               port: 3000
             initialDelaySeconds: 10
             periodSeconds: 15
