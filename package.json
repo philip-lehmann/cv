@@ -45,7 +45,7 @@
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "@types/node": "^20.8.7",
-    "@types/react": "18.2.40",
+    "@types/react": "18.2.41",
     "@types/react-dom": "18.2.17",
     "@types/styled-components": "^5.1.29",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
@@ -65,7 +65,7 @@
   "resolutions": {
     "postcss": ">=8.3.5",
     "terser": ">=5.14.2",
-    "@types/react-dom/@types/react": "18.2.40"
+    "@types/react-dom/@types/react": "18.2.41"
   },
   "packageManager": "yarn@4.0.2"
 }
