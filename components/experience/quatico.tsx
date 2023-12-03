@@ -14,7 +14,7 @@ export const Quatico: FC = () => {
       <H5>Quatico Solution AG</H5>
       <div>
         <FloatRight>
-          {monthYear('2021-09-01', { locale: locale })} - {monthYear('2022-09-30', { locale: locale })}
+          {monthYear('2022-01-01', { locale: locale })} - {monthYear('2022-09-30', { locale: locale })}
         </FloatRight>
         <H6>
           <T lang="en">Agile Team Lead</T>

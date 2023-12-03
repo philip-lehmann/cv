@@ -20,4 +20,5 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
   client.getObject(minioBucketName, `videos/${name}`);
   const url = await client.presignedGetObject(minioBucketName, `videos/${name}`, 3600);
   res.redirect(url);
+  res.end();
 };
