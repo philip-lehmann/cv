@@ -84,18 +84,8 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
   useEffect(() => {
     setOpen(true);
   }, []);
-  useEffect(() => {
-    if (
-      videoRef.current &&
-      window.navigator.userAgent.toLowerCase().includes('edg') &&
-      window.navigator.platform === 'Win32'
-    ) {
-      const src = videoRef.current?.querySelector("source[type='video/mp4; codecs=avc1']")?.getAttribute('src');
-      if (src) {
-        videoRef.current.src = src;
-      }
-    }
-  }, [videoRef.current]);
+
+  const isMSEdge = window.navigator.userAgent.toLowerCase().includes('edg') && window.navigator.platform === 'Win32';
 
   useDisableScroll({ element: document.body, disabled: open });
 
@@ -104,7 +94,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
       <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
       <ModalBody>
         <video controls width="100%" ref={videoRef}>
-          <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />
+          {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
           <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
           <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
           <source src={`/api/video/${video}.webm`} type="video/webm" />
