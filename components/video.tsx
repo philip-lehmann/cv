@@ -84,6 +84,19 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
   useEffect(() => {
     setOpen(true);
   }, []);
+  useEffect(() => {
+    if (
+      videoRef.current &&
+      window.navigator.userAgent.toLowerCase().includes('edg') &&
+      window.navigator.platform === 'Win32'
+    ) {
+      const src = videoRef.current?.querySelector("source[type='video/mp4; codecs=avc1']")?.getAttribute('src');
+      if (src) {
+        videoRef.current.src = src;
+      }
+    }
+  }, [videoRef.current]);
+
   useDisableScroll({ element: document.body, disabled: open });
 
   return createPortal(
