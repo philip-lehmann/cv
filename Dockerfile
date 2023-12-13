@@ -20,35 +20,20 @@ RUN apt-get update && \
                        wget gnupg \
                        fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf \
                        libgtk2.0-0 libdrm2 libxkbcommon0 \
-                       chromium && \
-    mkdir -p /tmp/.yarn-cache && chown -R 1001:1001 /tmp/.yarn-cache && \
-    mkdir -p /home/cv/.cache/yarn && chown -R 1001:1001 /home/cv && \
-    touch yarn-error.log && chown -R 1001:1001 yarn-error.log
+                       chromium
 
-
-COPY --from=builder --chown=1001:1001 /app/package.json ./package.json
-COPY --from=builder --chown=1001:1001 /app/yarn.lock ./yarn.lock
-COPY --from=builder --chown=1001:1001 /app/node_modules ./node_modules
-COPY --from=builder --chown=1001:1001 /app/components ./components
-COPY --from=builder --chown=1001:1001 /app/helpers ./helpers
-COPY --from=builder --chown=1001:1001 /app/pages ./pages
-COPY --from=builder --chown=1001:1001 /app/public ./public
-COPY --from=builder --chown=1001:1001 /app/styles ./styles
-COPY --from=builder --chown=1001:1001 /app/.next ./.next
-COPY --from=builder --chown=1001:1001 /app/next-env.d.ts ./next-env.d.ts
-COPY --from=builder --chown=1001:1001 /app/next.config.js ./next.config.js
-COPY --from=builder --chown=1001:1001 /app/tsconfig.json ./tsconfig.json
-
-RUN chown -R 1001:1001 /home/cv/ && \
-    chown -R 1001:1001 /app && chmod 700 /app
-
-RUN mkdir -p /usr/local/sbin/chrome-devel-sandbox chromium-data && \
-    chown 1001:1001 /usr/local/sbin/chrome-devel-sandbox chromium-data && \
-    chmod 4755 /usr/local/sbin/chrome-devel-sandbox chromium-data
-ENV CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
-
-USER 1001
-RUN chown -R 1001:1001 /app
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/yarn.lock ./yarn.lock
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/components ./components
+COPY --from=builder /app/helpers ./helpers
+COPY --from=builder /app/pages ./pages
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/styles ./styles
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/next-env.d.ts ./next-env.d.ts
+COPY --from=builder /app/next.config.js ./next.config.js
+COPY --from=builder /app/tsconfig.json ./tsconfig.json
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry

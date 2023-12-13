@@ -24,7 +24,7 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
     const browser = await puppeteer.launch({
       headless: 'new',
       userDataDir: './chromium-data',
-      // args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox'],
     });
     const page = await browser.newPage();
     const url = `${siteUrl}/${locale}`;

@@ -54,8 +54,8 @@ spec:
             allowPrivilegeEscalation: false
             privileged: false
             readOnlyRootFilesystem: false
-            runAsNonRoot: true
-            runAsUser: 1001
+            # runAsNonRoot: true
+            # runAsUser: 1001
             capabilities: {}
           livenessProbe:
             httpGet:
