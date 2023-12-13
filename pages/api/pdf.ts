@@ -23,7 +23,7 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
   } else {
     const browser = await puppeteer.launch({
       headless: 'new',
-      // args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
     const page = await browser.newPage();
     const url = `${siteUrl}/${locale}`;
