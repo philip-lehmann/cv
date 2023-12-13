@@ -42,9 +42,9 @@ COPY --from=builder --chown=1001:1001 /app/tsconfig.json ./tsconfig.json
 RUN chown -R 1001:1001 /home/cv/ && \
     chown -R 1001:1001 /app && chmod 700 /app
 
-RUN mkdir -p /usr/local/sbin/chrome-devel-sandbox && \
-    chown 1001:1001 /usr/local/sbin/chrome-devel-sandbox && \
-    chmod 4755 /usr/local/sbin/chrome-devel-sandbox
+RUN mkdir -p /usr/local/sbin/chrome-devel-sandbox chromium-data && \
+    chown 1001:1001 /usr/local/sbin/chrome-devel-sandbox chromium-data && \
+    chmod 4755 /usr/local/sbin/chrome-devel-sandbox chromium-data
 ENV CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 USER 1001
