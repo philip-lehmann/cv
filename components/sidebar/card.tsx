@@ -8,6 +8,5 @@ export const MyCardBlock = styled(CardBlock)`
 `;
 
 export const MyCardTitle = styled(CardTitle)`
-  border-bottom: 2px solid $black;
   padding-bottom: 5px;
 `;

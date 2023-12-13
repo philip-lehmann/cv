@@ -15,7 +15,7 @@ const SidebarCol = styled(Col)`
   background: linear-gradient(90deg, rgba(222, 222, 224, 1) 0%, rgba(233, 233, 235, 1) 100%);
   min-height: 100vh;
   @media print {
-    padding-bottom: 1000px;
+    height: 300vh;
   }
 `;
 
