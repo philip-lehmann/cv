@@ -8263,11 +8263,11 @@ __metadata:
   linkType: hard
 
 "styled-reset@npm:^4.5.1":
-  version: 4.5.1
-  resolution: "styled-reset@npm:4.5.1"
+  version: 4.5.2
+  resolution: "styled-reset@npm:4.5.2"
   peerDependencies:
     styled-components: ">=4.0.0 || >=5.0.0 || >=6.0.0"
-  checksum: 0760385cbb6c39e69995b87485b6710b44d69d243b796f3d1e5057e1c92b23317d48a203001e33d7f918b43b9e046ea3470a0a5b48a60b63724e0f13afc81bf3
+  checksum: 3e15586d2b4c1c37c473058747269d20ee4dcd88205718cec8f7c9c3b2cb99a220eddd958c073d1d9179e7b9682f6d601048fe62753ea789d661989d27bc8e00
   languageName: node
   linkType: hard
 
