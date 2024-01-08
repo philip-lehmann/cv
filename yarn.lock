@@ -8211,8 +8211,8 @@ __metadata:
   linkType: hard
 
 "styled-components@npm:^6.1.0":
-  version: 6.1.6
-  resolution: "styled-components@npm:6.1.6"
+  version: 6.1.7
+  resolution: "styled-components@npm:6.1.7"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.2.1"
     "@emotion/unitless": "npm:0.8.0"
@@ -8224,9 +8224,36 @@ __metadata:
     stylis: "npm:4.3.1"
     tslib: "npm:2.5.0"
   peerDependencies:
-    react: ">= 16.8.0"
-    react-dom: ">= 16.8.0"
-  checksum: 935f621c99b0b04df918f644219a99575b97a32cc4215e16af5bc6596b0c0270162405eef1aa03f68ac84eea9bba4b0445ae10ed39541f975c74d17264f7c22b
+    "@emotion/is-prop-valid": ^1.2.1
+    "@emotion/unitless": ">= 0.8.0"
+    "@types/stylis": ^4.2.0
+    css-to-react-native: ^3.2.0
+    csstype: ^3.1.2
+    postcss: ^8.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    shallowequal: ^1.1.0
+    tslib: ^2.5.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    "@emotion/unitless":
+      optional: true
+    "@types/stylis":
+      optional: true
+    css-to-react-native:
+      optional: true
+    csstype:
+      optional: true
+    postcss:
+      optional: true
+    react-dom:
+      optional: true
+    shallowequal:
+      optional: true
+    tslib:
+      optional: true
+  checksum: 2f7a2c5ad04b9c71b252e50096298fe2775525fd51316ce7685e7df55492fdde9ec511adeb61c6043d22bb5f2098be2166df78479d7d934e58f49eea6dbc68e7
   languageName: node
   linkType: hard
 
