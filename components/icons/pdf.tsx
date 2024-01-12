@@ -1,8 +1,9 @@
-import React, { type FC, type HTMLAttributes } from 'react';
+import type { FC, HTMLAttributes } from 'react';
 
 export const PdfIcon: FC<HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg {...props} viewBox="0 0 309.267 309.267" xmlns="http://www.w3.org/2000/svg">
+      <title>PDF</title>
       <path
         fill="#E2574C"
         d="M38.658,0h164.23l87.049,86.711v203.227c0,10.679-8.659,19.329-19.329,19.329H38.658

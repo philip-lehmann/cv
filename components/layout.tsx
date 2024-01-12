@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import BootstrapProvider from '@bootstrap-styled/provider';
 import { darken, lighten } from 'polished';
 

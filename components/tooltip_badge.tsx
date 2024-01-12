@@ -1,5 +1,5 @@
-import React, { memo, useState, useMemo } from 'react';
-import styled from 'styled-components';
+import { memo, useState, useMemo } from 'react';
+import { styled } from 'styled-components';
 import { Badge, Tooltip, Progress, ProgressBar, A } from '@bootstrap-styled/v4';
 
 const ProgressWith = styled(Progress)`

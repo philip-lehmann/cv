@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { Hr } from '@bootstrap-styled/v4';
 
 export const HrPrintHidden = styled(Hr)`

@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 import { LangType } from '@cv/helpers/date';
 import { useConfig } from '@cv/helpers/config_context';
 

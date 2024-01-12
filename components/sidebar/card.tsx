@@ -1,5 +1,5 @@
 import { Card, CardBlock, CardTitle } from '@bootstrap-styled/v4';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 export const MyCard = styled(Card)``;
 

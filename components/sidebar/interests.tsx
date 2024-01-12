@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 
 import { CardText } from '@bootstrap-styled/v4';
 import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';

@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import type { FC } from 'react';
 
 import { Row, Col, Header, H1, H3, Card, CardBlock } from '@bootstrap-styled/v4';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 import { Experience } from '@cv/components/experience';
 import { Sidebar } from '@cv/components/sidebar';

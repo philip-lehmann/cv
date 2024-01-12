@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 
 import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
 import { Trans as T } from '@cv/components/trans';

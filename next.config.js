@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* global require, module, __dirname, process */
 require('dotenv').config();
 const path = require('path');
 const runtimeCaching = require('next-pwa/cache');

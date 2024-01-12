@@ -1,4 +1,6 @@
 declare module '@bootstrap-styled/provider' {
-  const provider: any;
+  import { PropsWithChildren, ReactComponentElement } from 'react';
+
+  const provider: ComponentType<PropsWithChildren<{ theme: Record<string, string> }>>;
   export default provider;
 }

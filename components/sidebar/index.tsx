@@ -1,5 +1,5 @@
-import React, { type FC } from 'react';
-import styled from 'styled-components';
+import type { FC } from 'react';
+import { styled } from 'styled-components';
 import { AboutMe } from '@cv/components/sidebar/about_me';
 import { Contact } from '@cv/components/sidebar/contact';
 import { FollowMe } from '@cv/components/sidebar/follow_me';

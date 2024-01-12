@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 import { Hr, H6, Card, CardBlock, CardTitle } from '@bootstrap-styled/v4';
 import { Quatico } from '@cv/components/experience/quatico';
 import { Atpoint } from '@cv/components/experience/atpoint';

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import { Button, ButtonGroup, Col } from '@bootstrap-styled/v4';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { PdfIcon } from './icons/pdf';
 const FloatingButtonGroup = styled(ButtonGroup)`
   > a {

@@ -1,8 +1,9 @@
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 
 export const Font: FC = () => {
   return (
     <style
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
       dangerouslySetInnerHTML={{
         __html: `
     @font-face {

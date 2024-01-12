@@ -1,5 +1,5 @@
-import React, { type FC } from 'react';
-import styled from 'styled-components';
+import type { FC } from 'react';
+import { styled } from 'styled-components';
 
 import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
 import { Trans as T } from '@cv/components/trans';

@@ -1,9 +1,9 @@
-import React, { FC, useState, useCallback, useEffect, useRef } from 'react';
+import { type FC, useState, useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Modal, ModalHeader, ModalBody } from '@bootstrap-styled/v4';
 import { useRouter } from 'next/router';
 import { LangType } from '@cv/helpers/date';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 interface DisableScrollProps {
   element: HTMLElement;
@@ -55,7 +55,7 @@ const useDisableScroll = ({ element, disabled }: DisableScrollProps): void => {
     return () => {
       element.style.overflowY = 'scroll';
     };
-  }, [disabled]);
+  }, [disabled, element]);
 };
 
 const VideoModal: FC<VideoModalProps> = ({ video }) => {
@@ -71,7 +71,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
   }, []);
   const closedHandler = useCallback(() => {
     router.push({ query: {} }, undefined, { scroll: false });
-  }, []);
+  }, [router]);
   const openedHandler = useCallback(() => {
     try {
       // only allowed by user interaction
@@ -80,7 +80,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
       // eslint-disable-next-line no-console
       // console.error(e)
     }
-  }, [videoRef.current]);
+  }, []);
   useEffect(() => {
     setOpen(true);
   }, []);
@@ -93,6 +93,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
     <StyledModal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
       <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
       <ModalBody>
+        {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
         <video controls width="100%" ref={videoRef}>
           {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
           <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
@@ -102,7 +103,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
         </video>
       </ModalBody>
     </StyledModal>,
-    document.body
+    document.body,
   );
 };
 

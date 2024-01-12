@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { NextPage } from 'next';
 import { Trans as T } from '@cv/components/trans';
 

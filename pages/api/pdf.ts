@@ -1,5 +1,3 @@
-/* eslint no-console:off */
-
 import fs, { ReadStream } from 'fs';
 import path from 'path';
 import getConfig from 'next/config';
@@ -20,29 +18,28 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
   const outputPath = path.resolve(outputPathByLang[locale]);
   if (isProduction && fs.existsSync(outputPath)) {
     return fs.createReadStream(outputPath);
-  } else {
-    const browser = await puppeteer.launch({
-      headless: 'new',
-      userDataDir: './chromium-data',
-      args: ['--no-sandbox'],
-    });
-    const page = await browser.newPage();
-    const url = `${siteUrl}/${locale}`;
-    console.info(url);
-    await page.goto(url);
-    await page.pdf({
-      path: outputPath,
-      format: 'a4',
-      landscape: false,
-      scale: 0.8,
-      printBackground: true,
-      omitBackground: true,
-      pageRanges: '1-3',
-      margin: { top: 0, right: 0, bottom: 0, left: 0 },
-    });
-    await browser.close();
-    return getFile(locale, true);
   }
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    userDataDir: './chromium-data',
+    args: ['--no-sandbox'],
+  });
+  const page = await browser.newPage();
+  const url = `${siteUrl}/${locale}`;
+  console.info(url);
+  await page.goto(url);
+  await page.pdf({
+    path: outputPath,
+    format: 'a4',
+    landscape: false,
+    scale: 0.8,
+    printBackground: true,
+    omitBackground: true,
+    pageRanges: '1-3',
+    margin: { top: 0, right: 0, bottom: 0, left: 0 },
+  });
+  await browser.close();
+  return getFile(locale, true);
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {

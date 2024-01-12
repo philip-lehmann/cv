@@ -1,5 +1,5 @@
-import React, { type FC, type ComponentProps } from 'react';
-import styled from 'styled-components';
+import type { FC, ComponentProps } from 'react';
+import { styled } from 'styled-components';
 import { Ul, Li } from '@bootstrap-styled/v4';
 
 const List = styled(Ul)`

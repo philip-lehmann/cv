@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 import { type AppProps } from 'next/app';
 
 const MyCv: FC<AppProps> = ({ Component, pageProps }) => {

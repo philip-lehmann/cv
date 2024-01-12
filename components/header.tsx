@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
+import type { FC } from 'react';
+import { styled } from 'styled-components';
 
 const HeaderDiv = styled('header')`
   background: 'rebeccapurple';
