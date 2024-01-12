@@ -38,17 +38,11 @@ jobs:
         with:
           path: .yarn
           key: ${{ runner.os }}-dot-yarn
-      - name: Cache .eslintcache
-        id: cache-dot-eslintcache
-        uses: actions/cache@v3
-        with:
-          path: .eslintcache
-          key: ${{ runner.os }}-dot-eslintcache
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: yarn
           always-auth: true
           registry-url: https://npm.pkg.github.com
           scope: "@datage-ch"

@@ -8,11 +8,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "lint:js": "eslint --ext '.ts,.tsx' components helpers pages",
-    "lint:css": "stylelint components helpers pages",
     "lint:types": "tsc --noEmit",
-    "lint": "yarn lint:js && yarn lint:css && yarn lint:types",
-    "lint-fix": "eslint --ext '.ts,.tsx' --fix components helpers pages"
+    "lint:biome": "biome lint **/*.ts",
+    "lint": "yarn lint:biome && yarn lint:types",
+    "format": "biome format **/*.ts --write"
   },
   "engines": {
     "node": ">= 20.x",
@@ -35,7 +34,6 @@
     "puppeteer": "^21.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "request": "^2.88.2",
     "rollbar": "^2.26.2",
     "styled-components": "^6.1.0",
     "styled-jsx": "^5.1.2",
@@ -43,29 +41,12 @@
     "webpack": "^5.89.0"
   },
   "devDependencies": {
-    "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@biomejs/biome": "1.5.1",
     "@types/node": "^20.8.7",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
     "@types/styled-components": "^5.1.29",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
-    "eslint": "^8.52.0",
-    "eslint-config-next": "^14.0.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-react": "^7.33.2",
-    "postcss-syntax": "^0.36.2",
-    "prettier": "^3.0.3",
-    "stylelint": "^15.11.0",
-    "stylelint-config-recommended": "^14.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "5.3.3"
-  },
-  "resolutions": {
-    "postcss": ">=8.3.5",
-    "terser": ">=5.14.2",
-    "@types/react-dom/@types/react": "18.2.47"
   },
   "packageManager": "yarn@4.0.2"
 }
