@@ -28,13 +28,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Cache node_modules
         id: cache-node-modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules
       - name: Cache .yarn
         id: cache-dot-yarn
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .yarn
           key: ${{ runner.os }}-dot-yarn
