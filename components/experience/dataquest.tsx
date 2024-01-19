@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { H5, H6 } from '@bootstrap-styled/v4';
 import { FloatRight } from '@cv/components/float';
-import TooltipBadge from '@cv/components/tooltip_badge';
+import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { DashList, Dash } from '@cv/components/dash_list';
 import { Trans as T } from '@cv/components/trans';
 import { monthYear } from '@cv/helpers/date';
@@ -30,7 +30,9 @@ export const DataQuest: FC = () => {
           <T lang="de">Entwickeln einer Lagerverwalung für das iPod austausch Program in Java.</T>
         </Dash>
       </DashList>
-      <TooltipBadge namespace="dataquest" progress="60" name="Java" />
+      <TooltipBadgeGroup>
+        <TooltipBadge namespace="dataquest" progress="60" name="Java" />
+      </TooltipBadgeGroup>
     </>
   );
 };

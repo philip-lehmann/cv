@@ -6,13 +6,19 @@ const ProgressWith = styled(Progress)`
   min-width: 100px;
 `;
 
+export const TooltipBadgeGroup = styled('div')`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+`;
+
 interface TooltipBadgeProps {
   name: string;
   namespace: string;
   progress: string;
 }
 
-const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress }) => {
+export const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress }) => {
   const [isOpen, setIsOpen] = useState(false);
   const id = useMemo(() => {
     return `tooltip-${name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${namespace}`;
@@ -33,5 +39,3 @@ const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress }) => 
   );
 });
 TooltipBadge.displayName = 'TooltipBadge';
-
-export default TooltipBadge;

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { H5, H6 } from '@bootstrap-styled/v4';
 import { FloatRight } from '@cv/components/float';
-import TooltipBadge from '@cv/components/tooltip_badge';
+import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { DashList, Dash } from '@cv/components/dash_list';
 import { Trans as T } from '@cv/components/trans';
 import { LineBreak } from '@cv/components/print';
@@ -145,25 +145,27 @@ export const Atpoint: FC = () => {
           )
         </Dash>
       </DashList>
-      <TooltipBadge namespace="atpoint" progress="80" name="Ruby on Rails" />{' '}
-      <TooltipBadge namespace="atpoint" progress="90" name="ES6" />{' '}
-      <TooltipBadge namespace="atpoint" progress="85" name="Typescript" />{' '}
-      <TooltipBadge namespace="atpoint" progress="85" name="Flow" />{' '}
-      <TooltipBadge namespace="atpoint" progress="70" name="SCSS" />{' '}
-      <TooltipBadge namespace="atpoint" progress="90" name="HTML" />{' '}
-      <TooltipBadge namespace="atpoint" progress="95" name="React" />{' '}
-      <TooltipBadge namespace="atpoint" progress="80" name="Ember" />{' '}
-      <TooltipBadge namespace="atpoint" progress="90" name="node.js" />{' '}
-      <TooltipBadge namespace="atpoint" progress="50" name="Objective-C" />{' '}
-      <TooltipBadge namespace="atpoint" progress="60" name="Java" />{' '}
-      <TooltipBadge namespace="atpoint" progress="70" name="PHP" />{' '}
-      <TooltipBadge namespace="atpoint" progress="80" name="Mysql" />{' '}
-      <TooltipBadge namespace="atpoint" progress="85" name="Postgres" />{' '}
-      <TooltipBadge namespace="atpoint" progress="65" name="Elasticsearch" />{' '}
-      <TooltipBadge namespace="atpoint" progress="80" name="Git" />{' '}
-      <TooltipBadge namespace="atpoint" progress="75" name="Docker" />{' '}
-      <TooltipBadge namespace="atpoint" progress="30" name="Kustomize" />{' '}
-      <TooltipBadge namespace="atpoint" progress="30" name="Helm" />
+      <TooltipBadgeGroup>
+        <TooltipBadge namespace="atpoint" progress="80" name="Ruby on Rails" />
+        <TooltipBadge namespace="atpoint" progress="90" name="ES6" />
+        <TooltipBadge namespace="atpoint" progress="85" name="Typescript" />
+        <TooltipBadge namespace="atpoint" progress="85" name="Flow" />
+        <TooltipBadge namespace="atpoint" progress="70" name="SCSS" />
+        <TooltipBadge namespace="atpoint" progress="90" name="HTML" />
+        <TooltipBadge namespace="atpoint" progress="95" name="React" />
+        <TooltipBadge namespace="atpoint" progress="80" name="Ember" />
+        <TooltipBadge namespace="atpoint" progress="90" name="node.js" />
+        <TooltipBadge namespace="atpoint" progress="50" name="Objective-C" />
+        <TooltipBadge namespace="atpoint" progress="60" name="Java" />
+        <TooltipBadge namespace="atpoint" progress="70" name="PHP" />
+        <TooltipBadge namespace="atpoint" progress="80" name="Mysql" />
+        <TooltipBadge namespace="atpoint" progress="85" name="Postgres" />
+        <TooltipBadge namespace="atpoint" progress="65" name="Elasticsearch" />
+        <TooltipBadge namespace="atpoint" progress="80" name="Git" />
+        <TooltipBadge namespace="atpoint" progress="75" name="Docker" />
+        <TooltipBadge namespace="atpoint" progress="30" name="Kustomize" />
+        <TooltipBadge namespace="atpoint" progress="30" name="Helm" />
+      </TooltipBadgeGroup>
     </>
   );
 };

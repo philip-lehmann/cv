@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { H5, H6 } from '@bootstrap-styled/v4';
 import { FloatRight } from '@cv/components/float';
-import TooltipBadge from '@cv/components/tooltip_badge';
+import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { DashList, Dash } from '@cv/components/dash_list';
 import { Trans as T } from '@cv/components/trans';
 import { monthYear } from '@cv/helpers/date';
@@ -50,28 +50,39 @@ export const Quatico: FC = () => {
           <T lang="de">Erstellen von CMS Komponenten basierend auf Web Components</T>
         </Dash>
         <Dash>
-          <T lang="en">Build and deploy releases</T>
-          <T lang="de">Releases bauen und deployen</T>
+          <T lang="en">Backend and frontend development in Java and TypeScript</T>
+          <T lang="de">Backend- und Frontend-Entwicklung in Java und TypeScript</T>
+        </Dash>
+        <Dash>
+          <T lang="en">
+            Further development of continuous delivery pipelines for customer projects based on Kubernetes
+          </T>
+          <T lang="de">
+            Weiterentwicklung von Continuous Delivery Pipelines für Kundenprojekte auf Basis von Kubernetes
+          </T>
         </Dash>
       </DashList>
-      <TooltipBadge namespace="quatico" progress="90" name="ES6" />{' '}
-      <TooltipBadge namespace="quatico" progress="90" name="Typescript" />{' '}
-      <TooltipBadge namespace="quatico" progress="70" name="SCSS" />{' '}
-      <TooltipBadge namespace="quatico" progress="90" name="HTML" />{' '}
-      <TooltipBadge namespace="quatico" progress="95" name="React" />{' '}
-      <TooltipBadge namespace="quatico" progress="90" name="node.js" />{' '}
-      <TooltipBadge namespace="quatico" progress="60" name="Java" />{' '}
-      <TooltipBadge namespace="quatico" progress="30" name="Solr" />{' '}
-      <TooltipBadge namespace="quatico" progress="30" name="Jenkins" />{' '}
-      <TooltipBadge namespace="quatico" progress="80" name="Git" />{' '}
-      <TooltipBadge namespace="quatico" progress="85" name="Docker" />{' '}
-      <TooltipBadge namespace="quatico" progress="30" name="Intellij" />{' '}
-      <TooltipBadge namespace="quatico" progress="80" name="VS Code" />{' '}
-      <TooltipBadge namespace="quatico" progress="30" name="Rancher" />{' '}
-      <TooltipBadge namespace="quatico" progress="30" name="Argocd" />{' '}
-      <TooltipBadge namespace="quatico" progress="80" name="Jira" />{' '}
-      <TooltipBadge namespace="quatico" progress="80" name="Confluence" />{' '}
-      <TooltipBadge namespace="quatico" progress="80" name="Bitbucket" />{' '}
+      <TooltipBadgeGroup>
+        <TooltipBadge namespace="quatico" progress="90" name="ES6" />
+        <TooltipBadge namespace="quatico" progress="90" name="Typescript" />
+        <TooltipBadge namespace="quatico" progress="70" name="SCSS" />
+        <TooltipBadge namespace="quatico" progress="90" name="HTML" />
+        <TooltipBadge namespace="quatico" progress="95" name="React" />
+        <TooltipBadge namespace="quatico" progress="90" name="node.js" />
+        <TooltipBadge namespace="quatico" progress="60" name="Java" />
+        <TooltipBadge namespace="quatico" progress="50" name="Maven" />
+        <TooltipBadge namespace="quatico" progress="30" name="Solr" />
+        <TooltipBadge namespace="quatico" progress="30" name="Jenkins" />
+        <TooltipBadge namespace="quatico" progress="80" name="Git" />
+        <TooltipBadge namespace="quatico" progress="85" name="Docker" />
+        <TooltipBadge namespace="quatico" progress="30" name="Intellij" />
+        <TooltipBadge namespace="quatico" progress="80" name="VS Code" />
+        <TooltipBadge namespace="quatico" progress="30" name="Rancher" />
+        <TooltipBadge namespace="quatico" progress="30" name="Argocd" />
+        <TooltipBadge namespace="quatico" progress="80" name="Jira" />
+        <TooltipBadge namespace="quatico" progress="80" name="Confluence" />
+        <TooltipBadge namespace="quatico" progress="80" name="Bitbucket" />
+      </TooltipBadgeGroup>
     </>
   );
 };

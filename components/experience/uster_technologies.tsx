@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { H5, H6 } from '@bootstrap-styled/v4';
 import { FloatRight } from '@cv/components/float';
-import TooltipBadge from '@cv/components/tooltip_badge';
+import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { DashList, Dash } from '@cv/components/dash_list';
 import { Trans as T } from '@cv/components/trans';
 import { monthYear } from '@cv/helpers/date';
@@ -39,15 +39,17 @@ export const UsterTechnologies: FC = () => {
           <T lang="de">Software erstellen für Microcontroller in C / C++ / C#</T>
         </Dash>
       </DashList>
-      <TooltipBadge namespace="uster_technologies" progress="70" name="PHP" />{' '}
-      <TooltipBadge namespace="uster_technologies" progress="90" name="JavaScript" />{' '}
-      <TooltipBadge namespace="uster_technologies" progress="70" name="CSS" />{' '}
-      <TooltipBadge namespace="uster_technologies" progress="90" name="HTML" />{' '}
-      <TooltipBadge namespace="uster_technologies" progress="60" name="C" />{' '}
-      <TooltipBadge namespace="uster_technologies" progress="60" name="C++" />{' '}
-      <TooltipBadge namespace="uster_technologies" progress="60" name="C#" />{' '}
-      <TooltipBadge namespace="uster_technologies" progress="60" name="Java" />{' '}
-      <TooltipBadge namespace="uster_technologies" progress="80" name="Mysql" />
+      <TooltipBadgeGroup>
+        <TooltipBadge namespace="uster_technologies" progress="70" name="PHP" />
+        <TooltipBadge namespace="uster_technologies" progress="90" name="JavaScript" />
+        <TooltipBadge namespace="uster_technologies" progress="70" name="CSS" />
+        <TooltipBadge namespace="uster_technologies" progress="90" name="HTML" />
+        <TooltipBadge namespace="uster_technologies" progress="60" name="C" />
+        <TooltipBadge namespace="uster_technologies" progress="60" name="C++" />
+        <TooltipBadge namespace="uster_technologies" progress="60" name="C#" />
+        <TooltipBadge namespace="uster_technologies" progress="60" name="Java" />
+        <TooltipBadge namespace="uster_technologies" progress="80" name="Mysql" />
+      </TooltipBadgeGroup>
     </>
   );
 };

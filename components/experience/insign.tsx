@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { H5, H6 } from '@bootstrap-styled/v4';
 import { FloatRight } from '@cv/components/float';
-import TooltipBadge from '@cv/components/tooltip_badge';
+import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { DashList, Dash } from '@cv/components/dash_list';
 import { Trans as T } from '@cv/components/trans';
 import { monthYear } from '@cv/helpers/date';
@@ -41,13 +41,15 @@ export const Insign: FC = () => {
           <T lang="de">Systemadministratoraufgaben</T>
         </Dash>
       </DashList>
-      <TooltipBadge namespace="insign" progress="70" name="PHP" />{' '}
-      <TooltipBadge namespace="insign" progress="90" name="JavaScript" />{' '}
-      <TooltipBadge namespace="insign" progress="70" name="CSS" />{' '}
-      <TooltipBadge namespace="insign" progress="90" name="HTML" />{' '}
-      <TooltipBadge namespace="insign" progress="80" name="Mysql" />{' '}
-      <TooltipBadge namespace="insign" progress="70" name="SVN" />{' '}
-      <TooltipBadge namespace="insign" progress="65" name="Devops" />
+      <TooltipBadgeGroup>
+        <TooltipBadge namespace="insign" progress="70" name="PHP" />
+        <TooltipBadge namespace="insign" progress="90" name="JavaScript" />
+        <TooltipBadge namespace="insign" progress="70" name="CSS" />
+        <TooltipBadge namespace="insign" progress="90" name="HTML" />
+        <TooltipBadge namespace="insign" progress="80" name="Mysql" />
+        <TooltipBadge namespace="insign" progress="70" name="SVN" />
+        <TooltipBadge namespace="insign" progress="65" name="Devops" />
+      </TooltipBadgeGroup>
     </>
   );
 };
