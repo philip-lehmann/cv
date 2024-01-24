@@ -1,4 +1,4 @@
-import type { DetailedHTMLProps, FC, HTMLAttributes, PropsWithChildren } from 'react';
+import type { FC, ComponentPropsWithRef } from 'react';
 import { A } from '@bootstrap-styled/v4';
 import { styled } from 'styled-components';
 import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
@@ -25,12 +25,12 @@ const Links = styled('div')`
   gap: 10px;
 `;
 
-const Link: FC<
-  Omit<DetailedHTMLProps<HTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, 'children' | 'target' | 'rel'> & {
-    image: string;
-    name: string;
-  }
-> = ({ image, name, ...anchorProps }) => {
+export interface LinkProps extends Omit<ComponentPropsWithRef<'a'>, 'children' | 'target' | 'rel'> {
+  image: string;
+  name: string;
+}
+
+const Link: FC<LinkProps> = ({ image, name, ...anchorProps }) => {
   return (
     <ANoBreak target="_blank" rel="noopener noreferrer" {...anchorProps}>
       <picture>
