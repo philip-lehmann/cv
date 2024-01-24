@@ -20,10 +20,6 @@ jobs:
     # runs-on: self-hosted
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20.10.0]
-
     steps:
       - uses: actions/checkout@v4
       - name: Cache node_modules
@@ -38,17 +34,17 @@ jobs:
         with:
           path: .yarn
           key: ${{ runner.os }}-dot-yarn
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: package.json
           cache: yarn
           always-auth: true
           registry-url: https://npm.pkg.github.com
           scope: "@datage-ch"
       - name: install dependencies
         run: |
-          npm install -g yarn
+          corepack enable
           yarn install
       - name: lint
         run: yarn lint

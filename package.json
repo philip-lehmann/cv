@@ -14,8 +14,8 @@
     "format": "biome format **/*.ts --write"
   },
   "engines": {
-    "node": ">= 20.x",
-    "yarn": ">= 4.0.0"
+    "node": "20.11.0",
+    "yarn": "4.0.2"
   },
   "cacheDirectories": [
     "node_modules",
@@ -37,8 +37,7 @@
     "rollbar": "^2.26.2",
     "styled-components": "^6.1.0",
     "styled-jsx": "^5.1.2",
-    "styled-reset": "^4.5.1",
-    "webpack": "^5.89.0"
+    "styled-reset": "^4.5.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
