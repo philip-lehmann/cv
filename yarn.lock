@@ -2481,15 +2481,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromium-bidi@npm:0.5.4":
-  version: 0.5.4
-  resolution: "chromium-bidi@npm:0.5.4"
+"chromium-bidi@npm:0.5.6":
+  version: 0.5.6
+  resolution: "chromium-bidi@npm:0.5.6"
   dependencies:
     mitt: "npm:3.0.1"
-    urlpattern-polyfill: "npm:9.0.0"
+    urlpattern-polyfill: "npm:10.0.0"
   peerDependencies:
     devtools-protocol: "*"
-  checksum: 0a779744a03762202e26155585e4c158cd45f442c6ae07fc10dca165ade19ba8379b17b778ac3fe0993c15efd69e9c6bf0a617a730a65247ac5bb76970560292
+  checksum: 076fe42ed4eec6361a0c100bd17b91747ccc064cb89114431568c99daebf4b1f38c6466a4a2d17e7e08badc2a907f53245231f39344419a0f5c35c856f6ff717
   languageName: node
   linkType: hard
 
@@ -5192,30 +5192,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer-core@npm:21.9.0":
-  version: 21.9.0
-  resolution: "puppeteer-core@npm:21.9.0"
+"puppeteer-core@npm:21.10.0":
+  version: 21.10.0
+  resolution: "puppeteer-core@npm:21.10.0"
   dependencies:
     "@puppeteer/browsers": "npm:1.9.1"
-    chromium-bidi: "npm:0.5.4"
+    chromium-bidi: "npm:0.5.6"
     cross-fetch: "npm:4.0.0"
     debug: "npm:4.3.4"
     devtools-protocol: "npm:0.0.1232444"
     ws: "npm:8.16.0"
-  checksum: fe9533974e25c967ad22e1b8b628b31b72cb93d299f1a176d599c5b56aa31bfde43909becceaa240709cd474a12d3d5471ed1a9ed9bb1e70ae3015d31fd37b30
+  checksum: 301e4430d22b4659b77bfffe02bf3ee0ddf0fa095a44e782f17b473f53b2fb015f2deed080b4acfa4b75a50b889fe2295df7ce82eebd161bfbeb9d749529eaad
   languageName: node
   linkType: hard
 
 "puppeteer@npm:^21.4.0":
-  version: 21.9.0
-  resolution: "puppeteer@npm:21.9.0"
+  version: 21.10.0
+  resolution: "puppeteer@npm:21.10.0"
   dependencies:
     "@puppeteer/browsers": "npm:1.9.1"
     cosmiconfig: "npm:9.0.0"
-    puppeteer-core: "npm:21.9.0"
+    puppeteer-core: "npm:21.10.0"
   bin:
     puppeteer: lib/esm/puppeteer/node/cli.js
-  checksum: 37cd4af353a0fbda2244825d95167d96ee8858affb899a70671a0afcac2451272849669b127dce5d252935ea505f10838a9875909ff26f5d5cf8c407ce0c4ff9
+  checksum: a12b0352f84d78e1c379b3efab4c3a98394a1e051c5675ee59c23ad4812d127ccf9b679ad379019d113ab2da8128c469b5dda41059527ec8a83793c232d28347
   languageName: node
   linkType: hard
 
@@ -6559,10 +6559,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"urlpattern-polyfill@npm:9.0.0":
-  version: 9.0.0
-  resolution: "urlpattern-polyfill@npm:9.0.0"
-  checksum: 1fecb4a7695ad7917b02193896ec7b5773bb730ee3fbbb583cfaf134cc99da054c18560a35e7e901ad4e2f7a6035b6754313a2bb84126a7f118201427d465185
+"urlpattern-polyfill@npm:10.0.0":
+  version: 10.0.0
+  resolution: "urlpattern-polyfill@npm:10.0.0"
+  checksum: 43593f2a89bd54f2d5b5105ef4896ac5c5db66aef723759fbd15cd5eb1ea6cdae9d112e257eda9bbc3fb0cd90be6ac6e9689abe4ca69caa33114f42a27363531
   languageName: node
   linkType: hard
 
