@@ -15,7 +15,7 @@
   },
   "engines": {
     "node": "20.11.0",
-    "yarn": "4.0.2"
+    "yarn": "4.1.0"
   },
   "cacheDirectories": [
     "node_modules",
@@ -47,5 +47,5 @@
     "@types/styled-components": "^5.1.29",
     "typescript": "5.3.3"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.1.0"
 }
