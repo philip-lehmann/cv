@@ -1283,7 +1283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.8.4":
   version: 7.23.9
   resolution: "@babel/runtime@npm:7.23.9"
   dependencies:
@@ -5084,11 +5084,11 @@ __metadata:
   linkType: hard
 
 "polished@npm:^4.2.2":
-  version: 4.3.0
-  resolution: "polished@npm:4.3.0"
+  version: 4.3.1
+  resolution: "polished@npm:4.3.1"
   dependencies:
-    "@babel/runtime": "npm:^7.23.9"
-  checksum: 10c0/939f9b8773527a2f0868b3087d08e17c0104dacc271a4ea3634cc552c6395b7ffe0e1ddd3463df949dd359433ad25b1c1796e429301fbad0a5fc3d963207f29a
+    "@babel/runtime": "npm:^7.17.8"
+  checksum: 10c0/45480d4c7281a134281cef092f6ecc202a868475ff66a390fee6e9261386e16f3047b4de46a2f2e1cf7fb7aa8f52d30b4ed631a1e3bcd6f303ca31161d4f07fe
   languageName: node
   linkType: hard
 
