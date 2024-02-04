@@ -12,6 +12,7 @@ const theme = {
   '$link-hover-color': darken(0.4, '#343436'),
   '$link-hover-decoration': 'underline',
   '$brand-primary': lighten(0.4, '#343436'),
+  '$badge-default-bg': '#E1E1E1',
 };
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {

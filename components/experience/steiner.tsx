@@ -67,25 +67,32 @@ export const Steiner: FC = () => {
         </DashList>
       </div>
       <TooltipBadgeGroup>
-        <TooltipBadge namespace="steiner" progress="90" name="Typescript" />
-        <TooltipBadge namespace="steiner" progress="90" name="Next.js" />
-        <TooltipBadge namespace="steiner" progress="60" name="NestJs" />
-        <TooltipBadge namespace="steiner" progress="60" name="Tailwind" />
-        <TooltipBadge namespace="steiner" progress="70" name="Github Actions" />
-        <TooltipBadge namespace="steiner" progress="90" name="Git" />
-        <TooltipBadge namespace="steiner" progress="50" name="NX" />
-        <TooltipBadge namespace="steiner" progress="80" name="Postgres" />
-        <TooltipBadge namespace="steiner" progress="80" name="Redis" />
-        <TooltipBadge namespace="steiner" progress="60" name="Temporal" />
-        <TooltipBadge namespace="steiner" progress="50" name="RabbitMQ" />
-        <TooltipBadge namespace="steiner" progress="60" name="Elasticsearch" />
-        <TooltipBadge namespace="steiner" progress="30" name="TerraForm" />
-        <TooltipBadge namespace="steiner" progress="60" name="Auth0" />
-        <TooltipBadge namespace="steiner" progress="85" name="Docker" />
-        <TooltipBadge namespace="steiner" progress="50" name="Kubernetes" />
-        <TooltipBadge namespace="steiner" progress="80" name="VS Code" />
-        <TooltipBadge namespace="steiner" progress="80" name="Jira" />
-        <TooltipBadge namespace="steiner" progress="80" name="Confluence" />
+        <TooltipBadge namespace="steiner" progress="90" name="typescript" />
+        <TooltipBadge namespace="steiner" progress="90" name="nextjs" />
+        <TooltipBadge namespace="steiner" progress="60" name="nestjs" />
+        <TooltipBadge namespace="steiner" progress="60" name="tailwind" />
+        <TooltipBadge namespace="steiner" progress="90" name="html" />
+        <TooltipBadge namespace="steiner" progress="80" name="bullmq" />
+        <TooltipBadge namespace="steiner" progress="85" name="typeorm" />
+        <TooltipBadge namespace="steiner" progress="70" name="github-actions" />
+        <TooltipBadge namespace="steiner" progress="90" name="git" />
+        <TooltipBadge namespace="steiner" progress="50" name="nx" />
+        <TooltipBadge namespace="steiner" progress="60" name="storybook" />
+        <TooltipBadge namespace="steiner" progress="80" name="jest" />
+        <TooltipBadge namespace="steiner" progress="80" name="postgres" />
+        <TooltipBadge namespace="steiner" progress="80" name="redis" />
+        <TooltipBadge namespace="steiner" progress="60" name="temporal" />
+        <TooltipBadge namespace="steiner" progress="50" name="rabbitmq" />
+        <TooltipBadge namespace="steiner" progress="60" name="kibana" />
+        <TooltipBadge namespace="steiner" progress="30" name="terraform" />
+        <TooltipBadge namespace="steiner" progress="60" name="auth0" />
+        <TooltipBadge namespace="steiner" progress="80" name="git" />
+        <TooltipBadge namespace="steiner" progress="85" name="docker" />
+        <TooltipBadge namespace="steiner" progress="50" name="kubernetes" />
+        <TooltipBadge namespace="steiner" progress="80" name="vscode" />
+        <TooltipBadge namespace="steiner" progress="80" name="jira" />
+        <TooltipBadge namespace="steiner" progress="80" name="confluence" />
+        <TooltipBadge namespace="steiner" progress="30" name="azure" />
       </TooltipBadgeGroup>
     </>
   );

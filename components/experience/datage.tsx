@@ -38,28 +38,34 @@ export const Datage: FC = () => {
         </Dash>
       </DashList>
       <TooltipBadgeGroup>
-        <TooltipBadge namespace="datage" progress="70" name="Rancher" />
-        <TooltipBadge namespace="datage" progress="70" name="Postgres HA" />
-        <TooltipBadge namespace="datage" progress="70" name="Redis Cluster" />
-        <TooltipBadge namespace="datage" progress="60" name="OAuth Proxy" />
-        <TooltipBadge namespace="datage" progress="60" name="Keycloak" />
-        <TooltipBadge namespace="datage" progress="70" name="CertManager" />
-        <TooltipBadge namespace="datage" progress="60" name="Sealed Secrets" />
-        <TooltipBadge namespace="datage" progress="90" name="Typescript" />
-        <TooltipBadge namespace="datage" progress="80" name="Next.js" />
-        <TooltipBadge namespace="datage" progress="70" name="Apollo GraphQL" />
-        <TooltipBadge namespace="datage" progress="80" name="prisma.io" />
-        <TooltipBadge namespace="datage" progress="80" name="MUI" />
-        <TooltipBadge namespace="datage" progress="95" name="React" />
-        <TooltipBadge namespace="datage" progress="90" name="node.js" />
-        <TooltipBadge namespace="datage" progress="80" name="BullMQ" />
-        <TooltipBadge namespace="datage" progress="80" name="Git" />
-        <TooltipBadge namespace="datage" progress="85" name="Docker" />
-        <TooltipBadge namespace="datage" progress="80" name="VS Code" />
-        <TooltipBadge namespace="datage" progress="80" name="Github" />
-        <TooltipBadge namespace="datage" progress="80" name="Github Action Runner" />
-        <TooltipBadge namespace="datage" progress="70" name="Harbor" />
-        <TooltipBadge namespace="datage" progress="50" name="ECK" />
+        <TooltipBadge namespace="datage" progress="70" name="rancher" />
+        <TooltipBadge namespace="datage" progress="70" name="postgres" />
+        <TooltipBadge namespace="datage" progress="70" name="redis-cluster" />
+        <TooltipBadge namespace="datage" progress="60" name="oauth-proxy" />
+        <TooltipBadge namespace="datage" progress="60" name="keycloak" />
+        <TooltipBadge namespace="datage" progress="70" name="cert-manager" />
+        <TooltipBadge namespace="datage" progress="60" name="sealed-secrets" />
+        <TooltipBadge namespace="datage" progress="90" name="typescript" />
+        <TooltipBadge namespace="datage" progress="80" name="nextjs" />
+        <TooltipBadge namespace="datage" progress="70" name="apollo" />
+        <TooltipBadge namespace="datage" progress="80" name="prisma" />
+        <TooltipBadge namespace="datage" progress="80" name="bullmq" />
+        <TooltipBadge namespace="datage" progress="80" name="mui" />
+        <TooltipBadge namespace="datage" progress="80" name="html" />
+        <TooltipBadge namespace="datage" progress="95" name="react" />
+        <TooltipBadge namespace="datage" progress="50" name="vitest" />
+        <TooltipBadge namespace="datage" progress="70" name="swc" />
+        <TooltipBadge namespace="datage" progress="90" name="node" />
+        <TooltipBadge namespace="datage" progress="50" name="nx" />
+        <TooltipBadge namespace="datage" progress="80" name="git" />
+        <TooltipBadge namespace="datage" progress="85" name="docker" />
+        <TooltipBadge namespace="datage" progress="80" name="vscode" />
+        <TooltipBadge namespace="datage" progress="80" name="github" />
+        <TooltipBadge namespace="datage" progress="80" name="github-action-runner" />
+        <TooltipBadge namespace="datage" progress="70" name="harbor" />
+        <TooltipBadge namespace="datage" progress="50" name="eck" />
+        <TooltipBadge namespace="datage" progress="50" name="gcp" />
+        <TooltipBadge namespace="datage" progress="60" name="wordpress" />
       </TooltipBadgeGroup>
     </>
   );

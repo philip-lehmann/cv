@@ -9,6 +9,7 @@ import { Datage } from '@cv/components/experience/datage';
 import { UsterTechnologies } from '@cv/components/experience/uster_technologies';
 import { FloatRight } from '@cv/components/float';
 import { Trans as T } from '@cv/components/trans';
+import { LineBreak } from '../print';
 
 export const Experience: FC = () => {
   return (
@@ -23,12 +24,14 @@ export const Experience: FC = () => {
           <Hr />
           <Quatico />
           <Hr />
+          <LineBreak />
           <Datage />
           <Hr />
           <Atpoint />
           <Hr />
           <Insign />
           <Hr />
+          <LineBreak />
           <DataQuest />
           <Hr />
           <UsterTechnologies />

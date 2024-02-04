@@ -31,7 +31,7 @@ export const DataQuest: FC = () => {
         </Dash>
       </DashList>
       <TooltipBadgeGroup>
-        <TooltipBadge namespace="dataquest" progress="60" name="Java" />
+        <TooltipBadge namespace="dataquest" progress="60" name="java" />
       </TooltipBadgeGroup>
     </>
   );

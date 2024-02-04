@@ -63,25 +63,30 @@ export const Quatico: FC = () => {
         </Dash>
       </DashList>
       <TooltipBadgeGroup>
-        <TooltipBadge namespace="quatico" progress="90" name="ES6" />
-        <TooltipBadge namespace="quatico" progress="90" name="Typescript" />
-        <TooltipBadge namespace="quatico" progress="70" name="SCSS" />
-        <TooltipBadge namespace="quatico" progress="90" name="HTML" />
-        <TooltipBadge namespace="quatico" progress="95" name="React" />
-        <TooltipBadge namespace="quatico" progress="90" name="node.js" />
-        <TooltipBadge namespace="quatico" progress="60" name="Java" />
-        <TooltipBadge namespace="quatico" progress="50" name="Maven" />
-        <TooltipBadge namespace="quatico" progress="30" name="Solr" />
-        <TooltipBadge namespace="quatico" progress="30" name="Jenkins" />
-        <TooltipBadge namespace="quatico" progress="80" name="Git" />
-        <TooltipBadge namespace="quatico" progress="85" name="Docker" />
-        <TooltipBadge namespace="quatico" progress="30" name="Intellij" />
-        <TooltipBadge namespace="quatico" progress="80" name="VS Code" />
-        <TooltipBadge namespace="quatico" progress="30" name="Rancher" />
-        <TooltipBadge namespace="quatico" progress="30" name="Argocd" />
-        <TooltipBadge namespace="quatico" progress="80" name="Jira" />
-        <TooltipBadge namespace="quatico" progress="80" name="Confluence" />
-        <TooltipBadge namespace="quatico" progress="80" name="Bitbucket" />
+        <TooltipBadge namespace="quatico" progress="90" name="es6" />
+        <TooltipBadge namespace="quatico" progress="90" name="typescript" />
+        <TooltipBadge namespace="quatico" progress="70" name="scss" />
+        <TooltipBadge namespace="quatico" progress="90" name="html" />
+        <TooltipBadge namespace="quatico" progress="95" name="react" />
+        <TooltipBadge namespace="steiner" progress="60" name="storybook" />
+        <TooltipBadge namespace="atpoint" progress="90" name="webpack" />
+        <TooltipBadge namespace="atpoint" progress="80" name="jest" />
+        <TooltipBadge namespace="quatico" progress="90" name="node" />
+        <TooltipBadge namespace="quatico" progress="60" name="java" />
+        <TooltipBadge namespace="quatico" progress="50" name="maven" />
+        <TooltipBadge namespace="quatico" progress="30" name="solr" />
+        <TooltipBadge namespace="quatico" progress="30" name="jenkins" />
+        <TooltipBadge namespace="quatico" progress="80" name="git" />
+        <TooltipBadge namespace="quatico" progress="85" name="docker" />
+        <TooltipBadge namespace="quatico" progress="30" name="intellij" />
+        <TooltipBadge namespace="quatico" progress="80" name="vscode" />
+        <TooltipBadge namespace="quatico" progress="30" name="rancher" />
+        <TooltipBadge namespace="quatico" progress="30" name="argocd" />
+        <TooltipBadge namespace="quatico" progress="80" name="jira" />
+        <TooltipBadge namespace="quatico" progress="80" name="confluence" />
+        <TooltipBadge namespace="quatico" progress="80" name="bitbucket" />
+        <TooltipBadge namespace="quatico" progress="60" name="magnolia" />
+        <TooltipBadge namespace="quatico" progress="20" name="aem" />
       </TooltipBadgeGroup>
     </>
   );

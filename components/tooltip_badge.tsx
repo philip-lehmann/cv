@@ -1,6 +1,7 @@
 import { memo, useState, useMemo } from 'react';
 import { styled } from 'styled-components';
 import { Badge, Tooltip, Progress, ProgressBar, A } from '@bootstrap-styled/v4';
+import { icons } from './tooltip_icons';
 
 const ProgressWith = styled(Progress)`
   min-width: 100px;
@@ -12,8 +13,13 @@ export const TooltipBadgeGroup = styled('div')`
   gap: 5px;
 `;
 
+export const BadgeImg = styled('img')`
+  width: 30px;
+  height: 30px;
+`;
+
 interface TooltipBadgeProps {
-  name: string;
+  name: keyof typeof icons;
   namespace: string;
   progress: string;
 }
@@ -24,13 +30,18 @@ export const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress
     return `tooltip-${name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${namespace}`;
   }, [name, namespace]);
 
+  const icon = icons[name];
+
   return (
     <>
-      <A href="#" id={id}>
-        <Badge>{name}</Badge>
+      <A href={icon.url} id={id}>
+        <Badge>
+          <BadgeImg src={`/icons/${icon.icon}`} />
+        </Badge>
       </A>
 
       <Tooltip placement="top" isOpen={isOpen} target={id} toggle={() => setIsOpen(!isOpen)}>
+        <h2>{icon.name}</h2>
         <ProgressWith>
           <ProgressBar valueNow={Number(progress)} />
         </ProgressWith>

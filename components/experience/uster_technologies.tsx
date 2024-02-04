@@ -6,13 +6,11 @@ import { DashList, Dash } from '@cv/components/dash_list';
 import { Trans as T } from '@cv/components/trans';
 import { monthYear } from '@cv/helpers/date';
 import { useLocale } from '@cv/helpers/use_locale';
-import { LineBreak } from '@cv/components/print';
 
 export const UsterTechnologies: FC = () => {
   const locale = useLocale();
   return (
     <>
-      <LineBreak />
       <H5>Uster Technologies</H5>
       <div>
         <FloatRight>
@@ -40,15 +38,15 @@ export const UsterTechnologies: FC = () => {
         </Dash>
       </DashList>
       <TooltipBadgeGroup>
-        <TooltipBadge namespace="uster_technologies" progress="70" name="PHP" />
-        <TooltipBadge namespace="uster_technologies" progress="90" name="JavaScript" />
-        <TooltipBadge namespace="uster_technologies" progress="70" name="CSS" />
-        <TooltipBadge namespace="uster_technologies" progress="90" name="HTML" />
-        <TooltipBadge namespace="uster_technologies" progress="60" name="C" />
-        <TooltipBadge namespace="uster_technologies" progress="60" name="C++" />
-        <TooltipBadge namespace="uster_technologies" progress="60" name="C#" />
-        <TooltipBadge namespace="uster_technologies" progress="60" name="Java" />
-        <TooltipBadge namespace="uster_technologies" progress="80" name="Mysql" />
+        <TooltipBadge namespace="uster_technologies" progress="70" name="php" />
+        <TooltipBadge namespace="uster_technologies" progress="90" name="javascript" />
+        <TooltipBadge namespace="uster_technologies" progress="70" name="css" />
+        <TooltipBadge namespace="uster_technologies" progress="90" name="html" />
+        <TooltipBadge namespace="uster_technologies" progress="60" name="c" />
+        <TooltipBadge namespace="uster_technologies" progress="60" name="cpp" />
+        <TooltipBadge namespace="uster_technologies" progress="60" name="csharp" />
+        <TooltipBadge namespace="uster_technologies" progress="60" name="java" />
+        <TooltipBadge namespace="uster_technologies" progress="80" name="mysql" />
       </TooltipBadgeGroup>
     </>
   );
