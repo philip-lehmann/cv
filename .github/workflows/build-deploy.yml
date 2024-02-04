@@ -39,9 +39,6 @@ jobs:
         with:
           node-version-file: package.json
           cache: yarn
-          always-auth: true
-          registry-url: https://npm.pkg.github.com
-          scope: "@datage-ch"
       - name: install dependencies
         run: |
           corepack enable
