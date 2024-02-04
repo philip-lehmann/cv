@@ -40,7 +40,7 @@ export const icons = {
     url: 'https://en.wikipedia.org/wiki/JavaScript',
   },
   jenkins: { name: 'Jenkins', icon: 'Jenkins.svg', url: 'https://www.jenkins.io/' },
-  jira: { name: 'Jira', icon: 'Jira.svg', url: 'https://www.atlassian.com/software/jira' },
+  jira: { name: 'Jira', icon: 'jira.svg', url: 'https://www.atlassian.com/software/jira' },
   kubernetes: { name: 'Kubernets', icon: 'kubernetes.svg', url: 'https://kubernetes.io/' },
   mui: { name: 'MUI', icon: 'material-ui.svg', url: 'https://mui.com/' },
   nestjs: { name: 'NestJS', icon: 'nestjs.svg', url: 'https://nestjs.com/' },
