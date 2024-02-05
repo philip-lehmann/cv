@@ -39,7 +39,7 @@ export const icons = {
     icon: 'javascript.svg',
     url: 'https://en.wikipedia.org/wiki/JavaScript',
   },
-  jenkins: { name: 'Jenkins', icon: 'Jenkins.svg', url: 'https://www.jenkins.io/' },
+  jenkins: { name: 'Jenkins', icon: 'jenkins.svg', url: 'https://www.jenkins.io/' },
   jira: { name: 'Jira', icon: 'jira.svg', url: 'https://www.atlassian.com/software/jira' },
   kubernetes: { name: 'Kubernets', icon: 'kubernetes.svg', url: 'https://kubernetes.io/' },
   mui: { name: 'MUI', icon: 'material-ui.svg', url: 'https://mui.com/' },
@@ -80,7 +80,7 @@ export const icons = {
     icon: 'oauth2-proxy.svg',
     url: 'https://oauth2-proxy.github.io/oauth2-proxy/',
   },
-  'cert-manager': { name: 'Cert Manager', icon: 'CertManager.png', url: 'https://cert-manager.io/' },
+  'cert-manager': { name: 'Cert Manager', icon: 'cert-manager.png', url: 'https://cert-manager.io/' },
   'sealed-secrets': {
     name: 'Sealed Secrets',
     icon: 'sealed-secrets.png',
