@@ -20,7 +20,7 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
     return fs.createReadStream(outputPath);
   }
   const browser = await puppeteer.launch({
-    headless: 'new',
+    headless: true,
     userDataDir: './chromium-data',
     args: ['--no-sandbox'],
   });
