@@ -154,6 +154,7 @@ export const Atpoint: FC = () => {
         <TooltipBadge namespace="atpoint" progress="95" name="react" />
         <TooltipBadge namespace="atpoint" progress="80" name="ember" />
         <TooltipBadge namespace="atpoint" progress="90" name="webpack" />
+        <TooltipBadge namespace="atpoint" progress="60" name="selenium" />
         <TooltipBadge namespace="atpoint" progress="90" name="node" />
         <TooltipBadge namespace="atpoint" progress="50" name="objective-c" />
         <TooltipBadge namespace="atpoint" progress="60" name="java" />

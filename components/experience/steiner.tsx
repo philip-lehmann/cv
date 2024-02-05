@@ -78,6 +78,7 @@ export const Steiner: FC = () => {
         <TooltipBadge namespace="steiner" progress="90" name="git" />
         <TooltipBadge namespace="steiner" progress="50" name="nx" />
         <TooltipBadge namespace="steiner" progress="60" name="storybook" />
+        <TooltipBadge namespace="steiner" progress="80" name="playwright" />
         <TooltipBadge namespace="steiner" progress="80" name="jest" />
         <TooltipBadge namespace="steiner" progress="80" name="postgres" />
         <TooltipBadge namespace="steiner" progress="80" name="redis" />

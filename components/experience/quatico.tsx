@@ -70,6 +70,7 @@ export const Quatico: FC = () => {
         <TooltipBadge namespace="quatico" progress="95" name="react" />
         <TooltipBadge namespace="steiner" progress="60" name="storybook" />
         <TooltipBadge namespace="atpoint" progress="90" name="webpack" />
+        <TooltipBadge namespace="atpoint" progress="40" name="playwright" />
         <TooltipBadge namespace="atpoint" progress="80" name="jest" />
         <TooltipBadge namespace="quatico" progress="90" name="node" />
         <TooltipBadge namespace="quatico" progress="60" name="java" />

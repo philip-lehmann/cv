@@ -36,7 +36,14 @@ export const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress
     <>
       <A href={icon.url} id={id}>
         <Badge>
-          <BadgeImg src={`/icons/${icon.icon}`} />
+          {icon.type === 'svg' && <BadgeImg src={`/icons/${icon.icon}`} />}
+          {icon.type === 'image' && (
+            <picture>
+              <source srcSet={`/icons/${icon.icon}.avif`} type="image/avif" />
+              <source srcSet={`/icons/${icon.icon}.webp`} type="image/webp" />
+              <BadgeImg src={`/icons/${icon.icon}.png`} alt={icon.name} />
+            </picture>
+          )}
         </Badge>
       </A>
 

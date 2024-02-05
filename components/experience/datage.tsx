@@ -51,6 +51,7 @@ export const Datage: FC = () => {
         <TooltipBadge namespace="datage" progress="80" name="prisma" />
         <TooltipBadge namespace="datage" progress="80" name="bullmq" />
         <TooltipBadge namespace="datage" progress="80" name="mui" />
+        <TooltipBadge namespace="datage" progress="80" name="playwright" />
         <TooltipBadge namespace="datage" progress="80" name="html" />
         <TooltipBadge namespace="datage" progress="95" name="react" />
         <TooltipBadge namespace="datage" progress="50" name="vitest" />
