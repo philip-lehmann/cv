@@ -29,9 +29,9 @@ export const Experience: FC = () => {
           <Hr />
           <Atpoint />
           <Hr />
+          <LineBreak />
           <Insign />
           <Hr />
-          <LineBreak />
           <DataQuest />
           <Hr />
           <UsterTechnologies />
