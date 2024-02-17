@@ -34,7 +34,7 @@ export const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress
 
   return (
     <>
-      <A href={icon.url} id={id}>
+      <A href={icon.url} target="_blank" rel="noopener noreferrer" id={id}>
         <Badge>
           {icon.type === 'svg' && <BadgeImg src={`/icons/${icon.icon}`} />}
           {icon.type === 'image' && (
