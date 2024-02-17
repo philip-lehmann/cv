@@ -114,7 +114,7 @@ jobs:
       - name: git pull
         run: |
           git pull --rebase
-      - uses: imranismail/setup-kustomize@v2
+      - uses: philiplehmann/setup-kustomize@v2.2.2
       - name: set image tag
         run: |
           cd kustomize/cv
