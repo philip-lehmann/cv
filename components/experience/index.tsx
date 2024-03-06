@@ -10,6 +10,7 @@ import { UsterTechnologies } from '@cv/components/experience/uster_technologies'
 import { FloatRight } from '@cv/components/float';
 import { Trans as T } from '@cv/components/trans';
 import { LineBreak } from '../print';
+import { HealthAdvisor } from './healthadvisor';
 
 export const Experience: FC = () => {
   return (
@@ -20,6 +21,8 @@ export const Experience: FC = () => {
             <T lang="en">Work Experience</T>
             <T lang="de">Arbeitserfahrung</T>
           </CardTitle>
+          <HealthAdvisor />
+          <Hr />
           <Steiner />
           <Hr />
           <Quatico />
