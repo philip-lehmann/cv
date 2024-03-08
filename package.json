@@ -11,7 +11,7 @@
     "lint:types": "tsc --noEmit",
     "lint:biome": "biome lint **/*.ts",
     "lint": "yarn lint:biome && yarn lint:types",
-    "format": "biome format **/*.ts --write"
+    "format": "biome biome lint --apply **/*.ts"
   },
   "engines": {
     "node": "20.11.1",

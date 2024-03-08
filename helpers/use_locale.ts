@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { LangType } from './date';
+import type { LangType } from './date';
 
 const locales: Array<LangType> = ['de', 'en'];
 const isLocale = (locale: string | undefined): locale is LangType => {
