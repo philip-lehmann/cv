@@ -94,7 +94,7 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
       <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
       <ModalBody>
         {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
-        <video controls width="100%" ref={videoRef}>
+        <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`}>
           {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
           <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
           <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
