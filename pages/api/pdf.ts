@@ -1,8 +1,8 @@
-import fs, { ReadStream } from 'fs';
-import path from 'path';
+import fs, { type ReadStream } from 'node:fs';
+import path from 'node:path';
 import getConfig from 'next/config';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { LangType } from '@cv/helpers/date';
+import type { LangType } from '@cv/helpers/date';
 import puppeteer from 'puppeteer';
 
 const {

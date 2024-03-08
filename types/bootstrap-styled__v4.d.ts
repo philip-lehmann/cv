@@ -1,5 +1,5 @@
 declare module '@bootstrap-styled/v4' {
-  import { FC, PropsWithChildren } from 'react';
+  import type { FC, PropsWithChildren } from 'react';
 
   export const Hr: FC<ComponentProps<'hr'>>;
   export const H1: FC<ComponentProps<'h1'>>;
