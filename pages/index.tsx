@@ -41,7 +41,7 @@ const IndexPage: NextPage<{
   config: ConfigProps;
 }> = ({ config }) => {
   useEffect(hireMe, []);
-  const { query, locale, defaultLocale, pathname } = useRouter();
+  const { query, locale, pathname } = useRouter();
   const video = isVideoKey(query.video) ? query.video : null;
   const { googleAnalyticsKey, rollbarClientToken, env, siteUrl } = config;
 
@@ -59,7 +59,7 @@ const IndexPage: NextPage<{
         <Icons />
         <Twitter title={title} url={siteUrl} />
         <OpenGraph title={title} url={siteUrl} />
-        <Canonical locale={locale as LangType} defaultLocale={defaultLocale as LangType} path={pathname} />
+        <Canonical locale={locale as LangType} path={pathname} />
 
         {googleAnalyticsKey && <GoogleAnalytics googleAnalyticsKey={googleAnalyticsKey} />}
         {rollbarClientToken && <Rollbar rollbarClientToken={rollbarClientToken} env={env} />}

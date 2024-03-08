@@ -4,14 +4,11 @@ import { useConfig } from '@cv/helpers/config_context';
 
 interface CanonicalProps {
   locale: LangType;
-  defaultLocale: LangType;
   path: string;
 }
 
-export const Canonical: FC<CanonicalProps> = ({ locale, defaultLocale, path }) => {
+export const Canonical: FC<CanonicalProps> = ({ locale, path }) => {
   const { siteUrl } = useConfig();
-  if (path === '/' && locale === defaultLocale) {
-    return <link rel="canonical" href={`${siteUrl}/${defaultLocale}`} />;
-  }
-  return null;
+
+  return <link rel="canonical" href={`${siteUrl}/${locale}${path}`.replace(/\/$/, '')} />;
 };
