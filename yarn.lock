@@ -1922,7 +1922,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.64":
+"@types/react@npm:*":
   version: 18.2.64
   resolution: "@types/react@npm:18.2.64"
   dependencies:
@@ -1930,6 +1930,17 @@ __metadata:
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 10c0/ab3ba9597990d08ffd419a5ad28fd22393c7a9a241ae455fb1d5d193d209471aa1909fa7ad016fd8d161eab6d0babba77b013b56a5170bedf78833085b9ee424
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:18.2.65":
+  version: 18.2.65
+  resolution: "@types/react@npm:18.2.65"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    "@types/scheduler": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/91158b5a9e90489a5984bb610c3692001ecdf1d286c78384252698bcb306ef88e9434e75f01bf7739017e949e7690b7d6f1b7ef9d7097f86f3f649482a33604b
   languageName: node
   linkType: hard
 
@@ -2803,7 +2814,7 @@ __metadata:
     "@bootstrap-styled/provider": "npm:^2.0.3"
     "@bootstrap-styled/v4": "npm:^3.4.0"
     "@types/node": "npm:^20.8.7"
-    "@types/react": "npm:18.2.64"
+    "@types/react": "npm:18.2.65"
     "@types/react-dom": "npm:18.2.21"
     "@types/styled-components": "npm:^5.1.29"
     date-fns: "npm:^3.0.0"
