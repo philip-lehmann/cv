@@ -1,0 +1,19 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: google-analytics-secret
+  namespace: cv-philiplehmann
+spec:
+  encryptedData:
+    GOOGLE_ANALYTICS_KEY: AgBZ0lrTKI1ebrQVTcKD4X5HqFkv3tlEETq0lHO+V3JM1nLghtZDXizp86u9/XXdYOkqVm3iZiO+kGU63oAtvyRTPZvDBR48rUx47uTKnuP3naUhjHLwJNkFQWUFm51zGpSqQmPlmW6dqqwD/s0Y3PklXwO2eVG2DHo/P1IYtS70IYzCiDgD6Hx5WWvu4VWm7eYWgeNx0SozAS+RtYcSMDAiFlXlopsEBRwIJl9aSPzHtGvS5oObpKe0Q1LBvSYroFyI6K+ICl+o0NxtI+LtO9kXZQBkMzVn3tsUSR3UYT38itjNqNGkeLeojqb7Gc51bZOCRtGmrzLKS42wNNla8W4iIhXLdLb+gVZM0KpaMjRlPOnfnF0Xhyf2lRM9baiCIqy0ct7v5XXmuH2IcDVD3+dbHMilemFgBjDEEPdyckTEqLPtNcvR6+2LzWCh/JdmqjXW1aUyK4fFmkjcLOkTp+blBSJ+G7M0tHPApcFF3PoV+K5yMylIGrq1KLI7MlHdFMd6pAp7uostxvLxNQ35MtQ2pYF9xjBWNpSntdzQFg/Y4viDmBjWRFU86zbE2zgk8xs4j0Ca9DBINuq2NUlhz+GW9k6demle4Xag1bbv/C+ajlQsOl476/lkt1j8NwL6o+qILNIttRie0XsYX4fd/utdnvleDihmikzaIQOPuotosHCBpyp8UM4G/bfGbvGeWLDwpVfY7WuzIbgUwoU=
+  template:
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+      creationTimestamp: null
+      name: google-analytics-secret
+      namespace: cv-philiplehmann

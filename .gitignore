@@ -55,4 +55,4 @@ public/images
 tsconfig.tsbuildinfo
 
 # kubernetes secret
-kustomize/secret-argo-repo.yaml
+kustomize/secret-*
