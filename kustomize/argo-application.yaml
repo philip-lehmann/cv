@@ -9,7 +9,7 @@ spec:
     namespace: cv-philiplehmann
   source:
     path: kustomize
-    repoURL: "git@github.com:philip-lehmann/cv.git"
+    repoURL: "https://github.com/philip-lehmann/cv.git"
     targetRevision: HEAD
   project: philip
   syncPolicy:

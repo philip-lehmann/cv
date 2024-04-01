@@ -5,7 +5,6 @@ resources:
   - namespace.yaml
   - argo-application.yaml
 
-  - sealed-argo-repo.yaml
   - sealed-docker-registry-harbor.yaml
   - sealed-google-analytics.yaml
   - sealed-minio.yaml
