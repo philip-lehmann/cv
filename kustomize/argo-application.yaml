@@ -2,9 +2,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cv-philiplehmann
+  namespace: argo-cd
 spec:
   destination:
-    name: cv-philiplehmann
+    name: public
     namespace: cv-philiplehmann
   source:
     path: kustomize
