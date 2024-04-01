@@ -4,6 +4,8 @@ namespace: cv-philiplehmann
 
 resources:
   - namespace.yaml
+  - argo-application.yaml
+  - sealed-argo-repo.yaml
 
 bases:
   - cv

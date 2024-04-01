@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cv-philiplehmann
+spec:
+  destination:
+    name: cv-philiplehmann
+    namespace: cv-philiplehmann
+  source:
+    path: kustomize
+    repoURL: "git@github.com:philip-lehmann/cv.git"
+    targetRevision: HEAD
+  project: philip
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 2
