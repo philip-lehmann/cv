@@ -7,7 +7,6 @@ resources:
 
   - sealed-docker-registry-harbor.yaml
   - sealed-google-analytics.yaml
-  - sealed-minio.yaml
   - sealed-rollbar.yaml
 
 bases:
