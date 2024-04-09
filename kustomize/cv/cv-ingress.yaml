@@ -11,7 +11,7 @@ metadata:
       more_set_headers "X-Xss-Protection: 1; mode=block";
       more_set_headers "X-Content-Type-Options: nosniff";
       more_set_headers "Referrer-Policy: strict-origin";
-      more_set_headers "Content-Security-Policy: default-src 'self'; script-src 'self'; script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/*; script-src-attr 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://storage.riwi.dev https://storage-single.riwi.dev https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.geo.admin.ch; font-src 'self'; connect-src 'self' https://storage.riwi.dev https://storage-single.riwi.dev https://*.google-analytics.com https://*.analytics.google.com; media-src 'self' https://storage.riwi.dev https://storage-single.riwi.dev; child-src 'self'; frame-src 'self'; worker-src 'self'";
+      more_set_headers "Content-Security-Policy: default-src 'self'; script-src 'self'; script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/*; script-src-attr 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://storage.riwi.dev https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.geo.admin.ch; font-src 'self'; connect-src 'self' https://storage.riwi.dev https://*.google-analytics.com https://*.analytics.google.com; media-src 'self' https://storage.riwi.dev; child-src 'self'; frame-src 'self'; worker-src 'self'";
 
 spec:
   ingressClassName: nginx
