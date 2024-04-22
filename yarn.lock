@@ -1928,17 +1928,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
-  version: 18.2.78
-  resolution: "@types/react@npm:18.2.78"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: 10c0/5eb8e1dd98c29aeddf40b90f466d1a9ce83b113d42a096633d632b834e7ae9821f24ba7999928de9d98cca37764532a7ea35355a8103a377d8baa750f1841b5c
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:18.2.79":
+"@types/react@npm:*, @types/react@npm:18.2.79":
   version: 18.2.79
   resolution: "@types/react@npm:18.2.79"
   dependencies:
@@ -2510,9 +2500,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001579, caniuse-lite@npm:^1.0.30001587":
-  version: 1.0.30001610
-  resolution: "caniuse-lite@npm:1.0.30001610"
-  checksum: 10c0/015956a0bf2e3e233da3dc00c5632bbb4d416bcd6ced2f839e33e45b197a856234f97cb046e7427b83d7e3a3d6df314dfab1c86eb9d970970e00ad85a50b4933
+  version: 1.0.30001612
+  resolution: "caniuse-lite@npm:1.0.30001612"
+  checksum: 10c0/d6b405ff06f4e913bc779f9183fa68001c9d6b8526a7dd1b99c60587dd21a01aa8def3d8462cf6214f0181f1c21b9245611ff65241cf9c967fc742e86ece5065
   languageName: node
   linkType: hard
 
@@ -2706,11 +2696,11 @@ __metadata:
   linkType: hard
 
 "core-js-compat@npm:^3.31.0, core-js-compat@npm:^3.36.1":
-  version: 3.36.1
-  resolution: "core-js-compat@npm:3.36.1"
+  version: 3.37.0
+  resolution: "core-js-compat@npm:3.37.0"
   dependencies:
     browserslist: "npm:^4.23.0"
-  checksum: 10c0/70fba18a4095cd8ac04e5ba8cee251e328935859cf2851c1f67770068ea9f9fe71accb1b7de17cd3c9a28d304a4c41712bd9aa895110ebb6e3be71b666b029d1
+  checksum: 10c0/ca6ba7d200f7a4a850fd5cba58b40ab78139d3f301bad7b53816eafe0cfb000523e72882069ddaba440794b950ed101225668bf7b97b73e54a5e3384a8215e03
   languageName: node
   linkType: hard
 
@@ -3018,9 +3008,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.668":
-  version: 1.4.736
-  resolution: "electron-to-chromium@npm:1.4.736"
-  checksum: 10c0/f3acb515dcb9333b318f9a8ee80a0c3975162da6cc45d9c00152e0de7004b2bfe1246fe6cdf0c41a1b7016780bd4324aff848830aba4227cb55480c1aa32d248
+  version: 1.4.745
+  resolution: "electron-to-chromium@npm:1.4.745"
+  checksum: 10c0/2dd1842e0ee84f88e78ee6e81dbd9dd554a589cf612ab2e5920d8be837aaea78b4c00cf189e545ee25d36777514fed80c11c9a867b2194f94f173d063873ec18
   languageName: node
   linkType: hard
 
@@ -3914,9 +3904,9 @@ __metadata:
   linkType: hard
 
 "ipaddr.js@npm:^2.0.1":
-  version: 2.1.0
-  resolution: "ipaddr.js@npm:2.1.0"
-  checksum: 10c0/9aa43ff99771e3d14ab3683df3909b3b033fe81337646bc63780b00ec9bc51d4a696a047c0b261c05867c0a25086ab03f0ce32ea444a6b39e10fac1315d53cab
+  version: 2.2.0
+  resolution: "ipaddr.js@npm:2.2.0"
+  checksum: 10c0/e4ee875dc1bd92ac9d27e06cfd87cdb63ca786ff9fd7718f1d4f7a8ef27db6e5d516128f52d2c560408cbb75796ac2f83ead669e73507c86282d45f84c5abbb6
   languageName: node
   linkType: hard
 
