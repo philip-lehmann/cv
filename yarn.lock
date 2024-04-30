@@ -2813,7 +2813,7 @@ __metadata:
     "@types/styled-components": "npm:^5.1.29"
     date-fns: "npm:^3.0.0"
     dotenv: "npm:^16.3.1"
-    minio: "npm:^7.1.3"
+    minio: "npm:^8.0.0"
     next: "npm:^14.0.0"
     next-pwa: "npm:^5.6.0"
     polished: "npm:^4.2.2"
@@ -4628,9 +4628,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minio@npm:^7.1.3":
-  version: 7.1.4
-  resolution: "minio@npm:7.1.4"
+"minio@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "minio@npm:8.0.0"
   dependencies:
     async: "npm:^3.2.4"
     block-stream2: "npm:^2.1.0"
@@ -4646,7 +4646,7 @@ __metadata:
     through2: "npm:^4.0.2"
     web-encoding: "npm:^1.1.5"
     xml2js: "npm:^0.5.0"
-  checksum: 10c0/b1bd845d28bf7a7777f0af96879ede17ce5227b2bf61dc903442e7802a37ec5d5c256168bfc86d8202005ecf0542117c8375edf4a6bb17d0cdc1554c899febd1
+  checksum: 10c0/bc2ce03319bb4018356768f53e8f59d0e0f8945e7825bd9029636f5ca1b0cbe63874499788b454732d7ae8b752d774a351a86753b98a6298fcaa1dbe786ea8d1
   languageName: node
   linkType: hard
 
