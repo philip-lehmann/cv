@@ -10,4 +10,4 @@ resources:
 images:
 - name: harbor.riwi.dev/philiplehmann/cv
   newName: harbor.riwi.dev/philiplehmann/cv
-  newTag: 24-05-08.1345
+  newTag: 24-05-08.1347
