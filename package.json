@@ -14,7 +14,7 @@
     "format": "biome biome lint --apply **/*.ts"
   },
   "engines": {
-    "node": "20.13.0",
+    "node": "20.13.1",
     "yarn": "4.2.2"
   },
   "cacheDirectories": [
