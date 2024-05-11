@@ -1,7 +1,8 @@
 import { existsSync, createReadStream, createWriteStream, type ReadStream } from 'node:fs';
 import { finished } from 'node:stream/promises';
 import path from 'node:path';
-import { request } from 'node:http';
+import { request as httpRequest } from 'node:http';
+import { request as httpsRequest } from 'node:https';
 import getConfig from 'next/config';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { LangType } from '@cv/helpers/date';
@@ -23,6 +24,8 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
   if (isProduction && existsSync(outputPath)) {
     return createReadStream(outputPath);
   }
+
+  const request = new URL(puppeteerURL).protocol === 'https:' ? httpsRequest : httpRequest;
 
   return new Promise<ReadStream>((resolve, reject) => {
     try {
