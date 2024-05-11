@@ -25,6 +25,8 @@ spec:
               value: https://cv.philiplehmann.ch
             - name: NODE_ENV
               value: production
+            - name: PUPPETEER_API_URL
+              value: https://puppeteer.api.datage.ch
           envFrom:
             - secretRef:
                 name: minio-secret
@@ -81,4 +83,3 @@ spec:
             timeoutSeconds: 5
 
       restartPolicy: Always
-      

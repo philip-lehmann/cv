@@ -9,5 +9,4 @@ resources:
   - sealed-google-analytics.yaml
   - sealed-rollbar.yaml
 
-bases:
   - cv

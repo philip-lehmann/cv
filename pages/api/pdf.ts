@@ -1,12 +1,13 @@
-import fs, { type ReadStream } from 'node:fs';
+import { existsSync, createReadStream, createWriteStream, type ReadStream } from 'node:fs';
+import { finished } from 'node:stream/promises';
 import path from 'node:path';
+import { request } from 'node:http';
 import getConfig from 'next/config';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { LangType } from '@cv/helpers/date';
-import puppeteer from 'puppeteer';
 
 const {
-  serverRuntimeConfig: { siteUrl, defaultLocale },
+  serverRuntimeConfig: { defaultLocale },
 } = getConfig();
 
 const outputPathByLang = Object.freeze({
@@ -14,32 +15,50 @@ const outputPathByLang = Object.freeze({
   en: 'cv_pdf_en.pdf',
 });
 
+const puppeteerURL = process.env.PUPPETEER_API_URL || 'http://localhost:3001';
+
 const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV === 'production'): Promise<ReadStream> => {
+  console.log('getFile', locale, isProduction);
   const outputPath = path.resolve(outputPathByLang[locale]);
-  if (isProduction && fs.existsSync(outputPath)) {
-    return fs.createReadStream(outputPath);
+  if (isProduction && existsSync(outputPath)) {
+    return createReadStream(outputPath);
   }
-  const browser = await puppeteer.launch({
-    headless: true,
-    userDataDir: './chromium-data',
-    args: ['--no-sandbox'],
+
+  return new Promise<ReadStream>((resolve, reject) => {
+    try {
+      const req = request(
+        puppeteerURL,
+        { method: 'POST', path: '/', headers: { 'Content-Type': 'application/json' } },
+        async (res) => {
+          console.log('PDF response', res.statusCode, res.statusMessage);
+          if (res.statusCode !== 200) {
+            throw new Error(`Failed to generate PDF: ${res.statusMessage}`);
+          }
+          const file = createWriteStream(outputPath);
+          await finished(res.pipe(file, { end: true }));
+
+          resolve(getFile(locale, true));
+        },
+      );
+      const siteUrl = process.env.NODE_ENV === 'production' ? process.env.SITE_URL : 'http://host.docker.internal:3000';
+      const body = JSON.stringify({
+        url: `${siteUrl}/${locale}`,
+        format: 'a4',
+        landscape: false,
+        scale: 0.8,
+        printBackground: true,
+        omitBackground: true,
+        pageRanges: '1-3',
+        margin: { top: 0, right: 0, bottom: 0, left: 0 },
+      });
+      console.log('body', body);
+
+      req.write(body);
+      req.end();
+    } catch (error) {
+      reject(error);
+    }
   });
-  const page = await browser.newPage();
-  const url = `${siteUrl}/${locale}`;
-  console.info(url);
-  await page.goto(url);
-  await page.pdf({
-    path: outputPath,
-    format: 'a4',
-    landscape: false,
-    scale: 0.8,
-    printBackground: true,
-    omitBackground: true,
-    pageRanges: '1-3',
-    margin: { top: 0, right: 0, bottom: 0, left: 0 },
-  });
-  await browser.close();
-  return getFile(locale, true);
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
