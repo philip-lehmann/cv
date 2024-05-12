@@ -19,7 +19,6 @@ const outputPathByLang = Object.freeze({
 const puppeteerURL = process.env.PUPPETEER_API_URL || 'http://localhost:3001';
 
 const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV === 'production'): Promise<ReadStream> => {
-  console.log('getFile', locale, isProduction);
   const outputPath = path.resolve(outputPathByLang[locale]);
   if (isProduction && existsSync(outputPath)) {
     return createReadStream(outputPath);
@@ -33,7 +32,6 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
         puppeteerURL,
         { method: 'POST', path: '/', headers: { 'Content-Type': 'application/json' } },
         async (res) => {
-          console.log('PDF response', res.statusCode, res.statusMessage);
           if (res.statusCode !== 200) {
             throw new Error(`Failed to generate PDF: ${res.statusMessage}`);
           }
@@ -54,7 +52,6 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
         pageRanges: '1-3',
         margin: { top: 0, right: 0, bottom: 0, left: 0 },
       });
-      console.log('body', body);
 
       req.write(body);
       req.end();
