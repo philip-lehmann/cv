@@ -4252,8 +4252,8 @@ __metadata:
   linkType: hard
 
 "minio@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "minio@npm:8.0.0"
+  version: 8.0.1
+  resolution: "minio@npm:8.0.1"
   dependencies:
     async: "npm:^3.2.4"
     block-stream2: "npm:^2.1.0"
@@ -4269,7 +4269,7 @@ __metadata:
     through2: "npm:^4.0.2"
     web-encoding: "npm:^1.1.5"
     xml2js: "npm:^0.5.0"
-  checksum: 10c0/bc2ce03319bb4018356768f53e8f59d0e0f8945e7825bd9029636f5ca1b0cbe63874499788b454732d7ae8b752d774a351a86753b98a6298fcaa1dbe786ea8d1
+  checksum: 10c0/93e2501cfad143d4c3f08bc47a2d600d268cb023377da2ebb244201e6d611fb5e6aa6405191eead5383bbb7feabcb8fe55f5bf9d60e6cd7f5bdd8b0f0b212f85
   languageName: node
   linkType: hard
 
