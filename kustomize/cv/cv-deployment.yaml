@@ -15,7 +15,7 @@ spec:
       imagePullSecrets:
         - name: docker-registry-harbor
       initContainers:
-        - name: pdf-dir-
+        - name: pdf-dir-chown
           image: debian:bookworm-slim
           command:
             - chown
