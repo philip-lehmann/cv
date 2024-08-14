@@ -1,6 +1,6 @@
-import { existsSync, createReadStream, createWriteStream, type ReadStream } from 'node:fs';
+import { existsSync, createReadStream, createWriteStream, type ReadStream, mkdirSync } from 'node:fs';
 import { finished } from 'node:stream/promises';
-import path from 'node:path';
+import { dirname, resolve as pathResolve } from 'node:path';
 import { request as httpRequest } from 'node:http';
 import { request as httpsRequest } from 'node:https';
 import getConfig from 'next/config';
@@ -12,14 +12,18 @@ const {
 } = getConfig();
 
 const outputPathByLang = Object.freeze({
-  de: 'cv_pdf_de.pdf',
-  en: 'cv_pdf_en.pdf',
+  de: 'pdf/cv_pdf_de.pdf',
+  en: 'pdf/cv_pdf_en.pdf',
 });
 
 const puppeteerURL = process.env.PUPPETEER_API_URL || 'http://localhost:3001';
 
 const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV === 'production'): Promise<ReadStream> => {
-  const outputPath = path.resolve(outputPathByLang[locale]);
+  const outputPath = pathResolve(process.cwd(), outputPathByLang[locale]);
+  if (!existsSync(dirname(outputPath))) {
+    mkdirSync(dirname(outputPath), { recursive: true });
+  }
+
   if (isProduction && existsSync(outputPath)) {
     return createReadStream(outputPath);
   }
@@ -53,8 +57,7 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
         margin: { top: 0, right: 0, bottom: 0, left: 0 },
       });
 
-      req.write(body);
-      req.end();
+      req.end(body);
     } catch (error) {
       reject(error);
     }

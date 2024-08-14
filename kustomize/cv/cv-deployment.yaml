@@ -14,6 +14,17 @@ spec:
     spec:
       imagePullSecrets:
         - name: docker-registry-harbor
+      initContainers:
+        - name: pdf-dir-
+          image: debian:bookworm-slim
+          command:
+            - chown
+            - -R
+            - 1000:1000
+            - /app/pdf
+          volumeMounts:
+            - name: pdf
+              mountPath: /app/pdf
       containers:
         - name: cv-philiplehmann
           image: harbor.riwi.dev/philiplehmann/cv:latest
@@ -50,12 +61,15 @@ spec:
             - --max-old-space-size=250
             - node_modules/.bin/next
             - start
+          volumeMounts:
+            - name: pdf
+              mountPath: /app/pdf
           securityContext:
             allowPrivilegeEscalation: false
             privileged: false
             readOnlyRootFilesystem: false
-            # runAsNonRoot: true
-            # runAsUser: 1001
+            runAsNonRoot: true
+            runAsUser: 1001
             capabilities: {}
           livenessProbe:
             httpGet:
@@ -83,3 +97,7 @@ spec:
             timeoutSeconds: 5
 
       restartPolicy: Always
+      volumes:
+        - name: pdf
+          emptyDir:
+            sizeLimit: 20Mi
