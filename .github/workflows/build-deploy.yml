@@ -94,7 +94,7 @@ jobs:
       - name: git pull
         if: github.ref == 'refs/heads/main'
         run: |
-          git pull --rebase
+          git pull --rebase --autostash
       - uses: philiplehmann/setup-kustomize@v2.2.5
         if: github.ref == 'refs/heads/main'
       - name: set image tag
