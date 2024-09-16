@@ -24,7 +24,7 @@
   "dependencies": {
     "@bootstrap-styled/provider": "^2.0.3",
     "@bootstrap-styled/v4": "^3.4.0",
-    "date-fns": "^3.0.0",
+    "date-fns": "^4.0.0",
     "dotenv": "^16.3.1",
     "minio": "^8.0.0",
     "next": "^14.0.0",
