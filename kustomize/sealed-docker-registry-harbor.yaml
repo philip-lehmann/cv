@@ -9,22 +9,11 @@ metadata:
   namespace: cv-philiplehmann
 spec:
   encryptedData:
-    .dockerconfigjson: AgARpPrtv758EZqajtbKZJWANNSKyy8zmOCRGcylDlBcYlp312PjkgPaJaEr9xz78/9fmwADRxmKFZZESYmP1O1pXLrcHyEm+XOJGXhlus2E/Ls2/k5bmfDAwJbX+CpDigpNdfrb9tv3/unYALNeqst6S2VikWlNtNeIChPkhZowNc6U2EglWAhdvNE9BUlSyEadlHpDM0TsG8WZyTv5zDM3jN0yp+XC567g63Q4vb7p3Mo6ZACWf9xC6l21bINrjgBM1hadn/pgDR3ISmR+k5U7MGD+f9sFqcBDEdLtMYEe+u/dLFQfLW8NQ2a5Wy1GyInqFVOq/UGj2epNlB0er4vy0PbkAZZ2X/vp7gLZOh7kOiVqBdDIMNFP5phiIIJxcJX3ERgk9kJzl8svPoTX7hfJOhtpmVapisxMDLmDw8zlobJWUCQPRCpSEDyCbnx663IAV+h8VJseZD8OlNjOjQb1p2fYijN8L/+H1VFmplTNfh4kuPMT4r77jXH/jWQz4k1RskDW5iFErOVSDHICvSRm1cjHOA4d0KWVZkaxpzLPLAdsWzJsQvg8blxAYiAGBR0pVmjJNc9F1zqJKTW5eSnpaTESuhPloWLG4K/1ky/ZHTeBeiQDVYQGsrN48TjCSLQWc6/AR17tHHeLx5pX7BDM3G8BO1jCoMfhrzKRYmywUvIqwNkYNgkSnjcdOhk2lLEyCLF8cQBVhkDqFra4QdO9A5KlJZzo/gc41hHlEdcxWsBM9mUvO/RiAQ80PqSZGuD6iRaFwDswZixzQHIY6TMnZfRmzftyjIcHG6b6FLTN2O0jKgUAgjMtGRXDoKWjKncX1sFTKtM7boTfyGQJO4/7dmur2GePtUaW
+    .dockerconfigjson: AgA+wXhe7TbBEMzzwaprgwqSuXqzzXw/lMTar00v/ZNx7oWeWst0EETpN1DAqVsrrRifHuazKEPTrfT/cwXWpSFoKYDSiuS1a7eLltSaMT7qt0nS8Q7oANb9eEPVyPI0GwLzPwVAYlmO2ScHX+/Vs7dNKugxH9m0UaXoWAUSniugIrt5B6SR5kHVnZxQxyr+EpdDeQwRHoafj2k9+vGgUjQF0IIuDrYMGmYDb9VCqjIthmEia87yPJ+Ker5eL4S6URDRtFH7AjI3xWDGbvEwrWPL9IUAGwOj53Mvm7creUTC5dtvP+P3KQWnZvvRLZ4r0cuwQrt1J8NKVC1juU6c0s03OLNUWFwnksJ7NwBU1xOCWvmi/NYQVZAj0xdn2TK/2PmwCJn7iiPEZiJcWuVzxgW+iSzltWsYT6k4uAvKybtdMpvZj/NnPvKb5MHeiDydqGqjhLmYCgw8OhNc5oCjVXOsS+uRBwwhcOvrYJIPiIUlxAHGHD7V0V3UbYVJMWQkDjrd9lq5fzz/D2tvh2SmSE3CaEbdy9czgn0D+ZyaH2WQqsD85yRcADVlie1sbbPKuvWQjeU7Irh8EKiv5pWk+h0mr8LOu3NNckn7sjyCJ+gt0muGPtzqN/+T3iZkgJUxn6sHY/aaBoCpNbXab4hNUCQZmgdcKFZPsRZdCCoM4D+Z0IUNjlGVOgtpgpiVEo5eB8UlzFKbxbrPCOKCi/oQdA/i/SkPBpQrk2gCdDtiK//K5ZF1/gbanPt7Dower9j631RwpkRTKIJiWoLXLNBxexR85LtFuAnYKwgoGXdUiu1xEHbQuNzCUcMIWkLVRZmopz9hKGQVOrCl9eR3jbCj1oILUWX5gKf355Ak
   template:
     metadata:
       annotations:
         sealedsecrets.bitnami.com/cluster-wide: "true"
       creationTimestamp: null
-      managedFields:
-      - apiVersion: v1
-        fieldsType: FieldsV1
-        fieldsV1:
-          f:data:
-            .: {}
-            f:.dockerconfigjson: {}
-          f:type: {}
-        manager: agent
-        operation: Update
-        time: "2023-09-05T19:39:40Z"
       name: docker-registry-harbor
       namespace: cv-philiplehmann
