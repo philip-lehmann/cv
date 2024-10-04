@@ -1,4 +1,4 @@
-FROM bitnami/node:20.17.0 AS builder
+FROM bitnami/node:20.18.0 AS builder
 WORKDIR /app
 ARG SITE_URL=https://cv.philiplehmann.ch
 ENV NODE_ENV=production
@@ -11,7 +11,7 @@ RUN pwd
 RUN ls -al
 
 # Production image, copy all the files and run next
-FROM bitnami/node:20.17.0 AS runner
+FROM bitnami/node:20.18.0 AS runner
 WORKDIR /app
 
 COPY --from=builder /app/node_modules ./node_modules
