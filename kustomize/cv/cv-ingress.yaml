@@ -43,7 +43,7 @@ metadata:
     nginx.ingress.kubernetes.io/enable-modsecurity: "true"
     nginx.ingress.kubernetes.io/enable-owasp-core-rules: "true"
     nginx.ingress.kubernetes.io/server-snippet: |
-      return 301 $scheme://cv.philiplehmann.ch$request_uri;
+      return 301 https://cv.philiplehmann.ch$request_uri;
 spec:
   ingressClassName: nginx
   rules:
