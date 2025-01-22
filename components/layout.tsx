@@ -1,22 +1,38 @@
 import type { FC, PropsWithChildren } from 'react';
-import BootstrapProvider from '@bootstrap-styled/provider';
-import { darken, lighten } from 'polished';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-const theme = {
-  '$card-border-width': 'none',
-  '$body-color': '#343436',
-  $black: '#000',
-  '$font-family-sans-serif': "'Lato', 'Noto Sans JP', 'Open Sans', sans-serif",
-  '$link-color': '#343436',
-  '$link-decoration': 'none',
-  '$link-hover-color': darken(0.4, '#343436'),
-  '$link-hover-decoration': 'underline',
-  '$brand-primary': lighten(0.4, '#343436'),
-  '$badge-default-bg': '#E1E1E1',
-};
+const theme = createTheme({
+  palette: {
+    text: {
+      primary: '#343436',
+    },
+    primary: {
+      main: '#343436',
+      dark: '#000',
+      light: '#E1E1E1',
+    },
+  },
+  typography: {
+    fontFamily: "'Lato', 'Noto Sans JP', 'Open Sans', sans-serif",
+  },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#343436',
+          textDecoration: 'none',
+          '&:hover': {
+            color: '#000',
+            textDecoration: 'underline',
+          },
+        },
+      },
+    },
+  },
+});
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
-  return <BootstrapProvider theme={theme}>{children}</BootstrapProvider>;
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 export default Layout;

@@ -1,6 +1,5 @@
 import type { FC } from 'react';
-
-import { H5, H6 } from '@bootstrap-styled/v4';
+import { Typography, Box } from '@mui/material';
 import { FloatRight } from '@cv/components/float';
 import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { DashList, Dash } from '@cv/components/dash_list';
@@ -12,16 +11,16 @@ export const DataQuest: FC = () => {
   const locale = useLocale();
   return (
     <>
-      <H5>DataQuest</H5>
-      <div>
+      <Typography variant="h5">DataQuest</Typography>
+      <Box>
         <FloatRight>
           {monthYear('2006-08-01', { locale: locale })} - {monthYear('2006-11-01', { locale: locale })}
         </FloatRight>
-        <H6>
+        <Typography variant="h6">
           <T lang="en">Service Desk - Support</T>
           <T lang="de">Service Desk - Support</T>
-        </H6>
-      </div>
+        </Typography>
+      </Box>
       <DashList>
         <Dash>
           <T lang="en">

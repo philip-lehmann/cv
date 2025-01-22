@@ -1,48 +1,39 @@
 import type { FC } from 'react';
-
-import { Row, Col, Header, H1, H3, Card, CardBlock } from '@bootstrap-styled/v4';
-import { styled } from 'styled-components';
-
 import { Experience } from '@cv/components/experience';
 import { Sidebar } from '@cv/components/sidebar';
 import { LanguageSwitch } from './language_switch';
-
-const HomeH1 = styled(H1)`
-  margin-top: 100px;
-`;
-
-const SidebarCol = styled(Col)`
-  background: linear-gradient(90deg, rgba(222, 222, 224, 1) 0%, rgba(233, 233, 235, 1) 100%);
-  min-height: 100vh;
-  @media print {
-    height: 300vh;
-  }
-`;
-
-const RowStyled = styled(Row)`
-  position: relative;
-`;
+import { Box, Typography, Card, CardContent } from '@mui/material';
 
 export const CV: FC = () => {
   return (
-    <RowStyled>
+    <Box sx={{ position: 'relative' }}>
       <LanguageSwitch />
-      <SidebarCol sm={4}>
+      <Box
+        sx={{
+          background: 'linear-gradient(90deg, rgba(222, 222, 224, 1) 0%, rgba(233, 233, 235, 1) 100%)',
+          minHeight: '100vh',
+          '@media print': {
+            height: '300vh',
+          },
+        }}
+      >
         <Sidebar />
-      </SidebarCol>
-      <Col sm={8}>
+      </Box>
+      <Box>
         <Card>
-          <CardBlock>
-            <Header>
-              <HomeH1>Philip Lehmann</HomeH1>
-              <H3>Software Engineer</H3>
-            </Header>
-          </CardBlock>
+          <CardContent>
+            <header>
+              <Typography variant="h1" sx={{ mt: '100px' }}>
+                Philip Lehmann
+              </Typography>
+              <Typography variant="h3">Software Engineer</Typography>
+            </header>
+          </CardContent>
         </Card>
         <br />
         <br />
         <Experience />
-      </Col>
-    </RowStyled>
+      </Box>
+    </Box>
   );
 };

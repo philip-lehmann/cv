@@ -1,15 +1,23 @@
-import { styled } from 'styled-components';
-import { Hr } from '@bootstrap-styled/v4';
+import type { FC } from 'react';
+import { Divider, Box } from '@mui/material';
 
-export const HrPrintHidden = styled(Hr)`
-  @media print {
-    display: none !important;
-  }
-`;
+export const HrPrintHidden: FC = () => (
+  <Divider
+    sx={{
+      '@media print': {
+        display: 'none !important',
+      },
+    }}
+  />
+);
 
-export const LineBreak = styled('div')`
-  page-break-before: always;
-  @media print {
-    height: 70px;
-  }
-`;
+export const LineBreak: FC = () => (
+  <Box
+    sx={{
+      pageBreakBefore: 'always',
+      '@media print': {
+        height: '70px',
+      },
+    }}
+  />
+);

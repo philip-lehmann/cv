@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { H5, H6 } from '@bootstrap-styled/v4';
+import { Typography } from '@mui/material';
 import { FloatRight } from '@cv/components/float';
 import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { DashList, Dash } from '@cv/components/dash_list';
@@ -12,15 +12,15 @@ export const Atpoint: FC = () => {
   const locale = useLocale();
   return (
     <>
-      <H5>atpoint ag</H5>
+      <Typography variant="h5">atpoint ag</Typography>
       <div>
         <FloatRight>
           {monthYear('2020-09-01', { locale: locale })} - {monthYear('2021-06-30', { locale: locale })}
         </FloatRight>
-        <H6>
+        <Typography variant="h6">
           <T lang="en">Head of Development</T>
           <T lang="de">Head of Development</T>
-        </H6>
+        </Typography>
       </div>
       <DashList>
         <Dash>
@@ -65,10 +65,10 @@ export const Atpoint: FC = () => {
         <FloatRight>
           {monthYear('2010-06-01', { locale: locale })} - {monthYear('2020-09-01', { locale: locale })}
         </FloatRight>
-        <H6>
+        <Typography variant="h6">
           <T lang="en">Software Engineer</T>
           <T lang="de">Software Engineer</T>
-        </H6>
+        </Typography>
       </div>
       <DashList>
         <Dash>
@@ -99,10 +99,10 @@ export const Atpoint: FC = () => {
         </Dash>
       </DashList>
       <br />
-      <H6>
+      <Typography variant="h6">
         <T lang="en">Project references:</T>
         <T lang="de">Projekt Referenzen:</T>
-      </H6>
+      </Typography>
       <DashList>
         <Dash>
           <T lang="en">

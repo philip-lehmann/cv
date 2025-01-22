@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { H5, H6 } from '@bootstrap-styled/v4';
+import { Typography } from '@mui/material';
 import { FloatRight } from '@cv/components/float';
 import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { Dash, DashList } from '@cv/components/dash_list';
@@ -11,15 +11,15 @@ export const Steiner: FC = () => {
   const locale = useLocale();
   return (
     <>
-      <H5>Steiner AG</H5>
+      <Typography variant="h5">Steiner AG</Typography>
       <div>
         <FloatRight>
           {monthYear('2022-10-01', { locale: locale })} - {monthYear('2024-02-29', { locale: locale })}
         </FloatRight>
-        <H6>
+        <Typography variant="h6">
           <T lang="en">Senior Software Engineer</T>
           <T lang="de">Senior Software Engineer</T>
-        </H6>
+        </Typography>
         <DashList>
           <Dash>
             <T lang="en">Development of microservices using Node.js, Nest and other relevant technologies</T>

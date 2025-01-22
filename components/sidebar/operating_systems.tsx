@@ -1,12 +1,7 @@
 import type { FC } from 'react';
-import { styled } from 'styled-components';
 
 import { MyCard, MyCardBlock, MyCardTitle } from '@cv/components/sidebar/card';
 import { Trans as T } from '@cv/components/trans';
-
-const SpanNoBreak = styled('span')`
-  white-space: nowrap;
-`;
 
 export const OperatingSystems: FC = () => {
   return (
@@ -17,22 +12,22 @@ export const OperatingSystems: FC = () => {
           <T lang="de">Betriebssysteme</T>
         </MyCardTitle>
         MacOS:{' '}
-        <SpanNoBreak>
+        <span sx={{ whiteSpace: 'nowrap' }}>
           <T lang="en">Development / Personal use</T>
           <T lang="de">Entwicklung / Privat</T>
-        </SpanNoBreak>
+        </span>
         <br />
         Linux:{' '}
-        <SpanNoBreak>
+        <span sx={{ whiteSpace: 'nowrap' }}>
           <T lang="en">Production</T>
           <T lang="de">Produktiv</T>
-        </SpanNoBreak>
+        </span>
         <br />
         Windows:{' '}
-        <SpanNoBreak>
+        <span sx={{ whiteSpace: 'nowrap' }}>
           <T lang="en">Graphic intensive work / Games</T>
           <T lang="de">Grafisch / Games</T>
-        </SpanNoBreak>
+        </span>
       </MyCardBlock>
     </MyCard>
   );

@@ -10,6 +10,7 @@ export const Rollbar: FC<RollbarProps> = ({ rollbarClientToken, env }: RollbarPr
   return (
     <>
       <script
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: needed here
         dangerouslySetInnerHTML={{
           __html: `var _rollbarConfig = {
               accessToken: "${rollbarClientToken}",

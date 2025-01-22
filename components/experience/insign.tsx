@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { H5, H6 } from '@bootstrap-styled/v4';
+import Typography from '@mui/material/Typography';
 import { FloatRight } from '@cv/components/float';
 import { TooltipBadge, TooltipBadgeGroup } from '@cv/components/tooltip_badge';
 import { DashList, Dash } from '@cv/components/dash_list';
@@ -11,15 +11,15 @@ export const Insign: FC = () => {
   const locale = useLocale();
   return (
     <>
-      <H5>insign GmbH</H5>
+      <Typography variant="h5">insign GmbH</Typography>
       <div>
         <FloatRight>
           {monthYear('2007-06-01', { locale: locale })} - {monthYear('2010-05-01', { locale: locale })}
         </FloatRight>
-        <H6>
+        <Typography variant="h6">
           <T lang="en">Software Engineer</T>
           <T lang="de">Software Entwickler</T>
-        </H6>
+        </Typography>
       </div>
       <DashList>
         <Dash>
