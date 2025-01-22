@@ -2,13 +2,23 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { Button, ButtonGroup, Col } from '@bootstrap-styled/v4';
+import { Button, Col } from '@bootstrap-styled/v4';
 import { styled } from 'styled-components';
 import { PdfIcon } from './icons/pdf';
-const FloatingButtonGroup = styled(ButtonGroup)`
-  > a {
+
+const FloatingButtonGroup = styled('div')`
+  > .btn {
     text-decoration: none;
-  }
+    border-radius: 0;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.875rem;
+  };
+  > :first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+  };
+  > :last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+  };
 `;
 
 const LanguageCol = styled(Col)`
@@ -45,7 +55,7 @@ export const LanguageSwitch = ({ className = '' }) => {
         <PdfIconStyled />
       </LinkStyled>
 
-      <FloatingButtonGroup className={className} size="sm">
+      <FloatingButtonGroup className={className}>
         <Link href={{ href: '/' }} locale="en" passHref legacyBehavior>
           <Button color={locale === 'en' ? 'primary' : 'secondary'}>EN</Button>
         </Link>
