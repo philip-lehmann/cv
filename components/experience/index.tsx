@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Hr, H6, Card, CardBlock, CardTitle } from '@bootstrap-styled/v4';
+import { Divider, Typography, Card, CardContent } from '@mui/material';
 import { Quatico } from '@cv/components/experience/quatico';
 import { Atpoint } from '@cv/components/experience/atpoint';
 import { Insign } from '@cv/components/experience/insign';
@@ -16,73 +16,73 @@ export const Experience: FC = () => {
   return (
     <>
       <Card>
-        <CardBlock>
-          <CardTitle>
+        <CardContent>
+          <Typography variant="h5">
             <T lang="en">Work Experience</T>
             <T lang="de">Arbeitserfahrung</T>
-          </CardTitle>
+          </Typography>
           <HealthAdvisor />
-          <Hr />
+          <Divider />
           <Steiner />
-          <Hr />
+          <Divider />
           <Quatico />
-          <Hr />
+          <Divider />
           <LineBreak />
           <Datage />
-          <Hr />
+          <Divider />
           <Atpoint />
-          <Hr />
+          <Divider />
           <LineBreak />
           <Insign />
-          <Hr />
+          <Divider />
           <DataQuest />
-          <Hr />
+          <Divider />
           <UsterTechnologies />
-        </CardBlock>
+        </CardContent>
       </Card>
 
       <Card>
-        <CardBlock>
-          <CardTitle>
+        <CardContent>
+          <Typography variant="h5">
             <T lang="en">Education</T>
             <T lang="de">Ausbildung</T>
-          </CardTitle>
+          </Typography>
           <div>
             <FloatRight>Sep - Nov 2009</FloatRight>
-            <H6>
+            <Typography variant="subtitle1">
               <T lang="en">English Language School - Global Village Hawaii</T>
               <T lang="de">Englisch Sprachaufenthalt - Global Village Hawaii</T>
-            </H6>
+            </Typography>
           </div>
           <div>
             <FloatRight>2006 - 2007</FloatRight>
-            <H6>
+            <Typography variant="subtitle1">
               <T lang="en">Army Service - Electronic warfare (EKF)</T>
               <T lang="de">Militärdienst - Elektronische Kriegsführung (EKF)</T>
-            </H6>
+            </Typography>
           </div>
           <div>
             <FloatRight>2002 - 2006</FloatRight>
           </div>
-          <H6>
+          <Typography variant="subtitle1">
             <T lang="en">Apprenticeship as System Engineer</T>
             <T lang="de">Lehre als System Informatiker</T>
-          </H6>
+          </Typography>
           <div>
             <FloatRight>1999 - 2002</FloatRight>
-            <H6>
+            <Typography variant="subtitle1">
               <T lang="en">Secondary School (Sek A) - Wangen-Brüttisellen</T>
               <T lang="de">Sekundarschule (Sek A) - Wangen-Brüttisellen</T>
-            </H6>
+            </Typography>
           </div>
           <div>
             <FloatRight>1993 - 1999</FloatRight>
-            <H6>
+            <Typography variant="subtitle1">
               <T lang="en">Primary School - Brüttisellen</T>
               <T lang="de">Primarschule - Brüttisellen</T>
-            </H6>
+            </Typography>
           </div>
-        </CardBlock>
+        </CardContent>
       </Card>
     </>
   );

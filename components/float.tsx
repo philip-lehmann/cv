@@ -1,6 +1,14 @@
-import { styled } from 'styled-components';
+import type { PropsWithChildren, FC } from 'react';
+import { Box } from '@mui/material';
 
-export const FloatRight = styled('span')`
-  float: right;
-  margin-top: -3px;
-`;
+export const FloatRight: FC<PropsWithChildren> = ({ children }) => (
+  <Box
+    component="span"
+    sx={{
+      float: 'right',
+      marginTop: '-3px',
+    }}
+  >
+    {children}
+  </Box>
+);

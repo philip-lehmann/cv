@@ -1,5 +1,5 @@
 import { type FC, memo, type PropsWithChildren } from 'react';
-import { type LangType } from '@cv/helpers/date';
+import type { LangType } from '@cv/helpers/date';
 import { useLocale } from '@cv/helpers/use_locale';
 
 interface TransProps {

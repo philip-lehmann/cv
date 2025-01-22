@@ -5,8 +5,7 @@
 
 ## Stack
  - next.js
- - @bootstrap-styled/v4
- - styled-components
+ - mui
  - rollbar
  - google analytics
  - puppeteer

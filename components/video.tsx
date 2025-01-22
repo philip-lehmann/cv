@@ -1,9 +1,12 @@
-import { useState, useCallback, useEffect, useRef, type FC, type ReactPortal } from 'react';
+'use client';
+
+import { type FC, useState, useCallback, useEffect, useRef, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { Modal, ModalHeader, ModalBody } from '@bootstrap-styled/v4';
+import { Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import { useRouter } from 'next/router';
 import type { LangType } from '@cv/helpers/date';
-import { styled } from 'styled-components';
+import { useParams } from 'next/navigation';
 
 interface DisableScrollProps {
   element: HTMLElement;
@@ -38,15 +41,7 @@ export const isVideoKey = (source: string | string[] | undefined): source is Vid
   return typeof source === 'string' && (VideoKeys as string[]).includes(source);
 };
 
-interface VideoModalProps {
-  video: VideoType;
-}
-
-const StyledModal = styled(Modal)`
-  .modal-dialog {
-    background-color: transparent;
-  }
-`;
+interface VideoModalProps {}
 
 const useDisableScroll = ({ element, disabled }: DisableScrollProps): void => {
   useEffect(() => {
@@ -58,10 +53,14 @@ const useDisableScroll = ({ element, disabled }: DisableScrollProps): void => {
   }, [disabled, element]);
 };
 
-const VideoModal: FC<VideoModalProps> = ({ video }) => {
+const VideoModal: FC<VideoModalProps> = () => {
+  const query = useParams();
+  const video = isVideoKey(query?.video) ? query.video : null;
+  // if (video) {
+  //   title = `${title} - video ${video}`;
+  // }
   const router = useRouter();
   const { locale } = router;
-  const title = videoTitle[video][locale as LangType];
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -82,33 +81,57 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
     }
   }, []);
   useEffect(() => {
-    setOpen(true);
-  }, []);
+    setOpen(!!video);
+  }, [video]);
+
+  const title = video && videoTitle[video][locale as LangType];
 
   const isMSEdge = window.navigator.userAgent.toLowerCase().includes('edg') && window.navigator.platform === 'Win32';
 
   useDisableScroll({ element: document.body, disabled: open });
 
-  return (
-    <>
-      {createPortal(
-        <StyledModal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
-          <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
-          <ModalBody>
-            {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
-            <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`}>
-              {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
-              <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
-              <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
-              <source src={`/api/video/${video}.webm`} type="video/webm" />
-              Sorry, your browser doesn&apos;t support embedded videos.
-            </video>
-          </ModalBody>
-        </StyledModal>,
-        document.body,
-      )}
-    </>
-  );
+  return createPortal(
+    <Dialog
+      open={open}
+      onClose={closeHandler}
+      onExited={closedHandler}
+      onEntered={openedHandler}
+      maxWidth="lg"
+      fullWidth
+      PaperProps={{
+        sx: {
+          backgroundColor: 'transparent',
+        },
+      }}
+    >
+      <DialogTitle>
+        {title}
+        <IconButton
+          aria-label="close"
+          onClick={closeHandler}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent>
+        {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
+        <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`}>
+          {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
+          <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
+          <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
+          <source src={`/api/video/${video}.webm`} type="video/webm" />
+          Sorry, your browser doesn&apos;t support embedded videos.
+        </video>
+      </DialogContent>
+    </Dialog>,
+    document.body,
+  ) as ReactNode;
 };
 
 export default VideoModal;

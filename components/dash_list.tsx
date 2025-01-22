@@ -1,26 +1,28 @@
 import type { FC, ComponentProps } from 'react';
-import { styled } from 'styled-components';
-import { Ul, Li } from '@bootstrap-styled/v4';
-
-const List = styled(Ul)`
-  margin-left: 0;
-  padding-left: 10px;
-`;
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 
 export const DashList: FC<ComponentProps<typeof List>> = ({ children, ...props }) => {
   return (
-    <List {...props} role="list">
+    <List sx={{ ml: 0, pl: '10px' }} {...props}>
       {children}
     </List>
   );
 };
 
-export const Dash = styled(Li)`
-  text-indent: 5px;
-  &:before {
-    content: '-';
-    display: inline-block;
-    width: 15px;
-    margin-left: -20px;
-  }
-`;
+export const Dash = ({ children, ...props }: ComponentProps<typeof ListItem>) => (
+  <ListItem
+    sx={{
+      textIndent: '5px',
+      '&:before': {
+        content: '"-"',
+        display: 'inline-block',
+        width: '15px',
+        marginLeft: '-20px',
+      },
+    }}
+    {...props}
+  >
+    {children}
+  </ListItem>
+);

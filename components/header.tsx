@@ -1,38 +1,43 @@
 import type { FC } from 'react';
-import { styled } from 'styled-components';
-
-const HeaderDiv = styled('header')`
-  background: 'rebeccapurple';
-  margin-bottom: '1.45rem';
-`;
-
-const HeaderWrapper = styled('div')`
-  margin: '0 auto';
-  max-width: 960;
-  padding: '1.45rem 1.0875rem';
-`;
-
-const H1Styled = styled('h1')`
-  margin: 0;
-`;
-
-const AStyled = styled('a')`
-  color: 'white';
-  text-decoration: 'none';
-`;
-
-const Header: FC<HeaderProps> = ({ siteTitle = '' }) => (
-  <HeaderDiv>
-    <HeaderWrapper>
-      <H1Styled>
-        <AStyled href="/">{siteTitle}</AStyled>
-      </H1Styled>
-    </HeaderWrapper>
-  </HeaderDiv>
-);
+import { Box, Typography, Link } from '@mui/material';
 
 interface HeaderProps {
   siteTitle?: string;
 }
+
+const Header: FC<HeaderProps> = ({ siteTitle = '' }) => (
+  <Box
+    component="header"
+    sx={{
+      bgcolor: 'rebeccapurple',
+      mb: '1.45rem',
+    }}
+  >
+    <Box
+      sx={{
+        margin: '0 auto',
+        maxWidth: 960,
+        padding: '1.45rem 1.0875rem',
+      }}
+    >
+      <Typography
+        variant="h1"
+        sx={{
+          margin: 0,
+        }}
+      >
+        <Link
+          href="/"
+          sx={{
+            color: 'white',
+            textDecoration: 'none',
+          }}
+        >
+          {siteTitle}
+        </Link>
+      </Typography>
+    </Box>
+  </Box>
+);
 
 export default Header;

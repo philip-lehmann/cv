@@ -1,22 +1,10 @@
-import { memo, useState, useMemo } from 'react';
-import { styled } from 'styled-components';
-import { Badge, Tooltip, Progress, ProgressBar, A } from '@bootstrap-styled/v4';
+import { memo, useState, useMemo, type FC } from 'react';
+import Badge from '@mui/material/Badge';
+import Tooltip from '@mui/material/Tooltip';
+import LinearProgress from '@mui/material/LinearProgress';
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
 import { icons } from './tooltip_icons';
-
-const ProgressWith = styled(Progress)`
-  min-width: 100px;
-`;
-
-export const TooltipBadgeGroup = styled('div')`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-`;
-
-export const BadgeImg = styled('img')`
-  width: 30px;
-  height: 30px;
-`;
 
 interface TooltipBadgeProps {
   name: keyof typeof icons;
@@ -24,7 +12,11 @@ interface TooltipBadgeProps {
   progress: string;
 }
 
-export const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress }) => {
+export const TooltipBadgeGroup: FC<React.PropsWithChildren> = ({ children }) => (
+  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>{children}</Box>
+);
+
+export const TooltipBadge: FC<TooltipBadgeProps> = memo(({ name, namespace, progress }) => {
   const [isOpen, setIsOpen] = useState(false);
   const id = useMemo(() => {
     return `tooltip-${name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${namespace}`;
@@ -34,24 +26,31 @@ export const TooltipBadge = memo<TooltipBadgeProps>(({ name, namespace, progress
 
   return (
     <>
-      <A href={icon.url} target="_blank" rel="noopener noreferrer" id={id} title={icon.name}>
+      <Link href={icon.url} target="_blank" rel="noopener noreferrer" id={id} title={icon.name}>
         <Badge>
-          {icon.type === 'svg' && <BadgeImg src={`/icons/${icon.icon}`} />}
+          {icon.type === 'svg' && <Box component="img" sx={{ width: 30, height: 30 }} src={`/icons/${icon.icon}`} />}
           {icon.type === 'image' && (
             <picture>
               <source srcSet={`/icons/${icon.icon}.avif`} type="image/avif" />
               <source srcSet={`/icons/${icon.icon}.webp`} type="image/webp" />
-              <BadgeImg src={`/icons/${icon.icon}.png`} alt={icon.name} />
+              <Box component="img" sx={{ width: 30, height: 30 }} src={`/icons/${icon.icon}.png`} alt={icon.name} />
             </picture>
           )}
         </Badge>
-      </A>
+      </Link>
 
-      <Tooltip placement="top" isOpen={isOpen} target={id} toggle={() => setIsOpen(!isOpen)}>
-        <h2>{icon.name}</h2>
-        <ProgressWith>
-          <ProgressBar valueNow={Number(progress)} />
-        </ProgressWith>
+      <Tooltip
+        title={
+          <>
+            <h2>{icon.name}</h2>
+            <LinearProgress sx={{ minWidth: 100 }} variant="determinate" value={Number(progress)} />
+          </>
+        }
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        onOpen={() => setIsOpen(true)}
+      >
+        <span />
       </Tooltip>
     </>
   );
