@@ -21,7 +21,7 @@ const AStyled = styled('a')`
   text-decoration: 'none';
 `;
 
-const Header: FC<HeaderProps> = ({ siteTitle }) => (
+const Header: FC<HeaderProps> = ({ siteTitle = '' }) => (
   <HeaderDiv>
     <HeaderWrapper>
       <H1Styled>
@@ -32,11 +32,7 @@ const Header: FC<HeaderProps> = ({ siteTitle }) => (
 );
 
 interface HeaderProps {
-  siteTitle: string;
+  siteTitle?: string;
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
 
 export default Header;

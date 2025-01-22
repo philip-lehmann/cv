@@ -1,8 +1,8 @@
-import { type FC, useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef, type FC, type ReactPortal } from 'react';
 import { createPortal } from 'react-dom';
 import { Modal, ModalHeader, ModalBody } from '@bootstrap-styled/v4';
 import { useRouter } from 'next/router';
-import { LangType } from '@cv/helpers/date';
+import type { LangType } from '@cv/helpers/date';
 import { styled } from 'styled-components';
 
 interface DisableScrollProps {
@@ -89,21 +89,25 @@ const VideoModal: FC<VideoModalProps> = ({ video }) => {
 
   useDisableScroll({ element: document.body, disabled: open });
 
-  return createPortal(
-    <StyledModal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
-      <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
-      <ModalBody>
-        {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
-        <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`}>
-          {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
-          <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
-          <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
-          <source src={`/api/video/${video}.webm`} type="video/webm" />
-          Sorry, your browser doesn&apos;t support embedded videos.
-        </video>
-      </ModalBody>
-    </StyledModal>,
-    document.body,
+  return (
+    <>
+      {createPortal(
+        <StyledModal isOpen={open} size="lg" toggle={closeHandler} onClosed={closedHandler} onOpened={openedHandler}>
+          <ModalHeader toggle={closeHandler}>{title}</ModalHeader>
+          <ModalBody>
+            {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
+            <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`}>
+              {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
+              <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
+              <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
+              <source src={`/api/video/${video}.webm`} type="video/webm" />
+              Sorry, your browser doesn&apos;t support embedded videos.
+            </video>
+          </ModalBody>
+        </StyledModal>,
+        document.body,
+      )}
+    </>
   );
 };
 

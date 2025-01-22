@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
@@ -21,7 +21,7 @@ import { Rollbar } from '@cv/components/head/rollbar';
 import { Connect } from '@cv/components/head/connect';
 import { Font } from '@cv/components/head/font';
 import { Canonical } from '@cv/components/head/canonical';
-import { type LangType } from '@cv/helpers/date';
+import type { LangType } from '@cv/helpers/date';
 import { type ConfigProps, ConfigProvider } from '@cv/helpers/config_context';
 
 import dynamic from 'next/dynamic';

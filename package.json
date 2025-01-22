@@ -34,7 +34,7 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "rollbar": "^2.26.2",
-    "styled-components": "^6.1.0",
+    "styled-components": "^6.1.14",
     "styled-jsx": "^5.1.2",
     "styled-reset": "^4.5.1"
   },
