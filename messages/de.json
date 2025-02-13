@@ -1,0 +1,165 @@
+{
+  "Atpoint": {
+    "name": "atpoint ag",
+    "roles1": {
+      "name": "Head of Development",
+      "list": {
+        "item1": "Software-Entwicklungsprozess leiten, bewerten und überwachen",
+        "item2": "Analysieren und Beheben von Softwarefehlern, Verbessern und Optimieren der bestehenden Funktionalität",
+        "item3": "Entwerfen von wiederverwendbaren und wartbaren Softwarekomponenten",
+        "item4": "Projektplanung, -kalkulation und -kontrolle",
+        "item5": "Projekt-Roadmap erstellen und Projektaufbau definieren",
+        "item6": "Qualitäts- und Sicherheitskontrolle von Projekten",
+        "item7": "Leitung und Coaching des Software-Entwicklungsteams (5 Mitarbeiter, inkl. Rekrutierung, Leistungsbeurteilung, Know-how-Transfer)"
+      }
+    },
+    "roles2": {
+      "name": "Software Engineer",
+      "list": {
+        "item1": "Agile und innovative Softwareentwicklung",
+        "item2": "Verbessern der Funktionalität, Benutzerfreundlichkeit, Architektur und Qualität der Software",
+        "item3": "Spezifizieren, implementieren, testen und dokumentieren von Software",
+        "item4": "Einrichten von Produktionsumgebungen und Erstellen von Deployment-Pipelines",
+        "item5": "Weiterentwicklung bestehender Anwendungen (Wartung und Support, Fehlersuche, kontinuierliche Verbesserungen der bestehenden Codebasis)"
+      }
+    },
+    "references": {
+      "name": "Projekt Referenzen:",
+      "list": {
+        "item1": "Multitouch-Anwendungen auf Basis von HTML5 mit einer REST-API in Ruby on Rails mit einer Synchronisation über Websockets beim Beispiel Trilux",
+        "item2": "Microsoft Kinect demo in HTML5",
+        "item3": "iPad / Touch Offline-Anwendung in HTML5"
+      }
+    }
+  },
+  "Datage": {
+    "name": "Datage",
+    "roles1": {
+      "name": "Gründer & Entwickler",
+      "list": {
+        "item1": "Betreiben eines Kubernetes-Clusters und Hosting von Projekten",
+        "item2": "Entwicklung einer Next.js-Frontend-Anwendung mit einem GraphQL-Backend unter Verwendung von Workers und einer Medien-Engine als Microservices"
+      }
+    }
+  },
+  "DataQuest": {
+    "name": "DataQuest",
+    "roles1": {
+      "name": "Service Desk - Support",
+      "list": {
+        "item1": "Entwickeln einer Lagerverwalung für das iPod austausch Program in Java."
+      }
+    }
+  },
+  "HealthAdvisor": {
+    "name": "HealthAdvisor",
+    "roles1": {
+      "name": "Senior Full Stack Developer"
+    }
+  },
+  "Experience": {
+    "work": {
+      "name": "Arbeitserfahrung"
+    },
+    "education": {
+      "name": "Ausbildung",
+      "list": {
+        "languageSchool": "Englisch Sprachaufenthalt - Global Village Hawaii",
+        "army": "Militärdienst - Elektronische Kriegsführung (EKF)",
+        "apprenticeship": "Lehre als System Informatiker",
+        "secondarySchool": "Sekundarschule (Sek A) - Wangen-Brüttisellen",
+        "primarySchool": "Primarschule - Brüttisellen"
+      }
+    }
+  },
+  "Insign": {
+    "name": "insign GmbH",
+    "roles1": {
+      "name": "Software Entwickler",
+      "list": {
+        "item1": "Unterhalt, entwicklung und deployment von Webseiten aufgebaut auf dem internen CMS nach Kundenwünschen (PWC, Finanz und Wirtschaft, Syngenta etc.)",
+        "item2": "Piazza Plattform mit der PHP Template Engine Smarty erweitern",
+        "item3": "Systemadministratoraufgaben"
+      }
+    }
+  },
+  "Quatico": {
+    "name": "Quatico Solution AG",
+    "roles1": {
+      "name": "Agile Team Lead",
+      "list": {
+        "item1": "Aufwandschätzungen erstellen für Kundenwünsche",
+        "item2": "Organisieren von grooming und slicing für Releases"
+      }
+    },
+    "roles2": {
+      "name": "Senior Frontend Developer",
+      "list": {
+        "item1": "Magnolia-CMS Zertifizierung",
+        "item2": "Erstellen von CMS Komponenten basierend auf Web Components",
+        "item3": "Backend- und Frontend-Entwicklung in Java und TypeScript",
+        "item4": "Weiterentwicklung von Continuous Delivery Pipelines für Kundenprojekte auf Basis von Kubernetes"
+      }
+    }
+  },
+  "Steiner": {
+    "name": "Steiner AG",
+    "roles1": {
+      "name": "Senior Software Engineer",
+      "list": {
+        "item1": "Entwicklung von Microservices unter Verwendung von Node.js, Nest und anderen relevanten Technologien",
+        "item2": "Integration von PostgreSQL Datenbanken und externen APls in die Microservice-Architektur",
+        "item3": "Entwicklung von benutzerfreundlichen und responsiven Webanwendungen mit TypeScript, Next.js und Tailwind CSS",
+        "item4": "Mitarbeit an der Konfiguration und Verwaltung der Infrastruktur als Code mithilfe von Terraform",
+        "item5": "Sicherstellung der Code-Qualität durch gründliche Code-Reviews und konstruktives Feedback",
+        "item6": "Unterstützung und fachkundiges Coaching von Teammitgliedern",
+        "item7": "Mitarbeit in einem agilen 6-köpfigen Scrum-Team",
+        "item8": "Mitarbeit im teamübergreifenden Tech-Chapter"
+      }
+    }
+  },
+  "UsterTechnologies": {
+    "name": "Uster Technologies",
+    "roles1": {
+      "name": "Lehre als System Informatiker",
+      "list": {
+        "item1": "Computer aufsetzten für alle Mitarbeiter und helfen beim migrieren von Daten und Applikationen",
+        "item2": "Intranet mit PHP erstellen als Variante zu MS SharePoint",
+        "item3": "Software erstellen für Microcontroller in C / C++ / C#"
+      }
+    }
+  },
+  "AboutMe": {
+    "name": "Über mich",
+    "story": "Computer haben mich schon immer fasziniert. Ich habe meine Karriere mit einer Lehre als System Informatiker gestartet, aber als wir den ersten Programmierkurs in C hatten, habe ich meine Leidenschaft gefunden für das Programmieren. In meiner Freizeit habe ich angefangen PHP und Java zu lernen. Nach meiner Lehre war für mich klar, dass ich meine Berufung gefunden habe als Entwickler und habe nun seit {years} Jahren Erfahrungen gesammelt."
+  },
+  "ComputerLanguages": {
+    "name": "Programmiersprachen"
+  },
+  "HumanLanguages": {
+    "name": "Sprachen",
+    "swiss": "Schweizerdeutsch: Muttersprache",
+    "german": "Deutsch: fliessend",
+    "english": "Englisch: fliessend"
+  },
+  "Contact": {
+    "name": "Kontakt",
+    "swiss": "Schweizer"
+  },
+  "Interests": {
+    "name": "Persönliche Interessen",
+    "list": "Kochen / Surfen / Tauchen / Snowboard / Fahrrad / E-Sports"
+  },
+  "OperatingSystems": {
+    "name": "Betriebssysteme",
+    "macos": "Entwicklung / Privat",
+    "linux": "Produktiv",
+    "windows": "Grafisch / Games"
+  },
+  "Metadata": {
+    "title": "Philip Lehmann - Curriculum vitae"
+  },
+  "date": {
+    "now": "Jetzt"
+  }
+}

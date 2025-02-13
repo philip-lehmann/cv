@@ -14,8 +14,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@cv/components/*": ["./components/*"],
-      "@cv/helpers/*": ["./helpers/*"]
+      "@cv/components/*": ["src/components/*"],
+      "@cv/helpers/*": ["src/helpers/*"],
+      "@cv/i18n/*": ["./src/i18n/*"]
     },
     "incremental": true,
     "types": ["node", "minio"],

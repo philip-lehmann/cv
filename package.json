@@ -5,7 +5,7 @@
   "private": true,
   "description": "Philip Lehmann - Curriculum vitae",
   "scripts": {
-    "dev": "docker compose up -d & next dev",
+    "dev": "docker compose up & next dev",
     "build": "next build",
     "start": "next start -p $PORT",
     "lint:types": "tsc --noEmit",
@@ -22,15 +22,17 @@
     ".next/cache"
   ],
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.1.10",
     "@mui/material": "^6.1.10",
-    "@mui/material-nextjs": "^6.1.9",
+    "@mui/material-nextjs": "^6.4.3",
     "date-fns": "^4.1.0",
     "dotenv": "^16.4.7",
     "minio": "^8.0.2",
     "next": "^15.0.4",
+    "next-intl": "^3.26.3",
     "next-pwa": "^5.6.0",
     "polished": "^4.3.1",
     "postcss": "^8.4.49",
