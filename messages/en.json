@@ -1,0 +1,165 @@
+{
+  "Atpoint": {
+    "name": "atpoint ag",
+    "roles1": {
+      "name": "Head of Development",
+      "list": {
+        "item1": "Lead, evaluate and monitor software development process",
+        "item2": "Analyze and resolve software defects, improve and optimize existing functionality",
+        "item3": "Architect reusable and maintainable software components",
+        "item4": "Project planning, estimation and controlling",
+        "item5": "Create project roadmap and define project setup",
+        "item6": "Quality and security control of projects",
+        "item7": "Manage and coach software development team (5 employees, incl. recruitment, performance reviews, know-how transfers)"
+      }
+    },
+    "roles2": {
+      "name": "Software Engineer",
+      "list": {
+        "item1": "Agile and innovative software development",
+        "item2": "Improve the functionality, usability, architecture and quality of the software",
+        "item3": "Specify, implement, test and document software",
+        "item4": "Set up production environments and create deployment pipelines",
+        "item5": "Further development of existing applications (maintenance and support, troubleshooting, continuous improvements of the existing code base)"
+      }
+    },
+    "references": {
+      "name": "Project references:",
+      "list": {
+        "item1": "Multitouch applications based on HTML5 with a REST API in Ruby on Rails with a synchronization over websockets in the case of Trilux",
+        "item2": "Microsoft Kinect demo in HTML5",
+        "item3": "iPad / Touch offline application in HTML5"
+      }
+    }
+  },
+  "Datage": {
+    "name": "Datage",
+    "roles1": {
+      "name": "Founder & Developer",
+      "list": {
+        "item1": "Managing Kubernetes clusters and hosting projects",
+        "item2": "Developing a Next.js frontend with a GraphQL backend, utilizing workers and a media engine as microservices"
+      }
+    }
+  },
+  "DataQuest": {
+    "name": "DataQuest",
+    "roles1": {
+      "name": "Service Desk - Support",
+      "list": {
+        "item1": "Design and implement a warehouse management system for the iPod replacement program using Java"
+      }
+    }
+  },
+  "HealthAdvisor": {
+    "name": "HealthAdvisor",
+    "roles1": {
+      "name": "Senior Full Stack Developer"
+    }
+  },
+  "Experience": {
+    "work": {
+      "name": "Work Experience"
+    },
+    "education": {
+      "name": "Education",
+      "list": {
+        "languageSchool": "English Language School - Global Village Hawaii",
+        "army": "Army Service - Electronic warfare (EKF)",
+        "apprenticeship": "Apprenticeship as System Engineer",
+        "secondarySchool": "Secondary School (Sek A) - Wangen-Brüttisellen",
+        "primarySchool": "Primary School - Brüttisellen"
+      }
+    }
+  },
+  "Insign": {
+    "name": "insign GmbH",
+    "roles1": {
+      "name": "Software Engineer",
+      "list": {
+        "item1": "Maintain, create and deploy websites utilizing the internal CMS for customers (PWC, Finanz und Wirtschaft, Syngenta etc.)",
+        "item2": "Update Piazza using PHP Template Engine Smarty",
+        "item3": "System administrator tasks"
+      }
+    }
+  },
+  "Quatico": {
+    "name": "Quatico Solution AG",
+    "roles1": {
+      "name": "Agile Team Lead",
+      "list": {
+        "item1": "Estimating tasks for client approval",
+        "item2": "Organize grooming and slicing for releases"
+      }
+    },
+    "roles2": {
+      "name": "Senior Frontend Developer",
+      "list": {
+        "item1": "Magnolia-CMS Certification",
+        "item2": "Build CMS components based on Web Components",
+        "item3": "Backend and frontend development in Java and TypeScript",
+        "item4": "Further development of continuous delivery pipelines for customer projects based on Kubernetes"
+      }
+    }
+  },
+  "Steiner": {
+    "name": "Steiner AG",
+    "roles1": {
+      "name": "Senior Software Engineer",
+      "list": {
+        "item1": "Development of microservices using Node.js, Nest and other relevant technologies",
+        "item2": "Integration of PostgreSQL databases and external APls into the microservice architecture",
+        "item3": "Development of user-friendly and responsive web applications with TypeScript, Next.js and Tailwind CSS",
+        "item4": "Collaboration on the configuration and management of the infrastructure as code using Terraform",
+        "item5": "Ensuring code quality through thorough code reviews and constructive feedback",
+        "item6": "Support and expert coaching of team members",
+        "item7": "Collaboration in an agile 6-member Scrum team",
+        "item8": "Collaboration in the cross-team tech chapter"
+      }
+    }
+  },
+  "UsterTechnologies": {
+    "name": "Uster Technologies",
+    "roles1": {
+      "name": "Apprenticeship System Engineer",
+      "list": {
+        "item1": "Set up computers for all the employees and migrate data and applications",
+        "item2": "Create intranet based on PHP as a variant to MS SharePoint",
+        "item3": "Design software for microcontrollers in C / C++ / C#"
+      }
+    }
+  },
+  "AboutMe": {
+    "name": "About Me",
+    "story": "Computers have always fascinated me. I began my career with an apprenticeship as System Engineer but once I started my first course with C, I quickly discovered my passion for programming. In my free time I continued to study and discover PHP and Java and developing several private projects. After my apprenticeship it was clear to me that I had found my professional calling and pursued my career in programming, for {years} years."
+  },
+  "ComputerLanguages": {
+    "name": "Computer Languages"
+  },
+  "HumanLanguages": {
+    "name": "Human Languages",
+    "swiss": "Swiss German: Native",
+    "german": "German: Business Fluent",
+    "english": "English: Business Fluent"
+  },
+  "Contact": {
+    "name": "Contact",
+    "swiss": "Swiss"
+  },
+  "Interests": {
+    "name": "Personal Interests",
+    "list": "Cook / Surf / Scuba Dive / Snowboard / Bike / E-Sports"
+  },
+  "OperatingSystems": {
+    "name": "Operating Systems",
+    "macos": "Development / Personal use",
+    "linux": "Production",
+    "windows": "Graphic intensive work / Games"
+  },
+  "Metadata": {
+    "title": "Philip Lehmann - Curriculum vitae"
+  },
+  "date": {
+    "now": "Now"
+  }
+}
