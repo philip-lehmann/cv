@@ -1,18 +1,16 @@
 import type { FC } from 'react';
 
-import { MyCard, MyCardBlock, MyCardTitle } from './card';
 import { useTranslations } from 'next-intl';
+import { SidebarItem } from './helper';
 
 export const ComputerLanguages: FC = () => {
   const t = useTranslations('ComputerLanguages');
+
   return (
-    <MyCard backgroundColor="transparent">
-      <MyCardBlock>
-        <MyCardTitle>{t('name')}</MyCardTitle>
-        Typescript
-        <br />
-        Ruby on Rails
-      </MyCardBlock>
-    </MyCard>
+    <SidebarItem title={t('name')}>
+      Typescript
+      <br />
+      Ruby on Rails
+    </SidebarItem>
   );
 };

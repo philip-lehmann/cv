@@ -1,17 +1,8 @@
 import type { FC } from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
+import { SidebarItem } from './helper';
 
 export const Interests: FC = () => {
   const t = useTranslations('Interests');
-  return (
-    <Card sx={{ backgroundColor: 'transparent' }}>
-      <CardContent>
-        <Typography variant="h6" gutterBottom>
-          {t('name')}
-        </Typography>
-        <Typography variant="body1">{t('list')}</Typography>
-      </CardContent>
-    </Card>
-  );
+  return <SidebarItem title={t('name')}>{t('list')}</SidebarItem>;
 };

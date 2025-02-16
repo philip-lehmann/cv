@@ -167,4 +167,4 @@ export const icons = {
     icon: 'selenium.svg',
     url: 'https://www.selenium.dev/',
   },
-};
+} as const;

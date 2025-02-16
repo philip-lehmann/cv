@@ -1,9 +1,9 @@
 'use server';
 
 import type { FC } from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import IconButton from '@mui/material/IconButton';
 import { PdfIcon } from './icons/pdf';
@@ -16,11 +16,12 @@ interface LanguageSwitchProps {
 export const LanguageSwitch: FC<LanguageSwitchProps> = async ({ className = '' }) => {
   const locale = await getLocale();
   return (
-    <Box
+    <Stack
+      direction="row"
       sx={{
         zIndex: 1,
-        display: 'flex',
         justifyContent: 'space-between',
+        alignItems: 'center',
         '@media (min-width: 576px)': {
           justifyContent: 'flex-end',
         },
@@ -31,24 +32,26 @@ export const LanguageSwitch: FC<LanguageSwitchProps> = async ({ className = '' }
         '@media print': {
           display: 'none !important',
         },
+        width: '100%',
+        padding: '0 35px',
       }}
     >
-      <Link
+      <IconButton
         href={{ pathname: '/api/pdf', query: { locale } }}
         download
         title="download curriculum vitae"
-        style={{ height: '30px', paddingRight: '15px' }}
+        sx={{ height: '30px', paddingRight: '15px' }}
+        component={NextLink}
+        disableRipple
       >
-        <IconButton>
-          <PdfIcon sx={{ height: '30px' }} />
-        </IconButton>
-      </Link>
+        <PdfIcon style={{ height: '30px' }} />
+      </IconButton>
 
       <ButtonGroup>
         <Button
           href="/en"
           variant="contained"
-          LinkComponent={Link}
+          LinkComponent={NextLink}
           color={locale === 'en' ? 'primary' : 'secondary'}
           size="small"
         >
@@ -56,7 +59,7 @@ export const LanguageSwitch: FC<LanguageSwitchProps> = async ({ className = '' }
         </Button>
         <Button
           variant="contained"
-          LinkComponent={Link}
+          LinkComponent={NextLink}
           href="/de"
           color={locale === 'de' ? 'primary' : 'secondary'}
           size="small"
@@ -64,6 +67,6 @@ export const LanguageSwitch: FC<LanguageSwitchProps> = async ({ className = '' }
           DE
         </Button>
       </ButtonGroup>
-    </Box>
+    </Stack>
   );
 };
