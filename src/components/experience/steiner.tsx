@@ -33,7 +33,6 @@ export const Steiner: FC = () => {
         <TooltipBadge progress="60" name="kibana" />
         <TooltipBadge progress="30" name="terraform" />
         <TooltipBadge progress="60" name="auth0" />
-        <TooltipBadge progress="80" name="git" />
         <TooltipBadge progress="85" name="docker" />
         <TooltipBadge progress="50" name="kubernetes" />
         <TooltipBadge progress="80" name="vscode" />
