@@ -24,8 +24,8 @@ export const Duties: FC<DutiesProps> = async ({ namespace, duties, start, end })
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between">
-        {monthYear(start, { locale })} - {end === 'now' ? t('date.now') : monthYear(end, { locale })}
         <Typography variant="h6">{t(`${namespace}.name`)}</Typography>
+        {monthYear(start, { locale })} - {end === 'now' ? t('date.now') : monthYear(end, { locale })}
       </Stack>
       <DashList>
         {Array.from({ length: duties }, (_, i) => (

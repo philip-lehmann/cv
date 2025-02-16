@@ -1,7 +1,9 @@
 'use server';
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { Container, ThemeProvider } from '@mui/material';
+import Container from '@mui/material/Container';
+import { ThemeProvider } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
 import { theme } from '../../theme';
 import type { FC, PropsWithChildren } from 'react';
 import Head from 'next/head';
@@ -14,6 +16,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@cv/i18n/routing';
 import { Roboto } from 'next/font/google';
+import { LanguageSwitch } from '@cv/components/language_switch';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -39,42 +42,45 @@ const RootLayout: FC<
   const title = messages['Metadata.title'] as string;
 
   return (
-    <html lang={locale}>
-      <NextIntlClientProvider messages={messages}>
-        <Head>
-          <HireMe />
-          <Connect />
-          <Font />
-          <Meta title={title} />
-          <Icons />
-          <Twitter title={title} url={siteUrl} />
-          <OpenGraph title={title} url={siteUrl} />
-          <Canonical locale={locale} path={'/'} />
+    <>
+      <CssBaseline />
+      <html lang={locale}>
+        <NextIntlClientProvider messages={messages}>
+          <Head>
+            <title>{title}</title>
+            <HireMe />
+            <Connect />
+            <Font />
+            <Meta title={title} />
+            <Icons />
+            <Twitter title={title} url={siteUrl} />
+            <OpenGraph title={title} url={siteUrl} />
+            <Canonical locale={locale} path={'/'} />
 
-          {googleAnalyticsKey && <GoogleAnalytics googleAnalyticsKey={googleAnalyticsKey} />}
-          {rollbarClientToken && <Rollbar rollbarClientToken={rollbarClientToken} env={env} />}
-        </Head>
+            {googleAnalyticsKey && <GoogleAnalytics googleAnalyticsKey={googleAnalyticsKey} />}
+            {rollbarClientToken && <Rollbar rollbarClientToken={rollbarClientToken} env={env} />}
+          </Head>
 
-        <body className={roboto.variable}>
-          <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <ThemeProvider theme={theme}>
-              <Container
-                sx={{
-                  '@media screen and (max-width: 1024px)': {
-                    maxWidth: 'calc(100vw - 30px)',
-                  },
-                  '@media print': {
-                    maxWidth: 'calc(100vw - 30px)',
-                  },
-                }}
-              >
-                {children}
-              </Container>
-            </ThemeProvider>
-          </AppRouterCacheProvider>
-        </body>
-      </NextIntlClientProvider>
-    </html>
+          <body className={roboto.variable}>
+            <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+              <ThemeProvider theme={theme}>
+                <Container
+                  sx={{
+                    position: 'relative',
+                    '@media print': {
+                      maxWidth: '100vw',
+                    },
+                  }}
+                >
+                  <LanguageSwitch />
+                  {children}
+                </Container>
+              </ThemeProvider>
+            </AppRouterCacheProvider>
+          </body>
+        </NextIntlClientProvider>
+      </html>
+    </>
   );
 };
 

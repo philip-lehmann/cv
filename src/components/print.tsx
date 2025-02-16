@@ -12,10 +12,11 @@ export const HrPrintHidden: FC = () => (
 );
 
 export const LineBreak: FC = () => (
-  <Box
+  <Divider
     sx={{
       pageBreakBefore: 'always',
       '@media print': {
+        visibility: 'hidden',
         height: '70px',
       },
     }}

@@ -1,5 +1,7 @@
 import type { FC, ComponentPropsWithRef } from 'react';
-import { Link, Card, CardContent, Typography, Box } from '@mui/material';
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
+import { SidebarItem } from './helper';
 
 export interface LinkProps extends Omit<ComponentPropsWithRef<'a'>, 'children' | 'target' | 'rel'> {
   image: string;
@@ -45,23 +47,18 @@ const LinkComponent: FC<LinkProps> = ({ image, name, ...anchorProps }) => {
 
 export const FollowMe: FC = () => {
   return (
-    <Card sx={{ backgroundColor: 'transparent' }}>
-      <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Follow Me
-        </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '10px',
-          }}
-        >
-          <LinkComponent image="github" name="Github" href="https://github.com/philiplehmann" />
-          <LinkComponent image="linkedin" name="LinkedIn" href="https://www.linkedin.com/in/philip-lehmann-6362a256/" />
-          <LinkComponent image="xing" name="Xing" href="https://www.xing.com/profile/Philip_Lehmann5/cv" />
-        </Box>
-      </CardContent>
-    </Card>
+    <SidebarItem title="Follow Me">
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '10px',
+        }}
+      >
+        <LinkComponent image="github" name="Github" href="https://github.com/philiplehmann" />
+        <LinkComponent image="linkedin" name="LinkedIn" href="https://www.linkedin.com/in/philip-lehmann-6362a256/" />
+        <LinkComponent image="xing" name="Xing" href="https://www.xing.com/profile/Philip_Lehmann5/cv" />
+      </Box>
+    </SidebarItem>
   );
 };

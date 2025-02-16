@@ -1,108 +1,46 @@
 'use client';
 
-import { type FC, useState, useCallback, useEffect, useRef, type ReactNode } from 'react';
-import { createPortal } from 'react-dom';
+import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 import { Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { useRouter } from 'next/router';
-import type { LangType } from '../helpers/date';
-import { useParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useLocale, useTranslations } from 'next-intl';
 
-interface DisableScrollProps {
-  element: HTMLElement;
-  disabled: boolean;
-}
-
-const videoTitle = Object.freeze({
-  post: {
-    de: 'Die Schweizerische Post: Multitouch Messelösung (HTML5)',
-    en: 'The Swiss Post: Exhibition Multitouch Application (HTML5)',
-  },
-  avaloq: {
-    de: 'Avaloq Financial Planning Prototyp',
-    en: 'Avaloq Financial Planning Prototyp',
-  },
-  trilux: {
-    de: 'Trilux Verkausfsanwendung an der "Light+Building 2012"',
-    en: 'Trilux sales application at the "Light+Building 2012"',
-  },
-  kinect: {
-    de: 'Kinect Demo HTML5 & Javascript',
-    en: 'Kinect Demo HTML5 & Javascript',
-  },
-  local: {
-    de: 'local.ch: Sales Butler',
-    en: 'local.ch: Sales Butler',
-  },
-});
-export type VideoType = keyof typeof videoTitle;
-export const VideoKeys = Object.freeze(Object.getOwnPropertyNames(videoTitle) as VideoType[]);
-export const isVideoKey = (source: string | string[] | undefined): source is VideoType => {
-  return typeof source === 'string' && (VideoKeys as string[]).includes(source);
+export const VideoKeys = ['post', 'avaloq', 'trilux', 'kinect', 'local'] as const;
+export type VideoType = (typeof VideoKeys)[number];
+export const isVideoKey = (source: string | string[] | undefined | null): source is VideoType => {
+  return typeof source === 'string' && (VideoKeys as readonly string[]).includes(source);
 };
 
-interface VideoModalProps {}
-
-const useDisableScroll = ({ element, disabled }: DisableScrollProps): void => {
-  useEffect(() => {
-    element.style.overflowY = disabled ? 'hidden' : 'scroll';
-
-    return () => {
-      element.style.overflowY = 'scroll';
-    };
-  }, [disabled, element]);
-};
-
-const VideoModal: FC<VideoModalProps> = () => {
-  const query = useParams();
-  const video = isVideoKey(query?.video) ? query.video : null;
-  // if (video) {
-  //   title = `${title} - video ${video}`;
-  // }
+const VideoModal: FC = () => {
+  const t = useTranslations('Video');
+  const [isMSEdge, setMSEdge] = useState(false);
   const router = useRouter();
-  const { locale } = router;
+  const query = useSearchParams();
+  console.log(JSON.stringify(query));
+  const video = isVideoKey(query?.get('video')) ? (query.get('video') as VideoType) : null;
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const [open, setOpen] = useState(false);
   const closeHandler = useCallback(() => {
-    setOpen(false);
-  }, []);
-  const closedHandler = useCallback(() => {
-    router.push({ query: {} }, undefined, { scroll: false });
+    router.push(window.location.pathname, { scroll: false });
   }, [router]);
-  const openedHandler = useCallback(() => {
-    try {
-      // only allowed by user interaction
-      videoRef.current?.play();
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      // console.error(e)
-    }
-  }, []);
+
   useEffect(() => {
-    setOpen(!!video);
-  }, [video]);
+    setMSEdge(window.navigator.userAgent.toLowerCase().includes('edg') && window.navigator.platform === 'Win32');
+    // only allowed by user interaction
+    videoRef.current?.play();
+  }, []);
 
-  const title = video && videoTitle[video][locale as LangType];
+  const title = video && t(video);
 
-  const isMSEdge = window.navigator.userAgent.toLowerCase().includes('edg') && window.navigator.platform === 'Win32';
-
-  useDisableScroll({ element: document.body, disabled: open });
-
-  return createPortal(
+  return (
     <Dialog
-      open={open}
+      open={!!video}
       onClose={closeHandler}
-      onExited={closedHandler}
-      onEntered={openedHandler}
       maxWidth="lg"
       fullWidth
-      PaperProps={{
-        sx: {
-          backgroundColor: 'transparent',
-        },
-      }}
+      slotProps={{ paper: { sx: { backgroundColor: 'transparent' } } }}
     >
       <DialogTitle>
         {title}
@@ -121,7 +59,7 @@ const VideoModal: FC<VideoModalProps> = () => {
       </DialogTitle>
       <DialogContent>
         {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
-        <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`}>
+        <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`} autoPlay>
           {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
           <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
           <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
@@ -129,9 +67,8 @@ const VideoModal: FC<VideoModalProps> = () => {
           Sorry, your browser doesn&apos;t support embedded videos.
         </video>
       </DialogContent>
-    </Dialog>,
-    document.body,
-  ) as ReactNode;
+    </Dialog>
+  );
 };
 
 export default VideoModal;

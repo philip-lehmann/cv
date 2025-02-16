@@ -1,15 +1,11 @@
 import { existsSync, createReadStream, createWriteStream, type ReadStream, mkdirSync } from 'node:fs';
 import { finished } from 'node:stream/promises';
+import { ReadableStream } from 'node:stream/web';
 import { dirname, resolve as pathResolve } from 'node:path';
 import { request as httpRequest } from 'node:http';
 import { request as httpsRequest } from 'node:https';
-import getConfig from 'next/config';
-import type { NextApiRequest, NextApiResponse } from 'next';
 import type { LangType } from '@cv/helpers/date';
-
-const {
-  serverRuntimeConfig: { defaultLocale },
-} = getConfig();
+import { type NextRequest, NextResponse } from 'next/server';
 
 const outputPathByLang = Object.freeze({
   de: 'pdf/cv_pdf_de.pdf',
@@ -64,22 +60,27 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
   });
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const { locale = defaultLocale } = req.query;
+export const GET = async (req: NextRequest): Promise<Response> => {
+  const locale = req.nextUrl.searchParams.get('locale') ?? process.env.DEFAULT_LOCALE ?? 'en';
   const strLocale = (Array.isArray(locale) ? locale[0] : locale) as LangType;
   try {
     const response = await getFile(strLocale);
-    res.writeHead(200, {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition':
-        process.env.NODE_ENV === 'production' ? `attachment; filename="philip_lehmann_cv_${locale}.pdf"` : '',
-    });
-    response.pipe(res).on('finish', () => {
-      res.end();
-      console.log('PDF send');
+    const stream = ReadableStream.from(response);
+    return new NextResponse(stream, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/pdf',
+        'Content-Disposition':
+          process.env.NODE_ENV === 'production' ? `attachment; filename="philip_lehmann_cv_${strLocale}.pdf"` : '',
+      },
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json(error);
+    return new Response(JSON.stringify(error), {
+      status: 500,
+      headers: {
+        contentType: 'application/json',
+      },
+    });
   }
 };

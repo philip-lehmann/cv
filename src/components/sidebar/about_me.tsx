@@ -1,13 +1,17 @@
 import type { FC } from 'react';
 import { differenceInYears, parseISO } from 'date-fns';
-import { Card, CardContent, Typography, Box } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 import { useTranslations } from 'next-intl';
+import { SidebarTitle } from './helper';
 
 export const AboutMe: FC = () => {
   const t = useTranslations('AboutMe');
+
   return (
-    <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-      <CardContent>
+    <Stack gap={1} direction="column">
+      <Stack justifyContent="center" alignItems="center">
         <picture>
           <source srcSet="/images/me/2@1x.avif, /images/me/2@2x.avif 2x" type="image/avif" />
           <source srcSet="/images/me/2@1x.webp, /images/me/2@2x.webp 2x" type="image/webp" />
@@ -25,15 +29,11 @@ export const AboutMe: FC = () => {
             }}
           />
         </picture>
-        <br />
-        <br />
-        <Typography variant="h6" component="h2" gutterBottom>
-          {t('name')}
-        </Typography>
-        <Typography sx={{ textAlign: 'justify' }}>
-          {t('story', { years: differenceInYears(new Date(), parseISO('2007-06-01')) })}
-        </Typography>
-      </CardContent>
-    </Card>
+      </Stack>
+      <SidebarTitle>{t('name')}</SidebarTitle>
+      <Typography align="justify">
+        {t('story', { years: differenceInYears(new Date(), parseISO('2007-06-01')) })}
+      </Typography>
+    </Stack>
   );
 };

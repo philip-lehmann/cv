@@ -159,6 +159,13 @@
   "Metadata": {
     "title": "Philip Lehmann - Curriculum vitae"
   },
+  "Video": {
+    "post": "The Swiss Post: Exhibition Multitouch Application (HTML5)",
+    "avaloq": "Avaloq Financial Planning Prototyp",
+    "trilux": "Trilux sales application at the \"Light+Building 2012\"",
+    "kinect": "Kinect Demo HTML5 & Javascript",
+    "local": "local.ch: Sales Butler"
+  },
   "date": {
     "now": "Now"
   }

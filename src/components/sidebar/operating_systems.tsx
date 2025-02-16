@@ -1,20 +1,27 @@
 import type { FC } from 'react';
 
-import { MyCard, MyCardBlock, MyCardTitle } from './card';
 import { useTranslations } from 'next-intl';
+import Box from '@mui/material/Box';
+import { SidebarItem } from './helper';
 
 export const OperatingSystems: FC = () => {
   const t = useTranslations('OperatingSystems');
   return (
-    <MyCard backgroundColor="transparent">
-      <MyCardBlock>
-        <MyCardTitle>{t('name')}</MyCardTitle>
-        MacOS: <span sx={{ whiteSpace: 'nowrap' }}>{t('macos')}</span>
-        <br />
-        Linux: <span sx={{ whiteSpace: 'nowrap' }}>{t('linux')}</span>
-        <br />
-        Windows: <span sx={{ whiteSpace: 'nowrap' }}>{t('windows')}</span>
-      </MyCardBlock>
-    </MyCard>
+    <SidebarItem title={t('name')}>
+      MacOS:{' '}
+      <Box component="span" sx={{ whiteSpace: 'nowrap' }}>
+        {t('macos')}
+      </Box>
+      <br />
+      Linux:{' '}
+      <Box component="span" sx={{ whiteSpace: 'nowrap' }}>
+        {t('linux')}
+      </Box>
+      <br />
+      Windows:{' '}
+      <Box component="span" sx={{ whiteSpace: 'nowrap' }}>
+        {t('windows')}
+      </Box>
+    </SidebarItem>
   );
 };
