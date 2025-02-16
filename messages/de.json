@@ -134,7 +134,9 @@
     "story": "Computer haben mich schon immer fasziniert. Ich habe meine Karriere mit einer Lehre als System Informatiker gestartet, aber als wir den ersten Programmierkurs in C hatten, habe ich meine Leidenschaft gefunden für das Programmieren. In meiner Freizeit habe ich angefangen PHP und Java zu lernen. Nach meiner Lehre war für mich klar, dass ich meine Berufung gefunden habe als Entwickler und habe nun seit {years} Jahren Erfahrungen gesammelt."
   },
   "ComputerLanguages": {
-    "name": "Programmiersprachen"
+    "name": "Programmiersprachen",
+    "typescript": "TypeScript",
+    "rubyOnRails": "Ruby on Rails"
   },
   "HumanLanguages": {
     "name": "Sprachen",

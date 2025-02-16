@@ -134,7 +134,9 @@
     "story": "Computers have always fascinated me. I began my career with an apprenticeship as System Engineer but once I started my first course with C, I quickly discovered my passion for programming. In my free time I continued to study and discover PHP and Java and developing several private projects. After my apprenticeship it was clear to me that I had found my professional calling and pursued my career in programming, for {years} years."
   },
   "ComputerLanguages": {
-    "name": "Computer Languages"
+    "name": "Computer Languages",
+    "typescript": "TypeScript",
+    "rubyOnRails": "Ruby on Rails"
   },
   "HumanLanguages": {
     "name": "Human Languages",
