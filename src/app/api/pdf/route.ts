@@ -79,7 +79,7 @@ export const GET = async (req: NextRequest): Promise<Response> => {
     return new Response(JSON.stringify(error), {
       status: 500,
       headers: {
-        contentType: 'application/json',
+        'Content-Type': 'application/json',
       },
     });
   }
