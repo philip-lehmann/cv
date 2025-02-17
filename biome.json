@@ -10,7 +10,10 @@
       "**/*.json"
     ],
     "ignore": [
-      "node_modules/**/*"
+      "node_modules/**/*",
+      ".next/**/*",
+      ".yarn/**/*",
+      "kustomize/**/*"
     ]
   },
   "linter": {
