@@ -9,9 +9,9 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "lint:types": "tsc --noEmit",
-    "lint:biome": "biome lint **/*.ts*",
+    "lint:biome": "biome lint",
     "lint": "yarn lint:biome & yarn lint:types & wait",
-    "format": "biome biome lint --apply **/*.ts"
+    "format": "biome lint --write"
   },
   "engines": {
     "node": "22.14.0",
