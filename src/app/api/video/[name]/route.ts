@@ -1,9 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'minio';
 import { env } from '@cv/helpers/env';
+import { redirect } from 'next/navigation';
 
-export const GET = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const { name } = req.query;
+export const GET = async (req: Request, { params }: { params: Promise<{ name: string }> }): Promise<Response> => {
+  const { name } = await params;
 
   const client = new Client({
     endPoint: env.MINIO_ENDPOINT,
@@ -14,6 +14,5 @@ export const GET = async (req: NextApiRequest, res: NextApiResponse): Promise<vo
   });
 
   const url = await client.presignedGetObject(env.MINIO_BUCKET_NAME, `videos/${name}`, 3600);
-  res.redirect(url);
-  res.end();
+  redirect(url);
 };
