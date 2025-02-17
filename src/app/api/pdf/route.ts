@@ -1,6 +1,5 @@
 import { existsSync, createReadStream, createWriteStream, type ReadStream, mkdirSync } from 'node:fs';
 import { finished } from 'node:stream/promises';
-import { ReadableStream } from 'node:stream/web';
 import { dirname, resolve as pathResolve } from 'node:path';
 import { request as httpRequest } from 'node:http';
 import { request as httpsRequest } from 'node:https';
@@ -65,7 +64,13 @@ export const GET = async (req: NextRequest): Promise<Response> => {
   const strLocale = (Array.isArray(locale) ? locale[0] : locale) as LangType;
   try {
     const response = await getFile(strLocale);
-    const stream = ReadableStream.from(response);
+    const stream = new ReadableStream({
+      start(controller) {
+        response.on('data', (chunk) => controller.enqueue(chunk));
+        response.on('end', () => controller.close());
+        response.on('error', (err) => controller.error(err));
+      },
+    });
     return new NextResponse(stream, {
       status: 200,
       headers: {
