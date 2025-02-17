@@ -10,7 +10,7 @@
     "start": "next start -p $PORT",
     "lint:types": "tsc --noEmit",
     "lint:biome": "biome lint",
-    "lint": "yarn lint:biome & yarn lint:types & wait",
+    "lint": "yarn lint:biome & yarn lint:types",
     "format": "biome lint --write"
   },
   "engines": {
