@@ -46,20 +46,6 @@ export const theme = createTheme({
 
 theme.components = {
   ...theme.components,
-  MuiAlert: {
-    styleOverrides: {
-      root: {
-        variants: [
-          {
-            props: { severity: 'info' },
-            style: {
-              backgroundColor: '#60a5fa',
-            },
-          },
-        ],
-      },
-    },
-  },
   MuiContainer: {
     styleOverrides: {
       root: {
