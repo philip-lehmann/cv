@@ -28,7 +28,9 @@ const VideoModal: FC = () => {
   useEffect(() => {
     setMSEdge(window.navigator.userAgent.toLowerCase().includes('edg') && window.navigator.platform === 'Win32');
     // only allowed by user interaction
-    videoRef.current?.play();
+    videoRef.current?.play().catch((error) => {
+      console.warn('Autoplay prevented:', error);
+    });
   }, []);
 
   return (
