@@ -4,7 +4,7 @@ import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 import { Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 export const VideoKeys = ['post', 'avaloq', 'trilux', 'kinect', 'local'] as const;
 export type VideoType = (typeof VideoKeys)[number];
@@ -17,7 +17,6 @@ const VideoModal: FC = () => {
   const [isMSEdge, setMSEdge] = useState(false);
   const router = useRouter();
   const query = useSearchParams();
-  console.log(JSON.stringify(query));
   const video = isVideoKey(query?.get('video')) ? (query.get('video') as VideoType) : null;
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -32,41 +31,23 @@ const VideoModal: FC = () => {
     videoRef.current?.play();
   }, []);
 
-  const title = video && t(video);
-
   return (
-    <Dialog
-      open={!!video}
-      onClose={closeHandler}
-      maxWidth="lg"
-      fullWidth
-      slotProps={{ paper: { sx: { backgroundColor: 'transparent' } } }}
-    >
-      <DialogTitle>
-        {title}
-        <IconButton
-          aria-label="close"
-          onClick={closeHandler}
-          sx={{
-            position: 'absolute',
-            right: 8,
-            top: 8,
-            color: (theme) => theme.palette.grey[500],
-          }}
-        >
-          <CloseIcon />
-        </IconButton>
-      </DialogTitle>
-      <DialogContent>
-        {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
-        <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`} autoPlay>
-          {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
-          <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
-          <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
-          <source src={`/api/video/${video}.webm`} type="video/webm" />
-          Sorry, your browser doesn&apos;t support embedded videos.
-        </video>
-      </DialogContent>
+    <Dialog open={!!video} onClose={closeHandler} maxWidth="lg" fullWidth>
+      {video && (
+        <>
+          <DialogTitle>{t(video)}</DialogTitle>
+          <DialogContent>
+            {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
+            <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`} autoPlay>
+              {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
+              <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />
+              <source src={`/api/video/${video}.mp4`} type="video/mp4; codecs=avc1" />
+              <source src={`/api/video/${video}.webm`} type="video/webm" />
+              Sorry, your browser doesn&apos;t support embedded videos.
+            </video>
+          </DialogContent>
+        </>
+      )}
     </Dialog>
   );
 };
