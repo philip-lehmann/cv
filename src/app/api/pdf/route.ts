@@ -5,15 +5,14 @@ import { request as httpRequest } from 'node:http';
 import { request as httpsRequest } from 'node:https';
 import type { LangType } from '@cv/helpers/date';
 import { type NextRequest, NextResponse } from 'next/server';
+import { env } from '@cv/helpers/env';
 
 const outputPathByLang = Object.freeze({
   de: 'pdf/cv_pdf_de.pdf',
   en: 'pdf/cv_pdf_en.pdf',
 });
 
-const puppeteerURL = process.env.PUPPETEER_API_URL || 'http://localhost:3001';
-
-const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV === 'production'): Promise<ReadStream> => {
+const getFile = async (locale: LangType, isProduction = env.NODE_ENV === 'production'): Promise<ReadStream> => {
   const outputPath = pathResolve(process.cwd(), outputPathByLang[locale]);
   if (!existsSync(dirname(outputPath))) {
     mkdirSync(dirname(outputPath), { recursive: true });
@@ -23,12 +22,12 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
     return createReadStream(outputPath);
   }
 
-  const request = new URL(puppeteerURL).protocol === 'https:' ? httpsRequest : httpRequest;
+  const request = new URL(env.PUPPETEER_API_URL).protocol === 'https:' ? httpsRequest : httpRequest;
 
   return new Promise<ReadStream>((resolve, reject) => {
     try {
       const req = request(
-        puppeteerURL,
+        env.PUPPETEER_API_URL,
         { method: 'POST', path: '/', headers: { 'Content-Type': 'application/json' } },
         async (res) => {
           if (res.statusCode !== 200) {
@@ -40,7 +39,7 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
           resolve(getFile(locale, true));
         },
       );
-      const siteUrl = process.env.NODE_ENV === 'production' ? process.env.SITE_URL : 'http://host.docker.internal:3000';
+      const siteUrl = env.SITE_URL;
       const body = JSON.stringify({
         url: `${siteUrl}/${locale}`,
         format: 'a4',
@@ -60,7 +59,7 @@ const getFile = async (locale: LangType, isProduction = process.env.NODE_ENV ===
 };
 
 export const GET = async (req: NextRequest): Promise<Response> => {
-  const locale = req.nextUrl.searchParams.get('locale') ?? process.env.DEFAULT_LOCALE ?? 'en';
+  const locale = req.nextUrl.searchParams.get('locale') ?? env.DEFAULT_LOCALE;
   const strLocale = (Array.isArray(locale) ? locale[0] : locale) as LangType;
   try {
     const response = await getFile(strLocale);
@@ -76,7 +75,7 @@ export const GET = async (req: NextRequest): Promise<Response> => {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition':
-          process.env.NODE_ENV === 'production' ? `attachment; filename="philip_lehmann_cv_${strLocale}.pdf"` : '',
+          env.NODE_ENV === 'production' ? `attachment; filename="philip_lehmann_cv_${strLocale}.pdf"` : '',
       },
     });
   } catch (error) {
