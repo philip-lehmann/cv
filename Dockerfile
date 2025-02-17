@@ -18,14 +18,12 @@ ENV NODE_ENV=production
 
 COPY package.json ./package.json
 COPY yarn.lock ./yarn.lock
-COPY components ./components
-COPY helpers ./helpers
-COPY pages ./pages
+COPY src ./src
 COPY public ./public
 COPY styles ./styles
 COPY .next ./.next
 COPY next-env.d.ts ./next-env.d.ts
-COPY next.config.js ./next.config.js
+COPY next.config.mjs ./next.config.mjs
 COPY tsconfig.json ./tsconfig.json
 
 COPY --from=builder /app/node_modules ./node_modules

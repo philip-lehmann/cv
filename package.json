@@ -17,10 +17,6 @@
     "node": "22.14.0",
     "yarn": "4.6.0"
   },
-  "cacheDirectories": [
-    "node_modules",
-    ".next/cache"
-  ],
   "dependencies": {
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",

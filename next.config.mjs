@@ -1,5 +1,5 @@
 import { resolve } from 'node:path';
-import runtimeCaching from 'next-pwa';
+import runtimeCaching from 'next-pwa/cache.js';
 import nextPWA from 'next-pwa';
 import dotenv from 'dotenv';
 
@@ -7,7 +7,7 @@ dotenv.config();
 
 const withPWA = nextPWA({
   dest: 'public',
-  runtimeCaching,
+  runtimeCaching
 });
 
 import createNextIntlPlugin from 'next-intl/plugin';
