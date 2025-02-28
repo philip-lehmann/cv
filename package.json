@@ -41,7 +41,7 @@
     "@types/node": "^22.10.1",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
-    "typescript": "5.7.3"
+    "typescript": "5.8.2"
   },
   "packageManager": "yarn@4.6.0"
 }
