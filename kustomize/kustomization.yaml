@@ -8,5 +8,6 @@ resources:
   - sealed-docker-registry-harbor.yaml
   - sealed-google-analytics.yaml
   - sealed-rollbar.yaml
+  - sealed-minio.yaml
 
   - cv
