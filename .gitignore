@@ -50,6 +50,7 @@ cv_pdf_en.pdf
 
 # videos are on s3 buckets
 videos
+backup
 public/images
 
 tsconfig.tsbuildinfo
