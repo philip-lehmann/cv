@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
@@ -8,8 +10,11 @@ import { Interests } from './interests';
 import { ComputerLanguages } from './computer_languages';
 import { HumanLanguages } from './human_languages';
 import { OperatingSystems } from './operating_systems';
+import { useTheme } from '@mui/material/styles';
+import { breakpoint } from '../../breakpoint';
 
 export const Sidebar: FC = () => {
+  const theme = useTheme();
   return (
     <Stack
       direction="column"
@@ -20,8 +25,10 @@ export const Sidebar: FC = () => {
         '@media print': {
           height: '300vh',
         },
-        width: '33%',
-        maxWidth: '390px',
+        [theme.breakpoints.up(breakpoint)]: {
+          width: '33%',
+          maxWidth: '390px',
+        },
         padding: '35px',
       }}
     >

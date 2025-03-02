@@ -6,6 +6,7 @@ import { Sidebar } from '../../components/sidebar';
 import { Typography, Stack } from '@mui/material';
 import type { LangType } from '../../helpers/date';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { breakpoint } from '../../breakpoint';
 
 const Video = lazy(() => import('../../components/video'));
 
@@ -26,7 +27,7 @@ const CV: FC<LocaleRequest> = async ({ params }) => {
   setRequestLocale(locale);
 
   return (
-    <Stack direction={{ xs: 'column', sm: 'row' }}>
+    <Stack direction={{ xs: 'column', [breakpoint]: 'row' }}>
       <Sidebar />
       <Stack
         sx={{

@@ -70,6 +70,7 @@ const RootLayout: FC<
                     '@media print': {
                       maxWidth: '100vw',
                     },
+                    padding: 0,
                   }}
                 >
                   <LanguageSwitch />

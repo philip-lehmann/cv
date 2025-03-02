@@ -1,5 +1,6 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
+import type { Breakpoint } from '@mui/material';
 
 declare module '@mui/material/styles' {
   interface TypeBackground {
