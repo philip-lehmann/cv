@@ -20,7 +20,6 @@ COPY package.json ./package.json
 COPY yarn.lock ./yarn.lock
 COPY src ./src
 COPY public ./public
-COPY styles ./styles
 COPY .next ./.next
 COPY next-env.d.ts ./next-env.d.ts
 COPY next.config.mjs ./next.config.mjs
