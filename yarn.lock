@@ -2582,9 +2582,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001579, caniuse-lite@npm:^1.0.30001688":
-  version: 1.0.30001707
-  resolution: "caniuse-lite@npm:1.0.30001707"
-  checksum: 10c0/a1beaf84bad4f6617bbc5616d6bc0c9cab73e73f7e9e09b6466af5195b1bc393e0f6f19643d7a1c88bd3f4bfa122d7bea81cf6225ec3ade57d5b1dd3478c1a1b
+  version: 1.0.30001712
+  resolution: "caniuse-lite@npm:1.0.30001712"
+  checksum: 10c0/b3df8bdcc3335969380c2e47acb36c89bfc7f8fb4ef7ee2a5380e30ba46aa69e9d411654bc29894a06c201a1d60d490ab9b92787f3b66d7a7a38d71360e68215
   languageName: node
   linkType: hard
 
@@ -2973,9 +2973,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.73":
-  version: 1.5.128
-  resolution: "electron-to-chromium@npm:1.5.128"
-  checksum: 10c0/3c64ec24a8aff8e9954e99366aebdf41c0a5d0e48a498435b68d4deddd938584af53c1b176edd166285cfb9dcd407d4897184208a0369d1bb97e21d8daee8bc2
+  version: 1.5.132
+  resolution: "electron-to-chromium@npm:1.5.132"
+  checksum: 10c0/5dcbbed2a5be4b19812d54d4beb0c09a7f753793018255690f028346f96baf8b5c77f4d231a735321bf6f69f389bdd90c045c99deac61e8ce19183788ceb4fb4
   languageName: node
   linkType: hard
 
@@ -3242,6 +3242,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fdir@npm:^6.4.3":
+  version: 6.4.3
+  resolution: "fdir@npm:6.4.3"
+  peerDependencies:
+    picomatch: ^3 || ^4
+  peerDependenciesMeta:
+    picomatch:
+      optional: true
+  checksum: 10c0/d13c10120e9625adf21d8d80481586200759928c19405a816b77dd28eaeb80e7c59c5def3e2941508045eb06d34eb47fad865ccc8bf98e6ab988bb0ed160fb6f
+  languageName: node
+  linkType: hard
+
 "filelist@npm:^1.0.4":
   version: 1.0.4
   resolution: "filelist@npm:1.0.4"
@@ -3460,7 +3472,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.2.2, glob@npm:^10.3.10, glob@npm:^10.3.7":
+"glob@npm:^10.2.2":
   version: 10.4.5
   resolution: "glob@npm:10.4.5"
   dependencies:
@@ -4503,12 +4515,11 @@ __metadata:
   linkType: hard
 
 "minizlib@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "minizlib@npm:3.0.1"
+  version: 3.0.2
+  resolution: "minizlib@npm:3.0.2"
   dependencies:
-    minipass: "npm:^7.0.4"
-    rimraf: "npm:^5.0.5"
-  checksum: 10c0/82f8bf70da8af656909a8ee299d7ed3b3372636749d29e105f97f20e88971be31f5ed7642f2e898f00283b68b701cc01307401cdc209b0efc5dd3818220e5093
+    minipass: "npm:^7.1.2"
+  checksum: 10c0/9f3bd35e41d40d02469cb30470c55ccc21cae0db40e08d1d0b1dff01cc8cc89a6f78e9c5d2b7c844e485ec0a8abc2238111213fdc5b2038e6d1012eacf316f78
   languageName: node
   linkType: hard
 
@@ -4636,22 +4647,22 @@ __metadata:
   linkType: hard
 
 "node-gyp@npm:latest":
-  version: 11.1.0
-  resolution: "node-gyp@npm:11.1.0"
+  version: 11.2.0
+  resolution: "node-gyp@npm:11.2.0"
   dependencies:
     env-paths: "npm:^2.2.0"
     exponential-backoff: "npm:^3.1.1"
-    glob: "npm:^10.3.10"
     graceful-fs: "npm:^4.2.6"
     make-fetch-happen: "npm:^14.0.3"
     nopt: "npm:^8.0.0"
     proc-log: "npm:^5.0.0"
     semver: "npm:^7.3.5"
     tar: "npm:^7.4.3"
+    tinyglobby: "npm:^0.2.12"
     which: "npm:^5.0.0"
   bin:
     node-gyp: bin/node-gyp.js
-  checksum: 10c0/c38977ce502f1ea41ba2b8721bd5b49bc3d5b3f813eabfac8414082faf0620ccb5211e15c4daecc23ed9f5e3e9cc4da00e575a0bcfc2a95a069294f2afa1e0cd
+  checksum: 10c0/bd8d8c76b06be761239b0c8680f655f6a6e90b48e44d43415b11c16f7e8c15be346fba0cbf71588c7cdfb52c419d928a7d3db353afc1d952d19756237d8f10b9
   languageName: node
   linkType: hard
 
@@ -4858,6 +4869,13 @@ __metadata:
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 10c0/26c02b8d06f03206fc2ab8d16f19960f2ff9e81a658f831ecb656d8f17d9edc799e8364b1f4a7873e89d9702dff96204be0fa26fe4181f6843f040f819dac4be
+  languageName: node
+  linkType: hard
+
+"picomatch@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "picomatch@npm:4.0.2"
+  checksum: 10c0/7c51f3ad2bb42c776f49ebf964c644958158be30d0a510efd5a395e8d49cb5acfed5b82c0c5b365523ce18e6ab85013c9ebe574f60305892ec3fa8eee8304ccc
   languageName: node
   linkType: hard
 
@@ -5229,17 +5247,6 @@ __metadata:
   bin:
     rimraf: ./bin.js
   checksum: 10c0/4eef73d406c6940927479a3a9dee551e14a54faf54b31ef861250ac815172bade86cc6f7d64a4dc5e98b65e4b18a2e1c9ff3b68d296be0c748413f092bb0dd40
-  languageName: node
-  linkType: hard
-
-"rimraf@npm:^5.0.5":
-  version: 5.0.10
-  resolution: "rimraf@npm:5.0.10"
-  dependencies:
-    glob: "npm:^10.3.7"
-  bin:
-    rimraf: dist/esm/bin.mjs
-  checksum: 10c0/7da4fd0e15118ee05b918359462cfa1e7fe4b1228c7765195a45b55576e8c15b95db513b8466ec89129666f4af45ad978a3057a02139afba1a63512a2d9644cc
   languageName: node
   linkType: hard
 
@@ -6011,6 +6018,16 @@ __metadata:
   dependencies:
     readable-stream: "npm:3"
   checksum: 10c0/3741564ae99990a4a79097fe7a4152c22348adc4faf2df9199a07a66c81ed2011da39f631e479fdc56483996a9d34a037ad64e76d79f18c782ab178ea9b6778c
+  languageName: node
+  linkType: hard
+
+"tinyglobby@npm:^0.2.12":
+  version: 0.2.12
+  resolution: "tinyglobby@npm:0.2.12"
+  dependencies:
+    fdir: "npm:^6.4.3"
+    picomatch: "npm:^4.0.2"
+  checksum: 10c0/7c9be4fd3625630e262dcb19015302aad3b4ba7fc620f269313e688f2161ea8724d6cb4444baab5ef2826eb6bed72647b169a33ec8eea37501832a2526ff540f
   languageName: node
   linkType: hard
 
