@@ -1,4 +1,4 @@
-FROM bitnami/node:22.14.0 AS builder
+FROM bitnami/node:22.15.0 AS builder
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -11,7 +11,7 @@ RUN corepack enable; \
     yarn install --immutable
 
 # Production image, copy all the files and run next
-FROM bitnami/node:22.14.0 AS runner
+FROM bitnami/node:22.15.0 AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
