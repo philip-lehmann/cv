@@ -14,7 +14,7 @@
     "format": "biome lint --write"
   },
   "engines": {
-    "node": "22.14.0",
+    "node": "22.15.0",
     "yarn": "4.9.1"
   },
   "dependencies": {
