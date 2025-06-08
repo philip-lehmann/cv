@@ -7,7 +7,7 @@ import { Steiner } from './steiner';
 import { DataQuest } from './dataquest';
 import { Datage } from './datage';
 import { UsterTechnologies } from './uster_technologies';
-import { LineBreak } from '../print';
+import { PageBreak } from '../print';
 import { HealthAdvisor } from './healthadvisor';
 import { useTranslations } from 'next-intl';
 
@@ -19,13 +19,13 @@ export const Experience: FC = () => {
       <HealthAdvisor />
       <Divider />
       <Steiner />
-      <Divider />
+      <PageBreak />
       <Quatico />
-      <LineBreak />
+      <Divider />
       <Datage />
       <Divider />
       <Atpoint />
-      <LineBreak />
+      <PageBreak />
       <Insign />
       <Divider />
       <DataQuest />

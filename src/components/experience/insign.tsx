@@ -1,15 +1,16 @@
 import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+
 import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 import { useTranslations } from 'next-intl';
 import { Duties } from '../duties';
+import { NoPageBreakBox } from '../print';
 
 export const Insign: FC = () => {
   const t = useTranslations('Insign');
 
   return (
-    <Box>
+    <NoPageBreakBox>
       <Typography variant="h5">{t('name')}</Typography>
       <Duties namespace="Insign.roles1" duties={3} start="2007-06-01" end="2010-05-01" />
       <TooltipBadgeGroup>
@@ -21,6 +22,6 @@ export const Insign: FC = () => {
         <TooltipBadge progress="70" name="svn" />
         <TooltipBadge progress="65" name="devops" />
       </TooltipBadgeGroup>
-    </Box>
+    </NoPageBreakBox>
   );
 };

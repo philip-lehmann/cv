@@ -1,14 +1,14 @@
 import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 import { Duties } from '../duties';
 import { useTranslations } from 'next-intl';
+import { NoPageBreakBox } from '../print';
 
 export const UsterTechnologies: FC = () => {
   const t = useTranslations('UsterTechnologies');
   return (
-    <Box>
+    <NoPageBreakBox>
       <Typography variant="h5">Uster Technologies</Typography>
       <Duties namespace="UsterTechnologies.roles1" duties={3} start="2002-08-01" end="2006-07-01" />
       <TooltipBadgeGroup>
@@ -22,6 +22,6 @@ export const UsterTechnologies: FC = () => {
         <TooltipBadge progress="60" name="java" />
         <TooltipBadge progress="80" name="mysql" />
       </TooltipBadgeGroup>
-    </Box>
+    </NoPageBreakBox>
   );
 };
