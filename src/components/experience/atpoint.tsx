@@ -2,17 +2,18 @@
 
 import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import Link from 'next/link';
+
 import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 import { DashList, Dash } from '../dash_list';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Duties } from '../duties';
+import { NoPageBreakBox } from '../print';
 
 export const Atpoint: FC = async () => {
   const t = useTranslations('Atpoint');
   return (
-    <Box>
+    <NoPageBreakBox>
       <Typography variant="h5">{t('name')}</Typography>
       <Duties namespace="Atpoint.roles1" duties={7} start="2020-09-01" end="2021-06-30" />
       <Duties namespace="Atpoint.roles2" duties={4} start="2010-06-01" end="2020-09-01" />
@@ -75,6 +76,6 @@ export const Atpoint: FC = async () => {
         <TooltipBadge progress="90" name="heroku" />
         <TooltipBadge progress="60" name="wordpress" />
       </TooltipBadgeGroup>
-    </Box>
+    </NoPageBreakBox>
   );
 };

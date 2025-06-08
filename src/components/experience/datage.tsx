@@ -1,14 +1,15 @@
 import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import { useTranslations } from 'next-intl';
+
 import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 import { Duties } from '../duties';
-import { useTranslations } from 'next-intl';
+import { NoPageBreakBox } from '../print';
 
 export const Datage: FC = () => {
   const t = useTranslations('Datage');
   return (
-    <Box>
+    <NoPageBreakBox>
       <Typography variant="h5">{t('name')}</Typography>
       <Duties namespace="Datage.roles1" duties={2} start="2021-07-01" end="now" />
       <TooltipBadgeGroup>
@@ -42,6 +43,6 @@ export const Datage: FC = () => {
         <TooltipBadge progress="50" name="gcp" />
         <TooltipBadge progress="60" name="wordpress" />
       </TooltipBadgeGroup>
-    </Box>
+    </NoPageBreakBox>
   );
 };

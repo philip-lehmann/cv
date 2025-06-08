@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { differenceInYears, parseISO } from 'date-fns';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
@@ -31,9 +30,7 @@ export const AboutMe: FC = () => {
         </picture>
       </Stack>
       <SidebarTitle>{t('name')}</SidebarTitle>
-      <Typography align="justify">
-        {t('story', { years: differenceInYears(new Date(), parseISO('2007-06-01')) })}
-      </Typography>
+      <Typography align="justify">{t('story')}</Typography>
     </Stack>
   );
 };

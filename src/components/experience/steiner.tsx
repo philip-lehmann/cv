@@ -1,15 +1,15 @@
 import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
-
 import { useTranslations } from 'next-intl';
+
+import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 import { Duties } from '../duties';
+import { NoPageBreakBox } from '../print';
 
 export const Steiner: FC = () => {
   const t = useTranslations('Steiner');
   return (
-    <Box>
+    <NoPageBreakBox>
       <Typography variant="h5">{t('name')}</Typography>
       <Duties namespace="Steiner.roles1" duties={8} start="2022-10-01" end="2024-02-29" />
       <TooltipBadgeGroup>
@@ -40,6 +40,6 @@ export const Steiner: FC = () => {
         <TooltipBadge progress="80" name="confluence" />
         <TooltipBadge progress="30" name="azure" />
       </TooltipBadgeGroup>
-    </Box>
+    </NoPageBreakBox>
   );
 };

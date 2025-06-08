@@ -1,15 +1,16 @@
 import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+
 import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 import { useTranslations } from 'next-intl';
 import { Duties } from '../duties';
+import { NoPageBreakBox } from '../print';
 
 export const Quatico: FC = () => {
   const t = useTranslations('Quatico');
 
   return (
-    <Box>
+    <NoPageBreakBox>
       <Typography variant="h5">{t('name')}</Typography>
       <Duties namespace="Quatico.roles1" duties={2} start="2022-01-01" end="2022-09-30" />
       <Duties namespace="Quatico.roles2" duties={4} start="2021-09-01" end="2022-01-01" />
@@ -40,6 +41,6 @@ export const Quatico: FC = () => {
         <TooltipBadge progress="60" name="magnolia" />
         <TooltipBadge progress="20" name="aem" />
       </TooltipBadgeGroup>
-    </Box>
+    </NoPageBreakBox>
   );
 };
