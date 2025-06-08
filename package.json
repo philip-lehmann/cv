@@ -9,9 +9,9 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "lint:types": "tsc --noEmit",
-    "lint:biome": "biome lint",
-    "lint": "yarn lint:biome & yarn lint:types",
-    "format": "biome lint --write"
+    "lint:biome": "biome check",
+    "lint": "yarn lint:biome & yarn lint:types; wait",
+    "format": "biome check --write"
   },
   "engines": {
     "node": "22.16.0",
@@ -28,7 +28,7 @@
     "dotenv": "^16.4.7",
     "minio": "^8.0.2",
     "next": "^15.0.4",
-    "next-intl": "^4.0.0",
+    "next-intl": "^4.1.0",
     "next-pwa": "^5.6.0",
     "polished": "^4.3.1",
     "postcss": "^8.4.49",

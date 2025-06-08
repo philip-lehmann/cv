@@ -2799,7 +2799,7 @@ __metadata:
     dotenv: "npm:^16.4.7"
     minio: "npm:^8.0.2"
     next: "npm:^15.0.4"
-    next-intl: "npm:^4.0.0"
+    next-intl: "npm:^4.1.0"
     next-pwa: "npm:^5.6.0"
     polished: "npm:^4.3.1"
     postcss: "npm:^8.4.49"
@@ -4584,13 +4584,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-intl@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "next-intl@npm:4.0.0"
+"next-intl@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "next-intl@npm:4.1.0"
   dependencies:
     "@formatjs/intl-localematcher": "npm:^0.5.4"
     negotiator: "npm:^1.0.0"
-    use-intl: "npm:^4.0.0"
+    use-intl: "npm:^4.1.0"
   peerDependencies:
     next: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
@@ -4598,7 +4598,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/0378e6bc079284228fc3c9eb0c45013ce0c2efd6cb170b6acc94e01b28d737be4f475e040d98a04fa1dca6295babd0d19b22aed318fdf882dfc98ce340899f8e
+  checksum: 10c0/04c32d05e5becd16b9faaeb3954bba66bd8021c7f451c2aefdaeea64ac602d9eedfb7f4a05a435336866696ea39140f61144d56970fe08dd9f18c77548ddc263
   languageName: node
   linkType: hard
 
@@ -6290,16 +6290,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-intl@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "use-intl@npm:4.0.0"
+"use-intl@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "use-intl@npm:4.1.0"
   dependencies:
     "@formatjs/fast-memoize": "npm:^2.2.0"
     "@schummar/icu-type-parser": "npm:1.21.5"
     intl-messageformat: "npm:^10.5.14"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
-  checksum: 10c0/a9ce92891a4e65b123b5e7846227be7ff747587ba1793108d9e586993b5708503b08839414ec52c4047dff2466821f30ebe13e4f47faea924414496f0d1d0b6e
+  checksum: 10c0/907e417dc9924df213adb98b9e24bd97370c13dfb20360f5a276189a60e1373718dff36ae7fbe0f7cc398a9b2639c2577661813e7e3ea55215b845c1509dfe29
   languageName: node
   linkType: hard
 
