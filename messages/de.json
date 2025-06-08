@@ -54,7 +54,17 @@
   "HealthAdvisor": {
     "name": "HealthAdvisor",
     "roles1": {
-      "name": "Senior Full Stack Developer"
+      "name": "Senior Full Stack Developer",
+      "list": {
+        "item1": "Aufbau und Führung eines Entwicklerteams in der DACH-Region zur Erweiterung eines internationalen Entwicklungsteams",
+        "item2": "Technische und strategische Verantwortung für die Weiterentwicklung einer modernen, medizinischen Praxissoftware",
+        "item3": "Planung, Konzeption und Umsetzung neuer Features sowie kontinuierliche Optimierung bestehender Microservices",
+        "item4": "Technologische Entscheidungsfindung zur Skalierung und Modernisierung der Systemarchitektur",
+        "item5": "Entwicklung mit modernen Technologien wie Node.js, TypeScript, React, PostgreSQL, Docker, Grafana und Prometheus",
+        "item6": "Enge Zusammenarbeit mit Product Ownern und Stakeholdern zur Definition technischer Anforderungen",
+        "item7": "Etablierung von Entwicklungsstandards mit Fokus auf Software-Security und Compliance im Gesundheitswesen",
+        "item8": "Beitrag zu DevOps- und Monitoring-Strukturen zur Sicherstellung von Systemstabilität und Performance"
+      }
     }
   },
   "Experience": {
@@ -131,7 +141,7 @@
   },
   "AboutMe": {
     "name": "Über mich",
-    "story": "Computer haben mich schon immer fasziniert. Ich habe meine Karriere mit einer Lehre als System Informatiker gestartet, aber als wir den ersten Programmierkurs in C hatten, habe ich meine Leidenschaft gefunden für das Programmieren. In meiner Freizeit habe ich angefangen PHP und Java zu lernen. Nach meiner Lehre war für mich klar, dass ich meine Berufung gefunden habe als Entwickler und habe nun seit {years} Jahren Erfahrungen gesammelt."
+    "story": "Computer haben mich schon immer fasziniert. Ich begann meine berufliche Laufbahn mit einer Lehre als Systeminformatiker, doch als ich meinen ersten Kurs in C absolvierte, entdeckte ich schnell meine Leidenschaft für das Programmieren. In meiner Freizeit setzte ich mein Lernen eigenständig fort und beschäftigte mich mit Programmiersprachen wie PHP und Java, während ich an mehreren privaten Projekten arbeitete. Am Ende meiner Ausbildung war mir klar, dass ich meine berufliche Berufung gefunden hatte. Seitdem verfolge ich eine Karriere in der Softwareentwicklung."
   },
   "ComputerLanguages": {
     "name": "Programmiersprachen",

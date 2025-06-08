@@ -54,7 +54,17 @@
   "HealthAdvisor": {
     "name": "HealthAdvisor",
     "roles1": {
-      "name": "Senior Full Stack Developer"
+      "name": "Senior Full Stack Developer",
+      "list": {
+        "item1": "Building and leading a development team in the DACH region to expand an international development team",
+        "item2": "Technical and strategic responsibility for the further development of modern medical practice software",
+        "item3": "Planning, design and implementation of new features as well as continuous optimization of existing microservices",
+        "item4": "Technological decision-making for scaling and modernizing the system architecture",
+        "item5": "Development with modern technologies such as Node.js, TypeScript, React, PostgreSQL, Docker, Grafana and Prometheus",
+        "item6": "Close collaboration with Product Owners and stakeholders to define technical requirements",
+        "item7": "Establishment of development standards with focus on software security and compliance in healthcare",
+        "item8": "Contribution to DevOps and monitoring structures to ensure system stability and performance"
+      }
     }
   },
   "Experience": {
@@ -131,7 +141,7 @@
   },
   "AboutMe": {
     "name": "About Me",
-    "story": "Computers have always fascinated me. I began my career with an apprenticeship as System Engineer but once I started my first course with C, I quickly discovered my passion for programming. In my free time I continued to study and discover PHP and Java and developing several private projects. After my apprenticeship it was clear to me that I had found my professional calling and pursued my career in programming, for {years} years."
+    "story": "Computers have always fascinated me. I began my career with an apprenticeship as a System Engineer, but once I took my first course in C, I quickly discovered a passion for programming. In my free time, I continued to study on my own, exploring languages like PHP and Java while working on several personal projects. By the end of my apprenticeship, it was clear that I had found my professional calling. Since then, I've pursued a career in programming."
   },
   "ComputerLanguages": {
     "name": "Computer Languages",
