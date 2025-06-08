@@ -1,12 +1,12 @@
 'use server';
 
+import { Stack, Typography } from '@mui/material';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { type FC, lazy } from 'react';
+import { breakpoint } from '../../breakpoint';
 import { Experience } from '../../components/experience';
 import { Sidebar } from '../../components/sidebar';
-import { Typography, Stack } from '@mui/material';
 import type { LangType } from '../../helpers/date';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { breakpoint } from '../../breakpoint';
 
 const Video = lazy(() => import('../../components/video'));
 

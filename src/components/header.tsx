@@ -1,5 +1,5 @@
+import { Box, Link, Typography } from '@mui/material';
 import type { FC } from 'react';
-import { Box, Typography, Link } from '@mui/material';
 
 interface HeaderProps {
   siteTitle?: string;

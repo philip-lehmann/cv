@@ -1,22 +1,22 @@
 'use server';
 
+import { LanguageSwitch } from '@cv/components/language_switch';
+import { routing } from '@cv/i18n/routing';
+import { ThemeProvider } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import Container from '@mui/material/Container';
-import { ThemeProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
-import { theme } from '../../theme';
-import type { FC, PropsWithChildren } from 'react';
-import Head from 'next/head';
-import type { LangType } from '../../helpers/date';
-import { GoogleAnalytics } from '../../components/head/google_analytics';
-import { Rollbar, Canonical, OpenGraph, Twitter, Icons, Meta, Font, Connect } from '../../components/head';
-import { HireMe } from '../../components/hire_me';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { routing } from '@cv/i18n/routing';
 import { Roboto } from 'next/font/google';
-import { LanguageSwitch } from '@cv/components/language_switch';
+import Head from 'next/head';
+import { notFound } from 'next/navigation';
+import type { FC, PropsWithChildren } from 'react';
+import { Canonical, Connect, Font, Icons, Meta, OpenGraph, Rollbar, Twitter } from '../../components/head';
+import { GoogleAnalytics } from '../../components/head/google_analytics';
+import { HireMe } from '../../components/hire_me';
+import type { LangType } from '../../helpers/date';
+import { theme } from '../../theme';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],

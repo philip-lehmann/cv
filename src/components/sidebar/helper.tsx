@@ -1,5 +1,5 @@
-import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 export const SidebarTitle: FC<PropsWithChildren> = ({ children }) => {

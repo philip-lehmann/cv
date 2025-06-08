@@ -1,9 +1,9 @@
-import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
-import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
 import { Duties } from '../duties';
 import { NoPageBreakBox } from '../print';
+import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 
 export const HealthAdvisor: FC = () => {
   const t = useTranslations('HealthAdvisor');

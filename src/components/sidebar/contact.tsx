@@ -1,6 +1,6 @@
-import type { FC } from 'react';
 import Link from '@mui/material/Link';
 import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
 import { SidebarItem } from './helper';
 
 export const Contact: FC = () => {

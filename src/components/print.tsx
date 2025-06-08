@@ -1,5 +1,5 @@
+import { Box, type BoxProps, Divider, type SxProps, type Theme } from '@mui/material';
 import type { FC } from 'react';
-import { Divider, Box, type BoxProps, type SxProps, type Theme } from '@mui/material';
 
 export const HrPrintHidden: FC = () => (
   <Divider

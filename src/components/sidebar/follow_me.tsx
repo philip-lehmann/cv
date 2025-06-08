@@ -1,6 +1,6 @@
-import type { FC, ComponentPropsWithRef } from 'react';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
+import type { ComponentPropsWithRef, FC } from 'react';
 import { SidebarItem } from './helper';
 
 export interface LinkProps extends Omit<ComponentPropsWithRef<'a'>, 'children' | 'target' | 'rel'> {

@@ -1,15 +1,15 @@
-import type { FC } from 'react';
-import { Divider, Typography, Stack, Box } from '@mui/material';
-import { Quatico } from './quatico';
-import { Atpoint } from './atpoint';
-import { Insign } from './insign';
-import { Steiner } from './steiner';
-import { DataQuest } from './dataquest';
-import { Datage } from './datage';
-import { UsterTechnologies } from './uster_technologies';
-import { PageBreak } from '../print';
-import { HealthAdvisor } from './healthadvisor';
+import { Box, Divider, Stack, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
+import { PageBreak } from '../print';
+import { Atpoint } from './atpoint';
+import { Datage } from './datage';
+import { DataQuest } from './dataquest';
+import { HealthAdvisor } from './healthadvisor';
+import { Insign } from './insign';
+import { Quatico } from './quatico';
+import { Steiner } from './steiner';
+import { UsterTechnologies } from './uster_technologies';
 
 export const Experience: FC = () => {
   const t = useTranslations('Experience');

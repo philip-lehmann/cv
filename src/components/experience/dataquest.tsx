@@ -1,10 +1,10 @@
-import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
 import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
 
-import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 import { Duties } from '../duties';
 import { NoPageBreakBox } from '../print';
+import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 
 export const DataQuest: FC = () => {
   const t = useTranslations('DataQuest');

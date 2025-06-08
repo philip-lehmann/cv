@@ -1,4 +1,4 @@
-import { parseISO, format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import { de, enUS } from 'date-fns/locale';
 
 export type LangType = 'en' | 'de';
