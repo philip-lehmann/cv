@@ -1,12 +1,12 @@
 'use client';
 
-import { memo, type FC } from 'react';
-import Tooltip from '@mui/material/Tooltip';
-import LinearProgress from '@mui/material/LinearProgress';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import { icons } from './tooltip_icons';
 import { IconButton } from '@mui/material';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
+import Stack from '@mui/material/Stack';
+import Tooltip from '@mui/material/Tooltip';
+import { type FC, memo } from 'react';
+import { icons } from './tooltip_icons';
 
 interface TooltipBadgeProps {
   name: keyof typeof icons;

@@ -1,9 +1,9 @@
 import { Box, Stack, Typography } from '@mui/material';
-import type { FC } from 'react';
-import { getLocale } from 'next-intl/server';
 import { type NamespaceKeys, type NestedKeyOf, useTranslations } from 'next-intl';
-import { DashList, Dash } from './dash_list';
+import { getLocale } from 'next-intl/server';
+import type { FC } from 'react';
 import { type LangType, monthYear } from '../helpers/date';
+import { Dash, DashList } from './dash_list';
 
 export interface DutiesProps<
   Namespace extends NamespaceKeys<IntlMessages, NestedKeyOf<IntlMessages>> = NamespaceKeys<

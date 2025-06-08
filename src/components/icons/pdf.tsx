@@ -1,4 +1,4 @@
-import type { FC, ComponentProps } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 export const PdfIcon: FC<ComponentProps<'svg'>> = (props) => {
   return (

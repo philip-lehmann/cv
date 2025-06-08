@@ -1,6 +1,6 @@
-import type { FC, ComponentProps } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import type { ComponentProps, FC } from 'react';
 
 export const DashList: FC<ComponentProps<typeof List>> = ({ children, ...props }) => {
   return (

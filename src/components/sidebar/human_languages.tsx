@@ -1,6 +1,6 @@
-import type { FC } from 'react';
-import { useTranslations } from 'next-intl';
 import Stack from '@mui/material/Stack';
+import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
 import { SidebarItem } from './helper';
 
 const LANGUAGES = ['swiss', 'german', 'english'] as const;

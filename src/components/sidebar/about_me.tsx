@@ -1,8 +1,8 @@
-import type { FC } from 'react';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
 import { SidebarTitle } from './helper';
 
 export const AboutMe: FC = () => {

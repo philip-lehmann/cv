@@ -4,17 +4,8 @@
     "enabled": true
   },
   "files": {
-    "include": [
-      "**/*.ts",
-      "**/*.tsx",
-      "**/*.json"
-    ],
-    "ignore": [
-      "node_modules/**/*",
-      ".next/**/*",
-      ".yarn/**/*",
-      "kustomize/**/*"
-    ]
+    "include": ["**/*.ts", "**/*.tsx", "**/*.json"],
+    "ignore": ["node_modules/**/*", ".next/**/*", ".yarn/**/*", "kustomize/**/*"]
   },
   "linter": {
     "enabled": true,

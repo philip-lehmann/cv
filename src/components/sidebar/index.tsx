@@ -1,17 +1,17 @@
 'use client';
 
-import type { FC } from 'react';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
+import type { FC } from 'react';
+import { breakpoint } from '../../breakpoint';
 import { AboutMe } from './about_me';
+import { ComputerLanguages } from './computer_languages';
 import { Contact } from './contact';
 import { FollowMe } from './follow_me';
-import { Interests } from './interests';
-import { ComputerLanguages } from './computer_languages';
 import { HumanLanguages } from './human_languages';
+import { Interests } from './interests';
 import { OperatingSystems } from './operating_systems';
-import { useTheme } from '@mui/material/styles';
-import { breakpoint } from '../../breakpoint';
 
 export const Sidebar: FC = () => {
   const theme = useTheme();

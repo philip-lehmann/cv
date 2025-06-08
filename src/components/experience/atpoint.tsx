@@ -1,14 +1,14 @@
 'use server';
 
-import type { FC } from 'react';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
+import type { FC } from 'react';
 
-import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
-import { DashList, Dash } from '../dash_list';
 import { useTranslations } from 'next-intl';
+import { Dash, DashList } from '../dash_list';
 import { Duties } from '../duties';
 import { NoPageBreakBox } from '../print';
+import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 
 export const Atpoint: FC = async () => {
   const t = useTranslations('Atpoint');
