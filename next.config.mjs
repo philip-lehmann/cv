@@ -16,6 +16,7 @@ const withNextIntl = createNextIntlPlugin();
  
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   webpack: (config) => {
     config.resolve.alias['@cv/components'] = resolve('src/components');
     config.resolve.alias['@cv/helpers'] = resolve('src/helpers');
