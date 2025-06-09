@@ -1,35 +1,24 @@
-FROM bitnami/node:22.15.0 AS builder
-WORKDIR /app
 
-ENV NODE_ENV=production
-
-COPY package.json yarn.lock .yarnrc.yml ./
-COPY .yarn .yarn
-
-RUN corepack enable; \
-    yarn workspaces focus --production; \
-    yarn install --immutable
-
-# Production image, copy all the files and run next
+# Production stage
 FROM bitnami/node:22.15.0 AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
-COPY package.json ./package.json
-COPY yarn.lock ./yarn.lock
-COPY src ./src
+COPY .next/standalone ./
+COPY .next/static ./.next/static
 COPY public ./public
-COPY .next ./.next
-COPY next-env.d.ts ./next-env.d.ts
-COPY next.config.mjs ./next.config.mjs
-COPY tsconfig.json ./tsconfig.json
 
-COPY --from=builder /app/node_modules ./node_modules
+# Set correct permissions
+RUN chown -R 1000:1000 /app
+USER 1000
 
 # Next.js collects completely anonymous telemetry data about general usage.
-# Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry.
 ENV NEXT_TELEMETRY_DISABLED=1
 
-CMD ["node", "node_modules/.bin/next", "start"]
+EXPOSE $PORT
+
+CMD ["node", "server.js"]
