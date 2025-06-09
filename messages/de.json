@@ -5,7 +5,7 @@
       "name": "Head of Development",
       "list": {
         "item1": "Software-Entwicklungsprozess leiten, bewerten und überwachen",
-        "item2": "Analysieren und Beheben von Softwarefehlern, Verbessern und Optimieren der bestehenden Funktionalität",
+        "item2": "Softwarefehler analysieren und beheben, bestehende Funktionalität verbessern und optimieren",
         "item3": "Entwerfen von wiederverwendbaren und wartbaren Softwarekomponenten",
         "item4": "Projektplanung, -kalkulation und -kontrolle",
         "item5": "Projekt-Roadmap erstellen und Projektaufbau definieren",
@@ -17,7 +17,7 @@
       "name": "Software Engineer",
       "list": {
         "item1": "Agile und innovative Softwareentwicklung",
-        "item2": "Verbessern der Funktionalität, Benutzerfreundlichkeit, Architektur und Qualität der Software",
+        "item2": "Software-Funktionalität, Benutzerfreundlichkeit, Architektur und Qualität verbessern",
         "item3": "Spezifizieren, implementieren, testen und dokumentieren von Software",
         "item4": "Einrichten von Produktionsumgebungen und Erstellen von Deployment-Pipelines",
         "item5": "Weiterentwicklung bestehender Anwendungen (Wartung und Support, Fehlersuche, kontinuierliche Verbesserungen der bestehenden Codebasis)"
@@ -26,9 +26,9 @@
     "references": {
       "name": "Projekt Referenzen:",
       "list": {
-        "item1": "Multitouch-Anwendungen auf Basis von HTML5 mit einer REST-API in Ruby on Rails mit einer Synchronisation über Websockets beim Beispiel Trilux",
-        "item2": "Microsoft Kinect demo in HTML5",
-        "item3": "iPad / Touch Offline-Anwendung in HTML5"
+        "item1": "Multitouch-Anwendung (HTML5) mit Ruby on Rails REST-API und Websocket-Synchronisation für Trilux",
+        "item2": "Microsoft Kinect Demo in HTML5",
+        "item3": "iPad/Touch Offline-Anwendung in HTML5"
       }
     }
   },
@@ -56,14 +56,14 @@
     "roles1": {
       "name": "Senior Full Stack Developer",
       "list": {
-        "item1": "Aufbau und Führung eines Entwicklerteams in der DACH-Region zur Erweiterung eines internationalen Entwicklungsteams",
-        "item2": "Technische und strategische Verantwortung für die Weiterentwicklung einer modernen, medizinischen Praxissoftware",
-        "item3": "Planung, Konzeption und Umsetzung neuer Features sowie kontinuierliche Optimierung bestehender Microservices",
-        "item4": "Technologische Entscheidungsfindung zur Skalierung und Modernisierung der Systemarchitektur",
-        "item5": "Entwicklung mit modernen Technologien wie Node.js, TypeScript, React, PostgreSQL, Docker, Grafana und Prometheus",
-        "item6": "Enge Zusammenarbeit mit Product Ownern und Stakeholdern zur Definition technischer Anforderungen",
-        "item7": "Etablierung von Entwicklungsstandards mit Fokus auf Software-Security und Compliance im Gesundheitswesen",
-        "item8": "Beitrag zu DevOps- und Monitoring-Strukturen zur Sicherstellung von Systemstabilität und Performance"
+        "item1": "Aufbau und Leitung eines Entwicklerteams in der DACH-Region zur Erweiterung eines internationalen Teams",
+        "item2": "Technische und strategische Verantwortung für eine moderne medizinische Praxissoftware",
+        "item3": "Planung, Konzeption und Umsetzung neuer Features sowie Optimierung bestehender Microservices",
+        "item4": "Technologische Entscheidungen zur Skalierung und Modernisierung der Architektur",
+        "item5": "Entwicklung mit Technologien wie Node.js, TypeScript, React, PostgreSQL, Docker, Grafana, Prometheus",
+        "item6": "Enge Zusammenarbeit mit Product Ownern und Stakeholdern zur Anforderungsdefinition",
+        "item7": "Etablierung von Standards mit Fokus auf Security und Compliance im Gesundheitswesen",
+        "item8": "Beitrag zu DevOps- und Monitoring-Strukturen für Stabilität und Performance"
       }
     }
   },
@@ -108,7 +108,7 @@
         "item1": "Magnolia-CMS Zertifizierung",
         "item2": "Erstellen von CMS Komponenten basierend auf Web Components",
         "item3": "Backend- und Frontend-Entwicklung in Java und TypeScript",
-        "item4": "Weiterentwicklung von Continuous Delivery Pipelines für Kundenprojekte auf Basis von Kubernetes"
+        "item4": "Weiterentwicklung von CD/CI Pipelines auf Basis von Kubernetes"
       }
     }
   },

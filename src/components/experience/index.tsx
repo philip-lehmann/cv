@@ -23,7 +23,7 @@ export const Experience: FC = () => {
       <Quatico />
       <Divider />
       <Datage />
-      <Divider />
+      <PageBreak />
       <Atpoint />
       <PageBreak />
       <Insign />

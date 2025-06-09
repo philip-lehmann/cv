@@ -47,7 +47,7 @@ const getFile = async (locale: LangType, isProduction = env.NODE_ENV === 'produc
         scale: 0.8,
         printBackground: true,
         omitBackground: true,
-        pageRanges: '1-3',
+        // pageRanges: '1-3',
         margin: { top: 0, right: 0, bottom: 0, left: 0 },
       });
 

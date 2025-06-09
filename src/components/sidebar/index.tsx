@@ -23,7 +23,7 @@ export const Sidebar: FC = () => {
         background: 'var(--mui-palette-background-custom)',
         minHeight: '100vh',
         '@media print': {
-          height: '300vh',
+          height: 'calc(400vh + 4px)',
         },
         [theme.breakpoints.up(breakpoint)]: {
           width: '33%',

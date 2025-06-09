@@ -1,3 +1,3 @@
 import type { Breakpoint } from '@mui/material';
 
-export const breakpoint: Breakpoint = 'xs';
+export const breakpoint: Breakpoint = 'sm';
