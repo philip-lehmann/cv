@@ -7,12 +7,10 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-COPY .next/standalone ./
-COPY .next/static ./.next/static
-COPY public ./public
+COPY --chown=1000:1000 .next/standalone ./
+COPY --chown=1000:1000 .next/static ./.next/static
+COPY --chown=1000:1000 public ./public
 
-# Set correct permissions
-RUN chown -R 1000:1000 /app
 USER 1000
 
 # Next.js collects completely anonymous telemetry data about general usage.
