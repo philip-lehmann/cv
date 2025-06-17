@@ -3,14 +3,14 @@
 import { LanguageSwitch } from '@cv/components/language_switch';
 import { routing } from '@cv/i18n/routing';
 import { ThemeProvider } from '@mui/material';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Roboto } from 'next/font/google';
 import Head from 'next/head';
 import { notFound } from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
 import { Canonical, Connect, Font, Icons, Meta, OpenGraph, Rollbar, Twitter } from '../../components/head';
 import { GoogleAnalytics } from '../../components/head/google_analytics';

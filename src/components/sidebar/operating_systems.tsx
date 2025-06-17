@@ -1,7 +1,6 @@
-import type { FC } from 'react';
-
 import Box from '@mui/material/Box';
 import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
 import { SidebarItem } from './helper';
 
 export const OperatingSystems: FC = () => {

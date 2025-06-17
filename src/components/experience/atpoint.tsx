@@ -2,9 +2,8 @@
 
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
-import type { FC } from 'react';
-
 import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
 import { Dash, DashList } from '../dash_list';
 import { Duties } from '../duties';
 import { NoPageBreakBox } from '../print';

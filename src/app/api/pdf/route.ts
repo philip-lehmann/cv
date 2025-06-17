@@ -1,4 +1,4 @@
-import { type ReadStream, createReadStream, createWriteStream, existsSync, mkdirSync } from 'node:fs';
+import { createReadStream, createWriteStream, existsSync, mkdirSync, type ReadStream } from 'node:fs';
 import { request as httpRequest } from 'node:http';
 import { request as httpsRequest } from 'node:https';
 import { dirname, resolve as pathResolve } from 'node:path';
