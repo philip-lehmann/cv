@@ -9,11 +9,7 @@ import { getLocale } from 'next-intl/server';
 import type { FC } from 'react';
 import { PdfIcon } from './icons/pdf';
 
-interface LanguageSwitchProps {
-  className?: string;
-}
-
-export const LanguageSwitch: FC<LanguageSwitchProps> = async ({ className = '' }) => {
+export const LanguageSwitch: FC = async () => {
   const locale = await getLocale();
   return (
     <Stack

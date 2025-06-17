@@ -38,7 +38,7 @@ const VideoModal: FC = () => {
         <>
           <DialogTitle>{t(video)}</DialogTitle>
           <DialogContent>
-            {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
+            {/* biome-ignore lint/a11y/useMediaCaption: needed */}
             <video controls width="100%" ref={videoRef} poster={`/api/video/${video}.webp`} autoPlay>
               {!isMSEdge && <source src={`/api/video/${video}.av1.mp4`} type="video/mp4; codecs=av01.0.05M.08" />}
               <source src={`/api/video/${video}.m4v`} type="video/mp4; codecs=hvc1" />

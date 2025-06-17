@@ -1,12 +1,10 @@
 import Typography from '@mui/material/Typography';
-import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { Duties } from '../duties';
 import { NoPageBreakBox } from '../print';
 import { TooltipBadge, TooltipBadgeGroup } from '../tooltip_badge';
 
 export const UsterTechnologies: FC = () => {
-  const t = useTranslations('UsterTechnologies');
   return (
     <NoPageBreakBox>
       <Typography variant="h5">Uster Technologies</Typography>

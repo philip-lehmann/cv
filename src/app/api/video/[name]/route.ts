@@ -2,7 +2,7 @@ import { env } from '@cv/helpers/env';
 import { Client } from 'minio';
 import { redirect } from 'next/navigation';
 
-export const GET = async (req: Request, { params }: { params: Promise<{ name: string }> }): Promise<Response> => {
+export const GET = async (_req: Request, { params }: { params: Promise<{ name: string }> }): Promise<Response> => {
   const { name } = await params;
 
   const client = new Client({
