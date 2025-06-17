@@ -29,7 +29,7 @@ export const Duties: FC<DutiesProps> = async ({ namespace, duties, start, end })
       </Stack>
       <DashList>
         {Array.from({ length: duties }, (_, i) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: needed
           <Dash key={i}>{t(`${namespace}.list.item${i + 1}` as Parameters<typeof t>[0])}</Dash>
         ))}
       </DashList>

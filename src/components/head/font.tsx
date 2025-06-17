@@ -3,7 +3,7 @@ import type { FC } from 'react';
 export const Font: FC = () => {
   return (
     <style
-      // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: needed
       dangerouslySetInnerHTML={{
         __html: `
     @font-face {

@@ -1,5 +1,4 @@
 'use client';
-import type { Breakpoint } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
