@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import type { LangType } from '../../helpers/date';
+
 interface CanonicalProps {
   locale: LangType;
   path: string;

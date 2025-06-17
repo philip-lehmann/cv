@@ -4,8 +4,8 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
-import { getLocale } from 'next-intl/server';
 import NextLink from 'next/link';
+import { getLocale } from 'next-intl/server';
 import type { FC } from 'react';
 import { PdfIcon } from './icons/pdf';
 

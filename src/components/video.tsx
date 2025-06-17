@@ -1,9 +1,8 @@
 'use client';
 
-import CloseIcon from '@mui/icons-material/Close';
-import { Dialog, DialogContent, DialogTitle, IconButton } from '@mui/material';
-import { useTranslations } from 'next-intl';
+import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
 export const VideoKeys = ['post', 'avaloq', 'trilux', 'kinect', 'local'] as const;
