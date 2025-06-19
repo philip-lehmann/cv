@@ -59,8 +59,7 @@ spec:
             - node
           args:
             - --max-old-space-size=250
-            - node_modules/.bin/next
-            - start
+            - server.js
           volumeMounts:
             - name: pdf
               mountPath: /app/pdf
