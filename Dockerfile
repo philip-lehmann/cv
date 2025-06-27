@@ -12,6 +12,7 @@ RUN mkdir pdf; \
 
 COPY --chown=1000:1000 .next/standalone ./
 COPY --chown=1000:1000 .next/static ./.next/static
+COPY --chown=1000:1000 .next/standalone/.next/app-build-manifest.json ./.next/static/
 COPY --chown=1000:1000 public ./public
 
 USER 1000
