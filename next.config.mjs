@@ -7,7 +7,8 @@ dotenv.config();
 
 const withPWA = nextPWA({
   dest: 'public',
-  runtimeCaching
+  runtimeCaching,
+  buildExcludes: [/app-build-manifest\.json$/],
 });
 
 import createNextIntlPlugin from 'next-intl/plugin';
