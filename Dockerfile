@@ -1,6 +1,6 @@
 
 # Production stage
-FROM bitnami/node:24.2.0 AS runner
+FROM bitnami/node:24.3.0 AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
