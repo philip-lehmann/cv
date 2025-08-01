@@ -14,7 +14,7 @@
     "format": "biome check --write"
   },
   "engines": {
-    "node": "24.4.1",
+    "node": "24.5.0",
     "yarn": "4.9.2"
   },
   "dependencies": {
