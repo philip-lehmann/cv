@@ -37,7 +37,7 @@
     "rollbar": "^2.26.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.0",
+    "@biomejs/biome": "2.2.2",
     "@types/node": "^22.10.1",
     "@types/react": "19.1.11",
     "@types/react-dom": "19.1.7",
