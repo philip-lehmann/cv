@@ -10,7 +10,7 @@ export const GET = async (_req: Request, { params }: { params: Promise<{ name: s
     accessKeyId: env.MINIO_ACCESS_KEY,
     secretAccessKey: env.MINIO_SECRET_KEY,
     bucket: env.MINIO_BUCKET_NAME,
-    region: 'public',
+    region: env.MINIO_REGION,
   });
 
   const url = await client.presign(`videos/${name}`, { expiresIn: 3600 });

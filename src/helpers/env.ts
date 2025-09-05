@@ -40,4 +40,7 @@ export const env = {
   get MINIO_ENDPOINT() {
     return fetchEnv('MINIO_ENDPOINT');
   },
+  get MINIO_REGION() {
+    return fetchEnv('MINIO_REGION');
+  },
 };
