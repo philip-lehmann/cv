@@ -1,6 +1,6 @@
 
 # Production stage
-FROM bitnami/node:24.7.0 AS runner
+FROM oven/bun:1.2.21 AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -22,4 +22,4 @@ ENV NEXT_TELEMETRY_DISABLED=1
 
 EXPOSE $PORT
 
-CMD ["node", "server.js"]
+CMD ["bun", "server.js"]

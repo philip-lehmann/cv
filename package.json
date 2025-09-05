@@ -10,38 +10,30 @@
     "start": "next start -p $PORT",
     "lint:types": "tsc --noEmit",
     "lint:biome": "biome check",
-    "lint": "yarn lint:biome & yarn lint:types & wait",
+    "lint": "bun lint:biome & bun lint:types & wait",
     "format": "biome check --write"
   },
-  "engines": {
-    "node": "24.7.0",
-    "yarn": "4.9.4"
-  },
   "dependencies": {
-    "@emotion/cache": "^11.14.0",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^7.0.0",
-    "@mui/material": "^7.0.0",
-    "@mui/material-nextjs": "^7.0.0",
-    "date-fns": "^4.1.0",
-    "dotenv": "^17.0.0",
-    "minio": "^8.0.2",
-    "next": "^15.0.4",
-    "next-intl": "^4.1.0",
-    "next-pwa": "^5.6.0",
-    "polished": "^4.3.1",
-    "postcss": "^8.4.49",
+    "@emotion/cache": "11.14.0",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.0",
+    "@mui/icons-material": "7.0.0",
+    "@mui/material": "7.0.0",
+    "@mui/material-nextjs": "7.0.0",
+    "date-fns": "4.1.0",
+    "dotenv": "17.0.0",
+    "next": "15.0.4",
+    "next-intl": "4.1.0",
+    "next-pwa": "5.6.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "rollbar": "^2.26.4"
+    "rollbar": "2.26.4"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.3",
-    "@types/node": "^22.10.1",
+    "@types/bun": "1.2.21",
     "@types/react": "19.1.12",
     "@types/react-dom": "19.1.9",
     "typescript": "5.9.2"
-  },
-  "packageManager": "yarn@4.9.4"
+  }
 }
