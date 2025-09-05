@@ -1,6 +1,7 @@
 import { resolve } from 'node:path';
+/* @ts-ignore */
 import runtimeCaching from 'next-pwa/cache.js';
-import nextPWA from 'next-pwa';
+import nextPWA, { PWAConfig } from 'next-pwa';
 import createNextIntlPlugin from 'next-intl/plugin';
 import type { NextConfig } from 'next';
 
@@ -57,4 +58,4 @@ const nextConfig: NextConfig = {
 
 const config = withNextIntl(nextConfig);
 
-export default process.env.NODE_ENV === 'production' ? withPWA(config as any) : config;
+export default process.env.NODE_ENV === 'production' ? withPWA(config as PWAConfig) : config;
