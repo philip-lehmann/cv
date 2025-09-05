@@ -14,6 +14,37 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  async headers() {
+    return [
+      {
+        source: "/icons/:all*(png|jpg|jpeg|avif|svg|webp)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, immutable", // 7 days
+          },
+        ],
+      },
+      {
+        source: "/images/:all*(png|jpg|avif|webp)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, immutable", // 7 days
+          },
+        ],
+      },
+      {
+        source: "/fonts/:all*(woff|woff2|eot|ttf|otf)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, immutable", // 7 days
+          },
+        ],
+      },
+    ]
+  },
   webpack: (config) => {
     config.resolve.alias['@cv/components'] = resolve('src/components');
     config.resolve.alias['@cv/helpers'] = resolve('src/helpers');
