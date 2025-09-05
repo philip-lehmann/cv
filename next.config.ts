@@ -1,9 +1,8 @@
 import { resolve } from 'node:path';
 import runtimeCaching from 'next-pwa/cache.js';
 import nextPWA from 'next-pwa';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import createNextIntlPlugin from 'next-intl/plugin';
+import type { NextConfig } from 'next';
 
 const withPWA = nextPWA({
   dest: 'public',
@@ -11,12 +10,9 @@ const withPWA = nextPWA({
   buildExcludes: [/app-build-manifest\.json$/],
 });
 
-import createNextIntlPlugin from 'next-intl/plugin';
- 
 const withNextIntl = createNextIntlPlugin();
- 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const nextConfig: NextConfig = {
   output: 'standalone',
   webpack: (config) => {
     config.resolve.alias['@cv/components'] = resolve('src/components');
@@ -30,4 +26,4 @@ const nextConfig = {
 
 const config = withNextIntl(nextConfig);
 
-export default process.env.NODE_ENV === 'production' ? withPWA(config) : config;
+export default process.env.NODE_ENV === 'production' ? withPWA(config as any) : config;
