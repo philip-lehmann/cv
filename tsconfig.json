@@ -19,7 +19,7 @@
       "@cv/i18n/*": ["./src/i18n/*"]
     },
     "incremental": true,
-    "types": ["bun"],
+    "types": ["node"],
     "typeRoots": ["./types/", "./node_modules/@types", "./node_modules"],
     "plugins": [
       {

@@ -2,6 +2,7 @@ import { resolve } from 'node:path';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 import nextPWA, { type PWAConfig } from 'next-pwa';
+// biome-ignore lint/suspicious/noTsIgnore: cache.js is not included in the types
 /* @ts-ignore */
 import runtimeCaching from 'next-pwa/cache.js';
 
