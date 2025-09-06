@@ -1,9 +1,9 @@
 import { resolve } from 'node:path';
+import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
+import nextPWA, { type PWAConfig } from 'next-pwa';
 /* @ts-ignore */
 import runtimeCaching from 'next-pwa/cache.js';
-import nextPWA, { PWAConfig } from 'next-pwa';
-import createNextIntlPlugin from 'next-intl/plugin';
-import type { NextConfig } from 'next';
 
 const withPWA = nextPWA({
   dest: 'public',
@@ -18,33 +18,33 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/icons/:all*(png|jpg|jpeg|avif|svg|webp)",
+        source: '/icons/:all*(png|jpg|jpeg|avif|svg|webp)',
         headers: [
           {
-            key: "Cache-Control",
-            value: "public, max-age=604800, immutable", // 7 days
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, immutable', // 7 days
           },
         ],
       },
       {
-        source: "/images/:all*(png|jpg|avif|webp)",
+        source: '/images/:all*(png|jpg|avif|webp)',
         headers: [
           {
-            key: "Cache-Control",
-            value: "public, max-age=604800, immutable", // 7 days
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, immutable', // 7 days
           },
         ],
       },
       {
-        source: "/fonts/:all*(woff|woff2|eot|ttf|otf)",
+        source: '/fonts/:all*(woff|woff2|eot|ttf|otf)',
         headers: [
           {
-            key: "Cache-Control",
-            value: "public, max-age=604800, immutable", // 7 days
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, immutable', // 7 days
           },
         ],
       },
-    ]
+    ];
   },
   webpack: (config) => {
     config.resolve.alias['@cv/components'] = resolve('src/components');
