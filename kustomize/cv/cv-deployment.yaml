@@ -27,7 +27,7 @@ spec:
               mountPath: /app/pdf
       containers:
         - name: cv-philiplehmann
-          image: harbor.riwi.dev/philiplehmann/cv:latest
+          image: ghcr.io/philip-lehmann/cv:latest
           imagePullPolicy: Always
           env:
             - name: PORT
@@ -45,7 +45,7 @@ spec:
                 name: google-analytics-secret
             - secretRef:
                 name: rollbar-secret
-                
+
           ports:
             - containerPort: 3000
           resources:

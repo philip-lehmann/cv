@@ -35,5 +35,6 @@
     "@types/react": "19.1.14",
     "@types/react-dom": "19.1.9",
     "typescript": "5.9.3"
-  }
+  },
+  "packageManager": "yarn@4.10.3"
 }

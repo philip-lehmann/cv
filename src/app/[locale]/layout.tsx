@@ -7,7 +7,6 @@ import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Roboto } from 'next/font/google';
-import Head from 'next/head';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -46,7 +45,7 @@ const RootLayout: FC<
       <CssBaseline />
       <html lang={locale}>
         <NextIntlClientProvider messages={messages}>
-          <Head>
+          <head>
             <title>{title}</title>
             <HireMe />
             <Connect />
@@ -59,7 +58,7 @@ const RootLayout: FC<
 
             {googleAnalyticsKey && <GoogleAnalytics googleAnalyticsKey={googleAnalyticsKey} />}
             {rollbarClientToken && <Rollbar rollbarClientToken={rollbarClientToken} env={env} />}
-          </Head>
+          </head>
 
           <body className={roboto.variable}>
             <AppRouterCacheProvider options={{ enableCssLayer: true }}>

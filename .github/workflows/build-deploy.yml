@@ -15,6 +15,8 @@ concurrency:
 
 permissions:
   contents: write
+  packages: write
+  id-token: write
 
 jobs:
   build-deploy:
@@ -60,13 +62,13 @@ jobs:
           version: latest
           install: true
           endpoint: builders
-      - name: Login to harbor.riwi.dev registry
+      - name: Login to GitHub Container Registry
         if: github.ref == 'refs/heads/main'
         uses: docker/login-action@v3
         with:
-          registry: harbor.riwi.dev
-          username: ${{ secrets.HARBOR_USER }}
-          password: ${{ secrets.HARBOR_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: set version
         if: github.ref == 'refs/heads/main'
@@ -79,16 +81,14 @@ jobs:
           context: .
           file: Dockerfile
           platforms: linux/amd64,linux/arm64
-          build-args: |
-            NPM_TOKEN=${{ secrets.NPM_TOKEN }}
-            GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           push: true
-          cache-from: type=registry,ref=harbor.riwi.dev/philiplehmann/cv:buildcache
-          cache-to: type=registry,ref=harbor.riwi.dev/philiplehmann/cv:buildcache,mode=max,image-manifest=true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
           tags: |
-            harbor.riwi.dev/philiplehmann/cv:latest
-            harbor.riwi.dev/philiplehmann/cv:${{ env.TAG_VERSION }}
-  
+            ghcr.io/philip-lehmann/cv:latest
+            ghcr.io/philip-lehmann/cv:${{ env.TAG_VERSION }}
+
       - name: git pull
         if: github.ref == 'refs/heads/main'
         run: |
@@ -99,7 +99,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           cd kustomize/cv
-          kustomize edit set image harbor.riwi.dev/philiplehmann/cv=harbor.riwi.dev/philiplehmann/cv:${{ env.TAG_VERSION }}
+          kustomize edit set image ghcr.io/philip-lehmann/cv=ghcr.io/philip-lehmann/cv:${{ env.TAG_VERSION }}
       - name: Commit & Push changes
         if: github.ref == 'refs/heads/main'
         uses: actions-js/push@master

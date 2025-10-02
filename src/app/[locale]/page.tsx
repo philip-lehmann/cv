@@ -1,6 +1,7 @@
 'use server';
 
 import { Stack, Typography } from '@mui/material';
+import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { type FC, lazy } from 'react';
 import { breakpoint } from '../../breakpoint';
@@ -12,7 +13,7 @@ const Video = lazy(() => import('../../components/video'));
 
 type LocaleRequest = { params: Promise<{ locale: LangType }> };
 
-export async function generateMetadata({ params }: LocaleRequest) {
+export async function generateMetadata({ params }: LocaleRequest): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
