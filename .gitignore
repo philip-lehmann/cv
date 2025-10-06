@@ -8,11 +8,6 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-next-env.d.ts
-
 # production
 /build
 
@@ -33,14 +28,8 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# vercel
-.vercel
-
-# pwa
-public/sw.js
-public/workbox-*.js
-public/sw.js.map
-public/workbox-*.js.map
+# build
+dist
 
 # env variables
 .env

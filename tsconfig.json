@@ -12,21 +12,16 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
+    "baseUrl": ".",
     "paths": {
-      "@cv/components/*": ["./src/components/*"],
-      "@cv/helpers/*": ["./src/helpers/*"],
-      "@cv/i18n/*": ["./src/i18n/*"]
+      "@cv/components/*": ["./src/frontend/components/*"],
+      "@cv/helpers/*": ["./src/helpers/*"]
     },
     "incremental": true,
     "types": ["node"],
-    "typeRoots": ["./types/", "./node_modules/@types", "./node_modules"],
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "typeRoots": ["./types/", "./node_modules/@types", "./node_modules"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
-  "exclude": ["node_modules", ".next"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
