@@ -7,6 +7,9 @@ const fetchEnv = (key: string) => {
 };
 
 export const env = {
+  get PORT() {
+    return Number(process.env.PORT || '3000');
+  },
   get NODE_ENV() {
     return process.env.NODE_ENV ?? 'development';
   },
