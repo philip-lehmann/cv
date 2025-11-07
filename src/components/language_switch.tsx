@@ -1,16 +1,16 @@
-'use server';
+'use client';
 
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import NextLink from 'next/link';
-import { getLocale } from 'next-intl/server';
+import { useLocale } from 'next-intl';
 import type { FC } from 'react';
 import { PdfIcon } from './icons/pdf';
 
-export const LanguageSwitch: FC = async () => {
-  const locale = await getLocale();
+export const LanguageSwitch: FC = () => {
+  const locale = useLocale();
   return (
     <Stack
       direction="row"
