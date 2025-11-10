@@ -15,7 +15,8 @@
       "!**/node_modules/**/*",
       "!**/.next/**/*",
       "!**/.yarn/**/*",
-      "!**/kustomize/**/*"
+      "!**/kustomize/**/*",
+      "!next-env.d.ts"
     ]
   },
   "linter": {
