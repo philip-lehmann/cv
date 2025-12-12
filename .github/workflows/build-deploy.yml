@@ -29,7 +29,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - name: Cache node_modules
         id: cache-node-modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ hashFiles('bun.lock') }}-node-modules
@@ -42,7 +42,7 @@ jobs:
         run: bun run lint:biome
       - name: Cache .next
         id: cache-next
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .next
           key: ${{ runner.os }}-next
