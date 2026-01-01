@@ -10,4 +10,4 @@ resources:
 images:
 - name: ghcr.io/philip-lehmann/cv
   newName: ghcr.io/philip-lehmann/cv
-  newTag: 25-12-29.2782
+  newTag: 26-01-01.2784
