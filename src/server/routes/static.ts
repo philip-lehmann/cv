@@ -76,6 +76,7 @@ const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
       return new Response(build.stream(), {
         headers: {
           'Content-Type': build.type,
+          'Cache-Control': env.NODE_ENV === 'production' ? 'public, max-age=31536000, immutable' : 'no-cache',
         },
       });
     });
