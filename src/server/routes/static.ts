@@ -53,7 +53,18 @@ export const assetPath = (build: Bun.BuildArtifact) => {
 };
 
 const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
-  let route = new Elysia({ prefix: '/static' }).use(staticPlugin({ prefix: '/', assets: 'public' }));
+  const route = ['robots.txt', '.well-known'].reduce((root, asset) => {
+    return root.get(`/${asset}`, async () => {
+      const file = Bun.file(`public/${asset}`);
+      return new Response(file.stream(), {
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+      });
+    });
+  }, new Elysia());
+
+  let staticRoute = new Elysia({ prefix: '/static' }).use(staticPlugin({ prefix: '/', assets: 'public' }));
 
   const buildsWithSourcemaps = builds.flatMap((build) => {
     return build.sourcemap ? [build, build.sourcemap] : [build];
@@ -61,7 +72,7 @@ const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
   for (const build of buildsWithSourcemaps) {
     const cleanPath = assetPath(build);
     console.log(`static asset: ${cleanPath}, ${build.type}, ${build.kind}`);
-    route = route.get(cleanPath, async () => {
+    staticRoute = staticRoute.get(cleanPath, async () => {
       return new Response(await build.arrayBuffer(), {
         headers: {
           'Content-Type': build.type,
@@ -69,6 +80,8 @@ const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
       });
     });
   }
+
+  route.use(staticRoute);
   return route;
 };
 
