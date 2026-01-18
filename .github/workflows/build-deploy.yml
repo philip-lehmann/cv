@@ -46,8 +46,6 @@ jobs:
         with:
           path: .next
           key: ${{ runner.os }}-next
-      - name: build
-        run: bun --bun run build
 
       - name: Set up Docker Context for Buildx
         if: github.ref == 'refs/heads/main'
