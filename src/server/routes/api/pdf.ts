@@ -81,7 +81,7 @@ export const pdfRoute = new Elysia().get(
       });
     } catch (error) {
       console.error(error);
-      return new Response(JSON.stringify(error), {
+      return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
         status: 500,
         headers: {
           'Content-Type': 'application/json',
