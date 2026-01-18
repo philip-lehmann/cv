@@ -1,4 +1,4 @@
-Sitemap: https://cv.philiplehmann.ch/static/sitemap.xml
+Sitemap: https://cv.philiplehmann.ch/sitemap.xml
 
 User-agent: *
 Allow: /*
