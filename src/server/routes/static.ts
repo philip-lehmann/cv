@@ -24,10 +24,14 @@ const bunBuildAsset = async (asset: string | string[]) => {
         : false,
     outdir: 'dist/assets',
   });
-  if (result.success) {
-    return result.outputs;
+  if (!result.success) {
+    console.error('Asset build failed:');
+    for (const log of result.logs) {
+      console.error(log);
+    }
+    throw new Error(`Failed to build assets: ${entrypoints.join(', ')}`);
   }
-  return [];
+  return result.outputs;
 };
 
 export const assetPath = (build: Bun.BuildArtifact) => `/${build.path.replace(/^(\.\/|\/)+/, '')}`;
