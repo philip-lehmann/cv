@@ -53,7 +53,7 @@ spec:
               memory: "100Mi"
               cpu: "0.1"
             limits:
-              memory: "150Mi"
+              memory: "200Mi"
               cpu: "0.3"
           volumeMounts:
             - name: pdf
