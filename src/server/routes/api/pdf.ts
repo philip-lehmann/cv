@@ -30,13 +30,18 @@ const getFile = async (locale: LangType, isProduction = env.NODE_ENV === 'produc
         env.PUPPETEER_API_URL,
         { method: 'POST', path: '/', headers: { 'Content-Type': 'application/json' } },
         async (res) => {
-          if (res.statusCode !== 200) {
-            throw new Error(`Failed to generate PDF: ${res.statusMessage}`);
-          }
-          const file = createWriteStream(outputPath);
-          await finished(res.pipe(file, { end: true }));
+          try {
+            if (res.statusCode !== 200) {
+              reject(new Error(`Failed to generate PDF: ${res.statusMessage}`));
+              return;
+            }
+            const file = createWriteStream(outputPath);
+            await finished(res.pipe(file, { end: true }));
 
-          resolve(getFile(locale, true));
+            resolve(getFile(locale, true));
+          } catch (error) {
+            reject(error);
+          }
         },
       );
       const siteUrl = env.SITE_URL;
