@@ -36,7 +36,7 @@ const bunBuildAsset = async (asset: string | string[]) => {
 
 export const assetPath = (build: Bun.BuildArtifact) => `/${build.path.replace(/^(\.\/|\/)+/, '')}`;
 
-const createStaticRoutes = async (builds: Bun.BuildArtifact[]) => {
+const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
   let route = new Elysia({ prefix: '/static' }).use(staticPlugin({ prefix: '/', assets: 'public' }));
 
   const buildsWithSourcemaps = builds.flatMap((build) => {
