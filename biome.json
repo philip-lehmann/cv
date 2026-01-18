@@ -8,16 +8,7 @@
     }
   },
   "files": {
-    "includes": [
-      "**/*.ts",
-      "**/*.tsx",
-      "**/*.json",
-      "!**/node_modules/**/*",
-      "!**/.next/**/*",
-      "!**/.yarn/**/*",
-      "!**/kustomize/**/*",
-      "!next-env.d.ts"
-    ]
+    "includes": ["**/*.ts", "**/*.tsx", "**/*.json", "!**/node_modules/**/*", "!**/kustomize/**/*"]
   },
   "linter": {
     "enabled": true,
