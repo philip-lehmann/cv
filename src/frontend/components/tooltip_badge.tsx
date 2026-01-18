@@ -36,7 +36,13 @@ export const TooltipBadge: FC<TooltipBadgeProps> = memo(({ name, progress }) => 
         target="_blank"
         rel="noopener noreferrer"
         disableRipple
-        sx={{ padding: 0, height: 39, width: 39, background: 'var(--mui-palette-background-custom)', borderRadius: 1 }}
+        sx={{
+          padding: 0,
+          height: 39,
+          width: 39,
+          background: ({ palette }) => palette.background.custom,
+          borderRadius: 1,
+        }}
       >
         {icon.type === 'svg' && (
           <Box component="img" sx={{ width: 30, height: 30 }} src={`/static/icons/${icon.icon}`} />

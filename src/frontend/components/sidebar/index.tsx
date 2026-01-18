@@ -20,7 +20,7 @@ export const Sidebar: FC = () => {
       direction="column"
       gap={4}
       sx={{
-        background: 'var(--mui-palette-background-custom)',
+        background: ({ palette }) => palette.background.custom,
         minHeight: '100vh',
         '@media print': {
           height: 'calc(400vh + 4px)',

@@ -45,7 +45,7 @@ const Page: FC<{
                 </header>
                 <Experience />
               </Stack>
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense>
                 <Video />
               </Suspense>
             </Stack>
