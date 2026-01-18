@@ -9,7 +9,8 @@ export class MessagesNotFound extends Error {
 
 export const getMessages = async (locale: 'de' | 'en'): Promise<Messages> => {
   try {
-    return await import(`./${locale}.json`);
+    const module = await import(`./${locale}.json`);
+    return module.default;
   } catch (error) {
     console.error(error);
     throw new MessagesNotFound();
