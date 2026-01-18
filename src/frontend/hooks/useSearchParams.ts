@@ -23,9 +23,11 @@ export const useSearchParams = () => {
     };
     window.addEventListener('pushState', fn);
     window.addEventListener('replaceState', fn);
+    window.addEventListener('popstate', fn);
     return () => {
       window.removeEventListener('pushState', fn);
       window.removeEventListener('replaceState', fn);
+      window.removeEventListener('popstate', fn);
     };
   }, []);
 
