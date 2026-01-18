@@ -2,6 +2,8 @@ import { env } from '@cv/helpers/env';
 import { staticPlugin } from '@elysiajs/static';
 import { Elysia } from 'elysia';
 
+const assetsPath = 'dist/assets';
+
 const bunBuildAsset = async (asset: string | string[]) => {
   const entrypoints = Array.isArray(asset) ? asset : [asset];
   const result = await Bun.build({
@@ -22,7 +24,7 @@ const bunBuildAsset = async (asset: string | string[]) => {
             whitespace: true,
           }
         : false,
-    outdir: 'dist/assets',
+    outdir: assetsPath,
   });
   if (!result.success) {
     console.error('Asset build failed:');
@@ -34,7 +36,21 @@ const bunBuildAsset = async (asset: string | string[]) => {
   return result.outputs;
 };
 
-export const assetPath = (build: Bun.BuildArtifact) => `/${build.path.replace(/^(\.\/|\/)+/, '')}`;
+export const assetPath = (build: Bun.BuildArtifact) => {
+  // build.path is an absolute filesystem path when outdir is set
+  // Extract the path relative to the outdir (dist/assets)
+  const pathStr = build.path;
+  const outdirIndex = pathStr.indexOf(assetsPath);
+
+  if (outdirIndex !== -1) {
+    // Extract everything after 'dist/assets'
+    const relativePath = pathStr.slice(outdirIndex + assetsPath.length);
+    return `/${relativePath.replace(/^\/+/, '')}`;
+  }
+
+  // Fallback for unexpected path formats
+  return `/${pathStr.replace(/^(\.\/|\/)+/, '')}`;
+};
 
 const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
   let route = new Elysia({ prefix: '/static' }).use(staticPlugin({ prefix: '/', assets: 'public' }));
