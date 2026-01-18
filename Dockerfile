@@ -14,7 +14,7 @@ RUN mkdir pdf; \
 
 COPY --chown=1000:1000 public ./public
 COPY --chown=1000:1000 src ./src
-COPY --chown=1000:1000 package.json bun.lock tsconfig.json global.d.ts .
+COPY --chown=1000:1000 package.json bun.lock tsconfig.json global.d.ts ./
 
 RUN bun install
 
