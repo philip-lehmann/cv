@@ -55,8 +55,7 @@ export const assetPath = (build: Bun.BuildArtifact) => {
 const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
   const route = ['robots.txt', '.well-known'].reduce((root, asset) => {
     return root.get(`/${asset}`, async () => {
-      const file = Bun.file(`public/${asset}`);
-      return new Response(file.stream(), {
+      return new Response(Bun.file(`public/${asset}`), {
         headers: {
           'Content-Type': 'text/plain',
         },
@@ -73,7 +72,7 @@ const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
     const cleanPath = assetPath(build);
     console.log(`static asset: ${cleanPath}, ${build.type}, ${build.kind}`);
     staticRoute = staticRoute.get(cleanPath, async () => {
-      return new Response(build.stream(), {
+      return new Response(Bun.file(build.path), {
         headers: {
           'Content-Type': build.type,
           'Cache-Control': env.NODE_ENV === 'production' ? 'public, max-age=31536000, immutable' : 'no-cache',
