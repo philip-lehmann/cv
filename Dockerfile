@@ -7,6 +7,8 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
+USER 1000
+
 RUN mkdir pdf; \
     mkdir -p dist/assets; \
     chown -R 1000:1000 .
@@ -16,8 +18,6 @@ COPY --chown=1000:1000 src ./src
 COPY --chown=1000:1000 package.json bun.lock tsconfig.json global.d.ts ./
 
 RUN bun install
-
-USER 1000
 
 EXPOSE $PORT
 
