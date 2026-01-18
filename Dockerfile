@@ -8,18 +8,18 @@ ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 RUN mkdir pdf; \
-    chown 1000:1000 pdf
+    mkdir -p dist/assets; \
+    chown 1000:1000 pdf; \
+    chown -R 1000:1000 dist
 
-COPY --chown=1000:1000 .next/standalone ./
-COPY --chown=1000:1000 .next/static ./.next/static
 COPY --chown=1000:1000 public ./public
+COPY --chown=1000:1000 src ./src
+COPY --chown=1000:1000 package.json bun.lock tsconfig.json global.d.ts .
+
+RUN bun install
 
 USER 1000
 
-# Next.js collects completely anonymous telemetry data about general usage.
-# Uncomment the following line in case you want to disable telemetry.
-ENV NEXT_TELEMETRY_DISABLED=1
-
 EXPOSE $PORT
 
-CMD ["bun", "server.js"]
+CMD ["bun", "--production", "src/index.ts"]

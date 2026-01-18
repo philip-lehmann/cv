@@ -14,6 +14,7 @@ const bunBuildAsset = async (asset: string | string[]) => {
       chunk: 'chunks/[name]-[hash].[ext]',
       asset: 'assets/[name]-[hash].[ext]',
     },
+    production: env.NODE_ENV === 'production',
     minify:
       env.NODE_ENV === 'production'
         ? {
@@ -22,9 +23,8 @@ const bunBuildAsset = async (asset: string | string[]) => {
             whitespace: true,
           }
         : false,
-    // outdir: 'dist/assets',
+    outdir: 'dist/assets',
   });
-  console.log(result.logs);
   if (result.success) {
     return result.outputs;
   }

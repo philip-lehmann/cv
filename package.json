@@ -6,7 +6,6 @@
   "description": "Philip Lehmann - Curriculum vitae",
   "scripts": {
     "dev": "docker compose up & bun --bun --watch src/index.ts",
-    "build": "bun --bun build",
     "lint:types": "tsc --noEmit",
     "lint:biome": "biome check",
     "lint": "bun lint:biome & bun lint:types & wait",
