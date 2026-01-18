@@ -19,12 +19,10 @@ export const AboutMe: FC = () => {
             component="img"
             src="/static/images/me/2@1x.jpg"
             alt="Philip Lehmann"
-            width="250"
-            height="250"
             sx={{
-              width: 250,
-              borderRadius: '125px',
+              borderRadius: '50%',
               maxWidth: '100%',
+              aspectRatio: '1 / 1',
             }}
           />
         </picture>
