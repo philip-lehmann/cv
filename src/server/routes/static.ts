@@ -73,7 +73,7 @@ const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
     const cleanPath = assetPath(build);
     console.log(`static asset: ${cleanPath}, ${build.type}, ${build.kind}`);
     staticRoute = staticRoute.get(cleanPath, async () => {
-      return new Response(await build.arrayBuffer(), {
+      return new Response(build.stream(), {
         headers: {
           'Content-Type': build.type,
         },
