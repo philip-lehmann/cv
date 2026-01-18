@@ -4,7 +4,9 @@
 [philiplehmann.ch](https://philiplehmann.ch)
 
 ## Stack
- - next.js
+ - bun
+ - elysia
+ - custom ssr
  - mui
  - rollbar
  - google analytics
