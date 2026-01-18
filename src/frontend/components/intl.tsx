@@ -5,13 +5,20 @@ export type Messages = { [key: string]: string | Messages };
 const IntlContext = createContext<{ locale: string; messages: Messages }>({ locale: 'en', messages: {} });
 
 export const getTranslation = (messages: Messages, key: string): string | null => {
-  const value = key.split('.').reduce((obj: Messages | string, part, index, array) => {
-    if (typeof obj === 'string') {
-      console.error(`Invalid message key: ${key} found ${array.slice(0, index).join('.')}`);
-      return obj;
-    }
-    return obj?.[part];
-  }, messages);
+  const value = key.split('.').reduce(
+    (obj: Messages | string | null, part, index, array) => {
+      if (obj === null) {
+        return null;
+      }
+      if (typeof obj === 'string') {
+        console.error(`Invalid message key: ${key} found ${array.slice(0, index).join('.')}`);
+        return null;
+      }
+      const next = obj[part];
+      return next !== undefined ? next : null;
+    },
+    messages as Messages | string | null,
+  );
   if (typeof value === 'string') {
     return value;
   }
