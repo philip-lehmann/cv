@@ -32,7 +32,9 @@ const getFile = async (locale: LangType, isProduction = env.NODE_ENV === 'produc
         async (res) => {
           try {
             if (res.statusCode !== 200) {
-              reject(new Error(`Failed to generate PDF: ${res.statusMessage}`));
+              // Drain the response to prevent socket leaks
+              res.resume();
+              reject(new Error(`Failed to generate PDF: ${res.statusCode} ${res.statusMessage}`));
               return;
             }
             const file = createWriteStream(outputPath);
@@ -40,10 +42,24 @@ const getFile = async (locale: LangType, isProduction = env.NODE_ENV === 'produc
 
             resolve(getFile(locale, true));
           } catch (error) {
+            // Drain the response in case of error
+            res.resume();
             reject(error);
           }
         },
       );
+
+      // Set timeout to prevent hung promises (60 seconds)
+      req.setTimeout(60_000, () => {
+        req.destroy();
+        reject(new Error('Request timeout: PDF generation took too long'));
+      });
+
+      // Handle request errors
+      req.on('error', (error) => {
+        reject(new Error(`Request error: ${error.message}`));
+      });
+
       const siteUrl = env.SITE_URL;
       const body = JSON.stringify({
         url: `${siteUrl}/${locale}`,
