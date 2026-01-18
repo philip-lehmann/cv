@@ -8,7 +8,18 @@ const fetchEnv = (key: string) => {
 
 export const env = {
   get PORT() {
-    return Number(process.env.PORT || '3000');
+    const portValue = process.env.PORT || '3000';
+    const port = Number(portValue);
+
+    if (Number.isNaN(port)) {
+      throw new Error(`Invalid PORT value: "${portValue}" is not a valid number.`);
+    }
+
+    if (port < 1 || port > 65535) {
+      throw new Error(`Invalid PORT value: ${port} must be between 1 and 65535.`);
+    }
+
+    return port;
   },
   get NODE_ENV() {
     return process.env.NODE_ENV ?? 'development';
