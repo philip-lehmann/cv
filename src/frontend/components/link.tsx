@@ -34,24 +34,10 @@ export const Link: FC<LinkProps> = ({
   const onClickHandler = useCallback(
     (e: MouseEvent<HTMLAnchorElement>) => {
       onClick?.(e);
-
-      // Don't hijack navigation if:
-      // - User handler already prevented default
-      // - Not a local navigation
-      // - Not a left-click (button 0)
-      // - Modifier keys are held (Ctrl, Cmd, Shift, Alt)
-      // - Link has a target attribute (e.g., _blank)
-      if (
-        !local ||
-        e.defaultPrevented ||
-        e.button !== 0 ||
-        e.metaKey ||
-        e.ctrlKey ||
-        e.shiftKey ||
-        e.altKey ||
-        (e.currentTarget as HTMLAnchorElement).target
-      ) {
-        return;
+      if (local) {
+        e.preventDefault();
+        e.stopPropagation();
+        pushState(null, '', stringHref);
       }
 
       e.preventDefault();
