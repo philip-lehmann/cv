@@ -62,31 +62,27 @@ export const serveApp = async (
   );
   const bodyHtml = renderToString(PageComponent);
 
-  const { extractCriticalToChunks, constructStyleTagsFromChunks } = createEmotionServer(cache);
-  const emotionChunks = extractCriticalToChunks(bodyHtml);
-  const emotionCss = constructStyleTagsFromChunks(emotionChunks);
-
   const { default: Layout } = await import(`${pagePath}/layout.tsx`);
   const LayoutComponent = ServerLayout(
     Layout,
     { ...appData, googleAnalyticsKey, rollbarClientToken, env: nodeEnv, siteUrl },
-    { cache, messages, body: bodyHtml, css: emotionCss, ...location },
+    { cache, messages, body: bodyHtml, css: '', ...location },
   );
   const layoutHtml = renderToString(LayoutComponent);
+  const fullHtml = layoutHtml.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
+
+  const { extractCriticalToChunks, constructStyleTagsFromChunks } = createEmotionServer(cache);
+  const emotionChunks = extractCriticalToChunks(fullHtml);
+  const emotionCss = constructStyleTagsFromChunks(emotionChunks);
 
   const entryPoint = assetBuilds.filter((build) => build.kind === 'entry-point');
   const entryPointHtml = entryPoint
     .map((build) => `<script src="/static${assetPath(build)}" type="module" defer></script>`)
     .join('');
 
-  return new Response(
-    layoutHtml
-      .replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`)
-      .replace('</head>', `${emotionCss}${entryPointHtml}</head>`),
-    {
-      headers: {
-        'content-type': 'text/html; charset=utf-8',
-      },
+  return new Response(fullHtml.replace('</head>', `${emotionCss}${entryPointHtml}</head>`), {
+    headers: {
+      'content-type': 'text/html; charset=utf-8',
     },
-  );
+  });
 };
