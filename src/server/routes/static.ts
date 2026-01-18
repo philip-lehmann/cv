@@ -14,7 +14,6 @@ const bunBuildAsset = async (asset: string | string[]) => {
       chunk: 'chunks/[name]-[hash].[ext]',
       asset: 'assets/[name]-[hash].[ext]',
     },
-    production: env.NODE_ENV === 'production',
     minify:
       env.NODE_ENV === 'production'
         ? {
