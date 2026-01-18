@@ -35,8 +35,8 @@ const LinkComponent: FC<LinkProps> = ({ image, name, ...anchorProps }) => {
       {...anchorProps}
     >
       <picture>
-        <source srcSet={`/static/images/${image}@1x.avif, /static/images/${image}@1x.avif 2x`} type="image/avif" />
-        <source srcSet={`/static/images/${image}@1x.webp, /static/images/${image}@1x.webp 2x`} type="image/webp" />
+        <source srcSet={`/static/images/${image}@1x.avif, /static/images/${image}@2x.avif 2x`} type="image/avif" />
+        <source srcSet={`/static/images/${image}@1x.webp, /static/images/${image}@2x.webp 2x`} type="image/webp" />
         <source srcSet={`/static/images/${image}@1x.png, /static/images/${image}@2x.png 2x`} type="image/png" />
         <img src={`/static/images/${image}@1x.png`} alt={image} />
       </picture>
