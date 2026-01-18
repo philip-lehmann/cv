@@ -12,7 +12,7 @@
     "format": "biome check --write"
   },
   "dependencies": {
-    "@elysiajs/static": "1.4.4",
+    "@elysiajs/static": "1.4.7",
     "@emotion/cache": "11.14.0",
     "@emotion/css": "^11.13.5",
     "@emotion/react": "11.14.0",
