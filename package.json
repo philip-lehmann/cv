@@ -21,7 +21,7 @@
     "@mui/icons-material": "7.3.7",
     "@mui/material": "7.3.7",
     "date-fns": "4.1.0",
-    "elysia": "1.4.18",
+    "elysia": "1.4.22",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "rollbar": "2.26.5"
