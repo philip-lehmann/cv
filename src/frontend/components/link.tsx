@@ -1,12 +1,19 @@
 import type { LinkBaseProps } from '@mui/material';
-import { type AnchorHTMLAttributes, type FC, useCallback } from 'react';
+import {
+  type AnchorHTMLAttributes,
+  type ElementType,
+  type FC,
+  type MouseEvent,
+  type ReactNode,
+  useCallback,
+} from 'react';
 import { pushState } from '../hooks/useSearchParams';
 
 export interface LinkProps extends LinkBaseProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
-  children: React.ReactNode;
+  children: ReactNode;
   href: string | { pathname: string; query?: Record<string, string>; hash?: string };
   scroll?: boolean;
-  component?: React.ElementType;
+  component?: ElementType;
   local?: boolean;
 }
 
@@ -25,7 +32,7 @@ export const Link: FC<LinkProps> = ({
       : `${href.pathname}${href.query ? `?${new URLSearchParams(href.query).toString()}` : ''}${href.hash ? `#${href.hash}` : ''}`;
 
   const onClickHandler = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>) => {
+    (e: MouseEvent<HTMLAnchorElement>) => {
       onClick?.(e);
       if (local) {
         e.preventDefault();
