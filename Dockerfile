@@ -9,8 +9,7 @@ ENV HOSTNAME="0.0.0.0"
 
 RUN mkdir pdf; \
     mkdir -p dist/assets; \
-    chown 1000:1000 pdf; \
-    chown -R 1000:1000 dist
+    chown -R 1000:1000 .
 
 COPY --chown=1000:1000 public ./public
 COPY --chown=1000:1000 src ./src
