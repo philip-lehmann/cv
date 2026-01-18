@@ -46,7 +46,6 @@ const Layout: FC<AppData & { messages: Messages; cache: EmotionCache; body: stri
         </head>
 
         <body data-appdata={JSON.stringify(props)}>
-          {/* biome-ignore lint/correctness/useUniqueElementIds: id is needed for setting up hydration */}
           <div id="root" />
         </body>
       </html>
