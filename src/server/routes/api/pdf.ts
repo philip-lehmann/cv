@@ -5,6 +5,7 @@ import { dirname, resolve as pathResolve } from 'node:path';
 import { finished } from 'node:stream/promises';
 import { LangEnum, type LangType } from '@cv/helpers/date';
 import { env } from '@cv/helpers/env';
+import { record } from '@elysiajs/opentelemetry';
 import { Elysia, t } from 'elysia';
 
 const outputPathByLang = Object.freeze({
@@ -24,59 +25,63 @@ const getFile = async (locale: LangType, isProduction = env.NODE_ENV === 'produc
 
   const request = new URL(env.PUPPETEER_API_URL).protocol === 'https:' ? httpsRequest : httpRequest;
 
-  return new Promise<ReadStream>((resolve, reject) => {
-    try {
-      const req = request(
-        env.PUPPETEER_API_URL,
-        { method: 'POST', path: '/', headers: { 'Content-Type': 'application/json' } },
-        async (res) => {
-          try {
-            if (res.statusCode !== 200) {
-              // Drain the response to prevent socket leaks
-              res.resume();
-              reject(new Error(`Failed to generate PDF: ${res.statusCode} ${res.statusMessage}`));
-              return;
-            }
-            const file = createWriteStream(outputPath);
-            await finished(res.pipe(file, { end: true }));
+  return record(
+    'Pdf.puppeteer',
+    () =>
+      new Promise<ReadStream>((resolve, reject) => {
+        try {
+          const req = request(
+            env.PUPPETEER_API_URL,
+            { method: 'POST', path: '/', headers: { 'Content-Type': 'application/json' } },
+            async (res) => {
+              try {
+                if (res.statusCode !== 200) {
+                  // Drain the response to prevent socket leaks
+                  res.resume();
+                  reject(new Error(`Failed to generate PDF: ${res.statusCode} ${res.statusMessage}`));
+                  return;
+                }
+                const file = createWriteStream(outputPath);
+                await finished(res.pipe(file, { end: true }));
 
-            resolve(getFile(locale, true));
-          } catch (error) {
-            // Drain the response in case of error
-            res.resume();
-            reject(error);
-          }
-        },
-      );
+                resolve(getFile(locale, true));
+              } catch (error) {
+                // Drain the response in case of error
+                res.resume();
+                reject(error);
+              }
+            },
+          );
 
-      // Set timeout to prevent hung promises (60 seconds)
-      req.setTimeout(60_000, () => {
-        req.destroy();
-        reject(new Error('Request timeout: PDF generation took too long'));
-      });
+          // Set timeout to prevent hung promises (60 seconds)
+          req.setTimeout(60_000, () => {
+            req.destroy();
+            reject(new Error('Request timeout: PDF generation took too long'));
+          });
 
-      // Handle request errors
-      req.on('error', (error) => {
-        reject(new Error(`Request error: ${error.message}`));
-      });
+          // Handle request errors
+          req.on('error', (error) => {
+            reject(new Error(`Request error: ${error.message}`));
+          });
 
-      const siteUrl = env.SITE_URL;
-      const body = JSON.stringify({
-        url: `${siteUrl}/${locale}`,
-        format: 'a4',
-        landscape: false,
-        scale: 0.8,
-        printBackground: true,
-        omitBackground: true,
-        // pageRanges: '1-3',
-        margin: { top: 0, right: 0, bottom: 0, left: 0 },
-      });
+          const siteUrl = env.SITE_URL;
+          const body = JSON.stringify({
+            url: `${siteUrl}/${locale}`,
+            format: 'a4',
+            landscape: false,
+            scale: 0.8,
+            printBackground: true,
+            omitBackground: true,
+            // pageRanges: '1-3',
+            margin: { top: 0, right: 0, bottom: 0, left: 0 },
+          });
 
-      req.end(body);
-    } catch (error) {
-      reject(error);
-    }
-  });
+          req.end(body);
+        } catch (error) {
+          reject(error);
+        }
+      }),
+  );
 };
 
 export const pdfRoute = new Elysia().get(

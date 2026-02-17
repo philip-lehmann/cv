@@ -57,4 +57,10 @@ export const env = {
   get MINIO_REGION() {
     return fetchEnv('MINIO_REGION');
   },
+  get OPEN_TELEMETRY_USERNAME() {
+    return fetchEnv('OPEN_TELEMETRY_USERNAME');
+  },
+  get OPEN_TELEMETRY_PASSWORD() {
+    return fetchEnv('OPEN_TELEMETRY_PASSWORD');
+  },
 };
