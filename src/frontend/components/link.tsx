@@ -39,10 +39,6 @@ export const Link: FC<LinkProps> = ({
         e.stopPropagation();
         pushState(null, '', stringHref);
       }
-
-      e.preventDefault();
-      e.stopPropagation();
-      pushState(null, '', stringHref);
     },
     [stringHref, local, onClick],
   );
