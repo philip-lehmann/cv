@@ -7,9 +7,9 @@ resources:
 
   - sealed-docker-registry-harbor.yaml
   - sealed-google-analytics.yaml
-  - sealed-rollbar.yaml
   - sealed-minio.yaml
   - sealed-faro.yaml
   - sealed-open-telemetry.yaml
+  - sealed-redis.yaml
 
   - cv
