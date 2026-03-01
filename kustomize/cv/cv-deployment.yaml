@@ -47,6 +47,8 @@ spec:
                 name: open-telemetry-secret
             - secretRef:
                 name: faro-secret
+            - secretRef:
+                name: redis-secret
 
           ports:
             - containerPort: 3000

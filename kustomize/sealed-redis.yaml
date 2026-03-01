@@ -4,7 +4,7 @@ kind: SealedSecret
 metadata:
   annotations:
     sealedsecrets.bitnami.com/cluster-wide: "true"
-  name: faro-secret
+  name: redis-secret
   namespace: cv-philiplehmann
 spec:
   encryptedData:
@@ -13,5 +13,5 @@ spec:
     metadata:
       annotations:
         sealedsecrets.bitnami.com/cluster-wide: "true"
-      name: faro-secret
+      name: redis-secret
       namespace: cv-philiplehmann
