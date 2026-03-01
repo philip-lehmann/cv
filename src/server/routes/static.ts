@@ -52,16 +52,24 @@ export const assetPath = (build: Bun.BuildArtifact) => {
   return `/${pathStr.replace(/^(\.\/|\/)+/, '')}`;
 };
 
-const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
-  const route = ['robots.txt', '.well-known'].reduce((root, asset) => {
-    return root.get(`/${asset}`, async () => {
-      return new Response(Bun.file(`public/${asset}`), {
-        headers: {
-          'Content-Type': 'text/plain',
-        },
-      });
+const serveTextFile = (root: Elysia, urlPath: string, filePath: string) => {
+  return root.get(urlPath, async () => {
+    const file = Bun.file(filePath);
+    if (!(await file.exists())) {
+      return new Response('Not Found', { status: 404 });
+    }
+    return new Response(file, {
+      headers: {
+        'Content-Type': 'text/plain',
+      },
     });
-  }, new Elysia());
+  });
+};
+
+const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
+  let route = new Elysia();
+  route = serveTextFile(route, '/robots.txt', 'public/robots.txt');
+  route = serveTextFile(route, '/.well-known/security.txt', 'public/.well-known/security.txt');
 
   let staticRoute = new Elysia({ prefix: '/static' }).use(staticPlugin({ prefix: '/', assets: 'public' }));
 
