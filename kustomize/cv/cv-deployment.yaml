@@ -45,6 +45,8 @@ spec:
                 name: google-analytics-secret
             - secretRef:
                 name: rollbar-secret
+            - secretRef:
+                name: open-telemetry-secret
 
           ports:
             - containerPort: 3000

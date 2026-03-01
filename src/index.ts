@@ -13,25 +13,29 @@ diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
 
 process.env.OTEL_SERVICE_NAME ??= 'cv';
 
+const openTelemetry = env.OPEN_TELEMETRY_URL && env.OPEN_TELEMETRY_USERNAME && env.OPEN_TELEMETRY_PASSWORD;
+
 const app = new Elysia()
   .use(
-    opentelemetry({
-      spanProcessors: [
-        // new BatchSpanProcessor(new ConsoleSpanExporter()),
-        new BatchSpanProcessor(
-          new OTLPTraceExporter({
-            url: 'https://http.tempo.riwi.dev/v1/traces',
-            headers: {
-              Authorization: `Basic ${Buffer.from(`${env.OPEN_TELEMETRY_USERNAME}:${env.OPEN_TELEMETRY_PASSWORD}`).toString('base64')}`,
-            },
-          }),
-        ),
-      ],
-    }),
+    openTelemetry
+      ? opentelemetry({
+          spanProcessors: [
+            // new BatchSpanProcessor(new ConsoleSpanExporter()),
+            new BatchSpanProcessor(
+              new OTLPTraceExporter({
+                url: env.OPEN_TELEMETRY_URL,
+                headers: {
+                  Authorization: `Basic ${Buffer.from(`${env.OPEN_TELEMETRY_USERNAME}:${env.OPEN_TELEMETRY_PASSWORD}`).toString('base64')}`,
+                },
+              }),
+            ),
+          ],
+        })
+      : undefined,
   )
   .use(staticRoute)
   .use(apiRoute)
   .use(pageRoute)
-  .listen(env.PORT);
-
-console.log(`🚀 Server is running at ${app.server?.hostname}:${app.server?.port}`);
+  .listen({ port: env.PORT, hostname: '0.0.0.0' }, (server) => {
+    console.log(`🚀 Server is running at ${server.hostname}:${server.port}`);
+  });
