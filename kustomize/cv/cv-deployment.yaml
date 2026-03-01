@@ -44,9 +44,9 @@ spec:
             - secretRef:
                 name: google-analytics-secret
             - secretRef:
-                name: rollbar-secret
-            - secretRef:
                 name: open-telemetry-secret
+            - secretRef:
+                name: faro-secret
 
           ports:
             - containerPort: 3000

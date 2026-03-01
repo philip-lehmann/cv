@@ -15,7 +15,7 @@ process.env.OTEL_SERVICE_NAME ??= 'cv';
 
 const openTelemetry = env.OPEN_TELEMETRY_URL && env.OPEN_TELEMETRY_USERNAME && env.OPEN_TELEMETRY_PASSWORD;
 
-const app = new Elysia()
+new Elysia()
   .use(
     openTelemetry
       ? opentelemetry({

@@ -5,5 +5,5 @@ export * from './google_analytics';
 export * from './icons';
 export * from './meta';
 export * from './open_graph';
-export * from './rollbar';
+
 export * from './twitter';

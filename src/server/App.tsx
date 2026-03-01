@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import { env } from '@cv/helpers/env';
-import { record } from '@elysiajs/opentelemetry';
+import { recordSpan } from '@cv/helpers/telemetry';
 import type { EmotionCache } from '@emotion/cache';
 import createEmotionServer from '@emotion/server/create-instance';
 import type { AppData, Messages } from 'global';
@@ -9,6 +9,7 @@ import { renderToString } from 'react-dom/server';
 import { RouteProvider } from '../frontend/components/route';
 import { getMessages } from '../messages';
 import { createEmotionCache } from '../shared/createEmotionCache';
+import { createFaroTempKey } from './faro';
 import { assetBuilds, assetPath } from './routes/static';
 
 export const ServerLayout = (
@@ -47,10 +48,11 @@ export const serveApp = async (
   appData: Pick<AppData, 'locale'>,
   location: { pathname: string; search: string },
 ) => {
-  return record('serveApp', async () => {
+  return recordSpan('serveApp', async () => {
     const pagePath = resolve(process.cwd(), 'src', 'frontend', 'pages', page);
     const googleAnalyticsKey = env.GOOGLE_ANALYTICS_KEY;
-    const rollbarClientToken = env.ROLLBAR_CLIENT_TOKEN;
+    const faroApiKey = await createFaroTempKey();
+    const faroUrl = faroApiKey ? '/api/faro/collect' : undefined;
     const nodeEnv = env.NODE_ENV;
     const siteUrl = env.SITE_URL;
     const cache = createEmotionCache();
@@ -59,18 +61,18 @@ export const serveApp = async (
     const { default: Page } = await import(`${pagePath}/page.tsx`);
     const PageComponent = ServerPage(
       Page,
-      { ...appData, googleAnalyticsKey, rollbarClientToken, env: nodeEnv, siteUrl },
+      { ...appData, googleAnalyticsKey, env: nodeEnv, siteUrl, faroUrl, faroApiKey },
       { cache, messages, ...location },
     );
-    const bodyHtml = record('renderToString.page', () => renderToString(PageComponent));
+    const bodyHtml = recordSpan('renderToString.page', () => renderToString(PageComponent));
 
     const { default: Layout } = await import(`${pagePath}/layout.tsx`);
     const LayoutComponent = ServerLayout(
       Layout,
-      { ...appData, googleAnalyticsKey, rollbarClientToken, env: nodeEnv, siteUrl },
+      { ...appData, googleAnalyticsKey, env: nodeEnv, siteUrl, faroUrl, faroApiKey },
       { cache, messages, body: bodyHtml, css: '', ...location },
     );
-    const layoutHtml = record('renderToString.layout', () => renderToString(LayoutComponent));
+    const layoutHtml = recordSpan('renderToString.layout', () => renderToString(LayoutComponent));
     const fullHtml = layoutHtml.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
 
     const { extractCriticalToChunks, constructStyleTagsFromChunks } = createEmotionServer(cache);

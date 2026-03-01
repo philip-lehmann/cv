@@ -35,8 +35,15 @@ export const env = {
   get GOOGLE_ANALYTICS_KEY() {
     return process.env.GOOGLE_ANALYTICS_KEY;
   },
-  get ROLLBAR_CLIENT_TOKEN() {
-    return process.env.ROLLBAR_CLIENT_TOKEN;
+
+  get FARO_URL() {
+    return process.env.FARO_URL;
+  },
+  get FARO_API_KEY() {
+    return process.env.FARO_API_KEY;
+  },
+  get REDIS_URL() {
+    return process.env.REDIS_URL;
   },
   get DEFAULT_LOCALE() {
     return process.env.DEFAULT_LOCALE ?? 'en';
