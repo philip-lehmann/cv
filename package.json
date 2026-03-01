@@ -22,7 +22,7 @@
     "@grafana/faro-react": "2.2.4",
     "@mui/icons-material": "7.3.8",
     "@mui/material": "7.3.8",
-    "@opentelemetry/exporter-trace-otlp-grpc": "0.211.0",
+    "@opentelemetry/exporter-trace-otlp-grpc": "0.212.0",
     "@opentelemetry/exporter-trace-otlp-http": "0.212.0",
     "date-fns": "4.1.0",
     "elysia": "1.4.27",
