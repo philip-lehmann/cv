@@ -2,17 +2,7 @@ import type { EmotionCache } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import type { AppData, Messages } from 'global';
 import { type FC, StrictMode } from 'react';
-import {
-  Canonical,
-  Connect,
-  Font,
-  GoogleAnalytics,
-  Icons,
-  Meta,
-  OpenGraph,
-  Rollbar,
-  Twitter,
-} from '../../components/head';
+import { Canonical, Connect, Font, GoogleAnalytics, Icons, Meta, OpenGraph, Twitter } from '../../components/head';
 import { HireMe } from '../../components/hire_me';
 import { getTranslation } from '../../components/intl';
 
@@ -22,7 +12,7 @@ const Layout: FC<AppData & { messages: Messages; cache: EmotionCache; body: stri
   css,
   ...props
 }) => {
-  const { locale, googleAnalyticsKey, rollbarClientToken, env, siteUrl, messages } = props;
+  const { locale, googleAnalyticsKey, siteUrl, messages } = props;
 
   const title = getTranslation(messages, 'Metadata.title') || '';
 
@@ -42,7 +32,6 @@ const Layout: FC<AppData & { messages: Messages; cache: EmotionCache; body: stri
           <Canonical locale={locale} path={'/'} url={siteUrl} />
 
           {googleAnalyticsKey && <GoogleAnalytics googleAnalyticsKey={googleAnalyticsKey} />}
-          {rollbarClientToken && <Rollbar rollbarClientToken={rollbarClientToken} env={env} />}
         </head>
 
         <body data-appdata={JSON.stringify(props)}>

@@ -9,3 +9,10 @@ services:
       - 3001:3001
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
+  redis:
+    container_name: redis
+    image: redis:8.6-trixie
+    restart: unless-stopped
+    ports:
+      - 6379:6379

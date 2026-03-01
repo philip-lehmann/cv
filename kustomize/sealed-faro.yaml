@@ -1,0 +1,18 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  name: faro-secret
+  namespace: cv-philiplehmann
+spec:
+  encryptedData:
+    FARO_API_KEY: AgBjZhrnSUK7daVGYf40sDo4beu00Y7pxoqGkyHbgwIcEulQ06BkdiUreIggXFD4AqeQTQn9tXvnIXea2Pm/wNGidR6wAOPDOQ6Zws5AGVOOLmboSQ403ZnJ5y0vZiZ5Hcqf9Hc9J+/ws6J21/2bFDx+FnqccjlTbUZmtEj2BxMbAQnjQzuNvOf68ImokPZSyRB+mNjvIXgwQem3bO28xVOhdPYRRxGmTXE22umUx6+evnRZaGjuJEpmBZbEmxhA476mP2rMjlEtO+8K1DQmFpQzijst4P4QMy6xOGRjBQ5CE9OTiY+WXQNS2ZNN8AKZwI3X8P9YYE66nYObXN60S9No+pIogR3Rgn7qwtqAUpXSHMnAY9/j5YMFPG6qxk3r3wk/YPj+c+gBLfTxfE3h9fcwkJjuvVxhnzYi2mlz9QxYu3GLcc6RAOUB3tQA8aZrBcBO4ffUaxMMHgCbkSmrIkOO8aeh7ia6t33bq93TAcdoyACDJtpOj506HFK2vIU/UEGh8o9tJwFQVdCzlLBmzEN74cdsQ3St6ZzGmxEH0rmpsbNPr8JCyJBuM56cI1JEkFbXVS9m7G7YZ1EyUI0uvRTLDAqoY9KC7pobvZguuqwAqnKQ4+AQLI5QCqg1Kjng0Vt/inlhCG3IBzVmfsmvJGrdaV9DxCBVJLpLRRWEJsh/aaP9qSxvoLJnZckqr3XBmUcn0aqb2D2wk6F6GcUrjj9882a/2OvoZ452I/oCONC+BQ+e/nChnbiHKYK2NvwiWyBUF+4JXvRAawTndSB36DHh
+    FARO_URL: AgBoKqIs+DKzVTg0uLOxFgQYAXq6Glu361SdhnHR7UmP7cVWt/+XtZ753lfvwRS2QhtGI4vtb1SRPUE1+fP1i0kGRl6NXAG9xEClfsfsPsqjJ42VADh7wWXwjo/jqXSOecGdN24mAINkBaYhKJHrhT1V1S0pDbeLh3u/aF7sxgpmN0BAGTZTUUBnjFCm33eBO6BWYdoSd/S4jPmnfLV93j4OfwJ/iT+VZmD2gHM1wsVuGpXsRKDbMCEC3ZLDw1yqzK90j5uk0GUY+qZRMqxWKckZABnpU26pXGnAm3v3V68ew4WEW5/5ZWFUfaN7HkQ2KAZy173eKNSU88R/YuCRVpDHEcWWy8jPasl5j4qalj+3EtHA5yiCT7p34d0kNjQgQKPMh74S3C5V4kM32jS+tzo1XkcB8LB/+yWSDim+Y3rLNHARSq+S19nYxjgHMXG/bzGS9HDcsR1WD+HMHhSAUQAsrenIZ9M1EjErXA+cqt0XZr+v2zl+wFMyMQ+dgejc2NfTJ6CjyOsvf1F4WjSfxGUK1XuGr9dlUtEMtPhr3K3J/7RMpwDnPtXO1qyV7C0kHl1b9zwmlrI8SlDt6VyOOyScGLWf7oUd8TAnkVCb9DCiqoiimzRm7IFs09SxhiC9NNp63iIKyjhopuR8bjJmGl3E7UVcQvJuW0JLOPl8HzBuYR35gwvhLtVeJGp98FvA9y94AH0I5Klrk2hVzrIfDCaqd5Id63JPG/THb4+tug==
+  template:
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+      name: faro-secret
+      namespace: cv-philiplehmann

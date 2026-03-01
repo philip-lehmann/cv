@@ -5,9 +5,10 @@ type Messages = typeof en;
 type AppData = {
   locale: 'de' | 'en';
   googleAnalyticsKey: string | undefined;
-  rollbarClientToken: string | undefined;
   env: string;
   siteUrl: string;
+  faroUrl: string | undefined;
+  faroApiKey: string | undefined;
 };
 
 declare global {

@@ -1,5 +1,5 @@
 import { env } from '@cv/helpers/env';
-import { record } from '@elysiajs/opentelemetry';
+import { recordSpan } from '@cv/helpers/telemetry';
 import { S3Client } from 'bun';
 import { Elysia, t } from 'elysia';
 
@@ -8,7 +8,7 @@ export const videoRoute = new Elysia({ prefix: '/video' }).get(
   async ({ params, redirect }) => {
     const { name } = params;
 
-    return record('S3Client.presign', () => {
+    return recordSpan('S3Client.presign', () => {
       const client = new S3Client({
         endpoint: `https://${env.MINIO_ENDPOINT}`,
         accessKeyId: env.MINIO_ACCESS_KEY,

@@ -5,7 +5,7 @@ import { dirname, resolve as pathResolve } from 'node:path';
 import { finished } from 'node:stream/promises';
 import { LangEnum, type LangType } from '@cv/helpers/date';
 import { env } from '@cv/helpers/env';
-import { record } from '@elysiajs/opentelemetry';
+import { recordSpan } from '@cv/helpers/telemetry';
 import { Elysia, t } from 'elysia';
 
 const outputPathByLang = Object.freeze({
@@ -25,7 +25,7 @@ const getFile = async (locale: LangType, isProduction = env.NODE_ENV === 'produc
 
   const request = new URL(env.PUPPETEER_API_URL).protocol === 'https:' ? httpsRequest : httpRequest;
 
-  return record(
+  return recordSpan(
     'Pdf.puppeteer',
     () =>
       new Promise<ReadStream>((resolve, reject) => {

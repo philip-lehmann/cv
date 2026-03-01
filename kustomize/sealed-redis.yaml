@@ -1,0 +1,17 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  name: faro-secret
+  namespace: cv-philiplehmann
+spec:
+  encryptedData:
+    REDIS_URL: AgBqaB79lo1hdRQktxheEx7hZ0o83IgU269dm62DNpZI0WCDhRFv9XXYvU1O1xR/W47JzWg3rRcnc0T47HPzvC/M642Pq5SzaUhLifC6W8gjP0D6ssqCjhm+pT7o0Dmfbm4DZRNEkjJsLJFj+CM3yCyyGDZ9Unl2IAogE3WtRnH+jm8K+sTbSV/Xv6r0e6SYqHsXmOWyQPYPf6tHnEEpHesMlnj1EQKqqEgNBSO2rH54DjZf8dwI7/IOLmgoyQLTRknVnPPuFeQpykpKgazm0N/rpZU3LvQ203WX8RoTDIWFFytsROkAfkTzVM8KQNuzfj3mb7BSflu1YGFMh/46O8KFz9h0n903oJI4dw9BZXc8t2+7KV3ykAl9nbtmJbx2dt1TGupud5XYnf8gUwAFmQyc/Qb5RnGWMrlQlfi/gW/X2aSUVAYxN4SHaC/POll6yoPRj3DsKiHLtJx2U6BvgGmE2yuhQ3oeBVE1oVHc+HRz5ZnfsO2LvUOwZJu+XlVOUd7vBIu+ds237Tl6rMSSqXLvEsojlqfAk2SrGf4ljy3/uUtfo922AdjpbBvsyUQCPu9fs6ocGs056cr+myXZ7ZdZ8gOS8cNCiLZTN0lbtDw/KGrQp52Uq7X+4oqPwPPXt5uTGTom8f8WGDqXVm1UqxLVTIA4c2jTLjyKRr4Km86HYHDOreLxs55CS7ZRgi7pAVQKp+RLxfB+mIpCOpIYoQITHCor23IPj0xj8aLIknsPOT1yog0S
+  template:
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+      name: faro-secret
+      namespace: cv-philiplehmann
