@@ -1,4 +1,5 @@
 import { env } from '@cv/helpers/env';
+import { logError, logInfo } from '@cv/helpers/log';
 import { staticPlugin } from '@elysiajs/static';
 import { Elysia } from 'elysia';
 
@@ -27,9 +28,9 @@ const bunBuildAsset = async (asset: string | string[]) => {
     outdir: assetsPath,
   });
   if (!result.success) {
-    console.error('Asset build failed:');
+    logError('asset_build_failed', { entrypoints });
     for (const log of result.logs) {
-      console.error(log);
+      logError('asset_build_log', { log });
     }
     throw new Error(`Failed to build assets: ${entrypoints.join(', ')}`);
   }
@@ -78,7 +79,7 @@ const createStaticRoutes = (builds: Bun.BuildArtifact[]) => {
   });
   for (const build of buildsWithSourcemaps) {
     const cleanPath = assetPath(build);
-    console.log(`static asset: ${cleanPath}, ${build.type}, ${build.kind}`);
+    logInfo('static_asset_registered', { path: cleanPath, type: build.type, kind: build.kind });
     staticRoute = staticRoute.get(cleanPath, async () => {
       return new Response(Bun.file(build.path), {
         headers: {

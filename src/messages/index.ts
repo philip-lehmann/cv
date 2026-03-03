@@ -1,3 +1,4 @@
+import { logError } from '@cv/helpers/log';
 import type { Messages } from 'global';
 
 export class MessagesNotFound extends Error {
@@ -12,7 +13,7 @@ export const getMessages = async (locale: 'de' | 'en'): Promise<Messages> => {
     const module = await import(`./${locale}.json`);
     return module.default;
   } catch (error) {
-    console.error(error);
+    logError('messages_load_failed', { error, locale });
     throw new MessagesNotFound();
   }
 };

@@ -7,6 +7,7 @@ export const pageRoute = new Elysia()
     const [locale] = headers['accept-language']?.split('-') || ['en'];
     const normalizedLocale = locale.toLowerCase();
     const targetLocale = supportedLocales.includes(normalizedLocale) ? normalizedLocale : 'en';
+
     return redirect(`/${targetLocale}`);
   })
   .get('/de', ({ path, query }) => {

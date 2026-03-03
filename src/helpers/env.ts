@@ -48,6 +48,12 @@ export const env = {
   get DEFAULT_LOCALE() {
     return process.env.DEFAULT_LOCALE ?? 'en';
   },
+  get OTEL_SERVICE_NAME() {
+    return process.env.OTEL_SERVICE_NAME ?? 'cv';
+  },
+  get LOG_LEVEL() {
+    return process.env.LOG_LEVEL ?? 'info';
+  },
 
   get MINIO_BUCKET_NAME() {
     return fetchEnv('MINIO_BUCKET_NAME');

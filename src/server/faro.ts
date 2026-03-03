@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { env } from '@cv/helpers/env';
+import { logWarn } from '@cv/helpers/log';
 import { getRedisClient } from './redis';
 
 const FARO_TEMP_KEY_PREFIX = 'faro:api-key:';
@@ -28,7 +29,7 @@ export const createFaroTempKey = async () => {
     await redis.expire(redisKey, FARO_TEMP_KEY_TTL_SECONDS);
     return key;
   } catch (error) {
-    console.warn('Failed to store Faro temp key in Redis.', error);
+    logWarn('faro_temp_key_store_failed', { error });
     return undefined;
   }
 };
@@ -51,7 +52,7 @@ export const validateFaroTempKey = async (key?: string | null) => {
     const value = await redis.get(buildRedisKey(key));
     return value === '1';
   } catch (error) {
-    console.warn('Failed to read Faro temp key from Redis.', error);
+    logWarn('faro_temp_key_read_failed', { error });
     return false;
   }
 };

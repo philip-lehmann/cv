@@ -1,4 +1,5 @@
 import { env } from '@cv/helpers/env';
+import { logError } from '@cv/helpers/log';
 import { Elysia } from 'elysia';
 import { validateFaroTempKey } from '../../faro';
 
@@ -68,7 +69,7 @@ export const faroRoute = new Elysia({ prefix: '/faro' }).post('/collect', async 
       headers: responseHeaders,
     });
   } catch (error: unknown) {
-    console.error('Failed to reach Faro collector:', error);
+    logError('faro_proxy_failed', { error });
     set.status = 502;
     return { error: 'Failed to reach Faro collector.' };
   }

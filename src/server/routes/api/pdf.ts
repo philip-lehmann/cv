@@ -5,6 +5,7 @@ import { dirname, resolve as pathResolve } from 'node:path';
 import { finished } from 'node:stream/promises';
 import { LangEnum, type LangType } from '@cv/helpers/date';
 import { env } from '@cv/helpers/env';
+import { logError } from '@cv/helpers/log';
 import { recordSpan } from '@cv/helpers/telemetry';
 import { Elysia, t } from 'elysia';
 
@@ -106,7 +107,7 @@ export const pdfRoute = new Elysia().get(
         },
       });
     } catch (error) {
-      console.error(error);
+      logError('pdf_generation_failed', { error, locale });
       return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
         status: 500,
         headers: {
