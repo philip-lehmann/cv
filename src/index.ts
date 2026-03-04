@@ -38,6 +38,13 @@ new Elysia()
   })
   .onError(({ error, request, set }) => {
     const url = new URL(request.url);
+
+    if (typeof (error as { status?: unknown }).status === 'number') {
+      set.status = (error as { status: number }).status;
+    } else {
+      set.status = 500;
+    }
+
     logError('http_error', {
       type: 'http',
       method: request.method,
