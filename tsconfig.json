@@ -14,9 +14,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@cv/shared/*": ["./src/shared/*"],
-      "@cv/components/*": ["./src/frontend/components/*"],
-      "@cv/helpers/*": ["./src/helpers/*"]
+      "@cv/components/*": ["./apps/cv/src/frontend/components/*"],
+      "@cv/helpers/*": ["./apps/cv/src/helpers/*"]
     },
     "incremental": true,
     "types": ["bun"]
