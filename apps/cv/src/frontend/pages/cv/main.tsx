@@ -1,0 +1,59 @@
+/// <reference lib="dom" />
+
+import type { Messages } from '@cv/components/intl';
+import { RouteProvider } from '@cv/components/route';
+import { FaroErrorBoundary, getWebInstrumentations, initializeFaro } from '@grafana/faro-react';
+import { hydrateRoot } from 'react-dom/client';
+import { createEmotionCache } from '../../../shared/createEmotionCache';
+import type { AppData } from '../../../shared/types';
+import Page from './page';
+
+const cache = createEmotionCache();
+const appData = JSON.parse(document.body.dataset.appdata || '{}') as AppData & { messages: Messages };
+
+const faro =
+  appData.faroUrl && appData.faroApiKey
+    ? initializeFaro({
+        url: appData.faroUrl,
+        apiKey: appData.faroApiKey,
+        app: {
+          name: 'cv',
+          environment: appData.env,
+        },
+        instrumentations: getWebInstrumentations(),
+        experimental: { trackNavigation: true },
+      })
+    : undefined;
+
+const updateView = () => {
+  faro?.api.setView({ name: `${globalThis.location.pathname}${globalThis.location.search}` });
+};
+
+if (faro) {
+  updateView();
+
+  const patchHistory = (method: 'pushState' | 'replaceState') => {
+    const original = history[method];
+    history[method] = function (this: History, ...args: Parameters<History['pushState']>) {
+      const result = original.apply(this, args);
+      updateView();
+      return result;
+    } as History['pushState'];
+  };
+
+  patchHistory('pushState');
+  patchHistory('replaceState');
+  globalThis.addEventListener('popstate', updateView);
+}
+
+const root = document.getElementById('root');
+if (root) {
+  hydrateRoot(
+    root,
+    <RouteProvider pathname={globalThis.location.pathname} search={globalThis.location.search}>
+      <FaroErrorBoundary>
+        <Page {...appData} cache={cache} />
+      </FaroErrorBoundary>
+    </RouteProvider>,
+  );
+}
