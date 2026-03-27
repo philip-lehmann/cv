@@ -36,10 +36,32 @@ jobs:
       - name: install dependencies
         run: |
           bun install
-      - name: typecheck
-        run: bun run lint:types
-      - name: lint
-        run: bun run lint:biome
+      - name: Set Nx base/head
+        id: nx-shas
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "base=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+            echo "head=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
+          else
+            echo "base=HEAD~1" >> $GITHUB_OUTPUT
+            echo "head=HEAD" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Nx affected checks
+        run: bun x nx affected -t lint,typecheck --base=${{ steps.nx-shas.outputs.base }} --head=${{ steps.nx-shas.outputs.head }}
+      - name: Nx affected build
+        if: github.ref == 'refs/heads/main'
+        run: bun x nx affected -t build --base=${{ steps.nx-shas.outputs.base }} --head=${{ steps.nx-shas.outputs.head }}
+
+      - name: Check app build output
+        if: github.ref == 'refs/heads/main'
+        id: app-build
+        run: |
+          if [ -d "dist/apps/cv" ] || [ -d "dist/cv" ] || [ -d "dist" ]; then
+            echo "built=true" >> $GITHUB_OUTPUT
+          else
+            echo "built=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Set up Docker Context for Buildx
         if: github.ref == 'refs/heads/main'
@@ -69,7 +91,7 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v7
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.app-build.outputs.built == 'true'
         with:
           context: .
           file: Dockerfile

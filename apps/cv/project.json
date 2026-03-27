@@ -1,0 +1,49 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "cv",
+  "projectType": "application",
+  "root": "apps/cv",
+  "sourceRoot": "apps/cv/src",
+  "targets": {
+    "serve": {
+      "executor": "@riwi/bun:serve",
+      "options": {
+        "entrypoint": "apps/cv/src/index.ts"
+      }
+    },
+    "build": {
+      "executor": "@riwi/bun:build",
+      "outputs": ["{workspaceRoot}/dist/apps/cv"],
+      "options": {
+        "entrypoints": ["apps/cv/src/index.ts"],
+        "outdir": "dist/apps/cv",
+        "target": "bun",
+        "format": "esm",
+        "packages": "external",
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "docker": {
+      "executor": "@riwi/docker:build",
+      "options": {
+        "platforms": ["amd64", "arm64"],
+        "tags": ["philiplehmann/cv:auto"],
+        "file": "apps/cv/Dockerfile"
+      }
+    },
+    "lint": {
+      "executor": "@riwi/biomejs:lint",
+      "options": {}
+    },
+    "format": {
+      "executor": "@riwi/biomejs:lint",
+      "options": {
+        "fix": true
+      }
+    },
+    "typecheck": {
+      "executor": "@riwi/tsc:typecheck"
+    }
+  },
+  "tags": []
+}
