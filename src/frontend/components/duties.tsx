@@ -1,12 +1,12 @@
+import type { MessageNamespaces } from '@cv/shared/types';
 import { Box, Stack, Typography } from '@mui/material';
-import type { Messages } from 'global';
 import type { FC } from 'react';
 import { type LangType, monthYear } from '../../helpers/date';
 import { Dash, DashList } from './dash_list';
 import { useLocale, useTranslations } from './intl';
 
-export interface DutiesProps<Namespace extends keyof Messages = keyof Messages> {
-  namespace: Namespace;
+export interface DutiesProps {
+  namespace: MessageNamespaces;
   duties: number;
   start: string;
   end: string;

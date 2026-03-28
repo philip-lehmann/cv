@@ -1,6 +1,6 @@
+import type { AppData, Messages } from '@cv/shared/types';
 import type { EmotionCache } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
-import type { AppData, Messages } from 'global';
 import { type FC, StrictMode } from 'react';
 import { Canonical, Connect, Font, GoogleAnalytics, Icons, Meta, OpenGraph, Twitter } from '../../components/head';
 import { HireMe } from '../../components/hire_me';

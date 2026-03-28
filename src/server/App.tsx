@@ -1,9 +1,9 @@
 import { resolve } from 'node:path';
 import { env } from '@cv/helpers/env';
 import { recordSpan } from '@cv/helpers/telemetry';
+import type { AppData, Messages } from '@cv/shared/types';
 import type { EmotionCache } from '@emotion/cache';
 import createEmotionServer from '@emotion/server/create-instance';
-import type { AppData, Messages } from 'global';
 import type { ElementType } from 'react';
 import { renderToString } from 'react-dom/server';
 import { RouteProvider } from '../frontend/components/route';

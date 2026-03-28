@@ -13,15 +13,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
     "paths": {
+      "@cv/shared/*": ["./src/shared/*"],
       "@cv/components/*": ["./src/frontend/components/*"],
       "@cv/helpers/*": ["./src/helpers/*"]
     },
     "incremental": true,
-    "types": ["node"],
-    "typeRoots": ["./types/", "./node_modules/@types", "./node_modules"]
+    "types": ["bun"]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"],
   "exclude": ["node_modules"]
 }
