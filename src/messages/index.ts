@@ -1,5 +1,5 @@
 import { logError } from '@cv/helpers/log';
-import type { Messages } from 'global';
+import type { Messages } from '@cv/shared/types';
 
 export class MessagesNotFound extends Error {
   constructor() {

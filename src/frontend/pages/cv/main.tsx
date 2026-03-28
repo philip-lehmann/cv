@@ -2,8 +2,8 @@
 
 import type { Messages } from '@cv/components/intl';
 import { RouteProvider } from '@cv/components/route';
+import type { AppData } from '@cv/shared/types';
 import { FaroErrorBoundary, getWebInstrumentations, initializeFaro } from '@grafana/faro-react';
-import type { AppData } from 'global';
 import { hydrateRoot } from 'react-dom/client';
 import { createEmotionCache } from '../../../shared/createEmotionCache';
 import Page from './page';
