@@ -12,7 +12,7 @@
     "format": "biome check --write"
   },
   "dependencies": {
-    "@elysiajs/opentelemetry": "1.4.10",
+    "@elysiajs/opentelemetry": "1.4.11",
     "@elysiajs/static": "1.4.7",
     "@emotion/cache": "11.14.0",
     "@emotion/css": "11.13.5",
