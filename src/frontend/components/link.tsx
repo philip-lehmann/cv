@@ -26,10 +26,14 @@ export const Link: FC<LinkProps> = ({
   onClick,
   ...props
 }) => {
-  const stringHref =
-    typeof href === 'string'
-      ? href
-      : `${href.pathname}${href.query ? `?${new URLSearchParams(href.query).toString()}` : ''}${href.hash ? `#${href.hash}` : ''}`;
+  let stringHref: string;
+  if (typeof href === 'string') {
+    stringHref = href;
+  } else {
+    const query = href.query ? `?${new URLSearchParams(href.query).toString()}` : '';
+    const hash = href.hash ? `#${href.hash}` : '';
+    stringHref = `${href.pathname}${query}${hash}`;
+  }
 
   const onClickHandler = useCallback(
     (e: MouseEvent<HTMLAnchorElement>) => {
