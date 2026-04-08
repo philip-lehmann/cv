@@ -1,3 +1,4 @@
+import { HireMe } from '@cv/components/hire_me';
 import type { EmotionCache } from '@emotion/cache';
 import { CacheProvider, ThemeProvider } from '@emotion/react';
 import { Container, Stack, Typography } from '@mui/material';
@@ -49,6 +50,7 @@ const Page: FC<{
                 <Video />
               </Suspense>
             </Stack>
+            <HireMe />
           </Container>
         </ThemeProvider>
       </CacheProvider>

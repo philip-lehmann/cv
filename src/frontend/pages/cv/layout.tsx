@@ -3,7 +3,6 @@ import type { EmotionCache } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { type FC, StrictMode } from 'react';
 import { Canonical, Connect, Font, GoogleAnalytics, Icons, Meta, OpenGraph, Twitter } from '../../components/head';
-import { HireMe } from '../../components/hire_me';
 import { getTranslation } from '../../components/intl';
 
 const Layout: FC<AppData & { messages: Messages; cache: EmotionCache; body: string; css: string }> = ({
@@ -22,7 +21,6 @@ const Layout: FC<AppData & { messages: Messages; cache: EmotionCache; body: stri
       <html lang={locale}>
         <head>
           <title>{title}</title>
-          <HireMe />
           <Connect />
           <Font />
           <Meta title={title} />
