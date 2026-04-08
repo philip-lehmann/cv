@@ -12,7 +12,7 @@ export const env = {
     const port = Number(portValue);
 
     if (Number.isNaN(port)) {
-      throw new Error(`Invalid PORT value: "${portValue}" is not a valid number.`);
+      throw new TypeError(`Invalid PORT value: "${portValue}" is not a valid number.`);
     }
 
     if (port < 1 || port > 65535) {
