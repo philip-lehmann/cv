@@ -26,7 +26,7 @@ const faro =
     : undefined;
 
 const updateView = () => {
-  faro?.api.setView({ name: `${window.location.pathname}${window.location.search}` });
+  faro?.api.setView({ name: `${globalThis.location.pathname}${globalThis.location.search}` });
 };
 
 if (faro) {
@@ -43,14 +43,14 @@ if (faro) {
 
   patchHistory('pushState');
   patchHistory('replaceState');
-  window.addEventListener('popstate', updateView);
+  globalThis.addEventListener('popstate', updateView);
 }
 
 const root = document.getElementById('root');
 if (root) {
   hydrateRoot(
     root,
-    <RouteProvider pathname={window.location.pathname} search={window.location.search}>
+    <RouteProvider pathname={globalThis.location.pathname} search={globalThis.location.search}>
       <FaroErrorBoundary>
         <Page {...appData} cache={cache} />
       </FaroErrorBoundary>

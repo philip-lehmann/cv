@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react';
 
 export const pushState = (data: unknown, unused: string, url?: string | URL | null) => {
   history.pushState(data, unused, url);
-  window.dispatchEvent(new CustomEvent('pushState', { bubbles: false, composed: false, cancelable: true }));
+  globalThis.dispatchEvent(new CustomEvent('pushState', { bubbles: false, composed: false, cancelable: true }));
 };
 
 export const replaceState = (data: unknown, unused: string, url?: string | URL | null) => {
   history.replaceState(data, unused, url);
-  window.dispatchEvent(new CustomEvent('replaceState', { bubbles: false, composed: false, cancelable: true }));
+  globalThis.dispatchEvent(new CustomEvent('replaceState', { bubbles: false, composed: false, cancelable: true }));
 };
 
 export const useSearchParams = () => {
@@ -19,15 +19,15 @@ export const useSearchParams = () => {
 
   useEffect(() => {
     const fn = () => {
-      setSearchParams(new URLSearchParams(window.location.search));
+      setSearchParams(new URLSearchParams(globalThis.location.search));
     };
-    window.addEventListener('pushState', fn);
-    window.addEventListener('replaceState', fn);
-    window.addEventListener('popstate', fn);
+    globalThis.addEventListener('pushState', fn);
+    globalThis.addEventListener('replaceState', fn);
+    globalThis.addEventListener('popstate', fn);
     return () => {
-      window.removeEventListener('pushState', fn);
-      window.removeEventListener('replaceState', fn);
-      window.removeEventListener('popstate', fn);
+      globalThis.removeEventListener('pushState', fn);
+      globalThis.removeEventListener('replaceState', fn);
+      globalThis.removeEventListener('popstate', fn);
     };
   }, []);
 

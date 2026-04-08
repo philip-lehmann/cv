@@ -17,11 +17,13 @@ const VideoModal: FC = () => {
   const [isMSEdge, setMSEdge] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const closeHandler = useCallback(() => {
-    pushState(null, '', window.location.pathname);
+    pushState(null, '', globalThis.location.pathname);
   }, []);
 
   useEffect(() => {
-    setMSEdge(window.navigator.userAgent.toLowerCase().includes('edg') && window.navigator.platform === 'Win32');
+    setMSEdge(
+      globalThis.navigator.userAgent.toLowerCase().includes('edg') && globalThis.navigator.platform === 'Win32',
+    );
     // only allowed by user interaction
     videoRef.current?.play().catch((error) => {
       console.warn('Autoplay prevented:', error);
