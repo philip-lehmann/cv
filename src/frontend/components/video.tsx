@@ -22,7 +22,9 @@ const VideoModal: FC = () => {
 
   useEffect(() => {
     setMSEdge(
-      globalThis.navigator.userAgent.toLowerCase().includes('edg') && globalThis.navigator.platform === 'Win32',
+      globalThis.navigator.userAgent.toLowerCase().includes('edg') &&
+        ((globalThis.navigator as unknown as { userAgentData?: { platform: string } }).userAgentData?.platform ??
+          globalThis.navigator.platform) === 'Windows',
     );
     // only allowed by user interaction
     videoRef.current?.play().catch((error) => {
