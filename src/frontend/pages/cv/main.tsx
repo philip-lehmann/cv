@@ -35,7 +35,7 @@ if (faro) {
   const patchHistory = (method: 'pushState' | 'replaceState') => {
     const original = history[method];
     history[method] = function (this: History, ...args: Parameters<History['pushState']>) {
-      const result = original.apply(this, args as Parameters<History['pushState']>);
+      const result = original.apply(this, args);
       updateView();
       return result;
     } as History['pushState'];

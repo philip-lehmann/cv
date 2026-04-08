@@ -19,13 +19,13 @@ export const Duties: FC<DutiesProps> = ({ namespace, duties, start, end }) => {
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between">
-        <Typography variant="h6">{t(`${namespace}.name` as Parameters<typeof t>[0])}</Typography>
+        <Typography variant="h6">{t(`${namespace}.name`)}</Typography>
         {monthYear(start, { locale })} - {end === 'now' ? t('date.now') : monthYear(end, { locale })}
       </Stack>
       <DashList>
         {Array.from({ length: duties }, (_, i) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: needed
-          <Dash key={i}>{t(`${namespace}.list.item${i + 1}` as Parameters<typeof t>[0])}</Dash>
+          <Dash key={i}>{t(`${namespace}.list.item${i + 1}`)}</Dash>
         ))}
       </DashList>
     </Box>
