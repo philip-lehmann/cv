@@ -1,4 +1,4 @@
-import { createContext, type FC, type PropsWithChildren, useContext } from 'react';
+import { createContext, type FC, type PropsWithChildren, useContext, useMemo } from 'react';
 
 export type Messages = { [key: string]: string | Messages };
 
@@ -43,5 +43,6 @@ export const IntlProvider: FC<PropsWithChildren<{ locale: string; messages: Mess
   locale,
   messages,
 }) => {
-  return <IntlContext.Provider value={{ locale, messages }}>{children}</IntlContext.Provider>;
+  const value = useMemo(() => ({ locale, messages }), [locale, messages]);
+  return <IntlContext.Provider value={value}>{children}</IntlContext.Provider>;
 };
