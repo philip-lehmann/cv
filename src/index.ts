@@ -1,38 +1,16 @@
-import { opentelemetry } from '@elysiajs/opentelemetry';
-
-import { DiagConsoleLogger, DiagLogLevel, diag } from '@opentelemetry/api';
-import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
-import { BatchSpanProcessor } from '@opentelemetry/sdk-trace-node';
 import { Elysia } from 'elysia';
+
 import { env } from './helpers/env';
 import { logError, logInfo } from './helpers/log';
+import { getOpenTelemetry } from './server/getOpenTelemetry';
 import { apiRoute } from './server/routes/api';
 import { pageRoute } from './server/routes/page';
 import { staticRoute } from './server/routes/static';
 
-diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
-
-const openTelemetry = env.OPEN_TELEMETRY_URL && env.OPEN_TELEMETRY_USERNAME && env.OPEN_TELEMETRY_PASSWORD;
 const requestTimings = new WeakMap<Request, number>();
 
 new Elysia()
-  .use(
-    openTelemetry
-      ? opentelemetry({
-          spanProcessors: [
-            // new BatchSpanProcessor(new ConsoleSpanExporter()),
-            new BatchSpanProcessor(
-              new OTLPTraceExporter({
-                url: env.OPEN_TELEMETRY_URL,
-                headers: {
-                  Authorization: `Basic ${Buffer.from(`${env.OPEN_TELEMETRY_USERNAME}:${env.OPEN_TELEMETRY_PASSWORD}`).toString('base64')}`,
-                },
-              }),
-            ),
-          ],
-        })
-      : undefined,
-  )
+  .use(getOpenTelemetry())
   .onRequest(({ request }) => {
     requestTimings.set(request, Date.now());
   })
