@@ -15,7 +15,7 @@ export const getTranslation = (messages: Messages, key: string): string | null =
         return null;
       }
       const next = obj[part];
-      return next !== undefined ? next : null;
+      return next ?? null;
     },
     messages as Messages | string | null,
   );
