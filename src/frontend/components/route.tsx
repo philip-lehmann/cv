@@ -1,4 +1,4 @@
-import { createContext, type FC, type PropsWithChildren, useContext } from 'react';
+import { createContext, type FC, type PropsWithChildren, useContext, useMemo } from 'react';
 
 export type Messages = { [key: string]: string | Messages };
 
@@ -13,5 +13,6 @@ export const RouteProvider: FC<PropsWithChildren<{ pathname: string; search: str
   pathname,
   search,
 }) => {
-  return <RouteContext.Provider value={{ pathname, search }}>{children}</RouteContext.Provider>;
+  const value = useMemo(() => ({ pathname, search }), [pathname, search]);
+  return <RouteContext.Provider value={value}>{children}</RouteContext.Provider>;
 };
