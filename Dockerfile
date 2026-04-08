@@ -8,16 +8,14 @@ ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 
-RUN mkdir pdf; \
-    mkdir -p dist/assets; \
-    chown -R 1000:1000 .
+COPY public ./public
+COPY src ./src
+COPY package.json bun.lock tsconfig.json global.d.ts ./
 
-
-COPY --chown=1000:1000 public ./public
-COPY --chown=1000:1000 src ./src
-COPY --chown=1000:1000 package.json bun.lock tsconfig.json global.d.ts ./
-
-RUN bun install
+RUN bun install; \
+    mkdir -p pdf dist/assets; \
+    chown -R 1000:1000 pdf dist/assets; \
+    chmod -R a-w public src package.json bun.lock tsconfig.json global.d.ts node_modules
 
 USER 1000
 
