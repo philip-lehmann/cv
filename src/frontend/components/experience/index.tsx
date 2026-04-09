@@ -14,7 +14,7 @@ import { UsterTechnologies } from './uster_technologies';
 export const Experience: FC = () => {
   const t = useTranslations('Experience');
   return (
-    <Stack spacing={2} pt="80px">
+    <Stack sx={{ gap: 2, pt: '80px' }}>
       <Typography variant="h5">{t('work.name')}</Typography>
       <HealthAdvisor />
       <Divider />
@@ -35,23 +35,23 @@ export const Experience: FC = () => {
       <Divider />
       <Box>
         <Typography variant="h4">{t('education.name')}</Typography>
-        <Stack direction="row" justifyContent="space-between">
+        <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Typography variant="subtitle1">{t('education.list.languageSchool')}</Typography>
           <Box>Sep - Nov 2009</Box>
         </Stack>
-        <Stack direction="row" justifyContent="space-between">
+        <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Typography variant="subtitle1">{t('education.list.army')}</Typography>
           <Box>2006 - 2007</Box>
         </Stack>
-        <Stack direction="row" justifyContent="space-between">
+        <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Typography variant="subtitle1">{t('education.list.apprenticeship')}</Typography>
           <Box>2002 - 2006</Box>
         </Stack>
-        <Stack direction="row" justifyContent="space-between">
+        <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Typography variant="subtitle1">{t('education.list.secondarySchool')}</Typography>
           <Box>1999 - 2002</Box>
         </Stack>
-        <Stack direction="row" justifyContent="space-between">
+        <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Typography variant="subtitle1">{t('education.list.primarySchool')}</Typography>
           <Box>1993 - 1999</Box>
         </Stack>

@@ -31,7 +31,7 @@ const Page: FC<{
             }}
           >
             <LanguageSwitch />
-            <Stack direction={{ xs: 'column', [breakpoint]: 'row' }}>
+            <Stack sx={{ flexDirection: { xs: 'column', [breakpoint]: 'row' } }}>
               <Sidebar />
               <Stack
                 sx={{
@@ -39,7 +39,7 @@ const Page: FC<{
                 }}
               >
                 <header>
-                  <Typography variant="h1" mt="100px">
+                  <Typography variant="h1" sx={{ mt: '100px' }}>
                     Philip Lehmann
                   </Typography>
                   <Typography variant="h3">Software Engineer</Typography>

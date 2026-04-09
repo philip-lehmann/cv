@@ -17,9 +17,9 @@ export const Sidebar: FC = () => {
   const theme = useTheme();
   return (
     <Stack
-      direction="column"
-      gap={4}
       sx={{
+        flexDirection: 'column',
+        gap: 4,
         background: ({ palette }) => palette.background.custom,
         minHeight: '100vh',
         '@media print': {

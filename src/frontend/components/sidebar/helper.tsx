@@ -20,7 +20,7 @@ export const SidebarBody: FC<PropsWithChildren> = ({ children }) => {
 
 export const SidebarItem: FC<PropsWithChildren<{ title: ReactNode }>> = ({ title, children }) => {
   return (
-    <Stack gap={1} direction="column">
+    <Stack sx={{ flexDirection: 'column', gap: 1 }}>
       <SidebarTitle>{title}</SidebarTitle>
       <SidebarBody>{children}</SidebarBody>
     </Stack>

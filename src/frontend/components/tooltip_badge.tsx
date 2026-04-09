@@ -14,9 +14,7 @@ interface TooltipBadgeProps {
 }
 
 export const TooltipBadgeGroup: FC<React.PropsWithChildren> = ({ children }) => (
-  <Stack gap={0.5} flexWrap="wrap" direction="row">
-    {children}
-  </Stack>
+  <Stack sx={{ flexDirection: 'row', gap: 0.5, flexWrap: 'wrap' }}>{children}</Stack>
 );
 
 export const TooltipBadge: FC<TooltipBadgeProps> = memo(({ name, progress }) => {

@@ -11,8 +11,8 @@ export const LanguageSwitch: FC = () => {
   const locale = useLocale();
   return (
     <Stack
-      direction="row"
       sx={{
+        flexDirection: 'row',
         zIndex: 1,
         justifyContent: 'space-between',
         alignItems: 'center',
