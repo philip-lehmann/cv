@@ -9,8 +9,8 @@ export const AboutMe: FC = () => {
   const t = useTranslations('AboutMe');
 
   return (
-    <Stack gap={1} direction="column">
-      <Stack justifyContent="center" alignItems="center">
+    <Stack sx={{ flexDirection: 'column', gap: 1 }}>
+      <Stack sx={{ justifyContent: 'center', alignItems: 'center' }}>
         <picture>
           <source srcSet="/static/images/me/2@1x.avif, /static/images/me/2@2x.avif 2x" type="image/avif" />
           <source srcSet="/static/images/me/2@1x.webp, /static/images/me/2@2x.webp 2x" type="image/webp" />

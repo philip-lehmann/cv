@@ -18,7 +18,7 @@ export const Duties: FC<DutiesProps> = ({ namespace, duties, start, end }) => {
 
   return (
     <Box>
-      <Stack direction="row" justifyContent="space-between">
+      <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <Typography variant="h6">{t(`${namespace}.name`)}</Typography>
         {monthYear(start, { locale })} - {end === 'now' ? t('date.now') : monthYear(end, { locale })}
       </Stack>

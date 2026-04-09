@@ -9,7 +9,7 @@ export const HumanLanguages: FC = () => {
   const t = useTranslations('HumanLanguages');
   return (
     <SidebarItem title={t('name')}>
-      <Stack spacing={1}>
+      <Stack sx={{ gap: 1 }}>
         {LANGUAGES.map((lang) => (
           <div key={lang}>{t(lang)}</div>
         ))}
