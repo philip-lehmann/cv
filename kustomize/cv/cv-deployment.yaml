@@ -21,7 +21,7 @@ spec:
         - name: docker-registry-harbor
       initContainers:
         - name: pdf-dir-chown
-          image: debian:bookworm-slim
+          image: debian:trixie-slim
           command:
             - chown
             - -R
