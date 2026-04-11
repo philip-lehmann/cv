@@ -5,7 +5,7 @@
   "private": true,
   "description": "Philip Lehmann - Curriculum vitae",
   "scripts": {
-    "dev": "docker compose up & bun x nx run cv:dev",
+    "dev": "docker compose up & bun x nx run cv:serve",
     "build": "bun x nx run cv:build",
     "lint:types": "bun x nx run cv:typecheck",
     "lint:biome": "bun x nx run cv:lint",
