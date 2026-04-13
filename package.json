@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@elysiajs/opentelemetry": "1.4.11",
-    "@elysiajs/static": "1.4.7",
+    "@elysiajs/static": "1.4.9",
     "@emotion/cache": "11.14.0",
     "@emotion/css": "11.13.5",
     "@emotion/react": "11.14.0",
