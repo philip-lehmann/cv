@@ -33,7 +33,7 @@
     "react-dom": "19.2.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.11",
+    "@biomejs/biome": "2.4.12",
     "@nx/devkit": "22.6.5",
     "@riwi/biomejs": "0.1.0",
     "@riwi/bun": "0.1.0",
