@@ -6,10 +6,7 @@
     "libsDir": "libs"
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/*.spec.ts",
@@ -17,49 +14,35 @@
       "!{projectRoot}/**/*.spec.tsx",
       "!{projectRoot}/**/*.test.tsx"
     ],
-    "sharedGlobals": [
-      "{workspaceRoot}/package.json",
-      "{workspaceRoot}/tsconfig.json",
-      "{workspaceRoot}/biome.json"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/package.json", "{workspaceRoot}/tsconfig.json", "{workspaceRoot}/biome.json"]
   },
   "targetDefaults": {
     "build": {
-      "inputs": [
-        "production",
-        "^production"
-      ],
-      "outputs": [
-        "{workspaceRoot}/dist/{projectRoot}"
-      ]
+      "inputs": ["production", "^production"],
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"]
     },
     "lint": {
-      "inputs": [
-        "default",
-        "^default"
-      ],
+      "inputs": ["default", "^default"],
       "outputs": []
     },
     "format": {
-      "inputs": [
-        "default",
-        "^default"
-      ],
+      "inputs": ["default", "^default"],
       "outputs": []
     },
     "typecheck": {
-      "inputs": [
-        "default",
-        "^default"
-      ],
-      "outputs": []
+      "inputs": ["default", "^default"],
+      "outputs": [],
+      "options": {
+        "tsgo": true
+      }
     },
     "dev": {
-      "inputs": [
-        "default",
-        "^default"
-      ]
+      "inputs": ["default", "^default"]
     }
   },
+  "cli": {
+    "packageManager": "bun"
+  },
+  "parallel": 8,
   "analytics": true
 }
