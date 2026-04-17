@@ -29,7 +29,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .tool-versions
+
       - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .tool-versions
+
       - name: Cache node_modules
         id: cache-node-modules
         uses: actions/cache@v5
