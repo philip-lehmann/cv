@@ -20,7 +20,7 @@
     "@emotion/react": "11.14.0",
     "@emotion/server": "11.11.0",
     "@emotion/styled": "11.14.1",
-    "@grafana/faro-react": "2.4.0",
+    "@grafana/faro-react": "2.5.0",
     "@mui/icons-material": "9.0.0",
     "@mui/material": "9.0.0",
     "@opentelemetry/exporter-trace-otlp-grpc": "0.216.0",
