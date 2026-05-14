@@ -5,7 +5,7 @@ namespace: cv-philiplehmann
 resources:
 - cv-deployment.yaml
 - cv-service.yaml
-- cv-ingress.yaml
+- cv-gateway.yaml
 
 images:
 - name: ghcr.io/philip-lehmann/cv
