@@ -2,8 +2,6 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: cv-philiplehmann
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-http
 
 spec:
   gatewayClassName: istio
@@ -16,7 +14,7 @@ spec:
       mode: Terminate
       certificateRefs:
       - kind: Secret
-        name: cv-philiplehmann-cert
+        name: philiplehmann-cert
     allowedRoutes:
       namespaces:
         from: Same

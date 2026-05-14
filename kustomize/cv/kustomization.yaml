@@ -6,6 +6,7 @@ resources:
 - cv-deployment.yaml
 - cv-service.yaml
 - cv-gateway.yaml
+- cv-certificates.yaml
 
 images:
 - name: ghcr.io/philip-lehmann/cv
