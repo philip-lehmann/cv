@@ -12,7 +12,7 @@ services:
 
   redis:
     container_name: redis
-    image: redis:8.6-trixie
+    image: redis:8.8-trixie
     restart: unless-stopped
     ports:
       - 6379:6379
