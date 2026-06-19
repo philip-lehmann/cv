@@ -8,14 +8,17 @@ ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 
-COPY apps/cv/public ./public
-COPY apps/cv/src ./src
-COPY package.json bun.lock ./
+COPY package.json bun.lock tsconfig.json ./
+COPY apps/cv/tsconfig.json ./apps/cv/tsconfig.json
+COPY apps/cv/public ./apps/cv/public
+COPY apps/cv/src ./apps/cv/src
 
 RUN bun install; \
-    mkdir -p pdf dist/assets; \
-    chown -R 1000:1000 pdf dist/assets; \
-    chmod -R a-w public src package.json bun.lock node_modules
+    mkdir -p apps/cv/pdf apps/cv/dist/assets; \
+    chown -R 1000:1000 apps/cv/public apps/cv/src apps/cv/pdf apps/cv/dist/assets package.json bun.lock tsconfig.json apps/cv/tsconfig.json node_modules; \
+    chmod -R u=rX,go= apps/cv/public apps/cv/src package.json bun.lock tsconfig.json apps/cv/tsconfig.json node_modules
+
+WORKDIR /app/apps/cv
 
 USER 1000
 
