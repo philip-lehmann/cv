@@ -1,7 +1,7 @@
 services:
   puppeteer:
     container_name: puppeteer
-    image: philiplehmann/puppeteer:25.1.0
+    image: philiplehmann/puppeteer:25.2.1
     restart: unless-stopped
     environment:
       PORT: 3001
