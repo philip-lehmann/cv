@@ -12,7 +12,7 @@
         "@emotion/react": "11.14.0",
         "@emotion/server": "11.11.0",
         "@emotion/styled": "11.14.1",
-        "@grafana/faro-react": "2.8.1",
+        "@grafana/faro-react": "2.8.2",
         "@mui/icons-material": "9.1.1",
         "@mui/material": "9.1.2",
         "@opentelemetry/exporter-trace-otlp-grpc": "0.219.0",
@@ -298,13 +298,13 @@
 
     "@emotion/weak-memoize": ["@emotion/weak-memoize@0.4.0", "", {}, "sha512-snKqtPW01tN0ui7yu9rGv69aJXr/a/Ywvl11sUjNtEcRc+ng/mQriFL0wLXMef74iHa/EkftbDzU9F8iFbH+zg=="],
 
-    "@grafana/faro-core": ["@grafana/faro-core@2.8.1", "", { "dependencies": { "@opentelemetry/api": "^1.9.0", "@opentelemetry/otlp-transformer": "^0.219.0" } }, "sha512-9fz9MVj8gACa2bbyd++0nCvpGgCB/nQfdAadFoQn6JJFdpV3hca51pxM5ioJaRJFXCQRp5/o7dZAuiaX/AMQ8A=="],
+    "@grafana/faro-core": ["@grafana/faro-core@2.8.2", "", { "dependencies": { "@opentelemetry/api": "^1.9.0", "@opentelemetry/otlp-transformer": "^0.219.0" } }, "sha512-63C6+N/P9/ySUMaGut8yVb1DkPuHS5I/lfRm97+aDXFj3+8pxRT/QzyXNe0r6KMU5O95wC9FLVGxG9ZvkwEhJQ=="],
 
-    "@grafana/faro-react": ["@grafana/faro-react@2.8.1", "", { "dependencies": { "@grafana/faro-web-sdk": "^2.8.1", "@grafana/faro-web-tracing": "^2.8.1", "hoist-non-react-statics": "^3.3.2" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-router": "^7.12.0 || ^8.0.0", "react-router-dom": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0" }, "optionalPeers": ["react-dom", "react-router", "react-router-dom"] }, "sha512-6ey2hjYHSW1tQGNLc/3fvGvckchu6APoByqqm90p8pWtu/nVIbR8EWSojN4pkA2qx0CbTi1OmlR35rZZBkXIvA=="],
+    "@grafana/faro-react": ["@grafana/faro-react@2.8.2", "", { "dependencies": { "@grafana/faro-web-sdk": "^2.8.2", "@grafana/faro-web-tracing": "^2.8.2", "hoist-non-react-statics": "^3.3.2" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-router": "^7.12.0 || ^8.0.0", "react-router-dom": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0" }, "optionalPeers": ["react-dom", "react-router", "react-router-dom"] }, "sha512-Cd32yIDTIR+kqAZkP8m4Vpz84+/D77ODMyR9Ame7psCg89NwoA30m+C7lPWzkGdFpKJdX47Sd3JGzii+cVoXwQ=="],
 
-    "@grafana/faro-web-sdk": ["@grafana/faro-web-sdk@2.8.1", "", { "dependencies": { "@grafana/faro-core": "^2.8.1", "ua-parser-js": "1.0.41", "web-vitals": "^5.1.0" } }, "sha512-5209siIWJezvJSTJKrRCOgS9Fuw82Uml5/LEjN0BphRHcvZZRhzG2tEdprR8qxfpVCBmd7wC4yBI3YiEc/BF2g=="],
+    "@grafana/faro-web-sdk": ["@grafana/faro-web-sdk@2.8.2", "", { "dependencies": { "@grafana/faro-core": "^2.8.2", "ua-parser-js": "1.0.41", "web-vitals": "^5.1.0" } }, "sha512-WnUDnyQSQRq22Nb5kqm+g9SellSEUfiEuWQ7Pgwnvj5tnIO72E9JHNnJdurk4MveX8ulWrdyKxyk1L10FUJyzg=="],
 
-    "@grafana/faro-web-tracing": ["@grafana/faro-web-tracing@2.8.1", "", { "dependencies": { "@grafana/faro-web-sdk": "^2.8.1", "@opentelemetry/api": "^1.9.0", "@opentelemetry/core": "^2.0.0", "@opentelemetry/exporter-trace-otlp-http": "^0.219.0", "@opentelemetry/instrumentation": "^0.219.0", "@opentelemetry/instrumentation-fetch": "^0.219.0", "@opentelemetry/instrumentation-xml-http-request": "^0.219.0", "@opentelemetry/otlp-transformer": "^0.219.0", "@opentelemetry/resources": "^2.0.0", "@opentelemetry/sdk-trace-web": "^2.0.0", "@opentelemetry/semantic-conventions": "^1.32.0" } }, "sha512-QH7jK56BbXUOE4GpDjt4/rwmjGCXodgprsHre6Qqwz2eIq4XK8ljbgHO67FWstve6aim3PMVlQAIwspUelPP8A=="],
+    "@grafana/faro-web-tracing": ["@grafana/faro-web-tracing@2.8.2", "", { "dependencies": { "@grafana/faro-web-sdk": "^2.8.2", "@opentelemetry/api": "^1.9.0", "@opentelemetry/core": "^2.0.0", "@opentelemetry/exporter-trace-otlp-http": "^0.219.0", "@opentelemetry/instrumentation": "^0.219.0", "@opentelemetry/instrumentation-fetch": "^0.219.0", "@opentelemetry/instrumentation-xml-http-request": "^0.219.0", "@opentelemetry/otlp-transformer": "^0.219.0", "@opentelemetry/resources": "^2.0.0", "@opentelemetry/sdk-trace-web": "^2.0.0", "@opentelemetry/semantic-conventions": "^1.32.0" } }, "sha512-3MTOVHaW138Te2k1RTlM8a0WngYHwAJoSMX2EcZNn9elq1/5eNADN+75k89jYcCtcdiQAIq/hmT2WfRtUTD+kQ=="],
 
     "@grpc/grpc-js": ["@grpc/grpc-js@1.14.4", "", { "dependencies": { "@grpc/proto-loader": "^0.8.0", "@js-sdsl/ordered-map": "^4.4.2" } }, "sha512-k9Dj3DV/itK9D06Y8f190Qgop7/Ui+D0njFV3LHMPwPT75DpXLQohE9Wmz0QElrJnzsjB7KPWiKJbOl7IPDArQ=="],
 
