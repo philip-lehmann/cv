@@ -16,7 +16,8 @@ COPY apps/cv/src ./apps/cv/src
 RUN bun install; \
     mkdir -p apps/cv/pdf dist/apps/cv/assets; \
     chown -R 1000:1000 apps/cv/public apps/cv/src apps/cv/pdf dist/apps/cv/assets package.json bun.lock tsconfig.json apps/cv/tsconfig.json node_modules; \
-    chmod -R u=rX,go= apps/cv/public apps/cv/src dist/apps/cv/assets package.json bun.lock tsconfig.json apps/cv/tsconfig.json node_modules
+    chmod -R u=rX,go= apps/cv/public apps/cv/src package.json bun.lock tsconfig.json apps/cv/tsconfig.json node_modules; \
+    chmod -R u=rwX,go= apps/cv/pdf dist/apps/cv/assets
 
 USER 1000
 
