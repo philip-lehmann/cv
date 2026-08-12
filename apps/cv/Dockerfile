@@ -18,10 +18,8 @@ RUN bun install; \
     chown -R 1000:1000 apps/cv/public apps/cv/src apps/cv/pdf apps/cv/dist/assets package.json bun.lock tsconfig.json apps/cv/tsconfig.json node_modules; \
     chmod -R u=rX,go= apps/cv/public apps/cv/src package.json bun.lock tsconfig.json apps/cv/tsconfig.json node_modules
 
-WORKDIR /app/apps/cv
-
 USER 1000
 
 EXPOSE $PORT
 
-CMD ["bun", "--production", "src/index.ts"]
+CMD ["bun", "--production", "apps/cv/src/index.ts"]
