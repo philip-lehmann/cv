@@ -1,6 +1,6 @@
 
 # Production stage
-FROM oven/bun:1.4.1 AS runner
+FROM oven/bun:1.4.2 AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
