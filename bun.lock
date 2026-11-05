@@ -6,7 +6,7 @@
       "name": "cv",
       "dependencies": {
         "@elysiajs/opentelemetry": "1.4.11",
-        "@elysiajs/static": "1.4.10",
+        "@elysiajs/static": "1.4.12",
         "@emotion/cache": "11.14.0",
         "@emotion/css": "11.13.5",
         "@emotion/react": "11.14.0",
@@ -268,7 +268,7 @@
 
     "@elysiajs/opentelemetry": ["@elysiajs/opentelemetry@1.4.11", "", { "dependencies": { "@opentelemetry/api": "^1.9.0", "@opentelemetry/instrumentation": "^0.200.0", "@opentelemetry/sdk-node": "^0.200.0" }, "peerDependencies": { "elysia": ">= 1.4.0", "graphql": "*", "graphql-yoga": "*" }, "optionalPeers": ["graphql", "graphql-yoga"] }, "sha512-GGggB40rXithCA9nSjSc25TFkBPeEEW3rD8me/TrRq4TejzWFJn5zEKdRMYWSpYBeiUsraCpQxu94K2ASz+UnA=="],
 
-    "@elysiajs/static": ["@elysiajs/static@1.4.10", "", { "peerDependencies": { "elysia": ">= 1.4.0" } }, "sha512-BN/3PZVWjqkL/6TM7RH69Pae89CfU0OqfEYPeBp2hB/GR5Euds39Wy+0ug9Vbvu++GG4tRRANf2QjaLnriJveg=="],
+    "@elysiajs/static": ["@elysiajs/static@1.4.12", "", { "peerDependencies": { "elysia": ">= 1.4.0" } }, "sha512-u9KnwjG+ZX6lOg95QudHqphBvHv8DiqY3/AYrvEDjTcJ1HH/innCwo/ssAgF2LZ66bKBkt7MrXPk+GZgDC2XZw=="],
 
     "@emnapi/core": ["@emnapi/core@1.4.5", "", { "dependencies": { "@emnapi/wasi-threads": "1.0.4", "tslib": "^2.4.0" } }, "sha512-XsLw1dEOpkSX/WucdqUhPWP7hDxSvZiY+fsUC14h+FtQ2Ifni4znbBt8punRX+Uj2JG/uDb8nEHVKvrVlvdZ5Q=="],
 
